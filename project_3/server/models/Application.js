@@ -2,38 +2,54 @@ const { Schema, model } = require('mongoose');
 
 const applicationSchema = new Schema({
   salary: {
-
+    type: Number,
+    required: true
   },
   dateApplied: {
-
+    type: Date,
+    required: true
   },
   contact: {
-    {
-    name: String!,
-    address: ,
-    phone: ,
-  },
+    
+    name: {
+      type: String,
+      required: true
+    },
+    address: {
+      type: String,
+      required: true
+    },
+    phone: {
+      type: String,
+      required: true
+    },
+  
   },
 appliedFrom: {
-  []
+  type: String,
+  enum: ['LinkedIn', 'Indeed', 'AngelList', 'Handshake', 'Monster', 'Zip Recruiter', 'Company Website', 'Craigslist', 'Other'],
+  required : true 
 },
 jobURL: {
-
+  type: String,
+  required: true
 },
-jobDecsription: {
-
+jobDescription: {
+  type: String,
+  required: true
 },
 location: {
-
+  type: String,
+  required: true
 },
-type: {
-
+jobType: {
+  type: String,
+  required: true
 },
-interViewDates: {
 
-},
 currentMilestone: {
-
+  type: Array,
+  required: true
 },
 mileStones: {
 
@@ -55,6 +71,6 @@ notes: [
 ],
 });
 
-const Thought = model('Thought', thoughtSchema);
+const Application = model('Application', applicationSchema);
 
-module.exports = Thought;
+module.exports = Application;

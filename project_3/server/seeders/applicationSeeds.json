@@ -1,7 +1,7 @@
 [
   {
     "salary": 75000,
-   
+    "dateApplied": "2012-04-23",
     "appliedFrom": "LinkedIn",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",

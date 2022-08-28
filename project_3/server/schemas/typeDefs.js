@@ -21,12 +21,28 @@ const typeDefs = gql`
     _id: ID
     salary: Int!
     dateApplied: Date
+    contactName: String
+    contactEmail: String
+    contactPhone: String
     appliedFrom: String!
     jobURL: String!
     jobDescription: String!
     location: String!
     jobType: String!
     currentMilestone: String!
+    milestones: [Milestone]
+  }
+
+  type Milestone {
+    _id: ID
+    applied: Boolean
+    phoneInterview: Boolean
+    technicalInterview: Boolean
+    inPersonInterview: Boolean
+    jobOffer: Boolean
+    accepted: Boolean
+    rejected: Boolean
+    hippoDonations: Boolean
   }
 
   type Auth {

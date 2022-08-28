@@ -2,59 +2,68 @@ const { Schema, model } = require('mongoose');
 
 const applicationSchema = new Schema({
   salary: {
-
+    type: Number,
+    required: true
   },
   dateApplied: {
-
+    type: Date,
+    required: true
   },
   contact: {
-    {
-    name: String!,
-    address: ,
-    phone: ,
-  },
+    
+    name: {
+      type: String,
+      required: true
+    },
+    address: {
+      type: String,
+      required: true
+    },
+    phone: {
+      type: String,
+      required: true
+    },
+  
   },
 appliedFrom: {
-  []
+  type: String,
+  enum: ['LinkedIn', 'Indeed', 'AngelList', 'Handshake', 'Monster', 'Zip Recruiter', 'Job Fair', 'Company Website', 'Craigslist', 'Other'],
+  required : true 
 },
 jobURL: {
-
+  type: String,
+  required: true
 },
-jobDecsription: {
-
+jobDescription: {
+  type: String,
+  required: true
 },
 location: {
-
+  type: String,
+  required: true
 },
-type: {
-
+jobType: {
+  type: String,
+  enum: ['In person', 'Hybrid', 'Remote'],
+  required: true
 },
-interViewDates: {
 
-},
 currentMilestone: {
-
+  type: String,
+  enum: ['Applied', 'Phone Interview', 'Technical Interview', 'In Person Interview', 'Job Offer', 'Accepted', 'Rejected', 'Hippo Donations'],
+  required: true
 },
 mileStones: {
-
+  type: Array,
+  required: true
 },
-notes: [
-  {
-    commentText: {
-      type: String,
-      required: true,
-      minlength: 1,
-      maxlength: 280,
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
-    },
-  },
-],
+
+note: {
+  type: String
+},
+
 });
 
-const Thought = model('Thought', thoughtSchema);
+const Application = model('Application', applicationSchema);
 
-module.exports = Thought;
+module.exports = Application;

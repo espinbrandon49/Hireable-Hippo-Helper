@@ -1,7 +1,7 @@
 [
   {
     "salary": 75000,
-    "dateApplied": "2022-08-55",
+   
     "appliedFrom": "LinkedIn",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
@@ -11,7 +11,7 @@
   },
   {
     "salary": 100000,
-    "dateApplied": "2025-08-25",
+   
     "appliedFrom": "Monster",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
@@ -21,7 +21,7 @@
   },
   {
     "salary": 85000,
-    "dateApplied": "2052-08-25",
+    
     "appliedFrom": "Indeed",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
@@ -31,7 +31,7 @@
   },
   {
     "salary": 90000,
-    "dateApplied": "2052-05-25",
+   
     "appliedFrom": "Indeed",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
@@ -41,8 +41,8 @@
   },
   {
     "salary": 70000,
-    "dateApplied": "2022-07-25",
-    "appliedFrom": "Angelist",
+   
+    "appliedFrom": "AngelList",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
@@ -51,8 +51,8 @@
   },
   {
     "salary": 80000,
-    "dateApplied": "2022-08-24",
-    "appliedFrom": "Angelist",
+    
+    "appliedFrom": "AngelList",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",

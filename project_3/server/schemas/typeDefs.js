@@ -11,20 +11,14 @@ const typeDefs = gql`
 
   type Application {
     _id: ID
-    salary: Number
-    dateApplied: Date!
-    contact: {
-      name: String!
-      emailAddress: String!
-      phone: String
-    }
+    salary: Int!
+    
     appliedFrom: String!
     jobURL: String!
     jobDescription: String!
     location: String!
     jobType: String!
     currentMilestone: String!
-    milestones: Array!
   }
 
   type Auth {

@@ -7,17 +7,17 @@ const applicationSchema = new Schema({
   },
   dateApplied: {
     type: Date,
-    required: true
+  
   },
   contact: {
     
     name: {
       type: String,
-      required: true
+      
     },
     emailAddress: {
       type: String,
-      required: true
+      
     },
     phone: {
       type: String,

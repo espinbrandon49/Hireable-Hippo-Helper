@@ -1,3 +1,4 @@
-const Thought = require('./Thought');
+const User = require('./User');
+const Application = require('./Application');
 
-module.exports = { Thought };
+module.exports = { User, Application };

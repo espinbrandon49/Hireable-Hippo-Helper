@@ -1,31 +1,63 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type Thought {
+  type User {
     _id: ID
-    thoughtText: String
-    thoughtAuthor: String
-    createdAt: String
-    comments: [Comment]!
+    name: String!
+    email: String!
+    password: String!
+    applications: [Application]!
   }
 
-  type Comment {
+  type Application {
     _id: ID
-    commentText: String
-    createdAt: String
+    salary: Number
+    dateApplied: Date!
+    contact: {
+      name: String!
+      emailAddress: String!
+      phone: String
+    }
+    appliedFrom: String!
+    jobURL: String!
+    jobDescription: String!
+    location: String!
+    jobType: String!
+    currentMilestone: String!
+    milestones: Array!
+  }
+
+  type Auth {
+    token: ID!
+    user: User
   }
 
   type Query {
-    thoughts: [Thought]!
-    thought(thoughtId: ID!): Thought
+    users: [User]
+    user(email: String!): User
+    application(applicationId: ID!): Application
+    applications(appliedFrom: String): [Application]
   }
 
+
+
+
+
+
+  
   type Mutation {
-    addThought(thoughtText: String!, thoughtAuthor: String!): Thought
-    addComment(thoughtId: ID!, commentText: String!): Thought
-    removeThought(thoughtId: ID!): Thought
-    removeComment(thoughtId: ID!, commentId: ID!): Thought
+    addUser(name: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+    addApplication(applicationText: String!, applicationAuthor: String!): Application
+    addComment(
+      applicationId: ID!
+      commentText: String!
+      commentAuthor: String!
+    ): Application
+    removeApplication(applicationId: ID!): Application
+    removeComment(applicationId: ID!, commentId: ID!): Application
   }
+
 `;
 
 module.exports = typeDefs;

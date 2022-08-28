@@ -15,13 +15,12 @@ const applicationSchema = new Schema({
       type: String,
       required: true
     },
-    address: {
+    emailAddress: {
       type: String,
       required: true
     },
     phone: {
       type: String,
-      required: true
     },
   
   },
@@ -53,9 +52,8 @@ currentMilestone: {
   enum: ['Applied', 'Phone Interview', 'Technical Interview', 'In Person Interview', 'Job Offer', 'Accepted', 'Rejected', 'Hippo Donations'],
   required: true
 },
-mileStones: {
+milestones: {
   type: Array,
-  required: true
 },
 
 note: {

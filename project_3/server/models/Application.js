@@ -27,7 +27,7 @@ const applicationSchema = new Schema({
   },
 appliedFrom: {
   type: String,
-  enum: ['LinkedIn', 'Indeed', 'AngelList', 'Handshake', 'Monster', 'Zip Recruiter', 'Company Website', 'Craigslist', 'Other'],
+  enum: ['LinkedIn', 'Indeed', 'AngelList', 'Handshake', 'Monster', 'Zip Recruiter', 'Job Fair', 'Company Website', 'Craigslist', 'Other'],
   required : true 
 },
 jobURL: {
@@ -44,31 +44,24 @@ location: {
 },
 jobType: {
   type: String,
+  enum: ['In person', 'Hybrid', 'Remote'],
   required: true
 },
 
 currentMilestone: {
-  type: Array,
+  type: String,
+  enum: ['Applied', 'Phone Interview', 'Technical Interview', 'In Person Interview', 'Job Offer', 'Accepted', 'Rejected', 'Hippo Donations'],
   required: true
 },
 mileStones: {
-
+  type: Array,
+  required: true
 },
-notes: [
-  {
-    commentText: {
-      type: String,
-      required: true,
-      minlength: 1,
-      maxlength: 280,
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
-    },
-  },
-],
+
+note: {
+  type: String
+},
+
 });
 
 const Application = model('Application', applicationSchema);

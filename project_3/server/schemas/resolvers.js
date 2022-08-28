@@ -2,27 +2,27 @@ const { AuthenticationError } = require('apollo-server-express');
 // We import the signToken() method and the User model to access the functionality needed in our resolvers to generate a signed token and check a password:
 const { User, Application } = require('../models');
 const { signToken } = require('../utils/auth');
-import { Kind, GraphQLScalarType } from 'graphql'
+const { Kind, GraphQLScalarType } = require('graphql');
 
 
-const resolverMap = {
-  Date: new GraphQLScalarType({
-    name: 'Date',
-    description: 'Date custom scalar type',
-    parseValue(value) {
-      return new Date(value) // value from the client
-    },
-    serialize(value) {
-      return value.getTime() // value sent to the client
-    },
-    parseLiteral(ast) {
-      if (ast.kind === Kind.INT) {
-        return new Date(+ast.value) // ast value is always in string format
-      }
-      return null
-    }
-  })
-}
+// const resolverMap = {
+//   Date: new GraphQLScalarType({
+//     name: 'Date',
+//     description: 'Date custom scalar type',
+//     parseValue(value) {
+//       return new Date(value) // value from the client
+//     },
+//     serialize(value) {
+//       return value.getTime() // value sent to the client
+//     },
+//     parseLiteral(ast) {
+//       if (ast.kind === Kind.INT) {
+//         return new Date(+ast.value) // ast value is always in string format
+//       }
+//       return null
+//     }
+//   })
+// }
 
 const resolvers = {
   Query: {

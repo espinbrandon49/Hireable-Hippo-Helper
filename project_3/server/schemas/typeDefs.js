@@ -20,7 +20,7 @@ const typeDefs = gql`
   type Application {
     _id: ID
     salary: Int!
-    
+    dateApplied: Date
     appliedFrom: String!
     jobURL: String!
     jobDescription: String!

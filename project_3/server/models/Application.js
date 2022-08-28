@@ -54,7 +54,6 @@ currentMilestone: {
 },
 milestones: {
   type: Array,
-  required: true
 },
 
 note: {

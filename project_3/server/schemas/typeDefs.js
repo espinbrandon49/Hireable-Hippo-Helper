@@ -27,6 +27,36 @@ const typeDefs = gql`
     milestones: Array!
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
+  type Query {
+    users: [User]
+    user(email: String!): User
+    application(applicationId: ID!): Application
+    applications(appliedFrom: String): [Application]
+  }
+
+
+
+
+
+
+  
+  type Mutation {
+    addUser(name: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+    addApplication(applicationText: String!, applicationAuthor: String!): Application
+    addComment(
+      applicationId: ID!
+      commentText: String!
+      commentAuthor: String!
+    ): Application
+    removeApplication(applicationId: ID!): Application
+    removeComment(applicationId: ID!, commentId: ID!): Application
+  }
 
 `;
 

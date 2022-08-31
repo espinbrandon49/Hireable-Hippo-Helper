@@ -4,26 +4,6 @@ const { User, Application, Milestone } = require('../models');
 const { signToken } = require('../utils/auth');
 const { Kind, GraphQLScalarType } = require('graphql');
 
-
-// const resolverMap = {
-//   Date: new GraphQLScalarType({
-//     name: 'Date',
-//     description: 'Date custom scalar type',
-//     parseValue(value) {
-//       return new Date(value) // value from the client
-//     },
-//     serialize(value) {
-//       return value.getTime() // value sent to the client
-//     },
-//     parseLiteral(ast) {
-//       if (ast.kind === Kind.INT) {
-//         return new Date(+ast.value) // ast value is always in string format
-//       }
-//       return null
-//     }
-//   })
-// }
-
 const resolvers = {
   Query: {
     users: async () => {
@@ -37,14 +17,12 @@ const resolvers = {
       return Milestone.find({});
     },
 
-
-    user: async (parent, { email }) => {
-      return User.findOne({ email }).populate('applications');
+    user: async (parent, { username }) => {
+      return User.findOne({ username }).populate('applications');
     },
     application: async (parent, { applicationId }) => {
       return Application.findOne({ _id: applicationId });
     },
-
   },
 
   // Mutation: {

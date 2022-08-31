@@ -2,28 +2,28 @@ const { Schema, model } = require('mongoose');
 
 const milestoneSchema = new Schema({
 
-    Applied: {
+    applied: {
         type: Boolean,
     },
-    PhoneInterview: {
+    phoneInterview: {
         type: Boolean,
     },
-    TechnicalInterview: {
+    technicalInterview: {
         type: Boolean,
     },
-    InPersonInterview: {
+    inPersonInterview: {
         type: Boolean,
     },
-    JobOffer: {
+    jobOffer: {
         type: Boolean,
     },
-    Accepted: {
+    accepted: {
         type: Boolean,
     },
-    Rejected: {
+    rejected: {
         type: Boolean,
     },
-    HippoDonations: {
+    hippoDonations: {
         type: Boolean,
     },
 });

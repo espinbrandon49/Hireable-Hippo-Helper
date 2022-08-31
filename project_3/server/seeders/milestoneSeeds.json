@@ -1,0 +1,62 @@
+[
+  {
+    "Applied": true,
+    "PhoneInterview": true,
+    "TechnicalInterview": false,
+    "InPersonInterview": false,
+    "JobOffer": false,
+    "Accepted": false,
+    "Rejected": false,
+    "HippoDonations": false
+  },
+  {
+    "Applied": false,
+    "PhoneInterview": true,
+    "TechnicalInterview": false,
+    "InPersonInterview": false,
+    "JobOffer": false,
+    "Accepted": false,
+    "Rejected": false,
+    "HippoDonations": true
+  },
+  {
+    "Applied": true,
+    "PhoneInterview": true,
+    "TechnicalInterview": true,
+    "InPersonInterview": true,
+    "JobOffer": false,
+    "Accepted": false,
+    "Rejected": false,
+    "HippoDonations": false
+  },
+  {
+    "Applied": true,
+    "PhoneInterview": true,
+    "TechnicalInterview": false,
+    "InPersonInterview": false,
+    "JobOffer": false,
+    "Accepted": false,
+    "Rejected": false,
+    "HippoDonations": true
+  },
+  {
+    "Applied": false,
+    "PhoneInterview": true,
+    "TechnicalInterview": false,
+    "InPersonInterview": false,
+    "JobOffer": false,
+    "Accepted": false,
+    "Rejected": false,
+    "HippoDonations": false
+  },
+  {
+    "Applied": true,
+    "PhoneInterview": true,
+    "TechnicalInterview": true,
+    "InPersonInterview": true,
+    "JobOffer": false,
+    "Accepted": false,
+    "Rejected": false,
+    "HippoDonations": true
+  }
+]

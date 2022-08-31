@@ -1,62 +1,62 @@
 [
   {
-    "Applied": true,
-    "PhoneInterview": true,
-    "TechnicalInterview": false,
-    "InPersonInterview": false,
-    "JobOffer": false,
-    "Accepted": false,
-    "Rejected": false,
-    "HippoDonations": false
+    "applied": "true",
+    "phoneInterview": "true",
+    "technicalInterview": "false",
+    "inPersonInterview": "false",
+    "jobOffer": "false",
+    "accepted": "false",
+    "rejected": "false",
+    "hippoDonations": "false"
   },
   {
-    "Applied": false,
-    "PhoneInterview": true,
-    "TechnicalInterview": false,
-    "InPersonInterview": false,
-    "JobOffer": false,
-    "Accepted": false,
-    "Rejected": false,
-    "HippoDonations": true
+    "applied": "true",
+    "phoneInterview": "true",
+    "technicalInterview": "false",
+    "inPersonInterview": "false",
+    "jobOffer": "false",
+    "accepted": "false",
+    "rejected": "false",
+    "hippoDonations": "false"
   },
   {
-    "Applied": true,
-    "PhoneInterview": true,
-    "TechnicalInterview": true,
-    "InPersonInterview": true,
-    "JobOffer": false,
-    "Accepted": false,
-    "Rejected": false,
-    "HippoDonations": false
+    "applied": "true",
+    "phoneInterview": "true",
+    "technicalInterview": "false",
+    "inPersonInterview": "false",
+    "jobOffer": "false",
+    "accepted": "false",
+    "rejected": "false",
+    "hippoDonations": "false"
   },
   {
-    "Applied": true,
-    "PhoneInterview": true,
-    "TechnicalInterview": false,
-    "InPersonInterview": false,
-    "JobOffer": false,
-    "Accepted": false,
-    "Rejected": false,
-    "HippoDonations": true
+    "applied": "true",
+    "phoneInterview": "true",
+    "technicalInterview": "false",
+    "inPersonInterview": "false",
+    "jobOffer": "false",
+    "accepted": "false",
+    "rejected": "false",
+    "hippoDonations": "false"
   },
   {
-    "Applied": false,
-    "PhoneInterview": true,
-    "TechnicalInterview": false,
-    "InPersonInterview": false,
-    "JobOffer": false,
-    "Accepted": false,
-    "Rejected": false,
-    "HippoDonations": false
+    "applied": "true",
+    "phoneInterview": "true",
+    "technicalInterview": "false",
+    "inPersonInterview": "false",
+    "jobOffer": "false",
+    "accepted": "false",
+    "rejected": "false",
+    "hippoDonations": "false"
   },
   {
-    "Applied": true,
-    "PhoneInterview": true,
-    "TechnicalInterview": true,
-    "InPersonInterview": true,
-    "JobOffer": false,
-    "Accepted": false,
-    "Rejected": false,
-    "HippoDonations": true
+    "applied": "true",
+    "phoneInterview": "true",
+    "technicalInterview": "false",
+    "inPersonInterview": "false",
+    "jobOffer": "false",
+    "accepted": "false",
+    "rejected": "false",
+    "hippoDonations": "false"
   }
 ]

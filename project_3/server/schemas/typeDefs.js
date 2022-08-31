@@ -52,6 +52,7 @@ const typeDefs = gql`
     milestones: [Milestone]
     applications: [Application]
 
+    milestone(rejected: Boolean): Milestone
     user(email: String!): User
     application(applicationId: ID!): Application
   }
@@ -68,7 +69,6 @@ const typeDefs = gql`
     removeApplication(applicationId: ID!): Application
     removeComment(applicationId: ID!, commentId: ID!): Application
   }
-
 `;
 
 module.exports = typeDefs;

@@ -1,6 +1,10 @@
 const { Schema, model } = require('mongoose');
 
 const applicationSchema = new Schema({
+  applicationId: {
+    type: Number,
+    required: true,
+  },
   applicant: {
     type: String,
     required: true,

@@ -1,5 +1,6 @@
 [
   {
+    "appStone": "1",
     "applied": "true",
     "phoneInterview": "true",
     "technicalInterview": "false",
@@ -10,6 +11,18 @@
     "hippoDonations": "false"
   },
   {
+    "appStone": "2",
+    "applied": "false",
+    "phoneInterview": "true",
+    "technicalInterview": "false",
+    "inPersonInterview": "false",
+    "jobOffer": "false",
+    "accepted": "false",
+    "rejected": "false",
+    "hippoDonations": "false"
+  },
+  {
+    "appStone": "3",
     "applied": "true",
     "phoneInterview": "true",
     "technicalInterview": "false",
@@ -20,6 +33,18 @@
     "hippoDonations": "false"
   },
   {
+    "appStone": "4",
+    "applied": "false",
+    "phoneInterview": "true",
+    "technicalInterview": "false",
+    "inPersonInterview": "false",
+    "jobOffer": "false",
+    "accepted": "false",
+    "rejected": "false",
+    "hippoDonations": "false"
+  },
+  {
+    "appStone": "5",
     "applied": "true",
     "phoneInterview": "true",
     "technicalInterview": "false",
@@ -30,27 +55,8 @@
     "hippoDonations": "false"
   },
   {
-    "applied": "true",
-    "phoneInterview": "true",
-    "technicalInterview": "false",
-    "inPersonInterview": "false",
-    "jobOffer": "false",
-    "accepted": "false",
-    "rejected": "false",
-    "hippoDonations": "false"
-  },
-  {
-    "applied": "true",
-    "phoneInterview": "true",
-    "technicalInterview": "false",
-    "inPersonInterview": "false",
-    "jobOffer": "false",
-    "accepted": "false",
-    "rejected": "false",
-    "hippoDonations": "false"
-  },
-  {
-    "applied": "true",
+    "appStone": "6",
+    "applied": "false",
     "phoneInterview": "true",
     "technicalInterview": "false",
     "inPersonInterview": "false",

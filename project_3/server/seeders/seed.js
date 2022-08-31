@@ -15,6 +15,7 @@ db.once('open', async () => {
 
     for (let i = 0; i < applicationSeeds.length; i++) {
       const { _id, applicant } = await Application.create(applicationSeeds[i]);
+
       const user = await User.findOneAndUpdate(
         { username: applicant },
         {
@@ -27,9 +28,9 @@ db.once('open', async () => {
 
     for (let i = 0; i < milestoneSeeds.length; i++) {
       const { _id, appStone } = await Milestone.create(milestoneSeeds[i]);
-      
+
       const application = await Application.findOneAndUpdate(
-        { _id: appStone },
+        { applicationId: appStone },
         {
           $addToSet: {
             milestones: _id,
@@ -37,7 +38,6 @@ db.once('open', async () => {
         }
       );
     }
-
 
   } catch (err) {
     console.error(err);

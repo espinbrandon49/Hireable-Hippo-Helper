@@ -8,7 +8,8 @@ const typeDefs = gql`
 
   type User {
     _id: ID
-    name: String!
+    name: String
+    username: String!
     email: String!
     password: String!
     applications: [Application]!
@@ -16,6 +17,7 @@ const typeDefs = gql`
 
   type Application {
     _id: ID
+    applicant: String
     salary: Int!
     dateApplied: Date
     contactName: String
@@ -49,12 +51,15 @@ const typeDefs = gql`
 
   type Query {
     users: [User]
-    milestones: [Milestone]
-    applications: [Application]
-
-    milestone(rejected: Boolean): Milestone
     user(email: String!): User
+
+    applications(username: String): [Application]
     application(applicationId: ID!): Application
+
+    milestones: [Milestone]
+    milestone(rejected: Boolean): Milestone
+ 
+    
   }
 
   type Mutation {

@@ -14,16 +14,17 @@ db.once('open', async () => {
     await Application.create(applicationSeeds);
     await Milestone.create(milestoneSeeds);
 
-    // for (let i = 0; i < applicationSeeds.length; i++) {
-    //   const { _id } = await Application.create(applicationSeeds[i]);
-    //   const user = await User.findOneAndUpdate(
-    //     {
-    //       $addToSet: {
-    //         applications: _id,
-    //       },
-    //     }
-    //   );
-    // }
+    for (let i = 0; i < applicationSeeds.length; i++) {
+      const { _id, applicant } = await Application.create(applicationSeeds[i]);
+      const user = await User.findOneAndUpdate(
+        {username: applicant},
+        {
+          $addToSet: {
+            applications: _id,
+          },
+        }
+      );
+    }
 
     // for (let i = 0; i < milestoneSeeds.length; i++) {
     //   const { _id } = await Milestone.create(milestoneSeeds[i]);

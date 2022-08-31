@@ -57,9 +57,7 @@ const typeDefs = gql`
     application(applicationId: ID!): Application
 
     milestones: [Milestone]
-    milestone(rejected: Boolean): Milestone
- 
-    
+  
   }
 
   type Mutation {

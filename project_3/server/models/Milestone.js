@@ -1,7 +1,10 @@
 const { Schema, model } = require('mongoose');
 
 const milestoneSchema = new Schema({
-
+    appStone: {
+        type: String,
+        trim: true  
+    },
     applied: {
         type: Boolean,
     },

@@ -1,5 +1,6 @@
 [
   {
+    "applicant":"BrianKernighan",
     "salary": 75000,
     "appliedFrom": "LinkedIn",
     "jobURL": "google.com",
@@ -9,6 +10,7 @@
     "currentMilestone": "Applied"
   },
   {
+    "applicant":"BrianKernighan",
     "salary": 100000,
     "appliedFrom": "Monster",
     "jobURL": "google.com",
@@ -18,6 +20,7 @@
     "currentMilestone": "Applied"
   },
   {
+    "applicant":"MaxKanat-Alexander",
     "salary": 85000, 
     "appliedFrom": "Indeed",
     "jobURL": "google.com",
@@ -27,6 +30,7 @@
     "currentMilestone": "Applied"
   },
   {
+    "applicant":"MaxKanat-Alexander",
     "salary": 90000,
     "appliedFrom": "Indeed",
     "jobURL": "google.com",
@@ -36,6 +40,7 @@
     "currentMilestone": "Applied"
   },
   {
+    "applicant":"WhyTheLucky Stiff",
     "salary": 70000,  
     "appliedFrom": "AngelList",
     "jobURL": "google.com",
@@ -44,7 +49,7 @@
     "jobType": "Hybrid",
     "currentMilestone": "Applied"
   },
-  {
+  {"applicant":"WhyTheLucky Stiff",
     "salary": 80000,
     "appliedFrom": "AngelList",
     "jobURL": "google.com",

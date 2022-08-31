@@ -1,10 +1,7 @@
 const { gql } = require('apollo-server-express');
 
-
-
 const typeDefs = gql`
   scalar Date
-
   type MyType {
     created: Date
   }
@@ -52,17 +49,13 @@ const typeDefs = gql`
 
   type Query {
     users: [User]
+    milestones: [Milestone]
+    applications: [Application]
+
     user(email: String!): User
     application(applicationId: ID!): Application
-    applications(appliedFrom: String): [Application]
   }
 
-
-
-
-
-
-  
   type Mutation {
     addUser(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth

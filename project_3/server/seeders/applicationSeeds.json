@@ -1,7 +1,6 @@
 [
   {
     "salary": 75000,
-    "dateApplied": "2012-04-23",
     "appliedFrom": "LinkedIn",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
@@ -11,7 +10,6 @@
   },
   {
     "salary": 100000,
-   
     "appliedFrom": "Monster",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
@@ -20,8 +18,7 @@
     "currentMilestone": "Applied"
   },
   {
-    "salary": 85000,
-    
+    "salary": 85000, 
     "appliedFrom": "Indeed",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
@@ -31,7 +28,6 @@
   },
   {
     "salary": 90000,
-   
     "appliedFrom": "Indeed",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
@@ -40,8 +36,7 @@
     "currentMilestone": "Applied"
   },
   {
-    "salary": 70000,
-   
+    "salary": 70000,  
     "appliedFrom": "AngelList",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
@@ -51,7 +46,6 @@
   },
   {
     "salary": 80000,
-    
     "appliedFrom": "AngelList",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",

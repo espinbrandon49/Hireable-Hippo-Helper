@@ -2,51 +2,61 @@
   {
     "name": "Brian Kernighan",
     "email": "bkernighan@techfriends.dev",
-    "password": "password01"
+    "password": "password01",
+    "applications": [{"_id": "630f8f54753e8cc7f8260ff3"}]
   },
   {
     "name": "Max Kanat-Alexander",
     "email": "mkanatalexander@techfriends.dev",
-    "password": "password02"
+    "password": "password02",
+    "applications": [{"_id": "630f8f54753e8cc7f8260ff6"}]
   },
   {
     "name": "Why The Lucky Stiff",
     "email": "wtls@techfriends.dev",
-    "password": "password03"
+    "password": "password03",
+    "applications": [{"_id": "630f8f54753e8cc7f8260ff9"}]
   },
   {
     "name": "Kent Beck",
     "email": "kbeck@techfriends.dev",
-    "password": "password04"
+    "password": "password04",
+    "applications": [{"_id": "630f8f54753e8cc7f8260ffc"}]
   },
   {
     "name": "Edward V. Berard",
     "email": "evberard@techfriends.dev",
-    "password": "password05"
+    "password": "password05",
+    "applications": [{"_id": "630f8f54753e8cc7f8260fff"}]
   },
   {
     "name": "Alan Kay",
     "email": "akay@techfriends.dev",
-    "password": "password06"
+    "password": "password06",
+    "applications": [{"_id": "630f8f54753e8cc7f8261002"}]
   },
   {
     "name": "C.A.R. Hoare",
     "email": "choare@techfriends.dev",
-    "password": "password07"
+    "password": "password07",
+    "applications": [{"_id": "630f8f54753e8cc7f8260ff3"}]
   },
   {
     "name": "David Thomas",
     "email": "dthomas@techfriends.dev",
-    "password": "password08"
+    "password": "password08",
+    "applications": [{"_id": "630f8f54753e8cc7f8260ff3"}]
   },
   {
     "name": "Donald Knuth",
     "email": "dknuth@techfriends.dev",
-    "password": "password09"
+    "password": "password09",
+    "applications": [{"_id": "630f8f54753e8cc7f8260ff3"}]
   },
   {
     "name": "Lernantino",
     "email": "lernantino@techfriends.dev",
-    "password": "password10"
+    "password": "password10",
+    "applications": [{"_id": "630f8f54753e8cc7f8260ff3"}]
   }
 ]

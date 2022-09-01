@@ -23,7 +23,7 @@ const typeDefs = gql`
     jobDescription: String!
     location: String!
     jobType: String!
-    currentMilestone: String!
+    currentMilestone: String
     milestones: [Milestone]
   }
 

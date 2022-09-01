@@ -29,6 +29,9 @@ const milestoneSchema = new Schema({
     hippoDonations: {
         type: Boolean,
     },
+    createdAt: {
+        type: Boolean,
+    },
 });
 
 const Milestone = model('Milestone', milestoneSchema);

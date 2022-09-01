@@ -1,11 +1,6 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  scalar Date
-  type MyType {
-    created: Date
-  }
-
   type User {
     _id: ID
     name: String
@@ -17,8 +12,9 @@ const typeDefs = gql`
 
   type Application {
     _id: ID
+    applicant: String!
     salary: Int!
-    dateApplied: Date
+    dateApplied: String
     contactName: String
     contactEmail: String
     contactPhone: String
@@ -41,6 +37,7 @@ const typeDefs = gql`
     accepted: Boolean
     rejected: Boolean
     hippoDonations: Boolean
+    dateOfInterview: String
   }
 
   type Auth {
@@ -63,10 +60,11 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     
     addApplication(
-      applicationText: String!, applicationAuthor: String!
+      applicationText: String!
+      applicant: String!
       _id: ID
       salary: Int!
-      dateApplied: Date
+      dateApplied: String
       contactName: String
       contactEmail: String
       contactPhone: String
@@ -75,11 +73,12 @@ const typeDefs = gql`
       jobDescription: String!
       location: String!
       jobType: String!
-      ): Application
+      ): Application  
     
-    addMilestone(
+      addMilestone(
       applicationId: ID!
       milestone: String!
+      dateOfInterview: String
     ): Application
     
     removeApplication(applicationId: ID!): Application

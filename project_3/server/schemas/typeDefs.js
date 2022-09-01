@@ -58,16 +58,33 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(name: String!, email: String!, password: String!): Auth
+    addUser(name: String, username: String!, email: String!, password: String!): Auth
+    
     login(email: String!, password: String!): Auth
-    addApplication(applicationText: String!, applicationAuthor: String!): Application
-    addComment(
+    
+    addApplication(
+      applicationText: String!, applicationAuthor: String!
+      _id: ID
+      salary: Int!
+      dateApplied: Date
+      contactName: String
+      contactEmail: String
+      contactPhone: String
+      appliedFrom: String!
+      jobURL: String!
+      jobDescription: String!
+      location: String!
+      jobType: String!
+      ): Application
+    
+    addMilestone(
       applicationId: ID!
-      commentText: String!
-      commentAuthor: String!
+      milestone: String!
     ): Application
+    
     removeApplication(applicationId: ID!): Application
-    removeComment(applicationId: ID!, commentId: ID!): Application
+    
+    removeMilestone(applicationId: ID!, milestoneId: ID!): Application
   }
 `;
 

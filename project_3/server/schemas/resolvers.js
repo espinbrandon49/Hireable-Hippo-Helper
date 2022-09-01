@@ -26,6 +26,9 @@ const resolvers = {
     application: async (parent, { applicationId }) => {
       return Application.findOne({ _id: applicationId });
     },
+    // application: async (parent, { applicationId }) => {
+    //   return Application.findOne({ applicationId: _id });
+    // },
 
     // milestones: async (parent, { milestones }) => {
     //   const params = milestones ? { milestones } : {};

@@ -77,55 +77,6 @@ const Application = model('Application', applicationSchema);
 
 module.exports = Application;
 
-//MILESTONE NOTES
-// When you select a milestone, it would be like adding a comment, except the comment would be limited by options
-
-// no need to toggle true or false
-
-//so we can remove type boolean and make the type a string, and take all of the options out of the backend, and they will live in the front-end
-
-//cannot be an "enum" field because milestone will be more than one item
-
-//BACKEND
-// delete Milestone.js
-
-//Application.js
-// milestones: [
-  // {
-  //   milestone: {
-  //     type: String,
-  //   },
-  //   dateOfInterview: {
-  //     type: Date,
-  //     default: Date.now,
-  //     get: (timestamp) => dateFormat(timestamp),
-  //   },
-  // },
-// ],
-
-//TypeDefs
-// type Milestone {
-//   _id: ID
-//   milestone: String
-//   dateOfInterview: String
-// }
-
-//Seeders
-//Delete milsestoneSeeds.json
-
-//applicationSeeds.json
-// "milestones": [
-//   {
-    // "milestone": "applied",
-    //  "date": "09/14/2022",
-//   },
-//   {
-//     "milestone": "job offer",
-//      "date": "10/01/2022",
-//   }
-// ]
-
-
 //FRONTEND
 // when a current milestone is clicked, the option to set a date is selected, or the default date can be date.now
 

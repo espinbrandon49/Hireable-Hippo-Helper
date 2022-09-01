@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const userSchema = new Schema({
   name: {
     type: String,
-    trim: true,
+    default: "Hippo Hire"
   },
   username: {
     type: String,

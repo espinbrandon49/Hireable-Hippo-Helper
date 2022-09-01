@@ -1,67 +1,124 @@
 [
   {
     "applicationId": "1",
-    "applicant":"BrianKernighan",
+    "applicant": "BrianKernighan",
     "salary": 75000,
     "appliedFrom": "LinkedIn",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied"
+    "currentMilestone": "Applied",
+    "milestones": [
+      {
+        "milestone": "applied",
+        "date": "09/14/2022"
+      }
+    ]
   },
   {
     "applicationId": "2",
-    "applicant":"BrianKernighan",
+    "applicant": "BrianKernighan",
     "salary": 100000,
     "appliedFrom": "Monster",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied"
+    "currentMilestone": "In Person Interview",
+    "milestones": [
+      {
+        "milestone": "applied",
+        "date": "10/14/2022"
+      },
+      {
+        "milestone": "phone interview",
+        "date": "10/17/2022"
+      },
+      {
+        "milestone": "in-person Interview",
+        "date": "10/21/2022"
+      }
+    ]
   },
   {
     "applicationId": "3",
-    "applicant":"MaxKanat-Alexander",
-    "salary": 85000, 
+    "applicant": "MaxKanat-Alexander",
+    "salary": 85000,
     "appliedFrom": "Indeed",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied"
+    "currentMilestone": "Job Offer",
+    "milestones": [
+      {
+        "milestone": "Applied",
+        "date": "09/08/2022"
+      },
+      {
+        "milestone": "Phone Interview",
+        "date": "09/15/2022"
+      },
+      {
+        "milestone": "In-person Interview",
+        "date": "09/15/2022"
+      },
+      {
+        "milestone": "Job Offer",
+        "date": "9/16/2022"
+      }
+    ]
   },
   {
     "applicationId": "4",
-    "applicant":"MaxKanat-Alexander",
+    "applicant": "MaxKanat-Alexander",
     "salary": 90000,
     "appliedFrom": "Indeed",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied"
+    "currentMilestone": "Applied",
+    "milestones": [
+      {
+        "milestone": "Rejection",
+        "date": "11/14/2021"
+      }
+    ]
   },
   {
     "applicationId": "5",
-    "applicant":"WhyTheLucky Stiff",
-    "salary": 70000,  
+    "applicant": "WhyTheLucky Stiff",
+    "salary": 70000,
     "appliedFrom": "AngelList",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied"
+    "currentMilestone": "Applied",
+    "milestones": [
+      {
+        "milestone": "applied",
+        "date": "09/14/2022"
+      }
+    ]
   },
-  { "applicationId": "6",
-    "applicant":"WhyTheLucky Stiff",
+  {
+    "applicationId": "6",
+    "applicant": "WhyTheLucky Stiff",
     "salary": 80000,
     "appliedFrom": "AngelList",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied"
+    "currentMilestone": "Applied",
+    "milestones": [
+      {
+        "milestone": "applied",
+        "date": "09/14/2022"
+      }
+    ]
   }
 ]

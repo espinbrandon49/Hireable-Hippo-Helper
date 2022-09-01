@@ -1,11 +1,6 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  scalar Date
-  type MyType {
-    created: Date
-  }
-
   type User {
     _id: ID
     name: String
@@ -17,9 +12,9 @@ const typeDefs = gql`
 
   type Application {
     _id: ID
-    applicant: String
+    applicant: String!
     salary: Int!
-    dateApplied: Date
+    dateApplied: String
     contactName: String
     contactEmail: String
     contactPhone: String
@@ -34,14 +29,8 @@ const typeDefs = gql`
 
   type Milestone {
     _id: ID
-    applied: Boolean
-    phoneInterview: Boolean
-    technicalInterview: Boolean
-    inPersonInterview: Boolean
-    jobOffer: Boolean
-    accepted: Boolean
-    rejected: Boolean
-    hippoDonations: Boolean
+    milestone: String
+    dateOfInterview: String
   }
 
   type Auth {
@@ -56,21 +45,38 @@ const typeDefs = gql`
     applications(username: String): [Application]
     application(applicationId: ID!): Application
 
-    milestones: [Milestone]
-    milestone(appStone: Int): Milestone
   }
 
   type Mutation {
-    addUser(name: String!, email: String!, password: String!): Auth
+    addUser(name: String, username: String!, email: String!, password: String!): Auth
+    
     login(email: String!, password: String!): Auth
-    addApplication(applicationText: String!, applicationAuthor: String!): Application
-    addComment(
+    
+    addApplication(
+      applicationText: String!
+      applicant: String!
+      _id: ID
+      salary: Int!
+      dateApplied: String
+      contactName: String
+      contactEmail: String
+      contactPhone: String
+      appliedFrom: String!
+      jobURL: String!
+      jobDescription: String!
+      location: String!
+      jobType: String!
+      ): Application  
+    
+      addMilestone(
       applicationId: ID!
-      commentText: String!
-      commentAuthor: String!
+      milestone: String!
+      dateOfInterview: String
     ): Application
+    
     removeApplication(applicationId: ID!): Application
-    removeComment(applicationId: ID!, commentId: ID!): Application
+    
+    removeMilestone(applicationId: ID!, milestoneId: ID!): Application
   }
 `;
 

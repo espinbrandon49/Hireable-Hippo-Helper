@@ -11,14 +11,8 @@
     "currentMilestone": "Applied",
     "milestones": [
       {
-        "applied": "true",
-        "phoneInterview": "true",
-        "technicalInterview": "true",
-        "inPersonInterview": "true",
-        "jobOffer": "true",
-        "accepted": "true",
-        "rejected": "true",
-        "hippoDonations": "true"
+        "milestone": "applied",
+        "date": "09/14/2022"
       }
     ]
   },
@@ -31,17 +25,19 @@
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied",
+    "currentMilestone": "In Person Interview",
     "milestones": [
       {
-        "applied": "true",
-        "phoneInterview": "false",
-        "technicalInterview": "true",
-        "inPersonInterview": "true",
-        "jobOffer": "true",
-        "accepted": "true",
-        "rejected": "true",
-        "hippoDonations": "true"
+        "milestone": "applied",
+        "date": "10/14/2022"
+      },
+      {
+        "milestone": "phone interview",
+        "date": "10/17/2022"
+      },
+      {
+        "milestone": "in-person Interview",
+        "date": "10/21/2022"
       }
     ]
   },
@@ -54,17 +50,23 @@
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied",
+    "currentMilestone": "Job Offer",
     "milestones": [
       {
-        "applied": "true",
-        "phoneInterview": "true",
-        "technicalInterview": "false",
-        "inPersonInterview": "true",
-        "jobOffer": "true",
-        "accepted": "true",
-        "rejected": "true",
-        "hippoDonations": "true"
+        "milestone": "Applied",
+        "date": "09/08/2022"
+      },
+      {
+        "milestone": "Phone Interview",
+        "date": "09/15/2022"
+      },
+      {
+        "milestone": "In-person Interview",
+        "date": "09/15/2022"
+      },
+      {
+        "milestone": "Job Offer",
+        "date": "9/16/2022"
       }
     ]
   },
@@ -80,14 +82,8 @@
     "currentMilestone": "Applied",
     "milestones": [
       {
-        "applied": "true",
-        "phoneInterview": "true",
-        "technicalInterview": "true",
-        "inPersonInterview": "false",
-        "jobOffer": "true",
-        "accepted": "true",
-        "rejected": "true",
-        "hippoDonations": "true"
+        "milestone": "Rejection",
+        "date": "11/14/2021"
       }
     ]
   },
@@ -103,14 +99,8 @@
     "currentMilestone": "Applied",
     "milestones": [
       {
-        "applied": "true",
-        "phoneInterview": "true",
-        "technicalInterview": "true",
-        "inPersonInterview": "true",
-        "jobOffer": "false",
-        "accepted": "true",
-        "rejected": "true",
-        "hippoDonations": "true"
+        "milestone": "applied",
+        "date": "09/14/2022"
       }
     ]
   },
@@ -126,14 +116,8 @@
     "currentMilestone": "Applied",
     "milestones": [
       {
-        "applied": "true",
-        "phoneInterview": "true",
-        "technicalInterview": "true",
-        "inPersonInterview": "true",
-        "jobOffer": "true",
-        "accepted": "true",
-        "rejected": "false",
-        "hippoDonations": "true"
+        "milestone": "applied",
+        "date": "09/14/2022"
       }
     ]
   }

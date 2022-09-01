@@ -29,14 +29,7 @@ const typeDefs = gql`
 
   type Milestone {
     _id: ID
-    applied: Boolean
-    phoneInterview: Boolean
-    technicalInterview: Boolean
-    inPersonInterview: Boolean
-    jobOffer: Boolean
-    accepted: Boolean
-    rejected: Boolean
-    hippoDonations: Boolean
+    milestone: String
     dateOfInterview: String
   }
 

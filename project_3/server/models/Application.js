@@ -58,37 +58,8 @@ const applicationSchema = new Schema({
   },
   milestones: [
     {
-      applied: {
-        type: Boolean,
-        default: false
-      },
-      phoneInterview: {
-        type: Boolean,
-        default: false
-      },
-      technicalInterview: {
-        type: Boolean,
-        default: false
-      },
-      inPersonInterview: {
-        type: Boolean,
-        default: false
-      },
-      jobOffer: {
-        type: Boolean,
-        default: false
-      },
-      accepted: {
-        type: Boolean,
-        default: false
-      },
-      rejected: {
-        type: Boolean,
-        default: false
-      },
-      hippoDonations: {
-        type: Boolean,
-        default: false
+      milestone: {
+        type: String,
       },
       dateOfInterview: {
         type: Date,
@@ -120,16 +91,16 @@ module.exports = Application;
 
 //Application.js
 // milestones: [
-//   {
-//     milestone: {
-//       type: String,
-//     },
-//     dateOfInterview: {
-//       type: Date,
-//       default: Date.now,
-//       get: (timestamp) => dateFormat(timestamp),
-//     },
-//   },
+  // {
+  //   milestone: {
+  //     type: String,
+  //   },
+  //   dateOfInterview: {
+  //     type: Date,
+  //     default: Date.now,
+  //     get: (timestamp) => dateFormat(timestamp),
+  //   },
+  // },
 // ],
 
 //TypeDefs
@@ -145,8 +116,8 @@ module.exports = Application;
 //applicationSeeds.json
 // "milestones": [
 //   {
-//     "milestone": "applied",
-//      "date": "09/14/2022",
+    // "milestone": "applied",
+    //  "date": "09/14/2022",
 //   },
 //   {
 //     "milestone": "job offer",

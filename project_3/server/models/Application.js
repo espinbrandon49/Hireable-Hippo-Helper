@@ -116,6 +116,7 @@ module.exports = Application;
 //cannot be an "enum" field because milestone will be more than one item
 
 //BACKEND
+//Application Model
 // milestones: [
 //   {
 //     milestone: {
@@ -128,6 +129,29 @@ module.exports = Application;
 //     },
 //   },
 // ],
+
+//TypeDefs
+// type Milestone {
+//   _id: ID
+//   milestone: String
+//   dateOfInterview: String
+// }
+
+//Seeders
+//Delete milsestoneSeeds.json
+
+//applicationSeeds.json
+// "milestones": [
+//   {
+//     "milestone": "applied",
+//      "date": "09/14/2022",
+//   },
+//   {
+//     "milestone": "job offer",
+//      "date": "10/01/2022",
+//   }
+// ]
+
 
 //FRONTEND
 // when a current milestone is clicked, the option to set a date is selected, or the default date can be date.now

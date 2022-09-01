@@ -116,7 +116,9 @@ module.exports = Application;
 //cannot be an "enum" field because milestone will be more than one item
 
 //BACKEND
-//Application Model
+// delete Milestone.js
+
+//Application.js
 // milestones: [
 //   {
 //     milestone: {

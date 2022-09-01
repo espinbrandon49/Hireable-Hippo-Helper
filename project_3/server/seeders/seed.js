@@ -2,16 +2,16 @@ const db = require('../config/connection');
 const { User, Application, Milestone } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const applicationSeeds = require('./applicationSeeds.json');
-//const milestoneSeeds = require('./milestoneSeeds.json');
+
 
 db.once('open', async () => {
   try {
     await User.deleteMany({});
     await Application.deleteMany({});
-    // await Milestone.deleteMany({});
+   
 
     await User.create(userSeeds);
-    // await Milestone.create(milestoneSeeds);
+  
 
     for (let i = 0; i < applicationSeeds.length; i++) {
       const { _id, applicant } = await Application.create(applicationSeeds[i]);
@@ -26,18 +26,6 @@ db.once('open', async () => {
       );
     }
 
-    // for (let i = 0; i < milestoneSeeds.length; i++) {
-    //   const { _id, appStone } = await Milestone.create(milestoneSeeds[i]);
-
-    //   const application = await Application.findOneAndUpdate(
-    //     { applicationId: appStone },
-    //     {
-    //       $addToSet: {
-    //         milestones: _id,
-    //       },
-    //     }
-    //   );
-    // }
 
   } catch (err) {
     console.error(err);

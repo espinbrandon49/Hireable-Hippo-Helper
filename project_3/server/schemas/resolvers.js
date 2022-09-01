@@ -2,7 +2,7 @@ const { AuthenticationError } = require('apollo-server-express');
 // We import the signToken() method and the User model to access the functionality needed in our resolvers to generate a signed token and check a password:
 const { User, Application, Milestone } = require('../models');
 const { signToken } = require('../utils/auth');
-// const { Kind, GraphQLScalarType } = require('graphql');
+
 
 const resolvers = {
   Query: {
@@ -27,11 +27,7 @@ const resolvers = {
       return Application.findOne({ _id: applicationId });
     },
  
-    // milestones: async (parent, { milestones }) => {
-    //   const params = milestones ? { milestones } : {};
-    //   return Application.find(params);
-    // },
-
+  
     //data visuals
   //   applicationAppFrom: async (parent, { appliedFrom }) => {
   //     const params = appliedFrom ? { appliedFrom } : {};

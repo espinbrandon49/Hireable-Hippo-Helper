@@ -10,9 +10,10 @@
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
-
-
   },
+  "engines": {
+    "node": "16.16.0"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",

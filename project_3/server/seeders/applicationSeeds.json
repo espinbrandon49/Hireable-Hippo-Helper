@@ -1,67 +1,140 @@
 [
   {
     "applicationId": "1",
-    "applicant":"BrianKernighan",
+    "applicant": "BrianKernighan",
     "salary": 75000,
     "appliedFrom": "LinkedIn",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied"
+    "currentMilestone": "Applied",
+    "milestones": [
+      {
+        "applied": "true",
+        "phoneInterview": "true",
+        "technicalInterview": "true",
+        "inPersonInterview": "true",
+        "jobOffer": "true",
+        "accepted": "true",
+        "rejected": "true",
+        "hippoDonations": "true"
+      }
+    ]
   },
   {
     "applicationId": "2",
-    "applicant":"BrianKernighan",
+    "applicant": "BrianKernighan",
     "salary": 100000,
     "appliedFrom": "Monster",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied"
+    "currentMilestone": "Applied",
+    "milestones": [
+      {
+        "applied": "true",
+        "phoneInterview": "false",
+        "technicalInterview": "true",
+        "inPersonInterview": "true",
+        "jobOffer": "true",
+        "accepted": "true",
+        "rejected": "true",
+        "hippoDonations": "true"
+      }
+    ]
   },
   {
     "applicationId": "3",
-    "applicant":"MaxKanat-Alexander",
-    "salary": 85000, 
+    "applicant": "MaxKanat-Alexander",
+    "salary": 85000,
     "appliedFrom": "Indeed",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied"
+    "currentMilestone": "Applied",
+    "milestones": [
+      {
+        "applied": "true",
+        "phoneInterview": "true",
+        "technicalInterview": "false",
+        "inPersonInterview": "true",
+        "jobOffer": "true",
+        "accepted": "true",
+        "rejected": "true",
+        "hippoDonations": "true"
+      }
+    ]
   },
   {
     "applicationId": "4",
-    "applicant":"MaxKanat-Alexander",
+    "applicant": "MaxKanat-Alexander",
     "salary": 90000,
     "appliedFrom": "Indeed",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied"
+    "currentMilestone": "Applied",
+    "milestones": [
+      {
+        "applied": "true",
+        "phoneInterview": "true",
+        "technicalInterview": "true",
+        "inPersonInterview": "false",
+        "jobOffer": "true",
+        "accepted": "true",
+        "rejected": "true",
+        "hippoDonations": "true"
+      }
+    ]
   },
   {
     "applicationId": "5",
-    "applicant":"WhyTheLucky Stiff",
-    "salary": 70000,  
+    "applicant": "WhyTheLucky Stiff",
+    "salary": 70000,
     "appliedFrom": "AngelList",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied"
+    "currentMilestone": "Applied",
+    "milestones": [
+      {
+        "applied": "true",
+        "phoneInterview": "true",
+        "technicalInterview": "true",
+        "inPersonInterview": "true",
+        "jobOffer": "false",
+        "accepted": "true",
+        "rejected": "true",
+        "hippoDonations": "true"
+      }
+    ]
   },
-  { "applicationId": "6",
-    "applicant":"WhyTheLucky Stiff",
+  {
+    "applicationId": "6",
+    "applicant": "WhyTheLucky Stiff",
     "salary": 80000,
     "appliedFrom": "AngelList",
     "jobURL": "google.com",
     "jobDescription": "Google Front-End Junior Web Developer",
     "location": "SF",
     "jobType": "Hybrid",
-    "currentMilestone": "Applied"
+    "currentMilestone": "Applied",
+    "milestones": [
+      {
+        "applied": "true",
+        "phoneInterview": "true",
+        "technicalInterview": "true",
+        "inPersonInterview": "true",
+        "jobOffer": "true",
+        "accepted": "true",
+        "rejected": "false",
+        "hippoDonations": "true"
+      }
+    ]
   }
 ]

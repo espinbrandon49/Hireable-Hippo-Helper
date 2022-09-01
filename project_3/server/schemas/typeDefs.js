@@ -17,7 +17,6 @@ const typeDefs = gql`
 
   type Application {
     _id: ID
-    applicant: String
     salary: Int!
     dateApplied: Date
     contactName: String
@@ -56,8 +55,6 @@ const typeDefs = gql`
     applications(username: String): [Application]
     application(applicationId: ID!): Application
 
-    milestones: [Milestone]
-    milestone(appStone: Int): Milestone
   }
 
   type Mutation {

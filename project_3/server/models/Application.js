@@ -29,7 +29,7 @@ const applicationSchema = new Schema({
   appliedFrom: {
     type: String,
     enum: ['LinkedIn', 'Indeed', 'AngelList', 'Handshake', 'Monster', 'Zip Recruiter', 'Job Fair', 'Company Website', 'Craigslist', 'Other'],
-    required : true 
+    required: true
   },
   jobURL: {
     type: String,
@@ -55,9 +55,31 @@ const applicationSchema = new Schema({
   },
   milestones: [
     {
-      type: Schema.Types.ObjectId,
-      ref: 'Milestone',
-    }
+      applied: {
+        type: Boolean,
+      },
+      phoneInterview: {
+        type: Boolean,
+      },
+      technicalInterview: {
+        type: Boolean,
+      },
+      inPersonInterview: {
+        type: Boolean,
+      },
+      jobOffer: {
+        type: Boolean,
+      },
+      accepted: {
+        type: Boolean,
+      },
+      rejected: {
+        type: Boolean,
+      },
+      hippoDonations: {
+        type: Boolean,
+      },
+    },
   ],
   note: {
     type: String

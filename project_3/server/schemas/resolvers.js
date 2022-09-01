@@ -6,24 +6,38 @@ const { Kind, GraphQLScalarType } = require('graphql');
 
 const resolvers = {
   Query: {
+
+    // find all users
     users: async () => {
       return User.find().populate('applications');
     },
-    applications: async (parent, { appliedFrom }) => {
-      const params = appliedFrom ? { appliedFrom } : {};
-      return Application.find(params).sort({ createdAt: -1 }).populate('milestones');
-    },
-    milestones: async () => {
-      return Milestone.find({});
+
+    // find all applications
+    applications: async () => {
+      return Application.find();
     },
 
+    // find one user by username
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('applications');
     },
+
+    // find one application by object_Id as applicationIdf
     application: async (parent, { applicationId }) => {
       return Application.findOne({ _id: applicationId });
     },
-  },
+
+    // milestones: async (parent, { milestones }) => {
+    //   const params = milestones ? { milestones } : {};
+    //   return Application.find(params);
+    // },
+
+    //data visuals
+  //   applicationAppFrom: async (parent, { appliedFrom }) => {
+  //     const params = appliedFrom ? { appliedFrom } : {};
+  //     return Application.find(params).sort({ createdAt: -1 }).populate('milestones');
+  //   },
+   },
 
   // Mutation: {
   //   // 🔑 We then write an addUser resolver and pass in name, email, and password as arguments. This resolver will use our imported signToken() method:

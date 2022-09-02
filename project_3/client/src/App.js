@@ -11,9 +11,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TrackerContainer from "./components/TrackerContainer";
 import "./App.css";
 
-import Homepage from "./components/pages/Homepage";
-import Signup from "./components/pages/Signup";
-import Login from "./components/pages/Login";
+import Homepage from "./pages/Homepage";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({

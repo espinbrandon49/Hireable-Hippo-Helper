@@ -6,6 +6,7 @@ node_modules
 .pnp.js
 .DS_Store
 package-lock.json
+.eslintcache
 
 # testing
 /coverage

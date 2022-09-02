@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import NavBar from './NavBar';
 import SideBar from './SideBar';
-import Homepage from './pages/Homepage';
-import AppForm from './pages/AppForm';
-import Application from './pages/Application';
-import HippoStats from './pages/HippoStats';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+import Homepage from '../pages/Homepage';
+import AppForm from '../pages/AppForm';
+import Application from '../pages/Application';
+import HippoStats from '../pages/HippoStats';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 
 export default function TrackerContainer() {
     const [currentPage, setCurrentPage] = useState('Homepage');

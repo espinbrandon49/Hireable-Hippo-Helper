@@ -41,7 +41,7 @@ const client = new ApolloClient({
 });
 
 const App = () => (
-  <TrackerContainer client={client}>
+  <ApolloProvider client={client}>
     <Router>
       <div className="flex-column justify-flex-start min-100-vh">
         {/* <Header /> */}
@@ -50,12 +50,13 @@ const App = () => (
             <Route path="/" element={<Homepage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/trackerContainer" element={<TrackerContainer />} />
           </Routes>
         </div>
         {/* <Footer /> */}
       </div>
     </Router>
-  </TrackerContainer>
+  </ApolloProvider>
 );
 
 export default App;

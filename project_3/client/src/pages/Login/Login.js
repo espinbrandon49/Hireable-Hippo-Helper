@@ -1,4 +1,4 @@
-<body>
+{/* <body>
     <section class="hero is-success is-fullheight">
         <div class="hero-body">
             <div class="container has-text-centered">
@@ -42,3 +42,5 @@
     </section>
     <script async type="text/javascript" src="../js/bulma.js"></script>
 </body>
+
+export default Login */}

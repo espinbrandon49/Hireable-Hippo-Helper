@@ -43,8 +43,10 @@ export default function TrackerContainer() {
         return (
             <div>
                 <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
-                {renderPage()}
-                <SideBar />
+                <div>
+                    {renderPage()}
+                    <SideBar />
+                </div>
             </div>
         );
     }

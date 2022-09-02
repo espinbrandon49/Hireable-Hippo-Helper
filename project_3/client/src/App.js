@@ -9,6 +9,7 @@ import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import TrackerContainer from "./components/TrackerContainer";
+import 'bulma/css/bulma.min.css';
 import "./App.css";
 
 import Homepage from "./pages/Homepage";

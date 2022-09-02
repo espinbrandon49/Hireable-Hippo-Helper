@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { checkForText, validateEmail } from '../../utils/helpers';
+import { checkForText, validateEmail } from '../../../utils/helpers';
 
 function ApplicationForm() {
 

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import NavBar from './NavBar';
-import SideBar from './SideBar';
-import Homepage from './pages/Homepage';
-import AppForm from './pages/AppForm';
-import Application from './pages/Application';
-import HippoStats from './pages/HippoStats';
-import Login from './pages/Login';
+import SideBar from './MainComponent/Sidebar/SideBar';
+import Homepage from './Homepage/Homepage';
+import AppForm from './MainComponent/AddJob/AppForm';
+import Application from './MainComponent/Application/Application';
+import HippoStats from './MainComponent/HippoStats/HippoStats';
+import Login from './Login';
+import Signup from './Signup';
 
 export default function TrackerContainer() {
     const [currentPage, setCurrentPage] = useState('Homepage');
@@ -23,6 +24,9 @@ export default function TrackerContainer() {
         if (currentPage === 'AppForm') {
             return <AppForm />;
         }
+        if (currentPage === 'Signup') {
+            return <Signup />;
+        }
         return <Login />;
     };
 
@@ -39,8 +43,10 @@ export default function TrackerContainer() {
         return (
             <div>
                 <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
-                {renderPage()}
-                <SideBar />
+                <div>
+                    {renderPage()}
+                    <SideBar />
+                </div>
             </div>
         );
     }

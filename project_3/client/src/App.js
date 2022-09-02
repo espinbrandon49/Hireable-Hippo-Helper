@@ -12,11 +12,6 @@ import TrackerContainer from "./pages/TrackerContainer";
 import 'bulma/css/bulma.min.css';
 import "./App.css";
 
-import Homepage from "./pages/Homepage/Homepage";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-import NavBar from './pages/NavBar';
-
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -46,13 +41,9 @@ const App = () => (
   <ApolloProvider client={client}>
     <Router>
       <div className="flex-column justify-flex-start min-100-vh">
-        <NavBar />
         <div className="container">
           <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/trackerContainer" element={<TrackerContainer />} />
+            <Route path="/" element={<TrackerContainer />} />
           </Routes>
         </div>
         {/* <Footer /> */}

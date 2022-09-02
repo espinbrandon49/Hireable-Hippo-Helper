@@ -6,6 +6,7 @@ import AppForm from './pages/AppForm';
 import Application from './pages/Application';
 import HippoStats from './pages/HippoStats';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 export default function TrackerContainer() {
     const [currentPage, setCurrentPage] = useState('Homepage');
@@ -22,6 +23,9 @@ export default function TrackerContainer() {
         }
         if (currentPage === 'AppForm') {
             return <AppForm />;
+        }
+        if (currentPage === 'Signup') {
+            return <Signup />;
         }
         return <Login />;
     };

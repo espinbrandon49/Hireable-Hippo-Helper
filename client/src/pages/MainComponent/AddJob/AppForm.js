@@ -2,64 +2,89 @@ import React, { useState } from "react";
 import { checkForText, validateEmail } from "../../../utils/helpers";
 import Auth from "../../../utils/auth";
 import Login from "../../Login";
-function ApplicationForm() {
-  const [company, setCompany] = useState("");
-  const [title, setTitle] = useState("");
-  const [salary, setSalary] = useState("");
-  const [location, setLocation] = useState("");
-  const [contactName, setContactName] = useState("");
-  const [contactEmail, setContactEmail] = useState("");
-  const [contactPhone, setContactPhone] = useState("");
-  const [jobLink, setJobLink] = useState("");
-  const [jobDescription, setJobDescription] = useState("");
+import { useMutation } from '@apollo/client';
+import { ADD_APPLICATION } from '../../../utils/mutations';
 
-  const [errorMessage, setErrorMessage] = useState("");
+const ApplicationForm = (props) => {
+  const [formState, setFormState] = useState({
+    company: '',
+    title: '',
+    salary: '',
+    location: '',
+    contactName:'',
+    contactEmail: '',
+    contactPhone: '',
+    jobLink: '',
+    jobDescription: '',
+    errorMessage: '', 
+  })
+  const [application, {error, data}] = useMutation(ADD_APPLICATION);
+  // const [company, setCompany] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [salary, setSalary] = useState("");
+  // const [location, setLocation] = useState("");
+  // const [contactName, setContactName] = useState("");
+  // const [contactEmail, setContactEmail] = useState("");
+  // const [contactPhone, setContactPhone] = useState("");
+  // const [jobLink, setJobLink] = useState("");
+  // const [jobDescription, setJobDescription] = useState("");
+
+  // const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputChange = (event) => {
-    const { target } = event;
-    const inputType = target.name;
-    const inputValue = target.value;
+    const { name, value } = event.target;
+  
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    
+    // const { target } = event;
+    // const inputType = target.name;
+    // const inputValue = target.value;
 
-    if (inputType === "company") {
-      setCompany(inputValue);
-    } else if (inputType === "title") {
-      setTitle(inputValue);
-    } else if (inputType === "salary") {
-      setSalary(inputValue);
-    } else if (inputType === "location") {
-      setLocation(inputValue);
-    } else if (inputType === "contactName") {
-      setContactName(inputValue);
-    } else if (inputType === "contactEmail") {
-      setContactEmail(inputValue);
-    } else if (inputType === "contactPhone") {
-      setContactPhone(inputValue);
-    } else if (inputType === "jobLink") {
-      setJobLink(inputValue);
-    } else {
-      setJobDescription(inputValue);
-    }
+    // if (inputType === "company") {
+    //   setCompany(inputValue);
+    // } else if (inputType === "title") {
+    //   setTitle(inputValue);
+    // } else if (inputType === "salary") {
+    //   setSalary(inputValue);
+    // } else if (inputType === "location") {
+    //   setLocation(inputValue);
+    // } else if (inputType === "contactName") {
+    //   setContactName(inputValue);
+    // } else if (inputType === "contactEmail") {
+    //   setContactEmail(inputValue);
+    // } else if (inputType === "contactPhone") {
+    //   setContactPhone(inputValue);
+    // } else if (inputType === "jobLink") {
+    //   setJobLink(inputValue);
+    // } else {
+    //   setJobDescription(inputValue);
+    // }
+      
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log(formState);
 
-    if (!checkForText(company)) {
-      setErrorMessage("Company name is required.");
-      return;
-    }
-    if (!checkForText(title)) {
-      setErrorMessage("Job title is required.");
-      return;
-    }
-    if (!validateEmail(contactEmail)) {
-      setErrorMessage("Email is invalid.");
-      return;
-    }
-    if (!checkForText(jobDescription)) {
-      setErrorMessage("Job Description is required.");
-      return;
-    }
+    // if (!checkForText(company)) {
+    //   setErrorMessage("Company name is required.");
+    //   return;
+    // }
+    // if (!checkForText(title)) {
+    //   setErrorMessage("Job title is required.");
+    //   return;
+    // }
+    // if (!validateEmail(contactEmail)) {
+    //   setErrorMessage("Email is invalid.");
+    //   return;
+    // }
+    // if (!checkForText(jobDescription)) {
+    //   setErrorMessage("Job Description is required.");
+    //   return;
+    // }
 
     try {
       const res = await createMatchup(formData);

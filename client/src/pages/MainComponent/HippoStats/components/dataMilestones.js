@@ -15,17 +15,17 @@ const dataMilestones = () => {
     <div className='column'>
       <div className='box'>
         <div className="control is-justify-content-center" >
-          <label className="radio" for="appliedData" style={styles.font}>
+          <label className="radio" htmlFor="appliedData" style={styles.font}>
             <input type="radio" name="dataStone" style={styles.width} id="appliedData" />
             Applied
           </label>
-          <label className="radio" for="phoneInterviewData" style={styles.font}>
+          <label className="radio" htmlFor="phoneInterviewData" style={styles.font}>
             <input type="radio" name="dataStone" style={styles.width} id="phoneInterviewData"/>
             Phone Interview
           </label>
           <label
             className="radio"
-            for="technicalInterviewData"
+            htmlFor="technicalInterviewData"
             style={styles.font}
           >
             <input type="radio" name="dataStone" style={styles.width} id="technicalInterviewData"/>
@@ -33,17 +33,17 @@ const dataMilestones = () => {
           </label>
           <label
             className="radio"
-            for="inPersonInterviewData"
+            htmlFor="inPersonInterviewData"
             style={styles.font}
           >
             <input type="radio" name="dataStone" style={styles.width} id="inPersonInterviewData"/>
             In-person Interview
           </label>
-          <label className="radio" for="jobOfferData" style={styles.font}>
+          <label className="radio" htmlFor="jobOfferData" style={styles.font}>
             <input type="radio" name="dataStone" style={styles.width} id="jobOfferData"/>
             Job Offer
           </label>
-          <label className="radio" for="hippoDonateData" style={styles.font}>
+          <label className="radio" htmlFor="hippoDonateData" style={styles.font}>
             <input type="radio" name="dataStone" style={styles.width} id="hippoDonateData"/>
             Donate to HHH
           </label>

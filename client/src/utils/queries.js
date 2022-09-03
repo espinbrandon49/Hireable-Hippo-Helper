@@ -10,8 +10,8 @@ export const QUERY_USER = gql`
   }
 `;
 
-//Brandon - Query single users applications
-export const QUERY_SINGLE_APPLICATION = gql`
+//Brandon - Query all users applications
+export const QUERY_ALL_APPLICATION = gql`
   query getApplication {
     users {
       applications {

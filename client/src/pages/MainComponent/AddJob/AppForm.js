@@ -2,23 +2,22 @@ import React, { useState } from "react";
 import { checkForText, validateEmail } from "../../../utils/helpers";
 import Auth from "../../../utils/auth";
 import Login from "../../Login";
-import { useMutation } from '@apollo/client';
-import { ADD_APPLICATION } from '../../../utils/mutations';
+import { useMutation } from "@apollo/client";
+import { ADD_APPLICATION } from "../../../utils/mutations";
 
 const ApplicationForm = (props) => {
   const [formState, setFormState] = useState({
-    company: '',
-    title: '',
-    salary: '',
-    location: '',
-    contactName:'',
-    contactEmail: '',
-    contactPhone: '',
-    jobLink: '',
-    jobDescription: '',
-    errorMessage: '', 
-  })
-  const [application, {error, data}] = useMutation(ADD_APPLICATION);
+    company: "",
+    title: "",
+    salary: "",
+    location: "",
+    contactName: "",
+    contactEmail: "",
+    contactPhone: "",
+    jobLink: "",
+    jobDescription: "",
+  });
+  const [createApplication, { error, data }] = useMutation(ADD_APPLICATION);
   // const [company, setCompany] = useState("");
   // const [title, setTitle] = useState("");
   // const [salary, setSalary] = useState("");
@@ -33,12 +32,12 @@ const ApplicationForm = (props) => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-  
-      setFormState({
-        ...formState,
-        [name]: value,
-      });
-    
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+
     // const { target } = event;
     // const inputType = target.name;
     // const inputValue = target.value;
@@ -62,7 +61,6 @@ const ApplicationForm = (props) => {
     // } else {
     //   setJobDescription(inputValue);
     // }
-      
   };
 
   const handleFormSubmit = async (event) => {
@@ -87,24 +85,25 @@ const ApplicationForm = (props) => {
     // }
 
     try {
-      const res = await createMatchup(formData);
-
-      if (!res.ok) {
-        throw new Error('something went wrong!');
-      }
-
-      const matchup = await res.json();
-      console.log(matchup);
-      navigate(`/matchup/${matchup._id}`);
+      const { data } = await createApplication({
+        variables: { ...formState },
+      });
     } catch (err) {
       console.error(err);
     }
 
-    console.log(errorMessage);
-    setCompany("");
-    setTitle("");
-    setContactEmail("");
-    setJobDescription("");
+    // clear form values
+    setFormState({
+      company: "",
+      title: "",
+      salary: "",
+      location: "",
+      contactName: "",
+      contactEmail: "",
+      contactPhone: "",
+      jobLink: "",
+      jobDescription: "",
+    });
   };
 
   return (
@@ -116,7 +115,7 @@ const ApplicationForm = (props) => {
             <div className="control">
               <input
                 id="companyName"
-                value={company}
+                value={formState.company}
                 name="company"
                 onChange={handleInputChange}
                 type="text"
@@ -129,7 +128,7 @@ const ApplicationForm = (props) => {
             <div className="control">
               <input
                 id="title"
-                value={title}
+                value={formState.title}
                 name="title"
                 onChange={handleInputChange}
                 type="text"
@@ -142,7 +141,7 @@ const ApplicationForm = (props) => {
             <div className="control">
               <input
                 id="salary"
-                value={salary}
+                value={formState.salary}
                 name="salary"
                 onChange={handleInputChange}
                 type="text"
@@ -155,7 +154,7 @@ const ApplicationForm = (props) => {
             <div className="control">
               <input
                 id="jobLocation"
-                value={location}
+                value={formState.location}
                 name="location"
                 onChange={handleInputChange}
                 type="text"
@@ -168,7 +167,7 @@ const ApplicationForm = (props) => {
             <div className="control">
               <input
                 id="contactName"
-                value={contactName}
+                value={formState.contactName}
                 name="contactName"
                 onChange={handleInputChange}
                 type="text"
@@ -182,7 +181,7 @@ const ApplicationForm = (props) => {
               <input
                 className="input is-danger"
                 id="contactEmail"
-                value={contactEmail}
+                value={formState.contactEmail}
                 name="contactEmail"
                 onChange={handleInputChange}
                 type="email"
@@ -203,7 +202,7 @@ const ApplicationForm = (props) => {
             <div className="control">
               <input
                 id="contactPhone"
-                value={contactPhone}
+                value={formState.contactPhone}
                 name="contactPhone"
                 onChange={handleInputChange}
                 type="text"
@@ -216,7 +215,7 @@ const ApplicationForm = (props) => {
             <div className="control">
               <input
                 id="jobLink"
-                value={jobLink}
+                value={formState.jobLink}
                 name="jobLink"
                 onChange={handleInputChange}
                 type="text"
@@ -229,7 +228,7 @@ const ApplicationForm = (props) => {
             <div className="control">
               <textarea
                 id="jobDescription"
-                value={jobDescription}
+                value={formState.jobDescription}
                 name="jobDescription"
                 onChange={handleInputChange}
                 type="text"
@@ -246,10 +245,10 @@ const ApplicationForm = (props) => {
           </div>
         </div>
       ) : (
-        <Login/>
+        <Login />
       )}
     </div>
   );
-}
+};
 
 export default ApplicationForm;

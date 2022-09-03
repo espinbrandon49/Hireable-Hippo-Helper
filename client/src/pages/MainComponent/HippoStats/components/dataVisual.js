@@ -1,9 +1,17 @@
 import React from 'react'
 
+const styles = {
+  box: {
+    height: "50vh",
+  }
+}
+
 const dataVisual = () => {
   return (
-    <div>
-      DATA VISUAL - Hello HippoWorld
+    <div className='column'>
+      <div className='box' style={styles.box}>
+        DATA VISUALS
+      </div>
     </div>
   )
 }

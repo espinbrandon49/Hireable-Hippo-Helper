@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { checkForText, validateEmail } from "../../../utils/helpers";
 import Auth from "../../../utils/auth";
+import Login from "../../Login";
 function ApplicationForm() {
   const [company, setCompany] = useState("");
   const [title, setTitle] = useState("");
@@ -205,7 +206,7 @@ function ApplicationForm() {
           </div>
         </div>
       ) : (
-        <div>You must be logged in to see your HIPPO STATS</div>
+        <Login/>
       )}
     </div>
   );

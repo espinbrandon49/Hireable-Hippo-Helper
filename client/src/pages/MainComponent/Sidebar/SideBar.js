@@ -1,11 +1,33 @@
-import React from 'react'
+import React from "react";
 
-const SideBar = () => {
+const SideBar = ({applications}) => {
   return (
     <div className="box">
-    SIDEBAR HELL0 HIPPO
-    </div>
-  )
-}
+      {applications &&
+        applications.map((application) => (
+          <div key={application._id} className="card mb-2">
+            <h4 className="card-header bg-primary text-light is-size-6 m-0">
+              {application.applicant} <br />
+            </h4>
+            <div>
+              <h6 className="card-header bg-primary text-light is-size-6 m-0">
+                {application.appliedFrom} <br />
+              </h6>
+              <h6 className="card-header bg-primary text-light is-size-4 m-0">
+                {application.jobDescription} <br />
+              </h6>
+            </div>
 
-export default SideBar
+            {/* <Link
+          className="btn btn-primary btn-block btn-squared"
+          to={`/userApps/${application._id}`}
+        >
+          Join the discussion on this application.
+        </Link> */}
+          </div>
+        ))}
+    </div>
+  );
+};
+
+export default SideBar;

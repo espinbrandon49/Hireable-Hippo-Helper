@@ -10,7 +10,7 @@ import { useQuery } from "@apollo/client";
 
 import { QUERY_ALL_APPLICATION } from '../../../utils/queries'
 
-const HippoStats = () => {
+const HippoStats = ({applications}) => {
 
   // const { applicationId } = useParams()
 

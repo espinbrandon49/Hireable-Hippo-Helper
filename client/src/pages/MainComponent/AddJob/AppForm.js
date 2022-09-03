@@ -7,9 +7,10 @@ import { ADD_APPLICATION } from "../../../utils/mutations";
 
 const ApplicationForm = (props) => {
   const [formState, setFormState] = useState({
+    applicant: "",
     company: "",
     salary: "",
-    location: "",
+    appliedFrom: "",
     contactName: "",
     contactEmail: "",
     contactPhone: "",
@@ -33,7 +34,9 @@ const ApplicationForm = (props) => {
   // const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value} = event.target;
+    console.log(name)
+    console.log(value)
 
     setFormState({
       ...formState,
@@ -96,9 +99,10 @@ const ApplicationForm = (props) => {
 
     // clear form values
     setFormState({
+      applicant: "",
       company: "",
       salary: "",
-      location: "",
+      appliedFrom: "",
       contactName: "",
       contactEmail: "",
       contactPhone: "",
@@ -115,6 +119,21 @@ const ApplicationForm = (props) => {
       {Auth.loggedIn() ? (
         <form onSubmit={handleFormSubmit}>
           <div>
+            <div className="field">
+              <label htmlFor="applicant" className="label">
+                Applicant:
+              </label>
+              <div className="control">
+                <input
+                  id="applicant"
+                  value={formState.applicant}
+                  name="applicant"
+                  onChange={handleInputChange}
+                  type="text"
+                />
+              </div>
+            </div>
+
             <div className="field">
               <label htmlFor="companyName" className="label">
                 Company Name:
@@ -162,16 +181,25 @@ const ApplicationForm = (props) => {
 
             <div className="field">
               <label htmlFor="jobLocation" className="label">
-                Job Location:
+                Applied From:
               </label>
+
               <div className="control">
-                <input
-                  id="jobLocation"
-                  value={formState.location}
-                  name="location"
-                  onChange={handleInputChange}
-                  type="text"
-                />
+                <div className="select">
+                  <select onChange={handleInputChange}>
+                    
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Indeed">Indeed</option>
+                    <option value="AngelList">AngelList</option>
+                    <option value="Handshake">Handshake</option>
+                    <option value="Monster">Monster</option>
+                    <option value="Zip Recruiter">Zip Recruiter</option>
+                    <option value="Job Fair">Job Fair</option>
+                    <option value="Company Website">Company Website</option>
+                    <option value="Craigslist">Craigslist</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
               </div>
             </div>
 

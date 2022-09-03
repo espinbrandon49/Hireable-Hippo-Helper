@@ -16,10 +16,9 @@ function HeroSection() {
 
       <div>
       {Auth.loggedIn() ? (
-        <div>
-          <p>Hello {Auth.getProfile().data.name}</p>
-         
-        </div>
+        <>
+        <span>Hey there, {Auth.getProfile().data.username}!</span>
+      </>
       ) : (
         <div>
         <Link to="/Signup">

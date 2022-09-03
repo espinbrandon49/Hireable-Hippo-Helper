@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost:27017/hippodb',
+  process.env.MONGODB_URI || 'mongodb+srv://admin:QmWFWuW09D9ah4UX@cluster0.lz50dx1.mongodb.net/hippodb',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

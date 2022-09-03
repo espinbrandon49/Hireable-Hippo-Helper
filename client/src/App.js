@@ -7,7 +7,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import Signup from "./pages/Signup";
 import TrackerContainer from "./pages/TrackerContainer";
 import 'bulma/css/bulma.min.css';
 import "./App.css";
@@ -43,6 +43,7 @@ const App = () => (
         <div className="container is-fluid">
           <Routes>
             <Route path="/" element={<TrackerContainer />} />
+            <Route path="/Signup" element={<Signup/>} />
           </Routes>
           {/* <Footer /> */}
         </div>

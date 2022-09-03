@@ -7,7 +7,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import Signup from "./pages/Signup";
 import TrackerContainer from "./pages/TrackerContainer";
 import 'bulma/css/bulma.min.css';
 import "./App.css";
@@ -40,14 +40,13 @@ const client = new ApolloClient({
 const App = () => (
   <ApolloProvider client={client}>
     <Router>
-      <div className="flex-column justify-flex-start min-100-vh">
-        <div className="container">
+        <div className="container is-fluid">
           <Routes>
             <Route path="/" element={<TrackerContainer />} />
+            <Route path="/Signup" element={<Signup/>} />
           </Routes>
+          {/* <Footer /> */}
         </div>
-        {/* <Footer /> */}
-      </div>
     </Router>
   </ApolloProvider>
   

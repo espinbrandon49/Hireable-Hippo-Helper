@@ -2,8 +2,10 @@ import React from 'react'
 
 const currentMilestone = () => {
   return (
-    <div>
-      CURRENT MILESTONE Hello HippoWorld
+    <div className='column'>
+      <div className='box'>
+        CURRENT MILESTONE Hello HippoWorld
+      </div>
     </div>
   )
 }

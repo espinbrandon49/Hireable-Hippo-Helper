@@ -12,13 +12,16 @@ import { QUERY_SINGLE_APPLICATION } from '../../../utils/queries'
 
 const HippoStats = () => {
 
-  const { applicationId } = useParams()
+  // const { applicationId } = useParams()
 
-  const { loading, data } = useQuery(QUERY_SINGLE_APPLICATION, {
-    variables: { applicationId: applicationId }
-  })
+  // const { loading, data } = useQuery(QUERY_SINGLE_APPLICATION, {
+  //   variables: { applicationId: applicationId }
+  // })
 
-  const application = data?.application || {};
+  const {loading, data} = useQuery(QUERY_SINGLE_APPLICATION)
+
+   const users = data?.users || {};
+   console.log(users)
 
   if (loading) {
     return <div>Loading...</div>
@@ -30,12 +33,13 @@ const HippoStats = () => {
           <Subheader />
           <DataMilestones />
           <DataVisuals />
-          {
+          {users}
+          {/* {
             `applicationId: ${application.applicationId}
             jobURL: ${application.jobURL}
             milestones: ${application.milestones}
             `
-          }
+          } */}
         </div>
       ) : (
         <Login />
@@ -44,10 +48,7 @@ const HippoStats = () => {
   );
 };
 
-
 export default HippoStats;
-
-
 
 // const HippoStats = () => {
 //   return (

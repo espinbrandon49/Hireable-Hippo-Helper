@@ -37,10 +37,10 @@ const resolvers = {
 
   Mutation: {
     // 🔑 We then write an addUser resolver and pass in name, email, and password as arguments. This resolver will use our imported signToken() method:
-    addUser: async (parent, { name, username, email, password }) => {
+    addUser: async (parent, { username, email, password }) => {
       // First we create the user
       // 🔑 We use the data passed in to create a new user in the database:
-      const user = await User.create({ name, username, email, password });
+      const user = await User.create({ username, email, password });
       // To reduce friction for the user, we immediately sign a JSON Web Token and log the user in after they are created
       // 🔑 Next, we call the signToken() function to generate a signed token that includes the user information as the payload. The newly created user and token are then returned:
       const token = signToken(user);

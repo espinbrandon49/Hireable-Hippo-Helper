@@ -8,6 +8,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 import TrackerContainer from "./pages/TrackerContainer";
 import 'bulma/css/bulma.min.css';
 import "./App.css";
@@ -45,6 +46,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<TrackerContainer />} />
             <Route path="/Signup" element={<Signup/>} />
+            <Route path="/Login" element={<Login/>} />
             <Route path="/Hippostats" element={<HippoStats/>} />
           </Routes>
           {/* <Footer /> */}

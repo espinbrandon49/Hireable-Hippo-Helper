@@ -9,7 +9,7 @@ function NavTabs({ currentPage, handlePageChange }) {
     Auth.logout();
   };
   return (
-    <nav className="navbar is-transparent mx-2">
+    <nav className="navbar nav-toggle is-light is-transparent mx-1">
       <div className="navbar-brand">
         <a className="navbar-item" href="/">
           <img
@@ -17,17 +17,7 @@ function NavTabs({ currentPage, handlePageChange }) {
             alt="hippo"
           />
         </a>
-        <div
-          className="navbar-burger"
-          data-target="navbarExampleTransparentExample"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
 
-      <div className="navbar-menu">
         <div className="navbar-start mgr-medium">
           <a
             href="#Homepage"
@@ -36,8 +26,8 @@ function NavTabs({ currentPage, handlePageChange }) {
             // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
             className={
               currentPage === "Homepage"
-                ? "navbar-item active mx-2"
-                : "navbar-item mx-2"
+                ? "navbar-item is-active mx-1"
+                : "navbar-item mx-1"
             }
           >
             Home
@@ -49,8 +39,8 @@ function NavTabs({ currentPage, handlePageChange }) {
               // Check to see if the currentPage is `About`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
               className={
                 currentPage === "HippoStats"
-                  ? "navbar-item active mx-2"
-                  : "navbar-item mx-2"
+                  ? "navbar-item is-active mx-1"
+                  : "navbar-item mx-1"
               }
             >
               HippoStats
@@ -61,8 +51,8 @@ function NavTabs({ currentPage, handlePageChange }) {
               // Check to see if the currentPage is `Blog`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
               className={
                 currentPage === "Application"
-                  ? "navbar-item active mx-2"
-                  : "navbar-item mx-2"
+                  ? "navbar-item is-active mx-1"
+                  : "navbar-item mx-1"
               }
             >
               Application
@@ -73,14 +63,29 @@ function NavTabs({ currentPage, handlePageChange }) {
               // Check to see if the currentPage is `Contact`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
               className={
                 currentPage === "AppForm"
-                  ? "navbar-item active mx-2"
-                  : "navbar-item mx-2"
+                  ? "navbar-item is-active mx-1"
+                  : "navbar-item mx-1"
               }
             >
               AppForm
             </a>
           </div>
         </div>
+        
+{/* 
+        <div
+          className="navbar-burger"
+          data-target="navbarExampleTransparentExample"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div> */}
+
+      </div>
+
+      {/* <div className="navbar-menu"> */}
+        
         <div className="navbar-end">
           <div className="navbar-item">
             {Auth.loggedIn() ? (
@@ -104,8 +109,8 @@ function NavTabs({ currentPage, handlePageChange }) {
                     // Check to see if the currentPage is `Contact`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
                     className={
                       currentPage === "Login"
-                        ? "nav-link active mx-2"
-                        : "nav-link mx-2"
+                        ? "nav-link is-active mx-1"
+                        : "nav-link mx-1"
                     }
                   >
                     Login
@@ -115,7 +120,7 @@ function NavTabs({ currentPage, handlePageChange }) {
             )}
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </nav>
   );
 }

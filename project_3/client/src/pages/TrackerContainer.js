@@ -5,7 +5,7 @@ import Homepage from './Homepage/Homepage';
 import AppForm from './MainComponent/AddJob/AppForm';
 import Application from './MainComponent/Application/Application';
 import HippoStats from './MainComponent/HippoStats/HippoStats';
-import Login from './Login/Login';
+import Login from './Login';
 import Signup from './Signup';
 
 export default function TrackerContainer() {

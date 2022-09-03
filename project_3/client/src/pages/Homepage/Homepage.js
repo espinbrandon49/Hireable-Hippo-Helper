@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Homepage = () => {
   return (
+    <>
+    <nav className='navbar'>
+      <div className='navbar-container'>
+        <Link to='/' className='navbar-logo'>
+       <img alt="hippo" src="/images/hippoIcon.png"/>
+        </Link>
+      </div>
+    </nav>
     <body>
     <section class="hero is-medium">
       <div class="hero-body">
@@ -29,6 +37,7 @@ const Homepage = () => {
     </section>
     
     </body>
+    </>
   )
 }
 

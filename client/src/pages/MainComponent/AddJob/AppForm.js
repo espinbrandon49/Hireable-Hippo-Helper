@@ -16,7 +16,7 @@ const ApplicationForm = (props) => {
     contactPhone: "",
     jobLink: "",
     jobDescription: "",
-    dataApplied: "",
+    dateApplied: "",
     jobType: "",
     currentMileStone: "",
   });
@@ -108,7 +108,7 @@ const ApplicationForm = (props) => {
       contactPhone: "",
       jobLink: "",
       jobDescription: "",
-      dataApplied: "",
+      dateApplied: "",
       jobType: "",
       currentMileStone: "",
     });
@@ -282,6 +282,8 @@ const ApplicationForm = (props) => {
               </div>
             </div>
 
+          
+
             <div className="field">
               <label htmlFor="dateApplied" className="label">
                 Date Applied
@@ -297,20 +299,7 @@ const ApplicationForm = (props) => {
               </div>
             </div>
 
-            <div className="field">
-              <label htmlFor="currMilestone" className="label">
-                Current Milestone
-              </label>
-              <div className="control">
-                <input
-                  id="currMilestone"
-                  value={formState.currentMileStone}
-                  name="currentMileStone"
-                  onChange={handleInputChange}
-                  type="text"
-                />
-              </div>
-            </div>
+            
 
             <div className="field">
               <div className="control">

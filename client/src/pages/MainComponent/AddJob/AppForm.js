@@ -8,7 +8,6 @@ import { ADD_APPLICATION } from "../../../utils/mutations";
 const ApplicationForm = (props) => {
   const [formState, setFormState] = useState({
     company: "",
-    title: "",
     salary: "",
     location: "",
     contactName: "",
@@ -16,6 +15,9 @@ const ApplicationForm = (props) => {
     contactPhone: "",
     jobLink: "",
     jobDescription: "",
+    dataApplied: "",
+    jobType: "",
+    currentMileStone: "",
   });
   const [createApplication, { error, data }] = useMutation(ADD_APPLICATION);
   // const [company, setCompany] = useState("");
@@ -95,7 +97,6 @@ const ApplicationForm = (props) => {
     // clear form values
     setFormState({
       company: "",
-      title: "",
       salary: "",
       location: "",
       contactName: "",
@@ -103,6 +104,9 @@ const ApplicationForm = (props) => {
       contactPhone: "",
       jobLink: "",
       jobDescription: "",
+      dataApplied: "",
+      jobType: "",
+      currentMileStone: "",
     });
   };
 
@@ -112,7 +116,9 @@ const ApplicationForm = (props) => {
         <form onSubmit={handleFormSubmit}>
           <div>
             <div className="field">
-              <label for="companyName">Company Name:</label>
+              <label htmlFor="companyName" className="label">
+                Company Name:
+              </label>
               <div className="control">
                 <input
                   id="companyName"
@@ -125,12 +131,14 @@ const ApplicationForm = (props) => {
             </div>
 
             <div className="field">
-              <label for="title">Job Title:</label>
+              <label htmlFor="jobTitle" className="label">
+                Job Title:
+              </label>
               <div className="control">
                 <input
-                  id="title"
-                  value={formState.title}
-                  name="title"
+                  id="jobTitle"
+                  value={formState.jobType}
+                  name="jobType"
                   onChange={handleInputChange}
                   type="text"
                 />
@@ -138,7 +146,9 @@ const ApplicationForm = (props) => {
             </div>
 
             <div className="field">
-              <label for="salary">Salary:</label>
+              <label htmlFor="salary" className="label">
+                Salary:
+              </label>
               <div className="control">
                 <input
                   id="salary"
@@ -151,7 +161,9 @@ const ApplicationForm = (props) => {
             </div>
 
             <div className="field">
-              <label for="jobLocation">Job Location:</label>
+              <label htmlFor="jobLocation" className="label">
+                Job Location:
+              </label>
               <div className="control">
                 <input
                   id="jobLocation"
@@ -164,7 +176,7 @@ const ApplicationForm = (props) => {
             </div>
 
             <div className="field">
-              <label for="contactName">Contact Name:</label>
+              <label htmlFor="contactName">Contact Name:</label>
               <div className="control">
                 <input
                   id="contactName"
@@ -199,7 +211,9 @@ const ApplicationForm = (props) => {
             </div>
 
             <div className="field">
-              <label for="contactPhone">Contact Phone:</label>
+              <label htmlFor="contactPhone" className="label">
+                Contact Phone:
+              </label>
               <div className="control">
                 <input
                   id="contactPhone"
@@ -212,7 +226,9 @@ const ApplicationForm = (props) => {
             </div>
 
             <div className="field">
-              <label for="jobLink">Job Link:</label>
+              <label htmlFor="jobLink" className="label">
+                Job Link:
+              </label>
               <div className="control">
                 <input
                   id="jobLink"
@@ -225,12 +241,44 @@ const ApplicationForm = (props) => {
             </div>
 
             <div className="field">
-              <label className="label">Message</label>
+              <label htmlFor="jobDescrip" className="label">
+                Job Description
+              </label>
               <div className="control">
-                <textarea
-                  id="jobDescription"
+                <input
+                  id="jobDescrip"
                   value={formState.jobDescription}
                   name="jobDescription"
+                  onChange={handleInputChange}
+                  type="input"
+                />
+              </div>
+            </div>
+
+            <div className="field">
+              <label htmlFor="dateApplied" className="label">
+                Date Applied
+              </label>
+              <div className="control">
+                <input
+                  id="dateApplied"
+                  value={formState.dateApplied}
+                  name="dateApplied"
+                  onChange={handleInputChange}
+                  type="text"
+                />
+              </div>
+            </div>
+
+            <div className="field">
+              <label htmlFor="currMilestone" className="label">
+                Current Milestone
+              </label>
+              <div className="control">
+                <input
+                  id="currMilestone"
+                  value={formState.currentMileStone}
+                  name="currentMileStone"
                   onChange={handleInputChange}
                   type="text"
                 />

@@ -55,6 +55,7 @@ const typeDefs = gql`
     addApplication(
       _id: ID
       salary: Int!
+      company: String
       dateApplied: String
       contactName: String
       contactEmail: String

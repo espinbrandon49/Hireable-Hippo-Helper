@@ -77,10 +77,10 @@ const resolvers = {
     },
 
     addApplication: async (parent, { 
-      salary, dateApplied, contactName, contactEmail, contactPhone, appliedFrom, jobURL, jobDescription, location, jobType, currentMilestone
+      salary, dateApplied, contactName, contactEmail, contactPhone, appliedFrom, jobURL, jobDescription, location, jobType, currentMileStone
     }) => {     
       const application = await Application.create({
-        salary, dateApplied, contactName, contactEmail, contactPhone, appliedFrom, jobURL, jobDescription, location, jobType, currentMilestone 
+        salary, dateApplied, contactName, contactEmail, contactPhone, appliedFrom, jobURL, jobDescription, location, jobType, currentMileStone
       });
 
       await User.findOneAndUpdate(

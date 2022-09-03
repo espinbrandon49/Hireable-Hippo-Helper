@@ -109,143 +109,153 @@ const ApplicationForm = (props) => {
   return (
     <div>
       {Auth.loggedIn() ? (
-        <div>
-          <div className="field">
-            <label for="companyName">Company Name:</label>
-            <div className="control">
-              <input
-                id="companyName"
-                value={formState.company}
-                name="company"
-                onChange={handleInputChange}
-                type="text"
-              />
+        <form onSubmit={handleFormSubmit}>
+          <div>
+            <div className="field">
+              <label for="companyName">Company Name:</label>
+              <div className="control">
+                <input
+                  id="companyName"
+                  value={formState.company}
+                  name="company"
+                  onChange={handleInputChange}
+                  type="text"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="field">
-            <label for="title">Job Title:</label>
-            <div className="control">
-              <input
-                id="title"
-                value={formState.title}
-                name="title"
-                onChange={handleInputChange}
-                type="text"
-              />
+            <div className="field">
+              <label for="title">Job Title:</label>
+              <div className="control">
+                <input
+                  id="title"
+                  value={formState.title}
+                  name="title"
+                  onChange={handleInputChange}
+                  type="text"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="field">
-            <label for="salary">Salary:</label>
-            <div className="control">
-              <input
-                id="salary"
-                value={formState.salary}
-                name="salary"
-                onChange={handleInputChange}
-                type="text"
-              />
+            <div className="field">
+              <label for="salary">Salary:</label>
+              <div className="control">
+                <input
+                  id="salary"
+                  value={formState.salary}
+                  name="salary"
+                  onChange={handleInputChange}
+                  type="text"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="field">
-            <label for="jobLocation">Job Location:</label>
-            <div className="control">
-              <input
-                id="jobLocation"
-                value={formState.location}
-                name="location"
-                onChange={handleInputChange}
-                type="text"
-              />
+            <div className="field">
+              <label for="jobLocation">Job Location:</label>
+              <div className="control">
+                <input
+                  id="jobLocation"
+                  value={formState.location}
+                  name="location"
+                  onChange={handleInputChange}
+                  type="text"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="field">
-            <label for="contactName">Contact Name:</label>
-            <div className="control">
-              <input
-                id="contactName"
-                value={formState.contactName}
-                name="contactName"
-                onChange={handleInputChange}
-                type="text"
-              />
+            <div className="field">
+              <label for="contactName">Contact Name:</label>
+              <div className="control">
+                <input
+                  id="contactName"
+                  value={formState.contactName}
+                  name="contactName"
+                  onChange={handleInputChange}
+                  type="text"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="field">
-            <label className="contactEmail">Contact Email:</label>
-            <div className="control has-icons-left has-icons-right">
-              <input
-                className="input is-danger"
-                id="contactEmail"
-                value={formState.contactEmail}
-                name="contactEmail"
-                onChange={handleInputChange}
-                type="email"
-                placeholder="Contact's Email"
-              />
-              <span className="icon is-small is-left">
-                <i className="fas fa-envelope"></i>
-              </span>
-              <span className="icon is-small is-right">
-                <i className="fas fa-exclamation-triangle"></i>
-              </span>
+            <div className="field">
+              <label className="contactEmail">Contact Email:</label>
+              <div className="control has-icons-left has-icons-right">
+                <input
+                  className="input is-danger"
+                  id="contactEmail"
+                  value={formState.contactEmail}
+                  name="contactEmail"
+                  onChange={handleInputChange}
+                  type="email"
+                  placeholder="Contact's Email"
+                />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-envelope"></i>
+                </span>
+                <span className="icon is-small is-right">
+                  <i className="fas fa-exclamation-triangle"></i>
+                </span>
+              </div>
+              <p className="help is-danger">This email is invalid</p>
             </div>
-            <p className="help is-danger">This email is invalid</p>
-          </div>
 
-          <div className="field">
-            <label for="contactPhone">Contact Phone:</label>
-            <div className="control">
-              <input
-                id="contactPhone"
-                value={formState.contactPhone}
-                name="contactPhone"
-                onChange={handleInputChange}
-                type="text"
-              />
+            <div className="field">
+              <label for="contactPhone">Contact Phone:</label>
+              <div className="control">
+                <input
+                  id="contactPhone"
+                  value={formState.contactPhone}
+                  name="contactPhone"
+                  onChange={handleInputChange}
+                  type="text"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="field">
-            <label for="jobLink">Job Link:</label>
-            <div className="control">
-              <input
-                id="jobLink"
-                value={formState.jobLink}
-                name="jobLink"
-                onChange={handleInputChange}
-                type="text"
-              />
+            <div className="field">
+              <label for="jobLink">Job Link:</label>
+              <div className="control">
+                <input
+                  id="jobLink"
+                  value={formState.jobLink}
+                  name="jobLink"
+                  onChange={handleInputChange}
+                  type="text"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="field">
-            <label className="label">Message</label>
-            <div className="control">
-              <textarea
-                id="jobDescription"
-                value={formState.jobDescription}
-                name="jobDescription"
-                onChange={handleInputChange}
-                type="text"
-              />
+            <div className="field">
+              <label className="label">Message</label>
+              <div className="control">
+                <textarea
+                  id="jobDescription"
+                  value={formState.jobDescription}
+                  name="jobDescription"
+                  onChange={handleInputChange}
+                  type="text"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="field">
-            <div className="control">
-              <button className="button is-link" onClick={handleFormSubmit}>
-                Submit
-              </button>
+            <div className="field">
+              <div className="control">
+                <button
+                  className="btn btn-block btn-primary"
+                  style={{ cursor: "pointer" }}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        </form>
       ) : (
         <Login />
+      )}
+
+      {error && (
+        <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
       )}
     </div>
   );

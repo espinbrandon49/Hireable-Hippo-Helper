@@ -21,8 +21,9 @@ const typeDefs = gql`
     appliedFrom: String!
     jobURL: String!
     jobDescription: String!
-    location: String!
+    location: String
     jobType: String!
+    jobTitle: String!
     currentMilestone: String
     milestones: [Milestone]
   }
@@ -63,8 +64,9 @@ const typeDefs = gql`
       appliedFrom: String!
       jobURL: String!
       jobDescription: String!
-      location: String!
+      location: String
       jobType: String!
+      jobTitle: String!
       ): Application  
     
       addMilestone(

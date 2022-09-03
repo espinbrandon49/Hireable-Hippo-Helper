@@ -35,8 +35,8 @@ const ApplicationForm = (props) => {
 
   const handleInputChange = (event) => {
     const { name, value} = event.target;
+    console.log(event.target)
     console.log(name)
-    console.log(value)
 
     setFormState({
       ...formState,
@@ -143,7 +143,7 @@ const ApplicationForm = (props) => {
                   id="companyName"
                   value={formState.company}
                   name="company"
-                  onChange={handleInputChange}
+                  onChange= {handleInputChange}
                   type="text"
                 />
               </div>
@@ -185,9 +185,8 @@ const ApplicationForm = (props) => {
               </label>
 
               <div className="control">
-                <div className="select">
-                  <select onChange={handleInputChange}>
-                    
+                <div className="select" onChange={handleInputChange}>
+                  <select value={formState.appliedFrom} name="appliedFrom" id="jobLocation">
                     <option value="LinkedIn">LinkedIn</option>
                     <option value="Indeed">Indeed</option>
                     <option value="AngelList">AngelList</option>

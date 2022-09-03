@@ -16,22 +16,19 @@ function HeroSection() {
           Learn More&ensp;<i className="fad fa-chevron-right"></i>
         </a>
       </div>
-
-      <div>
       {Auth.loggedIn() ? (
         <>
-        <span>Hey there, {Auth.getProfile().data.username}!</span>
-      </>
+          <span>Hey there, {Auth.getProfile().data.username}!</span>
+        </>
       ) : (
         <div>
-        <Link to="/Signup">
-          <button type="button">Sign Up!</button>
-        </Link>
-      </div>
-
+          <Link to="/Signup">
+            <button type="button">Sign Up!</button>
+          </Link>
+        </div>
+      )}
     </>
-
-  );
-}
+  )
+};
 
 export default HeroSection;

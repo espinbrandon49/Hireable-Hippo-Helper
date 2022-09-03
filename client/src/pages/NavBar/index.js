@@ -103,7 +103,7 @@ function NavTabs({ currentPage, handlePageChange }) {
               </p>
             ) : (
               <p className="control">
-                <button class="button is-outlined">
+                <button className="button is-outlined">
                   <a
                     href="#Login"
                     onClick={() => handlePageChange("Login")}

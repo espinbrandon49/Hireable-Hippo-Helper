@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 .DS_Store
+../.DS_Store
 package-lock.json
 node_modules/
 

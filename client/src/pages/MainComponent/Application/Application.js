@@ -8,9 +8,9 @@ import Login from "../../Login";
 
 const Application = () => {
   return (
-    <div>
+    <div className='column'>
       {Auth.loggedIn() ? (
-        <div className='column'>
+        <div>
 
           <div className='box'>
 

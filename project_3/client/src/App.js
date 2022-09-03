@@ -40,14 +40,12 @@ const client = new ApolloClient({
 const App = () => (
   <ApolloProvider client={client}>
     <Router>
-      <div className="flex-column justify-flex-start min-100-vh">
-        <div className="container">
+        <div className="container is-fluid">
           <Routes>
             <Route path="/" element={<TrackerContainer />} />
           </Routes>
+          {/* <Footer /> */}
         </div>
-        {/* <Footer /> */}
-      </div>
     </Router>
   </ApolloProvider>
   

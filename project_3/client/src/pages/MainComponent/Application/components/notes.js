@@ -1,9 +1,17 @@
 import React from 'react'
 
+const styles = {
+  box: {
+    height: '100%',
+  }
+}
+
 const notes = () => {
   return (
-    <div>
-      NOTES (QUILL) Hello HippoWorld
+    <div className='column'>
+      <div className='box' style={styles.box}>
+        NOTES (QUILL) Hello HippoWorld
+      </div>
     </div>
   )
 }

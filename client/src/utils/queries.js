@@ -22,6 +22,18 @@ export const QUERY_ALL_APPLICATION = gql`
   }
 `;
 
+//Brandon - Query single user applications
+export const QUERY_SINGLE_APPLICATION = gql`
+  query getSingleApplication {
+    users ($username:String!) {
+      applications {
+        _id
+        jobURL
+      }     
+    }
+  }
+`;
+
 // export const QUERY_SINGLE_APPLICATION = gql`
 //   query getSingleApplication($applicationId: ID!) {
 //     application(applicationId: ID!) {

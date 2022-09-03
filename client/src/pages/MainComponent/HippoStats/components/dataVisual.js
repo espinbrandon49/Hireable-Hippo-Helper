@@ -1,7 +1,6 @@
 import React from 'react'
 
 
-
 const styles = {
   box: {
     height: "50vh",
@@ -30,6 +29,7 @@ const dataVisual = ({ users }) => {
         }
       </div>
     </div>
+
   )
 }
 

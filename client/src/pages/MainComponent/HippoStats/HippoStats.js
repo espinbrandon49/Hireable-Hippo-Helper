@@ -18,17 +18,21 @@ const HippoStats = () => {
   //   variables: { applicationId: applicationId }
   // })
 
-  const {loading, data} = useQuery(QUERY_ALL_APPLICATION)
+  const { loading, data } = useQuery(QUERY_ALL_APPLICATION)
+  const users = data?.users || {};
+  console.log("users", users)
+  console.log("loading", loading)
+  console.log("data", data)
 
-   const users = data?.users || {};
-   console.log("users" ,users)
-   console.log("loading" , loading)
-   console.log("data" , data)
+  const { loadings, datas } = useQuery(QUERY_ALL_APPLICATION)
+  const userss = data?.users || {};
+  console.log("users", userss)
+  console.log("loading", loadings)
+  console.log("data", datas)
 
   // console.log("users" ,users[1].applications[0]._id)
 
   if (loading) {
-
     return <div>Loading...</div>
   }
 
@@ -39,9 +43,9 @@ const HippoStats = () => {
           <Subheader />
           <DataMilestones />
           <DataVisuals
-          users={users}
+            users={users}
           />
-          
+
           {/* {
             `applicationId: ${application.applicationId}
             jobURL: ${application.jobURL}

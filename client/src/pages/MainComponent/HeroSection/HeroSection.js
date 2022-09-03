@@ -5,7 +5,6 @@ import background from "../../../images/hippo-background.jpg";
 
 import Auth from "../../../utils/auth";
 
-
 function HeroSection() {
   return (
     <>

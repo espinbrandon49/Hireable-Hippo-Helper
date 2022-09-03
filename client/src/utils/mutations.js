@@ -24,4 +24,29 @@ export const ADD_USER = gql`
   }
 `;
 
+export const ADD_APPLICATION = gql`
+  mutation addApplication($salary: Int!, $appliedFrom: String!, $jobUrl: String!, $jobDescription: String!, $location: String!, $jobType: String!) {
+      addApplication(
+        _id: ID
+        salary: Int!
+        dateApplied: String
+        contactName: String
+        contactEmail: String
+        contactPhone: String
+        appliedFrom: String!
+        jobURL: String!
+        jobDescription: String!
+        location: String!
+        jobType: String!
+        ) {
+          application 
+            
+          
+        }
+      }
+    }
+  }
+`;
+
+
 

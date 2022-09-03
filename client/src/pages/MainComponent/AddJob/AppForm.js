@@ -41,7 +41,7 @@ function ApplicationForm() {
     }
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     if (!checkForText(company)) {
@@ -60,6 +60,21 @@ function ApplicationForm() {
       setErrorMessage("Job Description is required.");
       return;
     }
+
+    try {
+      const res = await createMatchup(formData);
+
+      if (!res.ok) {
+        throw new Error('something went wrong!');
+      }
+
+      const matchup = await res.json();
+      console.log(matchup);
+      navigate(`/matchup/${matchup._id}`);
+    } catch (err) {
+      console.error(err);
+    }
+
     console.log(errorMessage);
     setCompany("");
     setTitle("");

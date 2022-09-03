@@ -53,8 +53,6 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     
     addApplication(
-      applicationText: String!
-      applicant: String!
       _id: ID
       salary: Int!
       dateApplied: String

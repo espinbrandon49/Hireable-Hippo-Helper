@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import Auth from "../../../utils/auth";
 
 function HeroSection() {
   return (
@@ -14,12 +15,19 @@ function HeroSection() {
       </div>
 
       <div>
+      {Auth.loggedIn() ? (
+        <>
+        <span>Hey there, {Auth.getProfile().data.username}!</span>
+      </>
+      ) : (
+        <div>
         <Link to="/Signup">
           <button type="button">Sign Up!</button>
         </Link>
       </div>
+      )}
+    </div>
     </body>
-    
   );
 }
 

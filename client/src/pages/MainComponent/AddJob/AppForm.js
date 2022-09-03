@@ -282,7 +282,22 @@ const ApplicationForm = (props) => {
               </div>
             </div>
 
-          
+            <div className="field">
+              <label htmlFor="jobType" className="label">
+                Job Type:
+              </label>
+
+              <div className="control">
+                <div className="select" onChange={handleInputChange}>
+                  <select value={formState.jobType} name="jobType" id="jobType">
+                    <option value="In person">In person</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Remote">Remote</option>
+                   
+                  </select>
+                </div>
+              </div>
+            </div>
 
             <div className="field">
               <label htmlFor="dateApplied" className="label">

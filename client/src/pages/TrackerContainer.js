@@ -7,8 +7,17 @@ import Application from './MainComponent/Application/Application';
 import HippoStats from './MainComponent/HippoStats/HippoStats';
 import Login from './Login';
 import Signup from './Signup';
+import Auth from "../utils/auth";
+import { useQuery } from "@apollo/client";
+import { QUERY_APPLICATIONS } from "../utils/queries";
 
 export default function TrackerContainer() {
+    const { loading, data } = useQuery(QUERY_APPLICATIONS);
+    const applications = data?.applications || [];
+    console.log("before " + applications);
+    var filteredApps = applications.filter((application) => application.applicant === Auth.getProfile().data.username )
+    console.log("after " + filteredApps);
+
     const [currentPage, setCurrentPage] = useState('Homepage');
 
     const renderPage = () => {
@@ -16,7 +25,7 @@ export default function TrackerContainer() {
             return <Homepage />;
         }
         if (currentPage === 'HippoStats') {
-            return <HippoStats />;
+            return <HippoStats applications={filteredApps}  />;
         }
         if (currentPage === 'Application') {
             return <Application />;
@@ -45,7 +54,7 @@ export default function TrackerContainer() {
                 <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
                 <div className='columns'>
                     {renderPage()}
-                    <SideBar className="column is-one-quarter "/>
+                    <SideBar applications={filteredApps} />
                 </div>
             </div>
         );

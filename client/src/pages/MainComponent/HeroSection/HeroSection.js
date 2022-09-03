@@ -29,7 +29,9 @@ function HeroSection() {
         </div>
       )}
     </>
-  );
-}
+
+  )
+};
+
 
 export default HeroSection;

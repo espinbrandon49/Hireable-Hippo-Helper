@@ -1,12 +1,15 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+
+import background from "../../../images/hippo-background.jpg";
+
 import Auth from "../../../utils/auth";
+
 
 function HeroSection() {
   return (
-    <body>
-      <div className="container">
+    <>
+      <div style={{ backgroundImage: `url(${background})` }} className="container">
         <h1 className="title is-1 ">Hireable-Hippo-Helper</h1>
         <h2 className="subtitle">We help young pottamus get hired!</h2>
         <a href="learn more" class="button is-white is-medium is-inverted">
@@ -25,9 +28,9 @@ function HeroSection() {
           <button type="button">Sign Up!</button>
         </Link>
       </div>
-      )}
-    </div>
-    </body>
+
+    </>
+
   );
 }
 

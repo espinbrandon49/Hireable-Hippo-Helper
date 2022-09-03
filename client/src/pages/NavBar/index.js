@@ -1,5 +1,6 @@
 import React from "react";
 import Auth from "../../utils/auth";
+import icon from "../../images/hippoIcon.png";
 
 // Here we are using object destructuring assignment to pluck off our variables from the props object
 // We assign them to their own variable names
@@ -13,7 +14,7 @@ function NavTabs({ currentPage, handlePageChange }) {
       <div className="navbar-brand">
         <a className="navbar-item" href="/">
           <img
-            src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/10964/hippopotamus-animal-clipart-md.png"
+            src={icon}
             alt="hippo"
           />
         </a>

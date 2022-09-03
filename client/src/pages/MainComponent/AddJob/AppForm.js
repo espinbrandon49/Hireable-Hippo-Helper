@@ -314,7 +314,27 @@ const ApplicationForm = (props) => {
               </div>
             </div>
 
-            
+            <div className="field">
+              <label htmlFor="currMilestone" className="label">
+                Current Milestone:
+              </label>
+
+              <div className="control">
+                <div className="select" onChange={handleInputChange}>
+                  <select value={formState.currentMileStone} name="currentMilestone" id="currMilestone">
+                    <option value="Applied">Applied</option>
+                    <option value="Phone Interview">Phone Interview</option>
+                    <option value="Technical Interview">Technical Interview</option>
+                    <option value="In Person Interview">In Person Interview</option>
+                    <option value="Job Offer">Job Offer</option>
+                    <option value="Accepted">Accepted</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="Hippo Donations">Hippo Donations</option>
+                   
+                  </select>
+                </div>
+              </div>
+            </div>
 
             <div className="field">
               <div className="control">

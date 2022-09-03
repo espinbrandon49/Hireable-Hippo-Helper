@@ -1,15 +1,13 @@
-const { AuthenticationError } = require('apollo-server-express');
+const { AuthenticationError } = require("apollo-server-express");
 // We import the signToken() method and the User model to access the functionality needed in our resolvers to generate a signed token and check a password:
-const { User, Application, Milestone } = require('../models');
-const { signToken } = require('../utils/auth');
-
+const { User, Application, Milestone } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-
     // find all users
     users: async () => {
-      return User.find().populate('applications');
+      return User.find().populate("applications");
     },
 
     // find all applications
@@ -17,23 +15,27 @@ const resolvers = {
       return Application.find();
     },
 
+    // find all applications
+    allApps: async () => {
+      return Application.find();
+    },
+
     // find one user by username
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('applications');
+      return User.findOne({ username }).populate("applications");
     },
 
     // find one application by object_Id as applicationId
     application: async (parent, { applicationId }) => {
       return Application.findOne({ _id: applicationId });
     },
- 
-  
+
     //data visuals
-  //   applicationAppFrom: async (parent, { appliedFrom }) => {
-  //     const params = appliedFrom ? { appliedFrom } : {};
-  //     return Application.find(params).sort({ createdAt: -1 }).populate('milestones');
-  //   },
-   },
+    //   applicationAppFrom: async (parent, { appliedFrom }) => {
+    //     const params = appliedFrom ? { appliedFrom } : {};
+    //     return Application.find(params).sort({ createdAt: -1 }).populate('milestones');
+    //   },
+  },
 
   Mutation: {
     // 🔑 We then write an addUser resolver and pass in name, email, and password as arguments. This resolver will use our imported signToken() method:
@@ -56,7 +58,7 @@ const resolvers = {
       // If there is no user with that email address, return an Authentication error stating so
       // If no user is found, we return an error message indicating there is no match:
       if (!user) {
-        throw new AuthenticationError('No user found with this email address');
+        throw new AuthenticationError("No user found with this email address");
       }
 
       // If there is a user found, execute the `isCorrectPassword` instance method and check if the correct password was provided
@@ -66,7 +68,7 @@ const resolvers = {
       // If the password is incorrect, return an Authentication error stating so
       // If there is no password match, we return an error. Otherwise, we use the signToken() function to generate a signed token that contains the user information:
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       // If email and password are correct, sign user into the application with a JWT
@@ -76,11 +78,34 @@ const resolvers = {
       return { token, user };
     },
 
-    addApplication: async (parent, { 
-      salary, dateApplied, contactName, contactEmail, contactPhone, appliedFrom, jobURL, jobDescription, location, jobType, currentMilestone
-    }) => {     
+    addApplication: async (
+      parent,
+      {
+        salary,
+        dateApplied,
+        contactName,
+        contactEmail,
+        contactPhone,
+        appliedFrom,
+        jobURL,
+        jobDescription,
+        location,
+        jobType,
+        currentMilestone,
+      }
+    ) => {
       const application = await Application.create({
-        salary, dateApplied, contactName, contactEmail, contactPhone, appliedFrom, jobURL, jobDescription, location, jobType, currentMilestone 
+        salary,
+        dateApplied,
+        contactName,
+        contactEmail,
+        contactPhone,
+        appliedFrom,
+        jobURL,
+        jobDescription,
+        location,
+        jobType,
+        currentMilestone,
       });
 
       await User.findOneAndUpdate(
@@ -90,7 +115,10 @@ const resolvers = {
       return application;
     },
 
-    addMilestone: async (parent, {applicationId, milestone, dateOfInterview }) => {
+    addMilestone: async (
+      parent,
+      { applicationId, milestone, dateOfInterview }
+    ) => {
       return Application.findOneAndUpdate(
         { _id: applicationId },
         {

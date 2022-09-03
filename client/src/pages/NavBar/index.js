@@ -9,7 +9,7 @@ function NavTabs({ currentPage, handlePageChange }) {
     Auth.logout();
   };
   return (
-    <nav className="navbar nav-toggle is-light is-transparent mx-1">
+    <nav className="navbar nav-toggle is-light is-transparent mx-1 block">
       <div className="navbar-brand">
         <a className="navbar-item" href="/">
           <img

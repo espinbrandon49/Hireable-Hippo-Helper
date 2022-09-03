@@ -45,7 +45,7 @@ export default function TrackerContainer() {
                 <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
                 <div className='columns'>
                     {renderPage()}
-                    <SideBar />
+                    <SideBar className="column is-one-quarter "/>
                 </div>
             </div>
         );

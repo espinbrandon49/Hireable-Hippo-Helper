@@ -42,7 +42,7 @@ const client = new ApolloClient({
 const App = () => (
   <ApolloProvider client={client}>
     <Router>
-        <div className="container is-fluid">
+        <div className="container is-fluid px-0 mx-0">
           <Routes>
             <Route path="/" element={<TrackerContainer />} />
             <Route path="/Signup" element={<Signup/>} />

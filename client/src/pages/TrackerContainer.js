@@ -19,8 +19,10 @@ export default function TrackerContainer() {
 
     var filteredApps = [];
 
-    // console.log(data)
-
+        console.log(data)
+        if (!data) {
+            console.log('meow')
+        }
         if (Auth.getProfile() !== null) {
             filteredApps = applications.filter((application) => application.applicant === Auth.getProfile().data.username);
         }

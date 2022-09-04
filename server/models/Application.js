@@ -2,30 +2,22 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const applicationSchema = new Schema({
-  applicationId: {
-    type: Number,
-  },
   applicant: {
     type: String,
-
     trim: true
   },
   company: {
     type: String,
-
   },
   jobTitle: {
     type: String,
-
   },
   salary: {
     type: String,
-  
   },
   appliedFrom: {
     type: String,
     enum: ['LinkedIn', 'Indeed', 'AngelList', 'Handshake', 'Monster', 'Zip Recruiter', 'Job Fair', 'Company Website', 'Craigslist', 'Other'],
-
   },
   contactName: {
     type: String,
@@ -38,16 +30,13 @@ const applicationSchema = new Schema({
   },
   jobLink: {
     type: String,
-
   },
   jobDescription: {
     type: String,
-
   },
   jobType: {
     type: String,
     enum: ['In person', 'Hybrid', 'Remote'],
-
   },
   dateApplied: {
     type: Date,

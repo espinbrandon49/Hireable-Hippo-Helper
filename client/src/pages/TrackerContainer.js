@@ -15,17 +15,17 @@ export default function TrackerContainer() {
 
     const { loading, data } = useQuery(QUERY_APPLICATIONS);
     const applications = data?.applications || [];
-    console.log("before " + applications);
+    // console.log("before " + applications);
 
     var filteredApps = [];
 
-    console.log(data)
+    // console.log(data)
 
         if (Auth.getProfile() !== null) {
             filteredApps = applications.filter((application) => application.applicant === Auth.getProfile().data.username);
         }
 
-    console.log("after " + filteredApps);
+    // console.log("after " + filteredApps);
 
     const [currentPage, setCurrentPage] = useState('Homepage');
 

@@ -53,7 +53,7 @@ const typeDefs = gql`
     
     login(email: String!, password: String!): Auth
     
-    addApplication(
+    createApplication(
       _id: ID
       applicant: String
       company: String

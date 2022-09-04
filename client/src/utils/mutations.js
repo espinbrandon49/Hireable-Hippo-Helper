@@ -29,24 +29,24 @@ export const ADD_APPLICATION = gql`
     addApplication(
       applicant: $applicant,
       company: $company,
-      jobTitle: $jobTitle,
       salary: $salary, 
       appliedFrom: $appliedFrom,
       contactName: $contactName,
       contactEmail: $contactEmail,
       contactPhone: $contactPhone,
+      jobTitle: $jobTitle,
       jobLink: $jobLink,
       jobDescription: $jobDescription,
       jobType: $jobType,
       ) {
         applicant
         company
-        jobTitle
         salary
         appliedFrom
         contactName
         contactEmail
         contactPhone
+        jobTitle
         jobLink
         jobDescription
         jobType

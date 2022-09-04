@@ -4,7 +4,7 @@ const dateFormat = require('../utils/dateFormat');
 const applicationSchema = new Schema({
   applicationId: {
     type: Number,
-    required: true,
+    
   },
   applicant: {
     type: String,
@@ -42,9 +42,9 @@ const applicationSchema = new Schema({
     type: String,
     required: true
   },
-  location: {
+  jobTitle: {
     type: String,
-    required: true
+
   },
   jobType: {
     type: String,

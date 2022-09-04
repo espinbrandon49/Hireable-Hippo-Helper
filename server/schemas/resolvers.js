@@ -91,6 +91,7 @@ const resolvers = {
         jobURL,
         jobDescription,
         jobType,
+        jobTitle,
         currentMilestone,
         company
       }
@@ -105,8 +106,8 @@ const resolvers = {
         appliedFrom,
         jobURL,
         jobDescription,
-        location,
         jobType,
+        jobTitle,
         currentMilestone,
         company
 

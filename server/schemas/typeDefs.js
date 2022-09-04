@@ -55,6 +55,7 @@ const typeDefs = gql`
     
     addApplication(
       _id: ID
+      applicant: String!
       salary: Int!
       company: String
       dateApplied: String
@@ -64,12 +65,12 @@ const typeDefs = gql`
       appliedFrom: String!
       jobURL: String!
       jobDescription: String!
-      location: String
       jobType: String!
       jobTitle: String!
-      ): Application  
+      currentMilestone: String
+    ): Application  
     
-      addMilestone(
+    addMilestone(
       applicationId: ID!
       milestone: String!
       dateOfInterview: String

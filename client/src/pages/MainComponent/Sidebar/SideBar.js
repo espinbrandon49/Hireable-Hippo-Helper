@@ -13,15 +13,15 @@ const SideBar = ({applications}) => {
         {applications &&
           applications.map((application) => (
             <div key={application._id} className="card mb-2">
-              <h4 className="card-header bg-primary text-light is-size-6 m-0">
+              {/* <h4 className="card-header bg-primary text-light is-size-6 m-0">
                 {application.applicant} <br />
-              </h4>
+              </h4> */}
               <div>
                 <h6 className="card-header bg-primary text-light is-size-6 m-0">
-                  {application.appliedFrom} <br />
+                  {application.company} ({application.appliedFrom})<br />
                 </h6>
                 <h6 className="card-header bg-primary text-light is-size-4 m-0">
-                  {application.jobDescription} <br />
+                  {application.jobTitle} <br />
                 </h6>
               </div>
 

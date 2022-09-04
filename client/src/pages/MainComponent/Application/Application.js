@@ -1,29 +1,26 @@
 import React from "react";
-import AllMilestones from './components/allMilestones'
-import CurrentMilestones from './components/currentMilestone'
-import Notes from './components/notes'
-import Subheader from './components/subheader'
 import Auth from "../../../utils/auth";
 import Login from "../../Login";
+import Subheader from './components/subheader'
+import CurrentMilestones from './components/currentMilestone'
+import AllMilestones from './components/allMilestones'
+import Notes from './components/notes'
 
-const Application = () => {
+const Application = ({applications}) => {
   return (
     <div className='column'>
       {Auth.loggedIn() ? (
-        <div>
-
-          <div className='box'>
-
-            <Subheader />
-            <CurrentMilestones />
-            
-            <div className='columns'>
-              <AllMilestones />
-              <Notes />
-            </div>
-
+        <div className='box'>
+          <Subheader
+            applications={applications}
+          />
+          <CurrentMilestones />
+          <div className='columns'>
+            <AllMilestones
+              // applications={applications}
+            />
+            <Notes />
           </div>
-
         </div>
       ) : (
         <Login/>

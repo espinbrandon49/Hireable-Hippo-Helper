@@ -38,7 +38,7 @@ export default function TrackerContainer() {
             return <HippoStats applications={filteredApps} />;
         }
         if (currentPage === 'Application') {
-            return <Application />;
+            return <Application applications={filteredApps} />;
         }
         if (currentPage === 'AppForm') {
             return <AppForm />;

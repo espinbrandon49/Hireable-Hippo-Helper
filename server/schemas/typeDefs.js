@@ -67,6 +67,7 @@ const typeDefs = gql`
       jobDescription: String!
       jobType: String!
       jobTitle: String!
+      currentMilestone: String
     ): Application  
     
     addMilestone(

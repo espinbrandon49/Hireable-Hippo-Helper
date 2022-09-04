@@ -42,7 +42,7 @@ const applicationSchema = new Schema({
     type: String,
     required: true
   },
-  location: {
+  jobTitle: {
     type: String,
 
   },

@@ -308,7 +308,7 @@ const ApplicationForm = (props) => {
               </div>
             </div>
 
-            {/* <div className="field">
+            <div className="field">
               <label htmlFor="currMilestone" className="label">
                 Current Milestone:
               </label>
@@ -328,7 +328,7 @@ const ApplicationForm = (props) => {
                   </select>
                 </div>
               </div>
-            </div> */}
+            </div>
 
             <div className="field">
               <div className="control">

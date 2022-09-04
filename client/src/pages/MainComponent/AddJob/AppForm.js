@@ -96,23 +96,27 @@ const ApplicationForm = (props) => {
   };
 
   return (
-    <div>
+    <div className="column is-half is-offset-one-quarter">
       {Auth.loggedIn() ? (
         <form onSubmit={handleFormSubmit}>
-          <div>
-            <div className="field">
-              <label htmlFor="applicant" className="label">
-                Welcome {formState.applicant}:
-              </label>
-              
+          <div className="box">
+            <div className="pb-5">
+              <h1 className='title'>
+                Welcome {formState.applicant}!
+              </h1>
+              <h2 className='subtitle'>
+                Add A New Application:
+              </h2>
             </div>
 
             <div className="field">
               <label htmlFor="companyName" className="label">
                 Company Name:
               </label>
+
               <div className="control">
                 <input
+                  className="input"
                   id="companyName"
                   value={formState.company}
                   name="company"
@@ -126,8 +130,10 @@ const ApplicationForm = (props) => {
               <label htmlFor="jobTitle" className="label">
                 Job Title:
               </label>
+
               <div className="control">
                 <input
+                  className="input"
                   id="jobTitle"
                   value={formState.jobTitle}
                   name="jobTitle"
@@ -141,8 +147,10 @@ const ApplicationForm = (props) => {
               <label htmlFor="salary" className="label">
                 Salary:
               </label>
+
               <div className="control">
                 <input
+                  className="input"
                   id="salary"
                   value={formState.salary}
                   name="salary"
@@ -176,9 +184,13 @@ const ApplicationForm = (props) => {
             </div>
 
             <div className="field">
-              <label htmlFor="contactName">Contact Name:</label>
+              <label htmlFor="contactName" className="label">
+                Contact Name:
+              </label>
+
               <div className="control">
                 <input
+                  className="input"
                   id="contactName"
                   value={formState.contactName}
                   name="contactName"
@@ -189,16 +201,18 @@ const ApplicationForm = (props) => {
             </div>
 
             <div className="field">
-              <label className="contactEmail">Contact Email:</label>
+              <label htmlFor="contactEmail" className="label">
+                Contact Email:
+              </label>
+
               <div className="control has-icons-left has-icons-right">
                 <input
-                  className="input is-danger"
+                  className="input"
                   id="contactEmail"
                   value={formState.contactEmail}
                   name="contactEmail"
                   onChange={handleInputChange}
                   type="email"
-                  placeholder="Contact's Email"
                 />
                 <span className="icon is-small is-left">
                   <i className="fas fa-envelope"></i>
@@ -214,8 +228,10 @@ const ApplicationForm = (props) => {
               <label htmlFor="contactPhone" className="label">
                 Contact Phone:
               </label>
+
               <div className="control">
                 <input
+                  className="input"
                   id="contactPhone"
                   value={formState.contactPhone}
                   name="contactPhone"
@@ -229,8 +245,10 @@ const ApplicationForm = (props) => {
               <label htmlFor="jobLink" className="label">
                 Job Link:
               </label>
+
               <div className="control">
                 <input
+                  className="input"
                   id="jobLink"
                   value={formState.jobLink}
                   name="jobLink"
@@ -244,8 +262,10 @@ const ApplicationForm = (props) => {
               <label htmlFor="jobDescrip" className="label">
                 Job Description
               </label>
+
               <div className="control">
                 <input
+                  className="input"
                   id="jobDescrip"
                   value={formState.jobDescription}
                   name="jobDescription"
@@ -308,10 +328,10 @@ const ApplicationForm = (props) => {
               </div>
             </div> */}
 
-            <div className="field">
+            <div className="field pt-3">
               <div className="control">
                 <button
-                  className="btn btn-block btn-primary"
+                  className="button is-info"
                   style={{ cursor: "pointer" }}
                   name="submit"
                   type="submit"

@@ -33,6 +33,7 @@ function NavTabs({ currentPage, handlePageChange }) {
           >
             Home
           </a>
+          
           <div className="navbar-item has-dropdown is-hoverable mgr-medium">
             <a
               href="#HippoStats"

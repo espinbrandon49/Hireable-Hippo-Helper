@@ -26,11 +26,11 @@ const SideBar = ({applications}) => {
               </div>
 
               {/* <Link
-            className="btn btn-primary btn-block btn-squared"
-            to={`/userApps/${application._id}`}
-          >
-            Join the discussion on this application.
-          </Link> */}
+              className="btn btn-primary btn-block btn-squared"
+              to={`/userApps/${application._id}`}
+              >
+              Join the discussion on this application.
+              </Link> */}
             </div>
           ))}
       </div>

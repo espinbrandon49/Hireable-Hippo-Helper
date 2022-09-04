@@ -13,17 +13,17 @@ const typeDefs = gql`
   type Application {
     _id: ID
     applicant: String
+    company: String
+    jobTitle: String
     salary: String
-    dateApplied: String
+    appliedFrom: String
     contactName: String
     contactEmail: String
     contactPhone: String
-    appliedFrom: String
     jobLink: String
     jobDescription: String
-    location: String
     jobType: String
-    jobTitle: String
+    dateApplied: String
     currentMilestone: String
     milestones: [Milestone]
   }

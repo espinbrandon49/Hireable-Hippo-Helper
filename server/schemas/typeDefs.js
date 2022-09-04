@@ -12,18 +12,18 @@ const typeDefs = gql`
 
   type Application {
     _id: ID
-    applicant: String!
-    salary: Int!
+    applicant: String
+    salary: String
     dateApplied: String
     contactName: String
     contactEmail: String
     contactPhone: String
-    appliedFrom: String!
-    jobURL: String!
-    jobDescription: String!
+    appliedFrom: String
+    jobLink: String
+    jobDescription: String
     location: String
-    jobType: String!
-    jobTitle: String!
+    jobType: String
+    jobTitle: String
     currentMilestone: String
     milestones: [Milestone]
   }
@@ -55,19 +55,17 @@ const typeDefs = gql`
     
     addApplication(
       _id: ID
-      applicant: String!
-      salary: Int!
+      applicant: String
       company: String
-      dateApplied: String
+      jobTitle: String
+      salary: String
+      appliedFrom: String
       contactName: String
       contactEmail: String
       contactPhone: String
-      appliedFrom: String!
-      jobURL: String!
-      jobDescription: String!
-      jobType: String!
-      jobTitle: String!
-      currentMilestone: String
+      jobLink: String
+      jobDescription: String
+      jobType: String
     ): Application  
     
     addMilestone(

@@ -15,7 +15,11 @@ const dataVisual = ({applications }) => {
         {
           // JSON.stringify(applications)
           applications.map((application, i) => (
-            <p key={i}>{application._id}</p> 
+          
+            
+            
+            <p key={i}>{application.note}</p> 
+            
           ))
         }
         {console.log(applications.length)}

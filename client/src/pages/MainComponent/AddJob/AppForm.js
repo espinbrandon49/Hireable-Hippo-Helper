@@ -5,7 +5,7 @@ import Login from "../../Login";
 import { useMutation } from "@apollo/client";
 import { ADD_APPLICATION } from "../../../utils/mutations";
 
-const ApplicationForm = (props) => {
+const ApplicationForm = () => {
   const [formState, setFormState] = useState({
     applicant: Auth.getProfile().data.username,
     company: "",
@@ -17,11 +17,11 @@ const ApplicationForm = (props) => {
     jobTitle: "",
     jobLink: "",
     jobDescription: "",
-    dateApplied: "",
     jobType: "",
     // currentMileStone: "",
   });
-  const [createApplication, { error, data }] = useMutation(ADD_APPLICATION);
+  const [createApplication, { error, data}] = useMutation(ADD_APPLICATION);
+
   // const [company, setCompany] = useState("");
   // const [title, setTitle] = useState("");
   // const [salary, setSalary] = useState("");

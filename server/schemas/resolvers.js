@@ -78,39 +78,34 @@ const resolvers = {
       return { token, user };
     },
 
-    addApplication: async (
+    createApplication: async (
       parent,
       {
         applicant,
+        company,
         salary,
-        dateApplied,
+        appliedFrom,
         contactName,
         contactEmail,
         contactPhone,
-        appliedFrom,
-        jobURL,
+        jobTitle,
+        jobLink,
         jobDescription,
         jobType,
-        jobTitle,
-        currentMilestone,
-        company
       }
     ) => {
       const application = await Application.create({
         applicant,
+        company,
         salary,
-        dateApplied,
+        appliedFrom,
         contactName,
         contactEmail,
         contactPhone,
-        appliedFrom,
-        jobURL,
+        jobTitle,
+        jobLink,
         jobDescription,
         jobType,
-        jobTitle,
-        currentMilestone,
-        company
-
       });
 
       await User.findOneAndUpdate(

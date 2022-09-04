@@ -25,8 +25,19 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_APPLICATION = gql`
-  mutation addApplication($applicant: String, $company: String, $jobTitle: String, $salary: String, $appliedFrom: String, $contactName: String, $contactEmail: String, $contactPhone: String, $jobLink: String, $jobDescription: String, $jobType: String) {
-    addApplication(
+  mutation createApplication(
+    $applicant: String,
+    $company: String,
+    $salary: String, 
+    $appliedFrom: String, 
+    $contactName: String, 
+    $contactEmail: String, 
+    $contactPhone: String, 
+    $jobTitle: String, 
+    $jobLink: String, 
+    $jobDescription: String, 
+    $jobType: String) {
+    createApplication(
       applicant: $applicant,
       company: $company,
       salary: $salary, 
@@ -39,6 +50,7 @@ export const ADD_APPLICATION = gql`
       jobDescription: $jobDescription,
       jobType: $jobType,
       ) {
+        _id
         applicant
         company
         salary

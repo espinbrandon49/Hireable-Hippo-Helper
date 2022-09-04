@@ -23,6 +23,7 @@ const typeDefs = gql`
     jobLink: String
     jobDescription: String
     jobType: String
+    note: String
   }
 
   type Milestone {
@@ -64,6 +65,11 @@ const typeDefs = gql`
       jobType: String
     ): Application  
     
+    updateNote(
+        applicant: String
+        note:String
+      ): Application
+
     addMilestone(
       applicationId: ID!
       milestone: String!

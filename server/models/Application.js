@@ -62,7 +62,9 @@ const applicationSchema = new Schema({
   note: {
     type: String
   },
-});
+},
+
+);
 
 const Application = model('Application', applicationSchema);
 

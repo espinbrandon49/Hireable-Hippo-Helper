@@ -63,8 +63,22 @@ export const ADD_APPLICATION = gql`
         jobDescription
         jobType
       }
-    }
-`;
+    }`;
+
+export const UPDATE_NOTE = gql`
+      mutation updateNote(
+        $applicant: String, $note: String) {
+        updateNote(
+          applicant: $applicant,
+          note: $note) {        
+          _id
+          applicant
+          note
+        }
+      }`;
+
+
+
 
 
 

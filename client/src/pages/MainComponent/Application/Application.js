@@ -1,9 +1,9 @@
 import React from "react";
 import Auth from "../../../utils/auth";
 import Login from "../../Login";
-import Subheader from './components/subheader'
+import Subheader from './components/Subheader'
 import CurrentMilestones from './components/currentMilestone'
-import AllMilestones from './components/allMilestones'
+import AllMilestones from './components/AllMilestones'
 import Notes from './components/notes'
 
 const Application = ({applications}) => {
@@ -17,7 +17,7 @@ const Application = ({applications}) => {
           <CurrentMilestones />
           <div className='columns'>
             <AllMilestones
-              // applications={applications}
+              applications={applications}
             />
             <Notes />
           </div>

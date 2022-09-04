@@ -1,13 +1,27 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
-const subheader = ({applications}) => {
-  return (
-    <div>
-      <h1 className='title'>{applications.company}</h1>
-      <h2 className='subtitle'>Job Title</h2>
-      {console.log(applications)}
-    </div>
-  )
+const Subheader = ({applications}) => {
+
+  const { _id } = useParams();
+
+  const application = applications.filter((application) => application._id === _id)[0];
+
+  if (!application) {
+    return (
+      <div>
+        <h1 className='title'>Company:</h1>
+        <h2 className='subtitle'>Job Title:</h2>
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <h1 className='title'>Company: {application.company}</h1>
+        <h2 className='subtitle'>Job Title: {application.jobTitle}</h2>
+      </div>
+    )
+  }
 }
 
-export default subheader
+export default Subheader

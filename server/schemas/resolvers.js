@@ -123,7 +123,7 @@ const resolvers = {
       return Application.findOneAndUpdate(
         { username: applicant },
         {
-          note: { note },
+          $note: { note },
         },
         {
           new: true,

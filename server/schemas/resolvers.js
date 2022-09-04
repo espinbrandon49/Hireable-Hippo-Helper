@@ -105,7 +105,6 @@ const resolvers = {
         appliedFrom,
         jobURL,
         jobDescription,
-        location,
         jobType,
         currentMilestone,
         company

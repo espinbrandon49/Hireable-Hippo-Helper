@@ -7,7 +7,7 @@ import { ADD_APPLICATION } from "../../../utils/mutations";
 
 const ApplicationForm = (props) => {
   const [formState, setFormState] = useState({
-    applicant: "",
+    applicant: Auth.getProfile().data.username,
     company: "",
     salary: "",
     appliedFrom: "",
@@ -121,17 +121,9 @@ const ApplicationForm = (props) => {
           <div>
             <div className="field">
               <label htmlFor="applicant" className="label">
-                Applicant:
+                Welcome {formState.applicant}:
               </label>
-              <div className="control">
-                <input
-                  id="applicant"
-                  value={formState.applicant}
-                  name="applicant"
-                  onChange={handleInputChange}
-                  type="text"
-                />
-              </div>
+              
             </div>
 
             <div className="field">

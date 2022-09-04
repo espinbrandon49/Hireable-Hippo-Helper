@@ -45,6 +45,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<TrackerContainer />} />
             <Route path="/Signup" element={<Signup/>} />
+            
             <Route path="/Hippostats" element={<HippoStats/>} />
           </Routes>
           {/* <Footer /> */}

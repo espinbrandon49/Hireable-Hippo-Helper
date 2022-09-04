@@ -25,26 +25,33 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_APPLICATION = gql`
-  mutation addApplication($applicant: String!, $company: String!, $salary: Int!, $appliedFrom: String!, $contactName: String!, $contactEmail: String!, $contactPhone: String!, $jobTitle: String!, $jobURL: String!, $jobDescription: String!, $dateApplied: String!, $jobType: String!, $currentMilestone: String!) {
-      addApplication(applicant: $applicant,
-        company: $company,
-        salary: $salary, 
-        appliedFrom: $appliedFrom,
-        contactName: $contactName,
-        contactEmail: $contactEmail,
-        contactPhone: $contactPhone,
-        jobTitle: $jobTitle,
-        jobURL: $jobUrl,
-        jobDescription: $jobDescription,
-        dateApplied: $dateApplied,
-        jobType: $jobType,
-        currentMilestone: $currentMilestone
-        ) {
-          application 
-            
-          
-        }
+  mutation addApplication($applicant: String, $company: String, $jobTitle: String, $salary: String, $appliedFrom: String, $contactName: String, $contactEmail: String, $contactPhone: String, $jobLink: String, $jobDescription: String, $jobType: String) {
+    addApplication(
+      applicant: $applicant,
+      company: $company,
+      jobTitle: $jobTitle,
+      salary: $salary, 
+      appliedFrom: $appliedFrom,
+      contactName: $contactName,
+      contactEmail: $contactEmail,
+      contactPhone: $contactPhone,
+      jobLink: $jobLink,
+      jobDescription: $jobDescription,
+      jobType: $jobType,
+      ) {
+        applicant
+        company
+        jobTitle
+        salary
+        appliedFrom
+        contactName
+        contactEmail
+        contactPhone
+        jobLink
+        jobDescription
+        jobType
       }
+    }
 `;
 
 

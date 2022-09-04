@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { checkForText, validateEmail } from "../../../utils/helpers";
+// import { checkForText, validateEmail } from "../../../utils/helpers";
 import Auth from "../../../utils/auth";
 import Login from "../../Login";
 import { useMutation } from "@apollo/client";
@@ -19,7 +19,7 @@ const ApplicationForm = (props) => {
     jobDescription: "",
     dateApplied: "",
     jobType: "",
-    currentMileStone: "",
+    // currentMileStone: "",
   });
   const [createApplication, { error, data }] = useMutation(ADD_APPLICATION);
   // const [company, setCompany] = useState("");
@@ -34,39 +34,18 @@ const ApplicationForm = (props) => {
 
   // const [errorMessage, setErrorMessage] = useState("");
 
+  // console.log(newApplication)
+
   const handleInputChange = (event) => {
     const { name, value} = event.target;
     console.log(event.target)
     console.log(name)
+    console.log(value)
 
     setFormState({
       ...formState,
       [name]: value,
     });
-
-    // const { target } = event;
-    // const inputType = target.name;
-    // const inputValue = target.value;
-
-    // if (inputType === "company") {
-    //   setCompany(inputValue);
-    // } else if (inputType === "title") {
-    //   setTitle(inputValue);
-    // } else if (inputType === "salary") {
-    //   setSalary(inputValue);
-    // } else if (inputType === "location") {
-    //   setLocation(inputValue);
-    // } else if (inputType === "contactName") {
-    //   setContactName(inputValue);
-    // } else if (inputType === "contactEmail") {
-    //   setContactEmail(inputValue);
-    // } else if (inputType === "contactPhone") {
-    //   setContactPhone(inputValue);
-    // } else if (inputType === "jobLink") {
-    //   setJobLink(inputValue);
-    // } else {
-    //   setJobDescription(inputValue);
-    // }
   };
 
   const handleFormSubmit = async (event) => {
@@ -90,13 +69,13 @@ const ApplicationForm = (props) => {
     //   return;
     // }
 
-    try {
-      const { data } = await createApplication({
-        variables: {...formState}
-      });
-    } catch (err) {
-      console.error(err);
-    }
+      try {
+        const {data} = await createApplication({
+          variables: {...formState, applicant: Auth.getProfile().data.username}
+        });
+      } catch (err) {
+        console.error(err);
+      }
 
     // clear form values
     setFormState({
@@ -112,7 +91,7 @@ const ApplicationForm = (props) => {
       jobDescription: "",
       dateApplied: "",
       jobType: "",
-      currentMileStone: "",
+      // currentMileStone: "",
     });
   };
 
@@ -287,13 +266,12 @@ const ApplicationForm = (props) => {
                     <option value="In person">In person</option>
                     <option value="Hybrid">Hybrid</option>
                     <option value="Remote">Remote</option>
-                   
                   </select>
                 </div>
               </div>
             </div>
 
-            <div className="field">
+            {/* <div className="field">
               <label htmlFor="dateApplied" className="label">
                 Date Applied
               </label>
@@ -306,9 +284,9 @@ const ApplicationForm = (props) => {
                   type="text"
                 />
               </div>
-            </div>
+            </div> */}
 
-            <div className="field">
+            {/* <div className="field">
               <label htmlFor="currMilestone" className="label">
                 Current Milestone:
               </label>
@@ -328,13 +306,14 @@ const ApplicationForm = (props) => {
                   </select>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="field">
               <div className="control">
                 <button
                   className="btn btn-block btn-primary"
                   style={{ cursor: "pointer" }}
+                  name="submit"
                   type="submit"
                 >
                   Submit

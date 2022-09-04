@@ -4,21 +4,28 @@ const dateFormat = require('../utils/dateFormat');
 const applicationSchema = new Schema({
   applicationId: {
     type: Number,
-    
   },
   applicant: {
     type: String,
-    required: true,
+
     trim: true
   },
-  salary: {
-    type: Number,
-    required: true
+  company: {
+    type: String,
+
   },
-  dateApplied: {
-    type: Date,
-    default: Date.now,
-    get: (timestamp) => dateFormat(timestamp),
+  jobTitle: {
+    type: String,
+
+  },
+  salary: {
+    type: String,
+  
+  },
+  appliedFrom: {
+    type: String,
+    enum: ['LinkedIn', 'Indeed', 'AngelList', 'Handshake', 'Monster', 'Zip Recruiter', 'Job Fair', 'Company Website', 'Craigslist', 'Other'],
+
   },
   contactName: {
     type: String,
@@ -29,27 +36,23 @@ const applicationSchema = new Schema({
   contactPhone: {
     type: String,
   },
-  appliedFrom: {
+  jobLink: {
     type: String,
-    enum: ['LinkedIn', 'Indeed', 'AngelList', 'Handshake', 'Monster', 'Zip Recruiter', 'Job Fair', 'Company Website', 'Craigslist', 'Other'],
-    required: true
-  },
-  jobURL: {
-    type: String,
-    required: true
+
   },
   jobDescription: {
-    type: String,
-    required: true
-  },
-  jobTitle: {
     type: String,
 
   },
   jobType: {
     type: String,
     enum: ['In person', 'Hybrid', 'Remote'],
-    required: true
+
+  },
+  dateApplied: {
+    type: Date,
+    default: Date.now,
+    get: (timestamp) => dateFormat(timestamp),
   },
   currentMilestone: {
     type: String,

@@ -7,7 +7,7 @@ import { ADD_USER } from '../../utils/mutations';
 import NavTabs from '../NavBar';
 
 import Auth from '../../utils/auth';
-
+///MERN 26-Stu_Resolver-Contect
 const Signup = () => {
     const [formState, setFormState] = useState({
       username: '',

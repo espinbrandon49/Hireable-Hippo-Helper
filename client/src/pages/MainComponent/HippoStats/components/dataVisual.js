@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const styles = {
   box: {
     height: "50vh",
@@ -8,24 +7,18 @@ const styles = {
 }
 
 const dataVisual = ({applications }) => {
-  // if (!applications.length) {
-  //   return <h3> No user applications</h3>
-  // }
+
   return (
     <div className='column'>
       <div className='box' style={styles.box}>
         DATA VISUALS
         {
-          JSON.stringify(applications)
-        // users &&
-        //   users.map((user, i) => (
-        //     <div key={i}>
-        //       {
-        //         user.applications.length
-        //       }
-        //     </div>
-        //   ))
+          // JSON.stringify(applications)
+          applications.map((application, i) => (
+            application._id
+          ))
         }
+        {console.log(applications.length)}
       </div>
     </div>
   )

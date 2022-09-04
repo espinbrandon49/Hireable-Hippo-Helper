@@ -50,7 +50,7 @@ const ApplicationForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+    
 
     // if (!checkForText(company)) {
     //   setErrorMessage("Company name is required.");
@@ -70,8 +70,10 @@ const ApplicationForm = () => {
     // }
 
       try {
-        const {data} = await createApplication({
-          variables: {...formState, applicant: Auth.getProfile().data.username}
+        console.log(formState);
+        const { data } = await createApplication({
+          variables: {...formState},
+          // , applicant: Auth.getProfile().data.username
         });
       } catch (err) {
         console.error(err);
@@ -79,7 +81,7 @@ const ApplicationForm = () => {
 
     // clear form values
     setFormState({
-      applicant: "",
+      applicant: Auth.getProfile().data.username,
       company: "",
       salary: "",
       appliedFrom: "",
@@ -89,7 +91,7 @@ const ApplicationForm = () => {
       jobTitle: "",
       jobLink: "",
       jobDescription: "",
-      dateApplied: "",
+      // dateApplied: "",
       jobType: "",
       // currentMileStone: "",
     });

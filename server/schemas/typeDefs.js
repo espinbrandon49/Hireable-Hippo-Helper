@@ -13,19 +13,16 @@ const typeDefs = gql`
   type Application {
     _id: ID
     applicant: String
+    company: String
     salary: String
-    dateApplied: String
+    appliedFrom: String
     contactName: String
     contactEmail: String
     contactPhone: String
-    appliedFrom: String
+    jobTitle: String
     jobLink: String
     jobDescription: String
-    location: String
     jobType: String
-    jobTitle: String
-    currentMilestone: String
-    milestones: [Milestone]
   }
 
   type Milestone {
@@ -54,15 +51,14 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     
     createApplication(
-      _id: ID
       applicant: String
       company: String
-      jobTitle: String
       salary: String
       appliedFrom: String
       contactName: String
       contactEmail: String
       contactPhone: String
+      jobTitle: String
       jobLink: String
       jobDescription: String
       jobType: String

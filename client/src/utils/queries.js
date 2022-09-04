@@ -17,8 +17,16 @@ export const QUERY_APPLICATIONS = gql`
     applications {
       _id
       applicant
-      jobDescription
+      company
+      jobTitle
+      salary
       appliedFrom
+      contactName
+      contactEmail
+      contactPhone
+      jobLink
+      jobDescription
+      jobType
     }
   }
 `;

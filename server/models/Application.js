@@ -9,9 +9,6 @@ const applicationSchema = new Schema({
   company: {
     type: String,
   },
-  jobTitle: {
-    type: String,
-  },
   salary: {
     type: String,
   },
@@ -26,6 +23,9 @@ const applicationSchema = new Schema({
     type: String,
   },
   contactPhone: {
+    type: String,
+  },
+  jobTitle: {
     type: String,
   },
   jobLink: {

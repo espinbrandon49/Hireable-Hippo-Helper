@@ -25,7 +25,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_APPLICATION = gql`
-  mutation addApplication($applicant: String!, $salary: Int!, $appliedFrom: String!, $jobUrl: String!, $jobDescription: String!, $jobType: String!, $jobTitle: String!) {
+  mutation addApplication($applicant: String!, $salary: Int!, $appliedFrom: String!, $jobURL: String!, $jobDescription: String!, $jobType: String!, $jobTitle: String!) {
       addApplication(applicant: $applicant,
         salary: $salary, appliedFrom: $appliedFrom, jobURL: $jobUrl, jobDescription: $jobDescription, jobType: $jobType, jobTitle: $jobTitle
         ) {

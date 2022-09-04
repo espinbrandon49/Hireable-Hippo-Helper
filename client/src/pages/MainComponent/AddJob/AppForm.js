@@ -14,6 +14,7 @@ const ApplicationForm = (props) => {
     contactName: "",
     contactEmail: "",
     contactPhone: "",
+    jobTitle: "",
     jobLink: "",
     jobDescription: "",
     dateApplied: "",
@@ -91,7 +92,7 @@ const ApplicationForm = (props) => {
 
     try {
       const { data } = await createApplication({
-        variables: { ...formState },
+        variables: {...formState}
       });
     } catch (err) {
       console.error(err);
@@ -106,6 +107,7 @@ const ApplicationForm = (props) => {
       contactName: "",
       contactEmail: "",
       contactPhone: "",
+      jobTitle: "",
       jobLink: "",
       jobDescription: "",
       dateApplied: "",
@@ -148,8 +150,8 @@ const ApplicationForm = (props) => {
               <div className="control">
                 <input
                   id="jobTitle"
-                  value={formState.jobType}
-                  name="jobType"
+                  value={formState.jobTitle}
+                  name="jobTitle"
                   onChange={handleInputChange}
                   type="text"
                 />
@@ -306,7 +308,7 @@ const ApplicationForm = (props) => {
               </div>
             </div>
 
-            <div className="field">
+            {/* <div className="field">
               <label htmlFor="currMilestone" className="label">
                 Current Milestone:
               </label>
@@ -326,7 +328,7 @@ const ApplicationForm = (props) => {
                   </select>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="field">
               <div className="control">

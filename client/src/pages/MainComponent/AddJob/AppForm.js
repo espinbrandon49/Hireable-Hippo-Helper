@@ -177,8 +177,8 @@ const ApplicationForm = (props) => {
               </label>
 
               <div className="control">
-                <div className="select" onChange={handleInputChange}>
-                  <select value={formState.appliedFrom} name="appliedFrom" id="jobLocation">
+                <div className="select" >
+                  <select value={formState.appliedFrom} name="appliedFrom" id="jobLocation" onChange={handleInputChange}>
                     <option value="LinkedIn">LinkedIn</option>
                     <option value="Indeed">Indeed</option>
                     <option value="AngelList">AngelList</option>
@@ -280,8 +280,8 @@ const ApplicationForm = (props) => {
               </label>
 
               <div className="control">
-                <div className="select" onChange={handleInputChange}>
-                  <select value={formState.jobType} name="jobType" id="jobType">
+                <div className="select">
+                  <select value={formState.jobType} name="jobType" id="jobType" onChange={handleInputChange}>
                     <option value="In person">In person</option>
                     <option value="Hybrid">Hybrid</option>
                     <option value="Remote">Remote</option>
@@ -312,8 +312,8 @@ const ApplicationForm = (props) => {
               </label>
 
               <div className="control">
-                <div className="select" onChange={handleInputChange}>
-                  <select value={formState.currentMileStone} name="currentMilestone" id="currMilestone">
+                <div className="select" >
+                  <select value={formState.currentMileStone} name="currentMileStone" id="currMilestone" onChange={handleInputChange}>
                     <option value="Applied">Applied</option>
                     <option value="Phone Interview">Phone Interview</option>
                     <option value="Technical Interview">Technical Interview</option>

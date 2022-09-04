@@ -33,9 +33,9 @@ const HippoStats = ({applications}) => {
   }
 
   return (
-    <div>
+    <div className="column">
       {Auth.loggedIn() ? (
-        <div className="column">
+        <div className="box">
           <Subheader />
           <DataMilestones />
           <DataVisuals

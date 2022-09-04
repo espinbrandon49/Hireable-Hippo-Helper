@@ -26,7 +26,7 @@ export default function TrackerContainer() {
             filteredApps = applications.filter((application) => application.applicant === Auth.getProfile().data.username);
         }
 
-    // console.log("after " + filteredApps);
+    // console.log("after " + JSON.stringify(filteredApps));
 
     const [currentPage, setCurrentPage] = useState('Homepage');
 

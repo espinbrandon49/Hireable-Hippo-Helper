@@ -46,9 +46,9 @@ const App = () => (
           <Routes>
             <Route path="/" element={<TrackerContainer />} />
             <Route path="/Signup" element={<Signup/>} />
-
             <Route path="/Login" element={<Login/>} />
             <Route path="/Hippostats" element={<HippoStats/>} />
+            <Route path="/Application/:_id" element={<TrackerContainer/>} />
           </Routes>
           {/* <Footer /> */}
         </div>

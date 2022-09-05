@@ -136,7 +136,7 @@ const resolvers = {
       const milestoneUpdate = await Application.findOneAndUpdate(
         { _id },
         {
-          $set: {"currentMilestone": {milestone}},
+          $set: { "currentMilestone": milestone },
         },
         {
           new: true,

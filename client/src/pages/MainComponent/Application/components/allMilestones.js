@@ -33,6 +33,7 @@ const AllMilestones = ({applications}) => {
             <li>Contact Phone:</li>
           </ul>
           <p>Note:</p> 
+          <p>Current Milestone:</p>
         </div>
       </div>
     )
@@ -62,6 +63,7 @@ const AllMilestones = ({applications}) => {
             <li>Contact Phone: {application.contactPhone}</li>
           </ul>
           <p>Note: {application.note}</p> 
+          <p>Current Milestone: {application.currentMilestone}</p>
         </div>
 
       </div>

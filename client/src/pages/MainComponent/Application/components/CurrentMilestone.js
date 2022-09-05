@@ -1,12 +1,11 @@
 import React from 'react'
 import { useMutation } from '@apollo/client';
-import { UPDATE_MILESTONE } from '../../../../utils/mutations';
+import { UPDATE_MILESTONE, ADD_MILESTONE } from '../../../../utils/mutations';
 import { useParams } from 'react-router-dom';
 
 const styles = {
-  width: {
-    maxWidth: "120px",
-    minWidth: "120px",
+  button: {
+    borderRadius: "50%",
   },
 };
 
@@ -16,7 +15,11 @@ const CurrentMilestone = ({applications}) => {
 
   const [updateMilestone, { error, data }] = useMutation(UPDATE_MILESTONE);
 
+
+  const [addMilestone, { err, dataA }] = useMutation(ADD_MILESTONE);
+
   const application = applications.filter((application) => application._id === _id)[0];
+
 
   const submitMilestone = async (event) => {
     event.preventDefault();
@@ -31,10 +34,14 @@ const CurrentMilestone = ({applications}) => {
       await updateMilestone({
         variables: { _id: _id, currentMilestone: currentMilestone },
       });
+      await addMilestone({
+        variables: { _id: _id, milestones: currentMilestone },
+      });
       console.log(updateMilestone)
     } catch (err) {
       console.error(err);
     }
+    
   }
 
   return (
@@ -44,11 +51,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Applied"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Applied"}
           onClick={submitMilestone}
         >
@@ -58,11 +65,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Phone Interview"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Phone Interview"}
           onClick={submitMilestone}
         >
@@ -72,11 +79,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Technical Interview"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Technical Interview"}
           onClick={submitMilestone}
         >
@@ -86,11 +93,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "In Person Interview"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"In Person Interview"}
           onClick={submitMilestone}
         >
@@ -100,11 +107,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Job Offer"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Job Offer"}
           onClick={submitMilestone}
         >
@@ -114,11 +121,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Accepted"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Accepted"}
           onClick={submitMilestone}
         >
@@ -128,11 +135,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Rejected"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Rejected"}
           onClick={submitMilestone}
         >
@@ -142,11 +149,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Hippo Donations"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Hippo Donations"}
           onClick={submitMilestone}
         >

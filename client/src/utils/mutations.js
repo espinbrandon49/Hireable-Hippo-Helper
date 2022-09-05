@@ -87,6 +87,17 @@ export const UPDATE_MILESTONE = gql`
     }
 }`;
 
+export const ADD_MILESTONE = gql`
+  mutation addMilestone(
+    $_id: String, $milestones: String) {
+    addMilestone(
+      _id: $_id,
+      milestones: $milestones) {        
+      _id
+      milestones
+    }
+}`;
+
 
 
 

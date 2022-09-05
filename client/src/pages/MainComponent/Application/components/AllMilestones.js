@@ -64,6 +64,7 @@ const AllMilestones = ({applications}) => {
           </ul>
           <p>Note: {application.note}</p> 
           <p>Current Milestone: {application.currentMilestone}</p>
+          <p>All Milestones: {application.milestones}</p>
         </div>
 
       </div>

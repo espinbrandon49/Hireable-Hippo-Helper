@@ -116,9 +116,9 @@ const resolvers = {
       note
     }) => {
       const noteUpdate = await Application.findOneAndUpdate(
-        { _id},
+        { _id },
         {
-          $set: {"note": note },
+          $set: { "note": note },
         },
         {
           new: true,
@@ -137,7 +137,7 @@ const resolvers = {
         { _id },
         {
           $set: { "currentMilestone": currentMilestone },
-        },
+        },        
         {
           new: true,
           runValidators: true,
@@ -146,30 +146,37 @@ const resolvers = {
       return milestoneUpdate
     },
 
-    addMilestone: async (parent, { applicationId, milestone }) => {
-      return Application.findOneAndUpdate(
-        { _id: applicationId },
+    addMilestone: async (parent, {
+      _id, milestones 
+      
+    }) => {
+      const milestoneAdd = await Application.findOneAndUpdate(
+        { _id },
         {
-          $addToSet: { milestones: { milestone } },
+          $addToset: {
+            milestones: { milestones}
+          },
         },
         {
           new: true,
           runValidators: true,
         }
       );
+      return milestoneAdd
     },
-    
-removeApplication: async (parent, { applicationId }) => {
-  return Application.findOneAndDelete({ _id: applicationId });
-},
 
-  removeMilestone: async (parent, { applicationId, milestoneId }) => {
-    return Application.findOneAndUpdate(
-      { _id: applicationId },
-      { $pull: { milestones: { _id: milestoneId } } },
-      { new: true }
-    );
-  },
+
+    removeApplication: async (parent, { applicationId }) => {
+      return Application.findOneAndDelete({ _id: applicationId });
+    },
+
+    removeMilestone: async (parent, { applicationId, milestoneId }) => {
+      return Application.findOneAndUpdate(
+        { _id: applicationId },
+        { $pull: { milestones: { _id: milestoneId } } },
+        { new: true }
+      );
+    },
   },
 };
 

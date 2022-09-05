@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMutation } from '@apollo/client';
-import { UPDATE_MILESTONE } from '../../../../utils/mutations';
+import { UPDATE_MILESTONE, ADD_MILESTONE } from '../../../../utils/mutations';
 import { useParams } from 'react-router-dom';
 
 const styles = {
@@ -16,7 +16,11 @@ const CurrentMilestone = ({applications}) => {
 
   const [updateMilestone, { error, data }] = useMutation(UPDATE_MILESTONE);
 
+
+  const [addMilestone, { err, dataA }] = useMutation(ADD_MILESTONE);
+
   const application = applications.filter((application) => application._id === _id)[0];
+
 
   const submitMilestone = async (event) => {
     event.preventDefault();
@@ -31,10 +35,14 @@ const CurrentMilestone = ({applications}) => {
       await updateMilestone({
         variables: { _id: _id, currentMilestone: currentMilestone },
       });
+      await addMilestone({
+        variables: { _id: _id, milestones: currentMilestone },
+      });
       console.log(updateMilestone)
     } catch (err) {
       console.error(err);
     }
+    
   }
 
   return (

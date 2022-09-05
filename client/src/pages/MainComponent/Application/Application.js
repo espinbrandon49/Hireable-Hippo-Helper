@@ -19,7 +19,8 @@ const Application = ({applications}) => {
             <AllMilestones
               applications={applications}
             />
-            <Notes />
+            <Notes
+             applications={applications} />
           </div>
         </div>
       ) : (

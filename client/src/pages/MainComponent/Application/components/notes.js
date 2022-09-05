@@ -23,19 +23,18 @@ const Notes = ({ applications }) => {
 
   //filter by single application
   const application = applications.filter((application) => application._id === _id)[0];
-  console.log(application.note)
 
   // useEffect hook to populate Quill with an initial value
   React.useEffect(() => {
     if (quill) {
-      quill.clipboard.dangerouslyPasteHTML(`<h2>${application.note}</h2>`);
+     !_id
+     ? quill.clipboard.dangerouslyPasteHTML('<h2>Hippopotamus Notes</h2>')
+     : quill.clipboard.dangerouslyPasteHTML(`<h2>${application.note}</h2>`)
     }
   }, [quill]);
 
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     console.log(_id, quill.getText());
     try {
       await updateNote({

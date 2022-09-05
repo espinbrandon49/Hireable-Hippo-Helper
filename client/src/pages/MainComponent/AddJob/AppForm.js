@@ -7,7 +7,7 @@ import { ADD_APPLICATION } from "../../../utils/mutations";
 
 const ApplicationForm = () => {
   const [formState, setFormState] = useState({
-    applicant: Auth.getProfile().data.username,
+    applicant: "",
     company: "",
     salary: "",
     appliedFrom: "",
@@ -59,9 +59,10 @@ const ApplicationForm = () => {
       try {
         // console.log(formState);
         const { data } = await createApplication({
-          variables: {...formState},
+          variables: {...formState, applicant: Auth.getProfile().data.username,},
           
         });
+        console.log(data);
       } catch (err) {
         console.error(err);
       }

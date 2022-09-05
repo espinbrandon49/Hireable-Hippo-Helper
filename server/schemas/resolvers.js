@@ -118,7 +118,7 @@ const resolvers = {
       const noteUpdate = await Application.findOneAndUpdate(
         { _id},
         {
-          $set: {"note": {note} },
+          $set: {"note": note },
         },
         {
           new: true,

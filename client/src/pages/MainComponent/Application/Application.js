@@ -4,7 +4,7 @@ import Login from "../../Login";
 import Subheader from './components/subheader'
 import CurrentMilestones from './components/currentMilestone'
 import AllMilestones from './components/AllMilestones'
-import Notes from './components/notes'
+import Notes from './components/Notes'
 
 const Application = ({applications}) => {
   return (

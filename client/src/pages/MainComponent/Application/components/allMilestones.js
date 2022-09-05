@@ -63,6 +63,7 @@ const AllMilestones = ({applications}) => {
           </ul>
           <p>Note: {application.note}</p> 
         </div>
+
       </div>
     )
   }

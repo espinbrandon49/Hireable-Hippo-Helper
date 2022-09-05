@@ -1,75 +1,112 @@
 import React from 'react'
 
 const styles = {
-  font: {
-    fontSize: ".75em",
-  },
-  width: {
-    // resize radio input
-    width: "1em",
-  },
-};
+  box: {
+    borderRadius: "50%",
+  }
+}
 
-const dataMilestones = () => {
+const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
   return (
     <div className='column'>
-      <div className='box'>
-        <div className="is-justify-content-center" >
-          <label className="radio" htmlFor="appliedData" style={styles.font}>
-            <input
-              type="radio"
-              name="dataStone"
-              style={styles.width}
-              id="appliedData"
-            />
-            Applied
-          </label>
-          <label className="radio" htmlFor="phoneInterviewData" style={styles.font}>
-            <input
-            type="radio"
-            name="dataStone"
-            style={styles.width}
-            id="phoneInterviewData"
-            />
-            Phone Interview
-          </label>
-          <label className="radio" htmlFor="technicalInterviewData" style={styles.font}>
-            <input
-            type="radio"
-            name="dataStone"
-            style={styles.width}
-            id="technicalInterviewData"
-            />
-            Technical Interview
-          </label>
-          <label className="radio" htmlFor="inPersonInterviewData" style={styles.font}>
-            <input
-            type="radio"
-            name="dataStone"
-            style={styles.width}
-            id="inPersonInterviewData"
-            />
-            In-person Interview
-          </label>
-          <label className="radio" htmlFor="jobOfferData" style={styles.font}>
-            <input
-            type="radio"
-            name="dataStone"
-            style={styles.width}
-            id="jobOfferData"
-            />
-            Job Offer
-          </label>
-          <label className="radio" htmlFor="hippoDonateData" style={styles.font}>
-            <input
-            type="radio"
-            name="dataStone"
-            style={styles.width}
-            id="hippoDonateData"
-            />
-            Donate to HHH
-          </label>
-        </div>
+      <div className="buttons">
+
+        <button
+          className={
+            currentDataPage === "Applied"
+              ? "button is-primary is-active"
+              : "button is-primary"
+          }
+          style={styles.box} 
+          onClick={() => handleDataPageChange("Applied")}
+          >
+          Applied
+        </button>
+
+        <button
+          className={
+            currentDataPage === "PhoneInterview"
+              ? "button is-primary is-active"
+              : "button is-primary"
+          }
+          style={styles.box} 
+          onClick={() => handleDataPageChange("PhoneInterview")}
+          >
+          Phone Interview
+        </button>
+        
+        <button
+          className={
+            currentDataPage === "TechnicalInterview"
+              ? "button is-primary is-active"
+              : "button is-primary"
+          }
+          style={styles.box} 
+          onClick={() => handleDataPageChange("TechnicalInterview")}
+          >
+          Technical Interview
+        </button>
+
+        <button
+          className={
+            currentDataPage === "InPersonInterview"
+              ? "button is-primary is-active"
+              : "button is-primary"
+          }
+          style={styles.box} 
+          onClick={() => handleDataPageChange("InPersonInterview")}
+          >
+          In-person Interview
+        </button>
+
+        <button
+          className={
+            currentDataPage === "JobOffer"
+              ? "button is-primary is-active"
+              : "button is-primary"
+          }
+          style={styles.box} 
+          onClick={() => handleDataPageChange("JobOffer")}
+          >
+          Job Offer
+        </button>
+
+        <button
+          className={
+            currentDataPage === "Accepted"
+              ? "button is-primary is-active"
+              : "button is-primary"
+          }
+          style={styles.box} 
+          onClick={() => handleDataPageChange("Accepted")}
+          >
+          Accepted
+        </button>
+
+        <button
+          className={
+            currentDataPage === "Rejected"
+              ? "button is-primary is-active"
+              : "button is-primary"
+          }
+          style={styles.box} 
+          onClick={() => handleDataPageChange("Rejected")}
+          >
+          Rejected
+        </button>
+
+        <button
+          className={
+            currentDataPage === "HippoDonations"
+              ? "button is-primary is-active"
+              : "button is-primary"
+          }
+          style={styles.box} 
+          onClick={() => handleDataPageChange("HippoDonations")}
+          >
+          Hippo Donations
+        </button>
+
       </div>
     </div>
   )

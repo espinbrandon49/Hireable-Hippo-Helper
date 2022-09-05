@@ -3,16 +3,13 @@ const { User, Application, Milestone } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const applicationSeeds = require('./applicationSeeds.json');
 
-
 db.once('open', async () => {
   try {
     await User.deleteMany({});
     await Application.deleteMany({});
    
-
     await User.create(userSeeds);
   
-
     for (let i = 0; i < applicationSeeds.length; i++) {
       const { _id, applicant } = await Application.create(applicationSeeds[i]);
 

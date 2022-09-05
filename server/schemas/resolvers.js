@@ -30,11 +30,6 @@ const resolvers = {
       return Application.findOne({ _id: applicationId });
     },
 
-    //data visuals
-    //   applicationAppFrom: async (parent, { appliedFrom }) => {
-    //     const params = appliedFrom ? { appliedFrom } : {};
-    //     return Application.find(params).sort({ createdAt: -1 }).populate('milestones');
-    //   },
   },
 
   Mutation: {
@@ -151,14 +146,11 @@ const resolvers = {
       return milestoneUpdate
     },
 
-    addMilestone: async (
-      parent,
-      { applicationId, milestone, dateOfInterview }
-    ) => {
+    addMilestone: async (parent, { applicationId, milestone }) => {
       return Application.findOneAndUpdate(
         { _id: applicationId },
         {
-          $addToSet: { milestones: { milestone, dateOfInterview } },
+          $addToSet: { milestones: { milestone } },
         },
         {
           new: true,
@@ -166,18 +158,18 @@ const resolvers = {
         }
       );
     },
+    
+removeApplication: async (parent, { applicationId }) => {
+  return Application.findOneAndDelete({ _id: applicationId });
+},
 
-    removeApplication: async (parent, { applicationId }) => {
-      return Application.findOneAndDelete({ _id: applicationId });
-    },
-
-    removeMilestone: async (parent, { applicationId, milestoneId }) => {
-      return Application.findOneAndUpdate(
-        { _id: applicationId },
-        { $pull: { milestones: { _id: milestoneId } } },
-        { new: true }
-      );
-    },
+  removeMilestone: async (parent, { applicationId, milestoneId }) => {
+    return Application.findOneAndUpdate(
+      { _id: applicationId },
+      { $pull: { milestones: { _id: milestoneId } } },
+      { new: true }
+    );
+  },
   },
 };
 

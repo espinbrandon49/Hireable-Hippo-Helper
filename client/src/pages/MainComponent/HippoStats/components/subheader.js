@@ -1,6 +1,7 @@
 import React from 'react'
 
-const subheader = () => {
+const Subheader = () => {
+
   return (
     <div>
           <div>
@@ -11,4 +12,4 @@ const subheader = () => {
   )
 }
 
-export default subheader
+export default Subheader

@@ -52,18 +52,12 @@ const applicationSchema = new Schema({
       milestone: {
         type: String,
       },
-      dateOfInterview: {
-        type: Date,
-        default: Date.now,
-        get: (timestamp) => dateFormat(timestamp),
-      },
     },
   ],
   note: {
     type: String
   },
 },
-
 );
 
 const Application = model('Application', applicationSchema);

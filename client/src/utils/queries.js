@@ -27,19 +27,7 @@ export const QUERY_APPLICATIONS = gql`
       jobLink
       jobDescription
       jobType
+      note
     }
   }
 `;
-
-
-//Don't delete 
-// export const QUERY_APPLICATIONS = gql`
-//   query allApps {
-//     applications {
-//       _id
-//       applicant
-//       jobDescription
-//       appliedFrom
-//     }
-//   }
-// `;

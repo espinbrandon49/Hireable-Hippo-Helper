@@ -24,12 +24,12 @@ const typeDefs = gql`
     jobDescription: String
     jobType: String
     note: String
+    milestones: [Milestone]
   }
 
   type Milestone {
     _id: ID
     milestone: String
-    dateOfInterview: String
   }
 
   type Auth {
@@ -63,7 +63,13 @@ const typeDefs = gql`
       jobLink: String
       jobDescription: String
       jobType: String
+      
     ): Application  
+
+    addMilestone(
+      applicationId: ID
+      milestone: String
+    ): Application
     
     updateNote(
         _id: String
@@ -75,12 +81,6 @@ const typeDefs = gql`
       currentMilestone: String
     ): Application
 
-    addMilestone(
-      applicationId: ID!
-      milestone: String!
-      dateOfInterview: String
-    ): Application
-    
     removeApplication(applicationId: ID!): Application
     
     removeMilestone(applicationId: ID!, milestoneId: ID!): Application

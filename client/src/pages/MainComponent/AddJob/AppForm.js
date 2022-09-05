@@ -25,9 +25,9 @@ const ApplicationForm = () => {
 
   const handleInputChange = (event) => {
     const { name, value} = event.target;
-    console.log(event.target)
-    console.log(name)
-    console.log(value)
+    // console.log(event.target)
+    // console.log(name)
+    // console.log(value)
 
     setFormState({
       ...formState,
@@ -57,7 +57,7 @@ const ApplicationForm = () => {
     // }
 
       try {
-        console.log(formState);
+        // console.log(formState);
         const { data } = await createApplication({
           variables: {...formState},
           

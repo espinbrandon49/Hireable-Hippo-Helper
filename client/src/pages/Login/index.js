@@ -44,7 +44,7 @@ const Login = (props) => {
       <main className="flex-row justify-center mb-4">
         <div className="col-12 col-lg-10">
           <div className="card">
-            <h4 className="card-header bg-dark text-light p-2">Login</h4>
+            <h3 className="card-header title p-3 mb-1">Login</h3>
             <div className="card-body">
               {data ? (
                 <p>
@@ -52,30 +52,55 @@ const Login = (props) => {
                   <Link to="/">back to the homepage.</Link>
                 </p>
               ) : (
-                <form onSubmit={handleFormSubmit}>
-                  <input
-                    className="form-input"
-                    placeholder="Your email"
-                    name="email"
-                    type="email"
-                    value={formState.email}
-                    onChange={handleChange}
-                  />
-                  <input
-                    className="form-input"
-                    placeholder="******"
-                    name="password"
-                    type="password"
-                    value={formState.password}
-                    onChange={handleChange}
-                  />
-                  <button
-                    className="btn btn-block btn-primary"
-                    style={{ cursor: 'pointer' }}
-                    type="submit"
-                  >
-                    Submit
-                  </button>
+                <form className="p-6" onSubmit={handleFormSubmit}>
+
+                  <div className='field'>
+                    <label htmlFor='email' className='label'>
+                      Email
+                    </label>
+
+                    <div className='control'>
+                      <input
+                        className="input"
+                        placeholder="Your email"
+                        name="email"
+                        type="email"
+                        value={formState.email}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+
+
+                  <div className='field'>
+                    <label htmlFor='password' className='label'>
+                      Password
+                    </label>
+
+                    <div className='control'>
+                      <input
+                        className="input"
+                        id='password'
+                        placeholder="********"
+                        name="password"
+                        type="password"
+                        value={formState.password}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+
+                  <div className='field pt-3'>
+                    <div className='control'>
+                      <button
+                        className="button is-info"
+                        style={{ cursor: 'pointer' }}
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
                 </form>
               )}
   

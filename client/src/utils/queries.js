@@ -31,7 +31,6 @@ export const QUERY_APPLICATIONS = gql`
   }
 `;
 
-
 //Don't delete 
 // export const QUERY_APPLICATIONS = gql`
 //   query allApps {

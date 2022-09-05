@@ -1,18 +1,17 @@
 import React from "react";
 import Login from "../../Login";
 import Auth from "../../../utils/auth";
-import Subheader from "./components/subheader";
-import DataMilestones from "./components/dataMilestones";
-import DataVisuals from "./components/dataVisual";
+import Subheader from "./components/Subheader";
+import DataVisuals from "./components/DataVisual";
 
 const HippoStats = ({applications}) => {
-
   return (
     <div className="column">
       {Auth.loggedIn() ? (
         <div className="box">
-          <Subheader />
-          <DataMilestones />
+          <Subheader 
+          applications={applications}
+          />
           <DataVisuals
             applications={applications}
           />

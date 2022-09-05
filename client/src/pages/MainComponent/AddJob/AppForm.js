@@ -20,11 +20,10 @@ const ApplicationForm = () => {
     jobType: "",
     // currentMileStone: "",
   });
-  const [createApplication, { error, data}] = useMutation(ADD_APPLICATION);
-
+  const [createApplication, { error, data }] = useMutation(ADD_APPLICATION);
 
   const handleInputChange = (event) => {
-    const { name, value} = event.target;
+    const { name, value } = event.target;
     // console.log(event.target)
     // console.log(name)
     // console.log(value)
@@ -37,7 +36,6 @@ const ApplicationForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    
 
     // if (!checkForText(company)) {
     //   setErrorMessage("Company name is required.");
@@ -56,16 +54,15 @@ const ApplicationForm = () => {
     //   return;
     // }
 
-      try {
-        // console.log(formState);
-        const { data } = await createApplication({
-          variables: {...formState, applicant: Auth.getProfile().data.username,},
-          
-        });
-        console.log(data);
-      } catch (err) {
-        console.error(err);
-      }
+    try {
+      // console.log(formState);
+      const { data } = await createApplication({
+        variables: { ...formState, applicant: Auth.getProfile().data.username },
+      });
+      console.log(data);
+    } catch (err) {
+      console.error(err);
+    }
 
     // clear form values
     setFormState({
@@ -92,12 +89,8 @@ const ApplicationForm = () => {
         <form onSubmit={handleFormSubmit}>
           <div className="box">
             <div className="pb-5">
-              <h1 className='title'>
-                Welcome {formState.applicant}!
-              </h1>
-              <h2 className='subtitle'>
-                Add A New Application:
-              </h2>
+              <h1 className="title">Welcome {formState.applicant}!</h1>
+              <h2 className="subtitle">Add A New Application:</h2>
             </div>
 
             <div className="field">
@@ -111,7 +104,7 @@ const ApplicationForm = () => {
                   id="companyName"
                   value={formState.company}
                   name="company"
-                  onChange= {handleInputChange}
+                  onChange={handleInputChange}
                   type="text"
                 />
               </div>
@@ -157,8 +150,16 @@ const ApplicationForm = () => {
               </label>
 
               <div className="control">
-                <div className="select" >
-                  <select value={formState.appliedFrom} name="appliedFrom" id="jobLocation" onChange={handleInputChange}>
+                <div className="select">
+                  <select
+                    value={formState.appliedFrom}
+                    name="appliedFrom"
+                    id="jobLocation"
+                    onChange={handleInputChange}
+                  >
+                    <option value="" disabled selected>
+                      Select your option
+                    </option>
                     <option value="LinkedIn">LinkedIn</option>
                     <option value="Indeed">Indeed</option>
                     <option value="AngelList">AngelList</option>
@@ -273,7 +274,15 @@ const ApplicationForm = () => {
 
               <div className="control">
                 <div className="select">
-                  <select value={formState.jobType} name="jobType" id="jobType" onChange={handleInputChange}>
+                  <select
+                    value={formState.jobType}
+                    name="jobType"
+                    id="jobType"
+                    onChange={handleInputChange}
+                  >
+                    <option value="" disabled selected>
+                      Select your option
+                    </option>
                     <option value="In person">In person</option>
                     <option value="Hybrid">Hybrid</option>
                     <option value="Remote">Remote</option>

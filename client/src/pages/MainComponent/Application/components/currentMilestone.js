@@ -1,71 +1,123 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useMutation } from '@apollo/client';
+import { UPDATE_MILESTONE } from '../../../../utils/mutations';
+import { useParams } from 'react-router-dom';
 
 const styles = {
-  font: {
-    fontSize: "0.5em",
-
-  },
   width: {
     maxWidth: "120px",
     minWidth: "120px",
   },
 };
 
-const currentMilestone = () => {
+const CurrentMilestone = () => {
+
+  const [currentMilestone, setCurrentMilestone] = useState({
+    _id: "",
+    currentMilestone: "",
+  })
+
+  const { _id } = useParams();
+
+  const [sendMilestone, { error, data }] = useMutation(UPDATE_MILESTONE);
+
+  const submitMilestone = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await sendMilestone({
+        variables: {...currentMilestone},
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  const updateMilestone = (event) => {
+    const { value } = event.target;
+    setCurrentMilestone({
+      ...currentMilestone,
+      _id: _id,
+      currentMilestone: value,
+    });
+    submitMilestone(event);
+  }
+
+  console.log(currentMilestone)
+
   return (
     <div className='column'>
       <div className='box columns my-2'>
-        <input
-          className='button is-rounded is-info column py-6 mx-5 my-1'
+        <button
+          className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
-          id="appliedData"
           value={"Applied"}
-        />
-        <input
+          onClick={updateMilestone}
+        >
+          Applied
+        </button>
+        <button
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
-          id="phoneInterviewData"
           value={"Phone Interview"}
-        />
-        <input
+          onClick={updateMilestone}
+        >
+          Phone Interview
+        </button>
+        <button
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
-          id="technicalInterviewData"
           value={"Technical Interview"}
-        />
-        <input
+          onClick={updateMilestone}
+        >
+          Technical Interview
+        </button>
+        <button
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
-          id="inPersonInterviewData"
           value={"In Person Interview"}
-        />
-        <input
+          onClick={updateMilestone}
+        >
+          In Person Interview
+        </button>
+        <button
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
-          id="jobOfferData"
           value={"Job Offer"}
-        />
-        <input
+          onClick={updateMilestone}
+        >
+          Job Offer
+        </button>
+        <button
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
-          id="AcceptedData"
           value={"Accepted"}
-        />
-        <input
+          onClick={updateMilestone}
+        >
+          Accepted
+        </button>
+        <button
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
-          id="RejectedData"
           value={"Rejected"}
-        />
-        <input
+          onClick={updateMilestone}
+        >
+          Rejected
+        </button>
+        <button
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
-          id="hippoDonateData"
           value={"Hippo Donations"}
-        />
+          onClick={updateMilestone}
+        >
+          Hippo Donations
+        </button>
       </div>
+        {error && (
+        <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
+      )}
     </div>
   )
 }
 
-export default currentMilestone
+export default CurrentMilestone

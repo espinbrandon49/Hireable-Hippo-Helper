@@ -61,6 +61,7 @@ const AllMilestones = ({applications}) => {
             <li>Contact Phone: {application.contactPhone}</li>
           </ul>
         </div>
+
       </div>
     )
   }

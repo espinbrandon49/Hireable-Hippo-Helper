@@ -51,9 +51,7 @@ const Notes = () => {
   
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    // id = id[id.length-1];
-    // console.log(id.split("#")[0]);
-    // id = id.split("#")[0];
+
     console.log(_id, quill.getText());
     try {
       await updateNote({

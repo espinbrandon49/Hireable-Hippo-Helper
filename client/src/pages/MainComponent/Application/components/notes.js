@@ -20,8 +20,7 @@ const Notes = () => {
   const { quill, quillRef } = useQuill();
   var id = window.location.href.split("/")
   
-  // console.log(id[id.length-1]);
-  // let {id} = useParams();
+ 
   // useEffect hook to populate Quill with an initial value
   React.useEffect(() => {
     if (quill) {

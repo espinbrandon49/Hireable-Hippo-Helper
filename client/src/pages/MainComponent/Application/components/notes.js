@@ -74,20 +74,22 @@ const Notes = () => {
   if (error) return `Update error! ${error.message}`
 
   return (
-    <div className='box column'>
-      {/*Form wrapper contains toolbar, editor, submit btn */}
-      <form style={{ width: 400, height: 200 }} onSubmit={handleFormSubmit} >        
-        {/* Quill editor  */}
-        <div ref={quillRef} />
-        <button
-          className="button is-info"
-          style={{ cursor: "pointer" }}
-          name="submit"
-          type="submit"
-        >
-          Submit
-        </button>
-      </form>
+    <div className='column'>
+      <div className='box' style={{ height: "100%" }}>
+        {/*Form wrapper contains toolbar, editor, submit btn */}
+        <form style={{ width: "100%", height: "80%" }} onSubmit={handleFormSubmit} >        
+          {/* Quill editor  */}
+          <div ref={quillRef} />
+          <button
+            className="button is-info"
+            style={{ cursor: "pointer" }}
+            name="submit"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   )
 }

@@ -8,7 +8,7 @@ function HeroSection() {
   return (
     <>
       <div
-        style={{ backgroundImage: `url(${background})` }}
+        
         className="container"
       >
         <h1 className="title is-1 ">Hireable-Hippo-Helper</h1>
@@ -28,6 +28,8 @@ function HeroSection() {
           </Link>
         </div>
       )}
+
+      
     </>
 
   )

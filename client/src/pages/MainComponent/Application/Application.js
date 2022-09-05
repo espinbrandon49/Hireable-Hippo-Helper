@@ -14,13 +14,16 @@ const Application = ({applications}) => {
           <Subheader
             applications={applications}
           />
-          <CurrentMilestones />
+          <CurrentMilestones 
+            applications={applications}
+          />
           <div className='columns'>
             <AllMilestones
               applications={applications}
             />
             <Notes
-             applications={applications} />
+             applications={applications}
+            />
           </div>
         </div>
       ) : (

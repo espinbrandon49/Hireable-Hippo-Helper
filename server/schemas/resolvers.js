@@ -117,19 +117,20 @@ const resolvers = {
 
     //brandon updateNote
     updateNote: async (parent, {
-      applicant,
+      _id,
       note
     }) => {
-      return Application.findOneAndUpdate(
-        { username: applicant },
+      const noteUpdate = await Application.findOneAndUpdate(
+        { _id},
         {
-          $note: { note },
+          $set: {"note": {note} },
         },
         {
           new: true,
           runValidators: true,
         }
       );
+      return noteUpdate
     },
 
     addMilestone: async (

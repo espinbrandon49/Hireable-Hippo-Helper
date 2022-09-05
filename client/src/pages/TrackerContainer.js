@@ -10,7 +10,7 @@ import Signup from './Signup';
 import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
 import { QUERY_APPLICATIONS } from "../utils/queries";
-{/* <p key={i}>{application._id}</p>  */}
+
 
 export default function TrackerContainer() {
 

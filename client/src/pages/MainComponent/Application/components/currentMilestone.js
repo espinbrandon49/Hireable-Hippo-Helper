@@ -4,9 +4,8 @@ import { UPDATE_MILESTONE } from '../../../../utils/mutations';
 import { useParams } from 'react-router-dom';
 
 const styles = {
-  width: {
-    maxWidth: "120px",
-    minWidth: "120px",
+  button: {
+    borderRadius: "50%",
   },
 };
 
@@ -44,11 +43,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Applied"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Applied"}
           onClick={submitMilestone}
         >
@@ -58,11 +57,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Phone Interview"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Phone Interview"}
           onClick={submitMilestone}
         >
@@ -72,11 +71,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Technical Interview"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Technical Interview"}
           onClick={submitMilestone}
         >
@@ -86,11 +85,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "In Person Interview"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"In Person Interview"}
           onClick={submitMilestone}
         >
@@ -100,11 +99,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Job Offer"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Job Offer"}
           onClick={submitMilestone}
         >
@@ -114,11 +113,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Accepted"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Accepted"}
           onClick={submitMilestone}
         >
@@ -128,11 +127,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Rejected"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Rejected"}
           onClick={submitMilestone}
         >
@@ -142,11 +141,11 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Hippo Donations"
-              ? 'button is-rounded is-link column py-6 mx-5 my-2'
-              : 'button is-rounded is-info column py-6 mx-5 my-2'
-            : 'button is-rounded is-info column py-6 mx-5 my-2'
+              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
+              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
           }
-          style={styles.width}
+          style={styles.button}
           value={"Hippo Donations"}
           onClick={submitMilestone}
         >

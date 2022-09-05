@@ -62,7 +62,7 @@ const HippoStats = ({ applications }) => {
             <Subheader applications={applications} />
           </div>
 
-          <div className="box">
+          <div>
             <DataMilestones currentDataPage={currentDataPage} handleDataPageChange={handleDataPageChange} />
           </div>
 

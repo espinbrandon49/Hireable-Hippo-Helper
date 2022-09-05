@@ -18,7 +18,7 @@ const dataVisual = ({applications }) => {
           
             
             
-            <p key={i}>{application.note}</p> 
+             <p key={i}>{application._id}</p> 
             
           ))
         }

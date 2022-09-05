@@ -93,7 +93,7 @@ const ApplicationForm = () => {
           <div className="box">
             <div className="pb-5">
               <h1 className='title'>
-                Welcome {formState.applicant}!
+                Welcome {Auth.getProfile().data.username}!
               </h1>
               <h2 className='subtitle'>
                 Add A New Application:
@@ -159,6 +159,9 @@ const ApplicationForm = () => {
               <div className="control">
                 <div className="select" >
                   <select value={formState.appliedFrom} name="appliedFrom" id="jobLocation" onChange={handleInputChange}>
+                    <option value="" disabled selected>
+                      Select your option
+                    </option>
                     <option value="LinkedIn">LinkedIn</option>
                     <option value="Indeed">Indeed</option>
                     <option value="AngelList">AngelList</option>
@@ -274,6 +277,9 @@ const ApplicationForm = () => {
               <div className="control">
                 <div className="select">
                   <select value={formState.jobType} name="jobType" id="jobType" onChange={handleInputChange}>
+                    <option value="" disabled selected>
+                      Select your option
+                    </option>
                     <option value="In person">In person</option>
                     <option value="Hybrid">Hybrid</option>
                     <option value="Remote">Remote</option>

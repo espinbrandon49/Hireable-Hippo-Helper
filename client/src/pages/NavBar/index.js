@@ -57,7 +57,7 @@ function NavTabs({ currentPage, handlePageChange }) {
                   : "navbar-item mx-1"
               }
             >
-              Application
+              My Applications
             </a>
             <a
               href="#AppForm"
@@ -69,7 +69,7 @@ function NavTabs({ currentPage, handlePageChange }) {
                   : "navbar-item mx-1"
               }
             >
-              AppForm
+              Add New
             </a>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useMutation } from '@apollo/client';
 import { UPDATE_MILESTONE } from '../../../../utils/mutations';
 import { useParams } from 'react-router-dom';
@@ -12,38 +12,25 @@ const styles = {
 
 const CurrentMilestone = () => {
 
-  const [currentMilestone, setCurrentMilestone] = useState({
-    _id: "",
-    currentMilestone: "",
-  })
-
   const { _id } = useParams();
 
-  const [sendMilestone, { error, data }] = useMutation(UPDATE_MILESTONE);
+  const [updateMilestone, { error, data }] = useMutation(UPDATE_MILESTONE);
 
   const submitMilestone = async (event) => {
     event.preventDefault();
 
+    const { value } = event.target;
+ 
     try {
-      const { data } = await sendMilestone({
-        variables: {...currentMilestone},
+      console.log(_id, value)
+      await updateMilestone({
+        variables: { _id: _id, currentMilestone: value },
       });
+      console.log(updateMilestone)
     } catch (err) {
       console.error(err);
     }
   }
-
-  const updateMilestone = (event) => {
-    const { value } = event.target;
-    setCurrentMilestone({
-      ...currentMilestone,
-      _id: _id,
-      currentMilestone: value,
-    });
-    submitMilestone(event);
-  }
-
-  console.log(currentMilestone)
 
   return (
     <div className='column'>
@@ -52,7 +39,7 @@ const CurrentMilestone = () => {
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
           value={"Applied"}
-          onClick={updateMilestone}
+          onClick={submitMilestone}
         >
           Applied
         </button>
@@ -60,7 +47,7 @@ const CurrentMilestone = () => {
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
           value={"Phone Interview"}
-          onClick={updateMilestone}
+          onClick={submitMilestone}
         >
           Phone Interview
         </button>
@@ -68,7 +55,7 @@ const CurrentMilestone = () => {
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
           value={"Technical Interview"}
-          onClick={updateMilestone}
+          onClick={submitMilestone}
         >
           Technical Interview
         </button>
@@ -76,7 +63,7 @@ const CurrentMilestone = () => {
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
           value={"In Person Interview"}
-          onClick={updateMilestone}
+          onClick={submitMilestone}
         >
           In Person Interview
         </button>
@@ -84,7 +71,7 @@ const CurrentMilestone = () => {
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
           value={"Job Offer"}
-          onClick={updateMilestone}
+          onClick={submitMilestone}
         >
           Job Offer
         </button>
@@ -92,7 +79,7 @@ const CurrentMilestone = () => {
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
           value={"Accepted"}
-          onClick={updateMilestone}
+          onClick={submitMilestone}
         >
           Accepted
         </button>
@@ -100,7 +87,7 @@ const CurrentMilestone = () => {
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
           value={"Rejected"}
-          onClick={updateMilestone}
+          onClick={submitMilestone}
         >
           Rejected
         </button>
@@ -108,7 +95,7 @@ const CurrentMilestone = () => {
           className='button is-rounded is-info column py-6 mx-5 my-2'
           style={styles.width}
           value={"Hippo Donations"}
-          onClick={updateMilestone}
+          onClick={submitMilestone}
         >
           Hippo Donations
         </button>

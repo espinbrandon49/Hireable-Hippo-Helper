@@ -10,7 +10,6 @@ import Signup from './Signup';
 import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
 import { QUERY_APPLICATIONS } from "../utils/queries";
-{/* <p key={i}>{application._id}</p>  */}
 
 export default function TrackerContainer() {
 
@@ -20,13 +19,16 @@ export default function TrackerContainer() {
 
     var filteredApps = [];
 
-        console.log(data)
-        if (!data) {
-            console.log('meow')
-        }
-        if (Auth.getProfile() !== null) {
+        try {
+            console.log(filteredApps)
             filteredApps = applications.filter((application) => application.applicant === Auth.getProfile().data.username);
+        } catch (err) {
+            console.log(err)
         }
+
+        // if (Auth.getProfile() !== null) {
+        //     filteredApps = applications.filter((application) => application.applicant === Auth.getProfile().data.username);
+        // } 
 
     // console.log("after " + JSON.stringify(filteredApps));
 

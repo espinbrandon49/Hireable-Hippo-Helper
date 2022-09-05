@@ -19,7 +19,8 @@ const Notes = () => {
   // initiate  Quill
   const { quill, quillRef } = useQuill();
   // var id = window.location.href.split("/")
-  const {id} = useParams();
+  const {_id} = useParams();
+  console.log(_id);
   
  
   // useEffect hook to populate Quill with an initial value
@@ -53,10 +54,10 @@ const Notes = () => {
     // id = id[id.length-1];
     // console.log(id.split("#")[0]);
     // id = id.split("#")[0];
-    console.log(id, quill.getText());
+    console.log(_id, quill.getText());
     try {
       await updateNote({
-        variables: { _id: id, note: quill.getText() },
+        variables: { _id: _id, note: quill.getText() },
       });
       console.log("Success");
     } catch (err) {

@@ -19,11 +19,16 @@ export default function TrackerContainer() {
 
     var filteredApps = [];
 
-    // console.log(data)
-
-        if (Auth.getProfile() !== null) {
+        try {
+            console.log(filteredApps)
             filteredApps = applications.filter((application) => application.applicant === Auth.getProfile().data.username);
+        } catch (err) {
+            console.log(err)
         }
+
+        // if (Auth.getProfile() !== null) {
+        //     filteredApps = applications.filter((application) => application.applicant === Auth.getProfile().data.username);
+        // } 
 
     // console.log("after " + JSON.stringify(filteredApps));
 

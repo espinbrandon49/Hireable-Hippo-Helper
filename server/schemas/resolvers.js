@@ -115,6 +115,23 @@ const resolvers = {
       return application;
     },
 
+    //brandon updateNote
+    updateNote: async (parent, {
+      applicant,
+      note
+    }) => {
+      return Application.findOneAndUpdate(
+        { username: applicant },
+        {
+          $note: { note },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+    },
+
     addMilestone: async (
       parent,
       { applicationId, milestone, dateOfInterview }

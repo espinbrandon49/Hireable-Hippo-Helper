@@ -18,7 +18,8 @@ const Notes = () => {
   // })
   // initiate  Quill
   const { quill, quillRef } = useQuill();
-  var id = window.location.href.split("/")
+  // var id = window.location.href.split("/")
+  const {id} = useParams();
   
  
   // useEffect hook to populate Quill with an initial value
@@ -49,9 +50,9 @@ const Notes = () => {
   
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    id = id[id.length-1];
-    console.log(id.split("#")[0]);
-    id = id.split("#")[0];
+    // id = id[id.length-1];
+    // console.log(id.split("#")[0]);
+    // id = id.split("#")[0];
     console.log(id, quill.getText());
     try {
       await updateNote({

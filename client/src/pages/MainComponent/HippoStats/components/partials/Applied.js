@@ -1,61 +1,47 @@
 import React from 'react'
 
-const Applied = ({applications}) => {
+const Applied = ({ applications }) => {
   console.log(applications)
 
-  let linkedIn = 0; let indeed = 0; let angelList = 0; let handshake = 0; let monster = 0; let zipRecruiter = 0; let jobFair = 0; let website = 0; let craigslist = 0; let other = 0
-  
-  const applicationData = applications.map((app, i) => {
+  const appliedFrom = {
+    linkedIn: 0,
+    indeed: 0,
+    angelList: 0,
+    handshake: 0,
+    monster: 0,
+    zipRecruiter: 0,
+    jobFair: 0,
+    website: 0,
+    craigsList: 0,
+    other: 0
+  }
 
-    if (app.appliedFrom === "LinkedIn") {
-      linkedIn++
-    }
-
-    if (app.appliedFrom === "Indeed") {
-      indeed++
-    }
-
-    if (app.appliedFrom === "AngelList") {
-      angelList++
-    }
-
-    if (app.appliedFrom === "Handshake") {
-      handshake++
-    }
-
-    if (app.appliedFrom === "Monster") {
-      monster++
-    }
-    if (app.appliedFrom === "Zip Recruiter") {
-      zipRecruiter++
-    }
-    if (app.appliedFrom === "Job Fair") {
-      jobFair++
-    }
-    if (app.appliedFrom === "Company Website") {
-      website++
-    }
-    if (app.appliedFrom === "Craigslist") {
-      craigslist++
-    }
-    if (app.appliedFrom === "Other") {
-      other++
-    }
+   applications.map((app, i) => {
+    app.appliedFrom === "LinkedIn" && appliedFrom.linkedIn++
+    app.appliedFrom === "Indeed" && appliedFrom.indeed++
+    app.appliedFrom === "AngelList" && appliedFrom.angelList++
+    app.appliedFrom === "Handshake" && appliedFrom.handshake++
+    app.appliedFrom === "Monster" && appliedFrom.monster++
+    app.appliedFrom === "Zip Recruiter" && appliedFrom.zipRecruiter++
+    app.appliedFrom === "Job Fair" && appliedFrom.jobFair++
+    app.appliedFrom === "Company Website" && appliedFrom.website++
+    app.appliedFrom === "Craigslist" && appliedFrom.craigslist++
+    app.appliedFrom === "Other" && appliedFrom.other++
   })
-    
+  
   return (
     <div>
       <h4>APPLIED</h4>
-      Linkedin: {linkedIn} <br/>
-      Indeed: {indeed} <br/>
-      AngelList: {angelList} <br/>
-      Handshake: {handshake} <br/>
-      Monster: {monster} <br/>
-      ZipRecruiter: {zipRecruiter} <br/>
-      Job Fair: {jobFair} <br/>
-      Company Website: {website} <br/>
-      Craigslist: {craigslist} <br/>
-      Other: {other} <br/>
+      Linkedin: {appliedFrom.linkedIn} <br />
+      Indeed: {appliedFrom.indeed} <br />
+      AngelList: {appliedFrom.angelList} <br />
+      Handshake: {appliedFrom.handshake} <br />
+      Monster: {appliedFrom.monster} <br />
+      ZipRecruiter: {appliedFrom.zipRecruiter} <br />
+      Job Fair: {appliedFrom.jobFair} <br />
+      Company Website: {appliedFrom.website} <br />
+      Craigslist: {appliedFrom.craigslist} <br />
+      Other: {appliedFrom.other} <br />
     </div>
   )
 }

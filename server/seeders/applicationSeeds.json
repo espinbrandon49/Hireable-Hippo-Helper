@@ -12,8 +12,7 @@
     "currentMilestone": "Applied",
     "milestones": [
       {
-        "milestone": "applied",
-        "date": "09/14/2022"
+        "milestone": "applied"
       }
     ]
   },
@@ -30,16 +29,13 @@
     "currentMilestone": "In Person Interview",
     "milestones": [
       {
-        "milestone": "applied",
-        "date": "10/14/2022"
+        "milestone": "applied"
       },
       {
-        "milestone": "phone interview",
-        "date": "10/17/2022"
+        "milestone": "phone interview"
       },
       {
-        "milestone": "in-person Interview",
-        "date": "10/21/2022"
+        "milestone": "in-person Interview"
       }
     ]
   },
@@ -56,20 +52,16 @@
     "currentMilestone": "Job Offer",
     "milestones": [
       {
-        "milestone": "Applied",
-        "date": "09/08/2022"
+        "milestone": "Applied"
       },
       {
-        "milestone": "Phone Interview",
-        "date": "09/15/2022"
+        "milestone": "Phone Interview"
       },
       {
-        "milestone": "In-person Interview",
-        "date": "09/15/2022"
+        "milestone": "In-person Interview"
       },
       {
-        "milestone": "Job Offer",
-        "date": "9/16/2022"
+        "milestone": "Job Offer"
       }
     ]
   },
@@ -86,8 +78,7 @@
     "currentMilestone": "Applied",
     "milestones": [
       {
-        "milestone": "Rejection",
-        "date": "11/14/2021"
+        "milestone": "Rejection"
       }
     ]
   },
@@ -104,8 +95,7 @@
     "currentMilestone": "Applied",
     "milestones": [
       {
-        "milestone": "applied",
-        "date": "09/14/2022"
+        "milestone": "applied"
       }
     ]
   },
@@ -122,8 +112,7 @@
     "currentMilestone": "Applied",
     "milestones": [
       {
-        "milestone": "applied",
-        "date": "09/14/2022"
+        "milestone": "applied"
       }
     ]
   }

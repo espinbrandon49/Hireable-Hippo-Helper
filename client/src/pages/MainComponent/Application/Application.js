@@ -1,8 +1,8 @@
 import React from "react";
 import Auth from "../../../utils/auth";
 import Login from "../../Login";
-import Subheader from './components/subheader'
-import CurrentMilestones from './components/currentMilestone'
+import Subheader from './components/Subheader'
+import CurrentMilestones from './components/CurrentMilestone'
 import AllMilestones from './components/AllMilestones'
 import Notes from './components/Notes'
 

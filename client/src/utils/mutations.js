@@ -67,15 +67,25 @@ export const ADD_APPLICATION = gql`
 
 export const UPDATE_NOTE = gql`
       mutation updateNote(
-        $applicant: String, $note: String) {
+        $_id: String, $note: String) {
         updateNote(
-          applicant: $applicant,
+          _id: $_id,
           note: $note) {        
           _id
-          applicant
           note
         }
       }`;
+
+export const UPDATE_MILESTONE = gql`
+  mutation updateMilestone(
+    $_id: String, $currentMilestone: String) {
+    updateMilestone(
+      _id: $_id,
+      currentMilestone: $currentMilestone) {        
+      _id
+      currentMilestone
+    }
+}`;
 
 
 

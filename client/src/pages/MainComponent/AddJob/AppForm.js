@@ -22,25 +22,12 @@ const ApplicationForm = () => {
   });
   const [createApplication, { error, data}] = useMutation(ADD_APPLICATION);
 
-  // const [company, setCompany] = useState("");
-  // const [title, setTitle] = useState("");
-  // const [salary, setSalary] = useState("");
-  // const [location, setLocation] = useState("");
-  // const [contactName, setContactName] = useState("");
-  // const [contactEmail, setContactEmail] = useState("");
-  // const [contactPhone, setContactPhone] = useState("");
-  // const [jobLink, setJobLink] = useState("");
-  // const [jobDescription, setJobDescription] = useState("");
-
-  // const [errorMessage, setErrorMessage] = useState("");
-
-  // console.log(newApplication)
 
   const handleInputChange = (event) => {
     const { name, value} = event.target;
-    console.log(event.target)
-    console.log(name)
-    console.log(value)
+    // console.log(event.target)
+    // console.log(name)
+    // console.log(value)
 
     setFormState({
       ...formState,
@@ -70,10 +57,10 @@ const ApplicationForm = () => {
     // }
 
       try {
-        console.log(formState);
+        // console.log(formState);
         const { data } = await createApplication({
           variables: {...formState},
-          // , applicant: Auth.getProfile().data.username
+          
         });
       } catch (err) {
         console.error(err);

@@ -112,19 +112,38 @@ const resolvers = {
 
     //brandon updateNote
     updateNote: async (parent, {
-      applicant,
+      _id,
       note
     }) => {
-      return Application.findOneAndUpdate(
-        { username: applicant },
+      const noteUpdate = await Application.findOneAndUpdate(
+        { _id},
         {
-          $note: { note },
+          $set: {"note": {note} },
         },
         {
           new: true,
           runValidators: true,
         }
       );
+      return noteUpdate
+    },
+
+    // Update Current Milestone
+    updateMilestone: async (parent, {
+      _id,
+      milestone
+    }) => {
+      const milestoneUpdate = await Application.findOneAndUpdate(
+        { _id },
+        {
+          $set: {"currentMilestone": {milestone}},
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+      return milestoneUpdate
     },
 
     addMilestone: async (parent, { applicationId, milestone }) => {

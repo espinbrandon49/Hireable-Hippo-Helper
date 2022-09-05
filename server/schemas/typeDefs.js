@@ -72,9 +72,14 @@ const typeDefs = gql`
     ): Application
     
     updateNote(
-        applicant: String
-        note:String
-      ): Application
+        _id: String
+        note: String
+    ): Application
+
+    updateMilestone(
+      _id: String
+      currentMilestone: String
+    ): Application
 
     removeApplication(applicationId: ID!): Application
     

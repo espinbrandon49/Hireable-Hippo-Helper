@@ -14,6 +14,7 @@ import { QUERY_APPLICATIONS } from "../utils/queries";
 export default function TrackerContainer() {
 
     const { loading, data } = useQuery(QUERY_APPLICATIONS);
+
     const applications = data?.applications || [];
 
     var filteredApps = [];
@@ -27,8 +28,11 @@ export default function TrackerContainer() {
     
         console.log(data)
 
+
     const [currentPage, setCurrentPage] = useState('Homepage');
 
+    if (loading) return 'Updating';
+    
     const renderPage = () => {
         if (currentPage === 'Homepage') {
             return <Homepage />;

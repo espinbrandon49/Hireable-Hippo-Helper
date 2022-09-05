@@ -44,7 +44,6 @@ const typeDefs = gql`
     allApps: [Application]
     applications(username: String): [Application]
     application(applicationId: ID!): Application
-
   }
 
   type Mutation {
@@ -64,13 +63,7 @@ const typeDefs = gql`
       jobLink: String
       jobDescription: String
       jobType: String
-      
     ): Application  
-
-    addMilestone(
-      applicationId: String
-      milestone: String
-    ): Application
     
     updateNote(
       _id: String
@@ -80,6 +73,11 @@ const typeDefs = gql`
     updateMilestone(
       _id: String
       currentMilestone: String
+    ): Application
+
+    addMilestone(
+      _id: String
+      milestone: String
     ): Application
 
     removeApplication(applicationId: ID!): Application

@@ -93,7 +93,7 @@ const ApplicationForm = () => {
           <div className="box">
             <div className="pb-5">
               <h1 className='title'>
-                Welcome {formState.applicant}!
+                Welcome {Auth.getProfile().data.username}!
               </h1>
               <h2 className='subtitle'>
                 Add A New Application:

@@ -131,12 +131,12 @@ const resolvers = {
     // Update Current Milestone
     updateMilestone: async (parent, {
       _id,
-      milestone
+      currentMilestone
     }) => {
       const milestoneUpdate = await Application.findOneAndUpdate(
         { _id },
         {
-          $set: { "currentMilestone": milestone },
+          $set: { "currentMilestone": currentMilestone },
         },
         {
           new: true,

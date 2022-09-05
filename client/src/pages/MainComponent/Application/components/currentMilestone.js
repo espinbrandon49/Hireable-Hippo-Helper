@@ -19,12 +19,14 @@ const CurrentMilestone = () => {
   const submitMilestone = async (event) => {
     event.preventDefault();
 
-    const { value } = event.target;
+    const currentMilestone  = event.target.value;
+    console.log(_id, currentMilestone);
+    console.log(event.target.value);
  
     try {
-      console.log(_id, value)
+      // console.log(_id, currentMilestone)
       await updateMilestone({
-        variables: { _id: _id, currentMilestone: value },
+        variables: { _id: _id, currentMilestone: currentMilestone },
       });
       console.log(updateMilestone)
     } catch (err) {

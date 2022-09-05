@@ -1,7 +1,7 @@
 import React from "react";
 import Auth from "../../../utils/auth";
 import Login from "../../Login";
-import Subheader from './components/Subheader'
+import Subheader from './components/subheader'
 import CurrentMilestones from './components/currentMilestone'
 import AllMilestones from './components/AllMilestones'
 import Notes from './components/Notes'
@@ -19,7 +19,8 @@ const Application = ({applications}) => {
             <AllMilestones
               applications={applications}
             />
-            <Notes />
+            <Notes
+             applications={applications} />
           </div>
         </div>
       ) : (

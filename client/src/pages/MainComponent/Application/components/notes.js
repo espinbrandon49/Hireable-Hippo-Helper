@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import Auth from "../../../../utils/auth";
 // import react-Quill
 import { useQuill } from 'react-quilljs';
@@ -9,46 +9,30 @@ import 'quill/dist/quill.snow.css'
 import { useMutation } from '@apollo/client';
 import { UPDATE_NOTE } from "../../../../utils/mutations"
 
-const Notes = () => {
-  
-  const [updateNote, {data, loading, error }] = useMutation(UPDATE_NOTE);
-  // const [formState, setFormState] = useState({
-  //   applicant: Auth.getProfile().data.username,
-  //   notes: "" 
-  // })
+const Notes = ({ applications }) => {
+  console.log(applications)
+
+  const [updateNote, { data, loading, error }] = useMutation(UPDATE_NOTE);
+
   // initiate  Quill
   const { quill, quillRef } = useQuill();
+
   // var id = window.location.href.split("/")
-  const {_id} = useParams();
+  const { _id } = useParams();
   console.log(_id);
-  
- 
+
+  //filter by single application
+  const application = applications.filter((application) => application._id === _id)[0];
+  console.log(application.note)
+
   // useEffect hook to populate Quill with an initial value
   React.useEffect(() => {
     if (quill) {
-      quill.clipboard.dangerouslyPasteHTML('<h1>Hipponotes</h1>');
+      quill.clipboard.dangerouslyPasteHTML(`<h2>${application.note}</h2>`);
     }
   }, [quill]);
 
-  // useEffect hook to set the state using the text value in Quill=editor on change
-  //resembles handleInputChange but more hip-po
-  // React.useEffect(() => {
-  //   if (quill) {
-  //     quill.on('text-change', (delta, oldDelta, source) => {
-  //       // console.log('Text change!');
-  //       // console.log(typeof quill.getText()); // Get text only
-  //       // console.log(quill.getContents()); // Get delta contents
-  //       // console.log(quill.root.innerHTML); // Get innerHTML using quill
-  //       // console.log(quillRef.current.firstChild.innerHTML); // Get innerHTML using quillRef
-  //       setFormState({
-  //         applicant: Auth.getProfile().data.username,
-  //         notes: quill.getText(),
-  //       });
-  //     });
-  //   }
-  // }, [quill]);
-  
-  
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -61,13 +45,6 @@ const Notes = () => {
     } catch (err) {
       console.error(err);
     }
-      // try {
-      //   const {data} = await updateNote({
-      //     variables: {...formState}
-      //   });
-      // } catch (error) {
-      //   console.error(error);
-      // }
   };
 
   if (loading) return 'Updating';
@@ -76,7 +53,7 @@ const Notes = () => {
   return (
     <div className='box column'>
       {/*Form wrapper contains toolbar, editor, submit btn */}
-      <form style={{ width: 400, height: 200 }} onSubmit={handleFormSubmit} >        
+      <form style={{ width: 400, height: 200 }} onSubmit={handleFormSubmit} >
         {/* Quill editor  */}
         <div ref={quillRef} />
         <button

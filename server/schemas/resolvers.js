@@ -133,6 +133,24 @@ const resolvers = {
       return noteUpdate
     },
 
+    // Update Current Milestone
+    updateMilestone: async (parent, {
+      _id,
+      milestone
+    }) => {
+      const milestoneUpdate = await Application.findOneAndUpdate(
+        { _id },
+        {
+          $set: {"currentMilestone": {milestone}},
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+      return milestoneUpdate
+    },
+
     addMilestone: async (
       parent,
       { applicationId, milestone, dateOfInterview }

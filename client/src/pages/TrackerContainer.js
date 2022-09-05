@@ -56,14 +56,7 @@ export default function TrackerContainer() {
 
     const handlePageChange = (page) => setCurrentPage(page);
 
-    if (currentPage === 'Homepage' || currentPage === 'AppForm' || currentPage === 'Login') {
-        return (
-            <div>
-                <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
-                {renderPage()}
-            </div>
-        );
-    } else {
+    if (currentPage === 'HippoStats' || currentPage === 'Application') {
         return (
             <div>
                 <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
@@ -73,6 +66,12 @@ export default function TrackerContainer() {
                 </div>
             </div>
         );
+    } else {
+        return (
+            <div>
+                <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
+                {renderPage()}
+            </div>
+        );
     }
-
 }

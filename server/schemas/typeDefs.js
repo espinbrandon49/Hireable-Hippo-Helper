@@ -68,7 +68,12 @@ const typeDefs = gql`
     updateNote(
         _id: String
         note: String
-      ): Application
+    ): Application
+
+    updateMilestone(
+      _id: String
+      currentMilestone: String
+    ): Application
 
     addMilestone(
       applicationId: ID!

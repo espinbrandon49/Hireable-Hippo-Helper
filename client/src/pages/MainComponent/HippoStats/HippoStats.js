@@ -3,14 +3,11 @@ import Login from "../../Login";
 import Auth from "../../../utils/auth";
 import Subheader from "./components/Subheader";
 import DataMilestones from "./components/DataMilestones";
-import Applied from './components/partials/Applied'
-import PhoneInterview from './components/partials/PhoneInterview';
-import TechnicalInterview from './components/partials/TechnicalInterview';
-import InPersonInterview from '././components/partials/InPersonInterview';
-import JobOffer from './components/partials/JobOffer';
-import Accepted from './components/partials/Accepted'
-import Rejected from './components/partials/Rejected';
-import HippoDonations from './components/partials/HippoDonations';
+import AppliedFrom from './components/partials/AppliedFrom'
+import AppliedTo from './components/partials/AppliedTo';
+import AppliedVsInterviews from './components/partials/AppliedVsInterviews';
+import AppliedVsRejected from './components/partials/AppliedVsRejected';
+import CurrentMilestones from './components/partials/CurrentMilestones';
 
 const styles = {
   box: {
@@ -21,32 +18,23 @@ const styles = {
 const HippoStats = ({ applications }) => {
   console.log(applications)
 
-  const [currentDataPage, setCurrentDataPage] = useState('Accepted');
+  const [currentDataPage, setCurrentDataPage] = useState('');
 
   const renderDataPage = () => {
-    if (currentDataPage === 'Applied') {
-      return <Applied applications={applications} />;
+    if (currentDataPage === 'AppliedFrom') {
+      return <AppliedFrom applications={applications} />;
     }
-    if (currentDataPage === 'PhoneInterview') {
-      return <PhoneInterview applications={applications} />;
+    if (currentDataPage === 'AppliedTo') {
+      return <AppliedTo applications={applications} />;
     }
-    if (currentDataPage === 'TechnicalInterview') {
-      return <TechnicalInterview applications={applications} />;
+    if (currentDataPage === 'AppliedVsInterviews') {
+      return <AppliedVsInterviews applications={applications} />;
     }
-    if (currentDataPage === 'InPersonInterview') {
-      return <InPersonInterview applications={applications} />;
+    if (currentDataPage === 'AppliedVsRejected') {
+      return <AppliedVsRejected applications={applications} />;
     }
-    if (currentDataPage === 'JobOffer') {
-      return <JobOffer applications={applications} />;
-    }
-    if (currentDataPage === 'Accepted') {
-      return <Accepted applications={applications} />;
-    }
-    if (currentDataPage === 'Rejected') {
-      return <Rejected applications={applications} />;
-    }
-    if (currentDataPage === 'HippoDonations') {
-      return <HippoDonations applications={applications} />;
+    if (currentDataPage === 'CurrentMilestones') {
+      return <CurrentMilestones applications={applications} />;
     }
   };
 
@@ -56,7 +44,7 @@ const HippoStats = ({ applications }) => {
     <div className="column">
       {Auth.loggedIn() ? (
 
-        <div className="column">
+        <div className="box">
 
           <div >
             <Subheader applications={applications} />

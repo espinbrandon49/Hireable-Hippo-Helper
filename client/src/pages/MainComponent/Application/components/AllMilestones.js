@@ -43,8 +43,6 @@ const AllMilestones = ({ applications }) => {
             <li className='has-text-weight-bold'><a>Contact Email</a></li>
             <li className='has-text-weight-bold'><a>Contact Phone</a></li>
           </ul>
-          {/* current Milestone will be in the buttons bar       */}
-          {/* notes will be in notes */}
         </div>
     )
   } else {

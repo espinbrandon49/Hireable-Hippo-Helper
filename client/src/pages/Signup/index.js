@@ -54,7 +54,10 @@ const Signup = () => {
               </p>
             ) : (
               <form className="p-6" onSubmit={handleFormSubmit}>
-
+              <p>
+                Already have an account?{' '}
+                <Link to="/Login">login here.</Link>
+              </p>
                 {/* <input
                   className="form-input"
                   placeholder="Your username"

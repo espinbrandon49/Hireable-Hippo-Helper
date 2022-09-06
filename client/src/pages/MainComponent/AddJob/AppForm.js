@@ -215,7 +215,6 @@ const ApplicationForm = () => {
                   <i className="fas fa-exclamation-triangle"></i>
                 </span>
               </div>
-              <p className="help is-danger">This email is invalid</p>
             </div>
 
             <div className="field">

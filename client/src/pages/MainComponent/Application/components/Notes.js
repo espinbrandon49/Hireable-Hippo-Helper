@@ -56,11 +56,11 @@ const Notes = ({ applications }) => {
   if (error) return `Update error! ${error.message}`
 
   return (
-    <form className='column is-half' onSubmit={handleFormSubmit} >
+    <form className='column' onSubmit={handleFormSubmit} >
       {/* Quill editor  */}
       <div style={styles.note} ref={quillRef} />
       <button
-        className="button is-info"
+        className="button is-info mt-3"
         style={{ cursor: "pointer" }}
         name="submit"
         type="submit"

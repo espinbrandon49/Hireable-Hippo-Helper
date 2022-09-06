@@ -3,14 +3,14 @@ import { useMutation } from '@apollo/client';
 import { UPDATE_MILESTONE, ADD_MILESTONE } from '../../../../utils/mutations';
 import { useParams } from 'react-router-dom';
 
-const styles = {
-  radii: {
-    borderBottomRightRadius: '50%',
-    borderTopRightRadius: '50%',
-    borderTopLefttRadius: '0%',
-    borderBottomLeftRadius: '0%',
-  },
-};
+// const styles = {
+//   radii: {
+//     borderBottomRightRadius: '50%',
+//     borderTopRightRadius: '50%',
+//     borderTopLefttRadius: '0%',
+//     borderBottomLeftRadius: '0%',
+//   },
+// };
 
 const CurrentMilestone = ({applications}) => {
   let application;
@@ -53,7 +53,7 @@ const CurrentMilestone = ({applications}) => {
           }
           value={"Applied"}
           onClick={submitMilestone}
-          style={styles.radii}
+          // style={styles.radii}
         >
           Applied
         </button>
@@ -120,7 +120,7 @@ const CurrentMilestone = ({applications}) => {
           }
           value={"Accepted"}
           onClick={submitMilestone}
-          style={styles.circle}
+          // style={styles.circle}
         >
           Accepted
         </button>

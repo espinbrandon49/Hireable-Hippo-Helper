@@ -21,23 +21,32 @@ const CurrentMilestone = ({applications}) => {
   console.log(`DATAA: ${dataA}`)
 
   const application = applications.filter((application) => application._id === _id)[0];
+  console.log(application.milestones)
+
+  let milestones = application.milestones
 
   const submitMilestone = async (event) => {
     event.preventDefault();
 
     const currentMilestone = event.target.value;
+    const milestonesPass = event.target.value
     // console.log(_id, currentMilestone);
     // console.log(event.target.value);
  
+    // let milestonesArray = application.milestones
+    milestones.concat(milestonesPass)
+    
+    // console.log(application.milestones)
+    // console.log('meow')
+
     try {
       // console.log(_id, currentMilestone)
       await updateMilestone({
         variables: { _id: _id, currentMilestone: currentMilestone },
       });
       await addMilestone({
-        variables: { _id: _id, milestones: currentMilestone },
+        variables: { _id: _id, milestones: milestones },
       });
-      console.log(updateMilestone)
     } catch (err) {
       console.error(err);
     }  

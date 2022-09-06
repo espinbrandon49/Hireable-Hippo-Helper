@@ -150,9 +150,7 @@ const resolvers = {
       const addMilestone = await Application.findOneAndUpdate(
         { _id },
         {
-          $addToset: {
-            milestones: { milestone}
-          },
+          $set: { "milestones" : milestones},
         },
         {
           new: true,

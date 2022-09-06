@@ -10,8 +10,8 @@ const Subheader = ({applications}) => {
   if (!application) {
     return (
       <div>
-        <h1 className='title'>Company:</h1>
-        <h2 className='subtitle'>Job Title:</h2>
+        <h1 className='title'>Choose or Add New Application</h1>
+        {/* <h2 className='subtitle'>Job Title:</h2> */}
       </div>
     )
   } else {

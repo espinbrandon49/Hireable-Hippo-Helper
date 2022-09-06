@@ -43,8 +43,6 @@ const AllMilestones = ({ applications }) => {
             <li className='has-text-weight-bold'><a>Contact Email</a></li>
             <li className='has-text-weight-bold'><a>Contact Phone</a></li>
           </ul>
-          {/* current Milestone will be in the buttons bar       */}
-          {/* notes will be in notes */}
         </div>
     )
   } else {
@@ -87,15 +85,17 @@ const AllMilestones = ({ applications }) => {
         Milestones
       </p>
       <ul className="menu-list">
-        <li><a>{application.currentMilestone}</a></li>
-        <li><a>{application.currentMilestone}</a></li>
-        <li><a>{application.currentMilestone}</a></li>
-      </ul>
       <p className="menu-label">
-        {application.milestones}
+        {application.milestones && 
+          application.milestones.map((milestone, i) => (
+            <h6 key={"milestone"+i} className="menu-label is-size-7">
+              {milestone}
+            </h6>
+          ))
+          }
       </p>
-      {/* current Milestone will be in the buttons bar       */}
-      {/* notes will be in notes */}
+      </ul>
+
     </div>
 
     )

@@ -18,16 +18,14 @@ const ApplicationForm = () => {
     jobLink: "",
     jobDescription: "",
     jobType: "",
-    // currentMileStone: "",
+
   });
   const [createApplication, { error, data}] = useMutation(ADD_APPLICATION);
 
 
   const handleInputChange = (event) => {
     const { name, value} = event.target;
-    // console.log(event.target)
-    // console.log(name)
-    // console.log(value)
+
 
     setFormState({
       ...formState,
@@ -37,27 +35,8 @@ const ApplicationForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    
-
-    // if (!checkForText(company)) {
-    //   setErrorMessage("Company name is required.");
-    //   return;
-    // }
-    // if (!checkForText(title)) {
-    //   setErrorMessage("Job title is required.");
-    //   return;
-    // }
-    // if (!validateEmail(contactEmail)) {
-    //   setErrorMessage("Email is invalid.");
-    //   return;
-    // }
-    // if (!checkForText(jobDescription)) {
-    //   setErrorMessage("Job Description is required.");
-    //   return;
-    // }
 
       try {
-        // console.log(formState);
         const { data } = await createApplication({
           variables: {...formState, applicant: Auth.getProfile().data.username,},
           
@@ -79,9 +58,7 @@ const ApplicationForm = () => {
       jobTitle: "",
       jobLink: "",
       jobDescription: "",
-      // dateApplied: "",
       jobType: "",
-      // currentMileStone: "",
     });
     window.location.reload();
   };
@@ -299,28 +276,6 @@ const ApplicationForm = () => {
                   onChange={handleInputChange}
                   type="text"
                 />
-              </div>
-            </div> */}
-
-            {/* <div className="field">
-              <label htmlFor="currMilestone" className="label">
-                Current Milestone:
-              </label>
-
-              <div className="control">
-                <div className="select" >
-                  <select value={formState.currentMileStone} name="currentMileStone" id="currMilestone" onChange={handleInputChange}>
-                    <option value="Applied">Applied</option>
-                    <option value="Phone Interview">Phone Interview</option>
-                    <option value="Technical Interview">Technical Interview</option>
-                    <option value="In Person Interview">In Person Interview</option>
-                    <option value="Job Offer">Job Offer</option>
-                    <option value="Accepted">Accepted</option>
-                    <option value="Rejected">Rejected</option>
-                    <option value="Hippo Donations">Hippo Donations</option>
-                   
-                  </select>
-                </div>
               </div>
             </div> */}
 

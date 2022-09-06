@@ -10,35 +10,26 @@ const styles = {
 };
 
 const CurrentMilestone = ({applications}) => {
-
+  let application;
   const { _id } = useParams();
 
   const [updateMilestone, { error, data }] = useMutation(UPDATE_MILESTONE);
-
   const [addMilestone, { err, dataA }] = useMutation(ADD_MILESTONE);
 
-  console.log(`DATA: ${JSON.stringify(data)}`)
-  console.log(`DATAA: ${dataA}`)
+  if (_id) {
+    application = applications.filter((application) => application._id === _id)[0];
+    console.log(application.milestones)
+  }
 
-  const application = applications.filter((application) => application._id === _id)[0];
-  console.log(application.milestones)
-
-  let milestones = application.milestones
+  let milestones = application ? application.milestones : []
 
   const submitMilestone = async (event) => {
     event.preventDefault();
-
     const currentMilestone = event.target.value;
     const milestonesPass = event.target.value
-    // console.log(_id, currentMilestone);
-    // console.log(event.target.value);
  
-    // let milestonesArray = application.milestones
     milestones.concat(milestonesPass)
     
-    // console.log(application.milestones)
-    // console.log('meow')
-
     try {
       // console.log(_id, currentMilestone)
       await updateMilestone({

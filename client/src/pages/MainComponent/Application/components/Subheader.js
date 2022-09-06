@@ -6,7 +6,7 @@ const Subheader = ({applications}) => {
   const { _id } = useParams();
 
   const application = applications.filter((application) => application._id === _id)[0];
-
+///
   if (!application) {
     return (
       <div>

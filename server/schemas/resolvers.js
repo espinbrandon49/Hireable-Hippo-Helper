@@ -1,4 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
+const { application } = require("express");
 // We import the signToken() method and the User model to access the functionality needed in our resolvers to generate a signed token and check a password:
 const { User, Application, Milestone } = require("../models");
 const { signToken } = require("../utils/auth");
@@ -150,7 +151,7 @@ const resolvers = {
       const addMilestone = await Application.findOneAndUpdate(
         { _id },
         {
-          $set: { "milestones" : milestones},
+          $addToSet: { milestones :  milestones},
         },
         {
           new: true,

@@ -18,25 +18,29 @@ const CurrentMilestone = ({applications}) => {
 
   if (_id) {
     application = applications.filter((application) => application._id === _id)[0];
-    console.log(application.milestones)
+    // console.log(application.milestones)
   }
 
-  let milestones = application ? application.milestones : []
+  // let milestones = application ? application.milestones : []
 
   const submitMilestone = async (event) => {
     event.preventDefault();
     const currentMilestone = event.target.value;
-    const milestonesPass = event.target.value
+    const milestones = event.target.value
  
-    milestones.concat(milestonesPass)
-    
+
+    // milestones.concat(milestonesPass)
+
+    console.log(milestones)
+    // console.log(milestonesPass)
+
     try {
       // console.log(_id, currentMilestone)
       await updateMilestone({
         variables: { _id: _id, currentMilestone: currentMilestone },
       });
       await addMilestone({
-        variables: { _id: _id, milestones: milestones },
+        variables: { _id: _id, milestones: [milestones] },
       });
     } catch (err) {
       console.error(err);

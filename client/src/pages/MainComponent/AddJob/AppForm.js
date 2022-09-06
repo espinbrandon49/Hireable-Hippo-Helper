@@ -60,6 +60,7 @@ const ApplicationForm = () => {
       jobDescription: "",
       jobType: "",
     });
+    // window.location.reload();
     window.location.reload();
   };
 

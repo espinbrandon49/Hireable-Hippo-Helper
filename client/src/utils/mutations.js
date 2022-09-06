@@ -105,10 +105,7 @@ export const ADD_MILESTONE = gql`
       _id: $_id,
       milestones: $milestones) {        
       _id
-      milestones {
-        _id
-        milestone
-      }
+      milestones
     }
 }`;
 

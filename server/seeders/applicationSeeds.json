@@ -10,11 +10,7 @@
     "jobDescription": "Entry-level position in SF office.",
     "jobType": "Hybrid",
     "currentMilestone": "Applied",
-    "milestones": [
-      {
-        "milestone": "applied"
-      }
-    ]
+    "milestones": ["Applied"]
   },
   {
     "applicationId": "2",
@@ -27,17 +23,7 @@
     "jobDescription": "Entry-level position in SF office.",
     "jobType": "Hybrid",
     "currentMilestone": "In Person Interview",
-    "milestones": [
-      {
-        "milestone": "applied"
-      },
-      {
-        "milestone": "phone interview"
-      },
-      {
-        "milestone": "in-person Interview"
-      }
-    ]
+    "milestones": ["Applied", "Phone Interview"]
   },
   {
     "applicationId": "3",
@@ -50,20 +36,7 @@
     "jobDescription": "Entry-level position in SF office.",
     "jobType": "Hybrid",
     "currentMilestone": "Job Offer",
-    "milestones": [
-      {
-        "milestone": "Applied"
-      },
-      {
-        "milestone": "Phone Interview"
-      },
-      {
-        "milestone": "In-person Interview"
-      },
-      {
-        "milestone": "Job Offer"
-      }
-    ]
+    "milestones": ["Applied", "Phone Interview", "Technical Interview"]
   },
   {
     "applicationId": "4",
@@ -76,11 +49,7 @@
     "jobDescription": "Entry-level position in SF office.",
     "jobType": "Hybrid",
     "currentMilestone": "Applied",
-    "milestones": [
-      {
-        "milestone": "Rejection"
-      }
-    ]
+    "milestones": ["Applied", "Phone Interview", "Technical Interview", "In Person Interview"]
   },
   {
     "applicationId": "5",
@@ -93,11 +62,7 @@
     "jobDescription": "Entry-level position in SF office.",
     "jobType": "Hybrid",
     "currentMilestone": "Applied",
-    "milestones": [
-      {
-        "milestone": "applied"
-      }
-    ]
+    "milestones": ["Applied", "Phone Interview", "Technical Interview"]
   },
   {
     "applicationId": "6",
@@ -110,10 +75,6 @@
     "jobDescription": "Entry-level position in SF office.",
     "jobType": "Hybrid",
     "currentMilestone": "Applied",
-    "milestones": [
-      {
-        "milestone": "applied"
-      }
-    ]
+    "milestones": ["Applied", "Phone Interview", "Technical Interview"]
   }
 ]

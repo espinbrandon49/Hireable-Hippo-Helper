@@ -47,13 +47,7 @@ const applicationSchema = new Schema({
     type: String,
     enum: ['Applied', 'Phone Interview', 'Technical Interview', 'In Person Interview', 'Job Offer', 'Accepted', 'Rejected', 'Hippo Donations'],
   },
-  milestones: [
-    {
-      milestone: {
-        type: String,
-      },
-    },
-  ],
+  milestones: [ String ],
   note: {
     type: String
   },

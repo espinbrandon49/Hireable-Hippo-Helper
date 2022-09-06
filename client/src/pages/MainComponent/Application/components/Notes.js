@@ -65,6 +65,7 @@ const Notes = ({ applications }) => {
     } catch (err) {
       console.error(err);
     }
+    window.location.reload();
   };
 
   if (loading) return 'Updating';

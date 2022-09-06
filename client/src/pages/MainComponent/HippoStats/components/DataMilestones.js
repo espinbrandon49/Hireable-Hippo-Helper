@@ -9,13 +9,12 @@ const styles = {
 const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
   return (
     <div className='column'>
-      <div className="buttons">
-
+      <div className="box columns my-2">
         <button
           className={
             currentDataPage === "Applied"
-              ? "button is-primary is-active"
-              : "button is-primary"
+              ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
+              : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
           }
           style={styles.box} 
           onClick={() => handleDataPageChange("Applied")}
@@ -26,8 +25,8 @@ const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
         <button
           className={
             currentDataPage === "PhoneInterview"
-              ? "button is-primary is-active"
-              : "button is-primary"
+              ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
+              : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
           }
           style={styles.box} 
           onClick={() => handleDataPageChange("PhoneInterview")}
@@ -38,8 +37,8 @@ const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
         <button
           className={
             currentDataPage === "TechnicalInterview"
-              ? "button is-primary is-active"
-              : "button is-primary"
+              ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
+              : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
           }
           style={styles.box} 
           onClick={() => handleDataPageChange("TechnicalInterview")}
@@ -50,8 +49,8 @@ const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
         <button
           className={
             currentDataPage === "InPersonInterview"
-              ? "button is-primary is-active"
-              : "button is-primary"
+              ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
+              : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
           }
           style={styles.box} 
           onClick={() => handleDataPageChange("InPersonInterview")}
@@ -62,8 +61,8 @@ const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
         <button
           className={
             currentDataPage === "JobOffer"
-              ? "button is-primary is-active"
-              : "button is-primary"
+              ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
+              : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
           }
           style={styles.box} 
           onClick={() => handleDataPageChange("JobOffer")}
@@ -74,8 +73,8 @@ const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
         <button
           className={
             currentDataPage === "Accepted"
-              ? "button is-primary is-active"
-              : "button is-primary"
+              ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
+              : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
           }
           style={styles.box} 
           onClick={() => handleDataPageChange("Accepted")}
@@ -86,8 +85,8 @@ const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
         <button
           className={
             currentDataPage === "Rejected"
-              ? "button is-primary is-active"
-              : "button is-primary"
+              ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
+              : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
           }
           style={styles.box} 
           onClick={() => handleDataPageChange("Rejected")}
@@ -98,8 +97,8 @@ const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
         <button
           className={
             currentDataPage === "HippoDonations"
-              ? "button is-primary is-active"
-              : "button is-primary"
+              ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
+              : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
           }
           style={styles.box} 
           onClick={() => handleDataPageChange("HippoDonations")}

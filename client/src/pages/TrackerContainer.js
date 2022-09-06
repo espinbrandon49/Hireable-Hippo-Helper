@@ -56,7 +56,7 @@ export default function TrackerContainer() {
 
     if (currentPage === 'HippoStats' || currentPage === 'Application') {
         return (
-            <div>
+            <div className='m-0 p-0' style={{height: "100%"}}>
                 <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
                 <div className='columns'>
                     {renderPage()}
@@ -66,7 +66,7 @@ export default function TrackerContainer() {
         );
     } else {
         return (
-            <div>
+            <div className='m-0 p-0' style={{height: "100%"}}>
                 <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
                 {renderPage()}
             </div>

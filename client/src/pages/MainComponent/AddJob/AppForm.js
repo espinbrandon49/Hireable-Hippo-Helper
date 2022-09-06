@@ -83,6 +83,7 @@ const ApplicationForm = () => {
       jobType: "",
       // currentMileStone: "",
     });
+    // window.location.reload();
     window.location.reload();
   };
 

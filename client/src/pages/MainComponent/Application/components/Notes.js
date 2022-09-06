@@ -30,10 +30,11 @@ const Notes = ({ applications }) => {
 
   // useEffect hook to populate Quill with an initial value
   React.useEffect(() => {
+
     if (quill) {
-      !_id
-        ? quill.clipboard.dangerouslyPasteHTML('<h3>Hippopotamus Notes <br/> Interview Dates <br/> Copy/Paste Job Description</h3>')
-        :  quill.setText(application.note)
+      _id && application.note
+        ? quill.setText(application.note)
+        :  quill.clipboard.dangerouslyPasteHTML('<h3>Hippopotamus Notes <br/> Interview Dates <br/> Copy/Paste Job Description</h3>')
     }
   }, [quill]);
 

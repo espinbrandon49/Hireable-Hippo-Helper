@@ -12,98 +12,62 @@ const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
       <div className="box columns my-2">
         <button
           className={
-            currentDataPage === "Applied"
+            currentDataPage === "AppliedFrom"
               ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
               : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
           }
           style={styles.box} 
-          onClick={() => handleDataPageChange("Applied")}
+          onClick={() => handleDataPageChange("AppliedFrom")}
           >
-          Applied
+          Applied From
         </button>
 
         <button
           className={
-            currentDataPage === "PhoneInterview"
+            currentDataPage === "AppliedTo"
               ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
               : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
           }
           style={styles.box} 
-          onClick={() => handleDataPageChange("PhoneInterview")}
+          onClick={() => handleDataPageChange("AppliedTo")}
           >
-          Phone Interview
+          Applied To
         </button>
         
         <button
           className={
-            currentDataPage === "TechnicalInterview"
+            currentDataPage === "AppliedVsInterviews"
               ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
               : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
           }
           style={styles.box} 
-          onClick={() => handleDataPageChange("TechnicalInterview")}
+          onClick={() => handleDataPageChange("AppliedVsInterviews")}
           >
-          Technical Interview
+          Applied vs Interviews
         </button>
 
         <button
           className={
-            currentDataPage === "InPersonInterview"
+            currentDataPage === "AppliedVsRejected"
               ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
               : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
           }
           style={styles.box} 
-          onClick={() => handleDataPageChange("InPersonInterview")}
+          onClick={() => handleDataPageChange("AppliedVsRejected")}
           >
-          In-person Interview
+          Applied vs Rejected
         </button>
 
         <button
           className={
-            currentDataPage === "JobOffer"
+            currentDataPage === "CurrentMilestones"
               ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
               : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
           }
           style={styles.box} 
-          onClick={() => handleDataPageChange("JobOffer")}
+          onClick={() => handleDataPageChange("CurrentMilestones")}
           >
-          Job Offer
-        </button>
-
-        <button
-          className={
-            currentDataPage === "Accepted"
-              ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
-              : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
-          }
-          style={styles.box} 
-          onClick={() => handleDataPageChange("Accepted")}
-          >
-          Accepted
-        </button>
-
-        <button
-          className={
-            currentDataPage === "Rejected"
-              ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
-              : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
-          }
-          style={styles.box} 
-          onClick={() => handleDataPageChange("Rejected")}
-          >
-          Rejected
-        </button>
-
-        <button
-          className={
-            currentDataPage === "HippoDonations"
-              ? "button column is-fullwidth py-6 mx-3 my-2 is-primary is-active"
-              : "button column is-fullwidth py-6 mx-3 my-2 is-primary"
-          }
-          style={styles.box} 
-          onClick={() => handleDataPageChange("HippoDonations")}
-          >
-          Hippo Donations
+          Current Milestones
         </button>
 
       </div>

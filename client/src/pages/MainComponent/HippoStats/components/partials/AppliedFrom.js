@@ -1,7 +1,7 @@
 import React from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const Applied = ({applications}) => {
+const AppliedFrom = ({applications}) => {
   const appliedFrom = {
     linkedIn: 0,
     indeed: 0,
@@ -89,7 +89,7 @@ const Applied = ({applications}) => {
 //     </div>
 
   return (
-    <ResponsiveContainer width="98%" height="80%">
+    <ResponsiveContainer width="95%" height="100%">
       <BarChart width={150} height={40} data={data}>
         <XAxis dataKey="appliedFrom" />
         <YAxis interval={1}/>
@@ -99,4 +99,4 @@ const Applied = ({applications}) => {
   );
 }
 
-export default Applied;
+export default AppliedFrom;

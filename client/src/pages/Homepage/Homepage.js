@@ -8,7 +8,7 @@ const Homepage = () => {
 
 
     
-     <div style={{ backgroundImage: `url(${background})`, height: '100%', width: '100%', backgroundRepeat:"no-repeat", backgroundSize:"contain" }}>
+     <div style={{ backgroundImage: `url(${background})`, height: '100%', width: '100%', backgroundRepeat:"no-repeat", backgroundSize:"cover" }}>
     <HeroSection/>
 
     </div>

@@ -87,13 +87,13 @@ const AllMilestones = ({ applications }) => {
         Milestones
       </p>
       <ul className="menu-list">
-        <li><a>{application.currentMilestone}</a></li>
-        <li><a>{application.currentMilestone}</a></li>
-        <li><a>{application.currentMilestone}</a></li>
+        {application.milestones.map((value, i) => {
+          return <li key={i}><a>{value}</a></li>
+        })}
       </ul>
-      <p className="menu-label">
+      {/* <p className="menu-label">
         {application.milestones}
-      </p>
+      </p> */}
       {/* current Milestone will be in the buttons bar       */}
       {/* notes will be in notes */}
     </div>

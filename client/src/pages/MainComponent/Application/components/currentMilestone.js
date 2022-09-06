@@ -16,17 +16,17 @@ const CurrentMilestone = ({applications}) => {
 
   const [updateMilestone, { error, data }] = useMutation(UPDATE_MILESTONE);
 
-
   const [addMilestone, { err, dataA }] = useMutation(ADD_MILESTONE);
 
-  const application = applications.filter((application) => application._id === _id)[0];
+  console.log(`DATA: ${JSON.stringify(data)}`)
+  console.log(`DATAA: ${dataA}`)
 
+  const application = applications.filter((application) => application._id === _id)[0];
 
   const submitMilestone = async (event) => {
     event.preventDefault();
 
     const currentMilestone = event.target.value;
-
     // console.log(_id, currentMilestone);
     // console.log(event.target.value);
  
@@ -41,10 +41,8 @@ const CurrentMilestone = ({applications}) => {
       console.log(updateMilestone)
     } catch (err) {
       console.error(err);
-    }
-    
+    }  
   }
-
   return (
     <div className='column'>
       <div className='box columns my-2'>

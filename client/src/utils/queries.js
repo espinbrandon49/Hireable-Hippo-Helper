@@ -29,6 +29,7 @@ export const QUERY_APPLICATIONS = gql`
       jobType
       currentMilestone
       note
+      milestones
     }
   }
 `;

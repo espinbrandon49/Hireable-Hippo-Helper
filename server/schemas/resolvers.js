@@ -146,15 +146,12 @@ const resolvers = {
       return milestoneUpdate
     },
 
-    addMilestone: async (parent, {
-      _id, milestones 
-      
-    }) => {
-      const milestoneAdd = await Application.findOneAndUpdate(
+    addMilestone: async (parent, { _id, milestones  }) => {
+      const addMilestone = await Application.findOneAndUpdate(
         { _id },
         {
           $addToset: {
-            milestones: { milestones}
+            milestones: { milestone}
           },
         },
         {
@@ -162,7 +159,7 @@ const resolvers = {
           runValidators: true,
         }
       );
-      return milestoneAdd
+      return addMilestone
     },
 
 

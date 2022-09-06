@@ -58,9 +58,3 @@ const Application = model('Application', applicationSchema);
 
 module.exports = Application;
 
-//FRONTEND
-// when a current milestone is clicked, the option to set a date is selected, or the default date can be date.now
-
-//milestones can be displayed as a data visual on the dashboard
-
-//dateOfInterview for an MVP or as a stretch? 

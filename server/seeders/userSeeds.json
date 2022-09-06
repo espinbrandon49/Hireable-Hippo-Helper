@@ -1,52 +1,62 @@
 [
   {
-    "username": "BrianKernighan",
-    "email": "bkernighan@techfriends.dev",
+    "name": "Brandon Espinhippo",
+    "username": "goodLookingCoder83",
+    "email": "virgoSpanishFoodHiking@techfriends.dev",
     "password": "password01"
   },
   {
-    "username": "MaxKanat-Alexander",
-    "email": "mkanatalexander@techfriends.dev",
+    "name": "Jeffrey Hipponerd",
+    "username": "hippoNerdAlert98",
+    "email": "hipNerd98@techfriends.dev",
     "password": "password02"
   },
   {
-    "username": "WhyTheLucky Stiff",
-    "email": "wtls@techfriends.dev",
+    "name": "Brian Kissips",
+    "username": "BrianKissips",
+    "email": "BrianKissips@techfriends.dev",
     "password": "password03"
   },
   {
-    "username": "KentBeck",
-    "email": "kbeck@techfriends.dev",
+    "name": "Brian Kissyou",
+    "username": "BrianKissyou",
+    "email": "BrianKissyou@techfriends.dev",
     "password": "password04"
   },
   {
-    "username": "EdwardV.Berard",
-    "email": "evberard@techfriends.dev",
+    "name": "Brian Kissthis",
+    "username": "BrianKissthis",
+    "email": "BrianKissthis@techfriends.dev",
     "password": "password05"
   },
   {
-    "username": "AlanKay",
-    "email": "akay@techfriends.dev",
+    "name": "Brian Kissy",
+    "username": "BrianKissy",
+    "email": "BrianKissy@techfriends.dev",
     "password": "password06"
   },
   {
-    "username": "C.A.R.Hoare",
-    "email": "choare@techfriends.dev",
+    "name": "Brian Kisskross",
+    "username": "BrianKisskross",
+    "email": "BrianKisskross@techfriends.dev",
     "password": "password07"
   },
   {
-    "username": "DavidThomas",
-    "email": "dthomas@techfriends.dev",
+    "name": "Brian Kisseey",
+    "username": "BrianKisseey",
+    "email": "BrianKisseey@techfriends.dev",
     "password": "password08"
   },
   {
-    "username": "DonaldKnuth",
-    "email": "dknuth@techfriends.dev",
+    "name": "Brian Kisseco",
+    "username": "BrianKisseco",
+    "email": "BrianKisseco@techfriends.dev",
     "password": "password09"
   },
   {
-    "username": "Lernantino",
-    "email": "lernantino@techfriends.dev",
+    "name": "Brian Kisshippo",
+    "username": "BrianKisshippo",
+    "email": "BrianKisshippo@techfriends.dev",
     "password": "password10"
   }
 ]

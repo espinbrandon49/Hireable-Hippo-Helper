@@ -13,7 +13,7 @@ const AllMilestones = ({ applications }) => {
           <p className="menu-label is-size-5 has-text-weight-bold">
             General
           </p>
-          <ul class="menu-list">
+          <ul className="menu-list">
             <li className='has-text-weight-bold'><a>Job Description</a></li>
             <li className='has-text-weight-bold'><a>Location</a></li>
             <li className='has-text-weight-bold'><a>Job Type</a></li>

@@ -11,7 +11,6 @@ const styles = {
   note: {
     height: '50vh',
   },
-
 };
 
 const Notes = ({ applications }) => {
@@ -33,19 +32,34 @@ const Notes = ({ applications }) => {
   React.useEffect(() => {
     if (quill) {
       !_id
-        ? quill.clipboard.dangerouslyPasteHTML('<h2>Hippopotamus Notes <br/> Interview Dates <br/> Copy/Paste Job Description</h2>')
-        : quill.clipboard.dangerouslyPasteHTML(`<h2>${application.note}</h2>`)
+        ? quill.clipboard.dangerouslyPasteHTML('<h3>Hippopotamus Notes <br/> Interview Dates <br/> Copy/Paste Job Description</h3>')
+        :  quill.setText(application.note)
     }
   }, [quill]);
 
+  // React.useEffect(() => {
+  //   if (quill) {
+  //     quill.on('text-change', (delta, oldDelta, source) => {
+  //       // console.log('Text change!');
+
+  //       console.log(quill.getText()); // Get text only
+  //       handleFormSubmit(event)
+  //       // console.log(quill.getContents()); // Get delta contents
+  //       // console.log(quill.root.innerHTML); // Get innerHTML using quill
+  //       // console.log(quillRef.current.firstChild.innerHTML); // Get innerHTML using quillRef
+  //     });
+  //   }
+  // }, [quill]);
+
   // form handler to make notes
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
+    //  event.preventDefault();
     console.log(_id, quill.getText());
     try {
       await updateNote({
         variables: { _id: _id, note: quill.getText() },
       });
+      // quill.setText(application.note)
       console.log("Success");
     } catch (err) {
       console.error(err);
@@ -55,20 +69,40 @@ const Notes = ({ applications }) => {
   if (loading) return 'Updating';
   if (error) return `Update error! ${error.message}`
 
-  return (
-    <form className='column' onSubmit={handleFormSubmit} >
-      {/* Quill editor  */}
-      <div style={styles.note} ref={quillRef} />
-      <button
-        className="button is-info mt-3"
-        style={{ cursor: "pointer" }}
-        name="submit"
-        type="submit"
-      >
-        Submit
-      </button>
-    </form>
-  )
+  if (!application) {
+    return (
+      <form className='column' onSubmit={handleFormSubmit} >
+        {/* Quill editor  */}
+        <div style={styles.note} ref={quillRef} />
+        <button
+          className="button is-info mt-3"
+          style={{ cursor: "pointer" }}
+          name="submit"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    )
+  } else {
+    return (
+      <form className='column' onSubmit={handleFormSubmit} >
+        {/* Quill editor  */}
+        <div>
+          <div style={styles.note} ref={quillRef} value={application.note} />
+        </div>
+      
+        <button
+          className="button is-info mt-3"
+          style={{ cursor: "pointer" }}
+          name="submit"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    )
+  }
 }
 //
 export default Notes

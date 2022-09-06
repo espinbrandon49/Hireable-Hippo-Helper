@@ -6,28 +6,28 @@ import CurrentMilestones from './components/CurrentMilestone'
 import AllMilestones from './components/AllMilestones'
 import Notes from './components/Notes'
 
-const Application = ({applications}) => {
+const Application = ({ applications }) => {
   return (
-    <div className='column'>
+    <div className='container column is-three-quarters'>
       {Auth.loggedIn() ? (
-        <div className='box'>
+        <>
           <Subheader
             applications={applications}
           />
-          <CurrentMilestones 
+          <CurrentMilestones
             applications={applications}
           />
-          <div className='columns'>
+          <div className='columns is-1 box'>
             <AllMilestones
               applications={applications}
             />
             <Notes
-             applications={applications}
+              applications={applications}
             />
           </div>
-        </div>
+        </>
       ) : (
-        <Login/>
+        <Login />
       )}
     </div>
   );

@@ -11,9 +11,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import TrackerContainer from "./pages/TrackerContainer";
 import 'bulma/css/bulma.min.css';
-import "./App.css";
 import HippoStats from "./pages/MainComponent/HippoStats/HippoStats";
-
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -43,7 +41,7 @@ const client = new ApolloClient({
 const App = () => (
   <ApolloProvider client={client}>
     <Router>
-        <div className="container is-fluid px-0 mx-0" style={{height: "100%" }}>
+        <>
           <Routes>
             <Route path="/" element={<TrackerContainer />} />
             <Route path="/Signup" element={<Signup/>} />
@@ -52,10 +50,9 @@ const App = () => (
             <Route path="/Application/:_id" element={<TrackerContainer/>} />
           </Routes>
           {/* <Footer /> */}
-        </div>
+        </>
     </Router>
-  </ApolloProvider>
-  
+  </ApolloProvider> 
 );
 
 export default App;

@@ -41,26 +41,23 @@ const HippoStats = ({ applications }) => {
   const handleDataPageChange = (page) => setCurrentDataPage(page);
 
   return (
-    <div className="column">
+    <div className="container column is-three-quarters">
       {Auth.loggedIn() ? (
+        <>
+          <Subheader applications={applications} />
 
-        <div className="box">
-
-          <div >
-            <Subheader applications={applications} />
-          </div>
-
-          <div>
-            <DataMilestones currentDataPage={currentDataPage} handleDataPageChange={handleDataPageChange} />
-          </div>
+          <DataMilestones 
+            currentDataPage={currentDataPage}
+            handleDataPageChange={handleDataPageChange} />
 
           <div className='box' style={styles.box}>
             {renderDataPage()}
           </div>
 
-        </div>
+        </>
       ) : (
         <Login />
+
       )}
     </div>
   );

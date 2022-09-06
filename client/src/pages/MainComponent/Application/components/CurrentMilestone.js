@@ -4,8 +4,11 @@ import { UPDATE_MILESTONE, ADD_MILESTONE } from '../../../../utils/mutations';
 import { useParams } from 'react-router-dom';
 
 const styles = {
-  button: {
-    borderRadius: "50%",
+  radii: {
+    borderBottomRightRadius: '50%',
+    borderTopRightRadius: '50%',
+    borderTopLefttRadius: '0%',
+    borderBottomLeftRadius: '0%',
   },
 };
 
@@ -21,21 +24,12 @@ const CurrentMilestone = ({applications}) => {
     // console.log(application.milestones)
   }
 
-  // let milestones = application ? application.milestones : []
-
   const submitMilestone = async (event) => {
     event.preventDefault();
     const currentMilestone = event.target.value;
     const milestones = event.target.value
  
-
-    // milestones.concat(milestonesPass)
-
-    console.log(milestones)
-    // console.log(milestonesPass)
-
     try {
-      // console.log(_id, currentMilestone)
       await updateMilestone({
         variables: { _id: _id, currentMilestone: currentMilestone },
       });
@@ -47,19 +41,19 @@ const CurrentMilestone = ({applications}) => {
     }  
   }
   return (
-    <div className='column'>
-      <div className='box columns my-2'>
+    <div className='box'>
+    <div className="buttons is-justify-content-center">
         <button
           className={
             _id
             ? application.currentMilestone === "Applied"
-              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
-              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
-            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+              ? 'button is-warning'
+              : 'button is-info'
+            : 'button is-info'
           }
-          style={styles.button}
           value={"Applied"}
           onClick={submitMilestone}
+          style={styles.radii}
         >
           Applied
         </button>
@@ -67,11 +61,10 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Phone Interview"
-              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
-              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
-            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+              ? 'button is-link'
+              : 'button is-info'
+            : 'button is-info'
           }
-          style={styles.button}
           value={"Phone Interview"}
           onClick={submitMilestone}
         >
@@ -81,25 +74,24 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Technical Interview"
-              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
-              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
-            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+              ? 'button is-link'
+              : 'button is-info'
+            : 'button is-info'
           }
-          style={styles.button}
           value={"Technical Interview"}
           onClick={submitMilestone}
         >
           Technical Interview
         </button>
+
         <button
           className={
             _id
             ? application.currentMilestone === "In Person Interview"
-              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
-              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
-            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+              ? 'button is-link'
+              : 'button is-info'
+            : 'button is-info'
           }
-          style={styles.button}
           value={"In Person Interview"}
           onClick={submitMilestone}
         >
@@ -109,11 +101,10 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Job Offer"
-              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
-              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
-            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+              ? 'button is-success'
+              : 'button is-info'
+            : 'button is-info'
           }
-          style={styles.button}
           value={"Job Offer"}
           onClick={submitMilestone}
         >
@@ -123,13 +114,13 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Accepted"
-              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
-              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
-            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+              ? 'button is-link'
+              : 'button is-info'
+            : 'button is-info'
           }
-          style={styles.button}
           value={"Accepted"}
           onClick={submitMilestone}
+          style={styles.circle}
         >
           Accepted
         </button>
@@ -137,34 +128,33 @@ const CurrentMilestone = ({applications}) => {
           className={
             _id
             ? application.currentMilestone === "Rejected"
-              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
-              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
-            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+              ? 'button is-danger'
+              : 'button is-info'
+            : 'button is-info'
           }
-          style={styles.button}
           value={"Rejected"}
           onClick={submitMilestone}
         >
           Rejected
         </button>
-        <button
+        {/* <button
           className={
             _id
             ? application.currentMilestone === "Hippo Donations"
-              ? 'button column is-fullwidth py-6 mx-3 my-2 is-link'
-              : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
-            : 'button column is-fullwidth py-6 mx-3 my-2 is-info'
+              ? 'button column  py-6 mx-3 my-2 is-link'
+              : 'button column  py-6 mx-3 my-2 is-info'
+            : 'button column  py-6 mx-3 my-2 is-info'
           }
           style={styles.button}
           value={"Hippo Donations"}
           onClick={submitMilestone}
         >
           Hippo Donations
-        </button>
+        </button> */}
       </div>
-        {error && (
-        <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
-      )}
+
+        {/* {error && (
+        <div className="my-3 p-3 bg-danger text-white">{error.message}</div>)} */}
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-const AllMilestones = ({applications}) => {
+const AllMilestones = ({ applications }) => {
 
   const { _id } = useParams();
 
@@ -9,65 +9,95 @@ const AllMilestones = ({applications}) => {
 
   if (!application) {
     return (
-      <div className='column is-one-quarter'>
-        <div className='box'>
-          <h3 className='subtitle mb-2'>Job Information</h3>
-          <ul>
-            <li>Job Description:</li>
-            <li>Location:</li>
-            <li>Job Type:</li>
-            <li>Salary:</li>
-            <li>Link:</li>
+        <div className="menu column is-half">
+          <p className="menu-label">
+            General
+          </p>
+          <ul class="menu-list">
+            <li><a>Job Description</a></li>
+            <li><a>Location</a></li>
+            <li><a>Job Type</a></li>
+            <li><a>Salary</a></li>
           </ul>
-  
-          <h3 className='subtitle mb-2 mt-4'>Important Dates</h3>
-          <ul>
-            <li>Data Applied:</li>
-            <li>Interview Dates:</li>
+          <p className="menu-label">
+            Important Dates
+          </p>
+          <ul className="menu-list">
+            <li><a>Date Applied</a></li>
+            <li>
+              <a>Interviews</a>
+              <ul>
+                <li><a>Phone</a></li>
+                <li><a>Technical</a></li>
+                <li><a>In person</a></li>
+              </ul>
+            </li>
+            <li><a>Date of Offer</a></li>
+            <li><a>Start Date</a></li>
           </ul>
-  
-          <h3 className='subtitle mb-2 mt-4'>Contact Info</h3>
-          <ul>
-            <li>Contact Name:</li>
-            <li>Contact Email:</li>
-            <li>Contact Phone:</li>
+          <p className="menu-label">
+            Contact Info
+          </p>
+          <ul className="menu-list">
+            <li><a>Contact Name</a></li>
+            <li><a>Contact Email</a></li>
+            <li><a>Contact Phone</a></li>
           </ul>
-          <p>Note:</p> 
-          <p>Current Milestone:</p>
+          {/* current Milestone will be in the buttons bar       */}
+          {/* notes will be in notes */}
         </div>
-      </div>
     )
   } else {
     return (
-      <div className='column is-one-quarter'>
-        <div className='box'>
-          <h3 className='subtitle mb-2'>Job Information</h3>
+      <div className=" box menu column is-half">
+      <p className="menu-label">
+        General
+      </p>
+      <ul className="menu-list">
+        <li><a>Job Description: {application.jobLink}</a></li>
+        <li><a>Location: </a></li>
+        <li><a>Job Type: {application.jobType}</a></li>
+        <li><a>Salary: {application.salary}</a></li>
+      </ul>
+      <p className="menu-label">
+        Important Dates
+      </p>
+      <ul className="menu-list">
+        <li><a>Date Applied: {application.dateApplied} </a></li>
+        <li>
+          <a>Interviews</a>
           <ul>
-            <li>Job Description: {application.jobDescription}</li>
-            <li>Location: </li>
-            <li>Job Type: {application.jobType}</li>
-            <li>Salary: {application.salary}</li>
-            <li>Link: {application.jobLink}</li>
+            <li><a>Phone: </a></li>
+            <li><a>Technical: </a></li>
+            <li><a>In person: </a></li>
           </ul>
-  
-          <h3 className='subtitle mb-2 mt-4'>Important Dates</h3>
-          <ul>
-            <li>Data Applied: {application.dateApplied}</li>
-            <li>Interview Dates: </li>
-          </ul>
-  
-          <h3 className='subtitle mb-2 mt-4'>Contact Info</h3>
-          <ul>
-            <li>Contact Name: {application.contactName}</li>
-            <li>Contact Email: {application.contactEmail}</li>
-            <li>Contact Phone: {application.contactPhone}</li>
-          </ul>
-          <p>Note: {application.note}</p> 
-          <p>Current Milestone: {application.currentMilestone}</p>
-          <p>All Milestones: {application.milestones}</p>
-        </div>
+        </li>
+        <li><a>Date of Offer: </a></li>
+        <li><a>Start Date: </a></li>
+      </ul>
+      <p className="menu-label">
+        Contact Info
+      </p>
+      <ul className="menu-list">
+        <li><a>Contact Name: {application.contactName}</a></li>
+        <li><a>Contact Email: {application.contactEmail}</a></li>
+        <li><a>Contact Phone: {application.contactPhone}</a></li>
+      </ul>
+      <p className="menu-label">
+        Milestones
+      </p>
+      <ul className="menu-list">
+        <li><a>{application.currentMilestone}</a></li>
+        <li><a>{application.currentMilestone}</a></li>
+        <li><a>{application.currentMilestone}</a></li>
+      </ul>
+      <p className="menu-label">
+        {application.milestones}
+      </p>
+      {/* current Milestone will be in the buttons bar       */}
+      {/* notes will be in notes */}
+    </div>
 
-      </div>
     )
   }
 }

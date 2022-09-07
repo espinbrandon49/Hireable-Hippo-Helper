@@ -14,7 +14,7 @@ const styles = {
 };
 
 const Notes = ({ applications }) => {
-  console.log(applications)
+  // console.log(applications)
 
   const [updateNote, { data, loading, error }] = useMutation(UPDATE_NOTE);
 
@@ -23,8 +23,7 @@ const Notes = ({ applications }) => {
 
   // var id = window.location.href.split("/")
   const { _id } = useParams();
-  console.log(_id);
-
+ 
   //filter by single application
   const application = applications.filter((application) => application._id === _id)[0];
 

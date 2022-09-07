@@ -88,6 +88,7 @@ const resolvers = {
         jobLink,
         jobDescription,
         jobType,
+        dateApplied,
       }
     ) => {
       const application = await Application.create({
@@ -102,6 +103,7 @@ const resolvers = {
         jobLink,
         jobDescription,
         jobType,
+        dateApplied,
       });
 
       await User.findOneAndUpdate(

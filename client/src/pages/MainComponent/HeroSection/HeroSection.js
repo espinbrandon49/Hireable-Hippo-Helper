@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import background from "../../../images/hippo-background.jpg";
 
 import Auth from "../../../utils/auth";
 

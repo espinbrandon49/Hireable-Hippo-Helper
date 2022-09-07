@@ -1,6 +1,8 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import icon from "../../images/hippoIcon.png";
+import { Link } from 'react-router-dom';
+
 
 function NavTabs({ currentPage, handlePageChange }) {
   const logout = (event) => {
@@ -55,7 +57,7 @@ function NavTabs({ currentPage, handlePageChange }) {
             My Applications
           </a>
 
-          <a href="#AppForm"
+          {/* <a href="#AppForm"
             onClick={() => handlePageChange("AppForm")}
             // Check to see if the currentPage is `Contact`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
             className={
@@ -65,7 +67,8 @@ function NavTabs({ currentPage, handlePageChange }) {
             }
           >
             Add New
-          </a>
+          </a> */}
+          <Link to="/AppForm">Add New</Link>
 
           <div className="navbar-end ">
             <div className="navbar-item" >

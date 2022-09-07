@@ -13,6 +13,5 @@ mongoose.connect(
 //     mongoose.connection.db.dropDatabase();
 // });
 
-//mongodb+srv://m001-student:m001-mongodb-basics@cluster0.dy1kgod.mongodb.net/Hireable-Hippo-Helper?retryWrites=true&w=majority
 
 module.exports = mongoose.connection;

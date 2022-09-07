@@ -57,7 +57,6 @@ const Login = (props) => {
                     <label htmlFor='email' className='label'>
                       Email
                     </label>
-
                     <div className='control'>
                       <input
                         className="input"
@@ -69,13 +68,10 @@ const Login = (props) => {
                       />
                     </div>
                   </div>
-
-
                   <div className='field'>
                     <label htmlFor='password' className='label'>
                       Password
                     </label>
-
                     <div className='control'>
                       <input
                         className="input"
@@ -88,7 +84,6 @@ const Login = (props) => {
                       />
                     </div>
                   </div>
-
                   <div className='field pt-3'>
                     <div className='control'>
                       <button
@@ -102,7 +97,6 @@ const Login = (props) => {
                   </div>
                 </form>
               )}
-  
               {error && (
                 <div className="my-3 p-3 bg-danger text-white">
                   {error.message}

@@ -6,12 +6,12 @@ const Subheader = ({applications}) => {
   const { _id } = useParams();
 
   const application = applications.filter((application) => application._id === _id)[0];
-///
+
   if (!application) {
     return (
       <div className='block'>
         <h1 className='title'>Choose or Add New Application</h1>
-        {/* <h2 className='subtitle'>Job Title:</h2> */}
+
       </div>
     )
   } else {

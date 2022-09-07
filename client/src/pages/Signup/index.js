@@ -7,7 +7,7 @@ import { ADD_USER } from '../../utils/mutations';
 import NavTabs from '../NavBar';
 
 import Auth from '../../utils/auth';
-///MERN 26-Stu_Resolver-Contect
+
 const Signup = () => {
   const [formState, setFormState] = useState({
     username: '',
@@ -27,7 +27,7 @@ const Signup = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+
 
     try {
       const { data } = await addUser({
@@ -58,14 +58,6 @@ const Signup = () => {
                 Already have an account?{' '}
                 <Link to="/Login">login here.</Link>
               </p>
-                {/* <input
-                  className="form-input"
-                  placeholder="Your username"
-                  name="username"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                /> */}
 
                 <div className='field'>
                   <label htmlFor='username' className='label'>
@@ -84,15 +76,6 @@ const Signup = () => {
                   </div>
                 </div>
 
-                {/* <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />*/}
-
                 <div className='field'>
                   <label htmlFor='email' className='label'>
                     Email
@@ -110,14 +93,6 @@ const Signup = () => {
                   </div>
                 </div>
 
-                {/* <input 
-                className="form-input"
-                placeholder="******"
-                name="password"
-                type="password"
-                value={formState.password}
-                onChange={handleChange}
-                /> */}
 
                 <div className='field'>
                   <label htmlFor='password' className='label'>
@@ -137,13 +112,6 @@ const Signup = () => {
                   </div>
                 </div>
 
-                {/* <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button> */}
 
                 <div className='field pt-3'>
                   <div className='control'>

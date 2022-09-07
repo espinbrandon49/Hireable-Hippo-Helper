@@ -12,7 +12,6 @@ const CurrentMilestone = ({applications}) => {
 
   if (_id) {
     application = applications.filter((application) => application._id === _id)[0];
-    // console.log(application.milestones)
   } 
 
   const submitMilestone = async (event) => {

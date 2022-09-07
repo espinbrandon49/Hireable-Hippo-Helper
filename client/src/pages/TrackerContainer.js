@@ -19,14 +19,11 @@ export default function TrackerContainer() {
   // call single applications by username
   var filteredApps = [];
   try {
-    console.log(filteredApps);
     filteredApps = applications.filter((application) => application.applicant === Auth.getProfile().data.username);
   } catch (err) {
     console.log(err);
   }
 
-  // console.log all applications
-  console.log(data);
 
   // render pages by state
   const [currentPage, setCurrentPage] = useState("Homepage");

@@ -16,8 +16,6 @@ const styles = {
 }
 
 const HippoStats = ({ applications }) => {
-  console.log(applications)
-
   const [currentDataPage, setCurrentDataPage] = useState('');
 
   const renderDataPage = () => {

@@ -32,10 +32,11 @@ const AllMilestones = ({ applications }) => {
             General
           </p>
           <ul className="menu-list">
-            <li className='has-text-weight-bold'><a>Job Description</a></li>
+            <li className='has-text-weight-bold'><a>Job Link</a></li>
             <li className='has-text-weight-bold'><a>Location</a></li>
             <li className='has-text-weight-bold'><a>Job Type</a></li>
             <li className='has-text-weight-bold'><a>Salary</a></li>
+            <li className='has-text-weight-bold'><a>Job Description</a></li>
           </ul>
           <p className="menu-label is-size-5 has-text-weight-bold">
             Important Dates
@@ -70,10 +71,11 @@ const AllMilestones = ({ applications }) => {
         General
       </p>
       <ul className="menu-list">
-        <li><a><span className='has-text-weight-bold'>Job Description: </span>{application.jobLink}</a></li>
+        <li><a><span className='has-text-weight-bold'>Job Link: </span>{application.jobLink}</a></li>
         <li><a><span className='has-text-weight-bold'>Location: </span></a></li>
         <li><a><span className='has-text-weight-bold'>Job Type: </span>{application.jobType}</a></li>
         <li><a><span className='has-text-weight-bold'>Salary: </span>{application.salary}</a></li>
+        <li><a><span className='has-text-weight-bold'>Job Description: </span>{application.jobDescription}</a></li>
       </ul>
       <p className="menu-label is-size-5 has-text-weight-bold">
         Important Dates

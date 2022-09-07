@@ -65,13 +65,13 @@ const ApplicationForm = () => {
   };
 
   return (
-    
+    <>
+    <NavTabs/>
     <div className="column is-half is-offset-one-quarter">
 
       {Auth.loggedIn() ? (
         
         <form onSubmit={handleFormSubmit}>
-          <NavTabs />
           <div className="box">
             
             <div className="pb-5">
@@ -292,6 +292,7 @@ const ApplicationForm = () => {
         <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
       )}
     </div>
+    </>
   );
 };
 

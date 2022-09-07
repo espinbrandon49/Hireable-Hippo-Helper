@@ -1,7 +1,6 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import icon from "../../images/hippoIcon.png";
-import { Link } from 'react-router-dom';
 
 
 function NavTabs({ currentPage, handlePageChange }) {
@@ -13,29 +12,17 @@ function NavTabs({ currentPage, handlePageChange }) {
   return (
     <nav className="navbar nav-toggle is-light is-transparent mx-1 is-flex " role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="/">
+        <a className="navbar-item" href="/Homepage">
           <img src={icon} alt="hippo" height="56" />
         </a>
       </div>
 
       {/* <div className="navbar-menu"> */}
         <div className="navbar-start is-flex is-align-items-center ">
-          <a href="#Homepage"
-            onClick={() => handlePageChange("Homepage")}
-            // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-            // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-            className={
-              currentPage === "Homepage"
-                ? "navbar-item is-active mx-1"
-                : "navbar-item mx-1"
-            }
-          >
-            Home
-          </a>
 
-          <a href="#HippoStats"
+          <a href="/#HippoStats"
             onClick={() => handlePageChange("HippoStats")}
-            // Check to see if the currentPage is `About`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+            // Check to see if the currentPage is `About`, and if so we use the active link class. Otherwise, we set it to a normal nav-link
             className={
               currentPage === "HippoStats"
                 ? "navbar-item is-active mx-1"
@@ -45,9 +32,9 @@ function NavTabs({ currentPage, handlePageChange }) {
             HippoStats
           </a>
 
-          <a href="#Application"
+          <a href="/#Application"
             onClick={() => handlePageChange("Application")}
-            // Check to see if the currentPage is `Blog`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+            // Check to see if the currentPage is `Blog`, and if so we use the active link class. Otherwise, we set it to a normal nav-link
             className={
               currentPage === "Application"
                 ? "navbar-item is-active mx-1"
@@ -57,9 +44,9 @@ function NavTabs({ currentPage, handlePageChange }) {
             My Applications
           </a>
 
-          {/* <a href="#AppForm"
+          <a href="/AppForm"
             onClick={() => handlePageChange("AppForm")}
-            // Check to see if the currentPage is `Contact`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+            // Check to see if the currentPage is `Contact`, and if so we use the active link class. Otherwise, we set it to a normal nav-link
             className={
               currentPage === "AppForm"
                 ? "navbar-item is-active mx-1"
@@ -67,8 +54,8 @@ function NavTabs({ currentPage, handlePageChange }) {
             }
           >
             Add New
-          </a> */}
-          <Link to="/AppForm">Add New</Link>
+          </a>
+          {/* <Link to="/AppForm">Add New</Link> */}
 
           <div className="navbar-end ">
             <div className="navbar-item" >
@@ -87,7 +74,7 @@ function NavTabs({ currentPage, handlePageChange }) {
                     <a
                       href="#Login"
                       onClick={() => handlePageChange("Login")}
-                      // Check to see if the currentPage is `Contact`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+                      // Check to see if the currentPage is `Contact`, and if so we use the active link class. Otherwise, we set it to a normal nav-link
                       className={
                         currentPage === "Login"
                           ? "nav-link is-active mx-1"

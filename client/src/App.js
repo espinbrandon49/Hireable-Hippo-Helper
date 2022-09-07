@@ -13,6 +13,8 @@ import AddJob from "./pages/MainComponent/AddJob/AppForm";
 import TrackerContainer from "./pages/TrackerContainer";
 import 'bulma/css/bulma.min.css';
 import HippoStats from "./pages/MainComponent/HippoStats/HippoStats";
+import Application from "./pages/MainComponent/Application/Application";
+import Homepage from "./pages/Homepage/Homepage";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -47,7 +49,9 @@ const App = () => (
             <Route path="/" element={<TrackerContainer />} />
             <Route path="/Signup" element={<Signup/>} />
             <Route path="/Login" element={<Login/>} />
+            <Route path="/Homepage" element={<Homepage/>} />
             <Route path="/Hippostats" element={<HippoStats/>} />
+            <Route path="/Application" element={<Application/>} />
             <Route path="/Application/:_id" element={<TrackerContainer/>} />
             <Route path="/AppForm" element={<AddJob/>} />
           </Routes>

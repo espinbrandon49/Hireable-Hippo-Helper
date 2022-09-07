@@ -75,7 +75,7 @@ const typeDefs = gql`
       milestones: [String]
     ): Application
 
-    removeApplication(applicationId: ID!): Application
+    removeApplication(_id: String): Application
     
     removeMilestone(applicationId: ID!, milestoneId: ID!): Application
   }

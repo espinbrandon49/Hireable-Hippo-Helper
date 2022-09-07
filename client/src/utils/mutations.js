@@ -65,6 +65,16 @@ export const ADD_APPLICATION = gql`
       }
     }`;
 
+export const REMOVE_APPLICATION = gql`
+  mutation removeApplication(
+    $_id: String) {
+    removeApplication(
+      _id: $_id
+      ) {        
+        _id
+    }
+  }`;
+
 export const UPDATE_NOTE = gql`
       mutation updateNote(
         $_id: String, $note: String) {

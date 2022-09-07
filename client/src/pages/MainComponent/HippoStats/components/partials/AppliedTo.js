@@ -1,45 +1,50 @@
 import React from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
-const data = [
-  {
-    date: "09/10/2022",
-    appsSent: 0,
-    interview: 0,
-  },
-  {
-    date: "09/11/2022",
-    appsSent: 3,
-    interview: 0,
-  },
-  {
-    date: "09/12/2022",
-    appsSent: 2,
-    interview: 0,
-  },
-  {
-    date: "09/13/2022",
-    appsSent: 3,
-    interview: 0,
-  },
-  {
-    date: "09/14/2022",
-    appsSent: 2,
-    interview: 0,
-  },
-  {
-    date: "09/15/2022",
-    appsSent: 0,
-    interview: 1,
-  },
-  {
-    date: "09/16/2022",
-    appsSent: 4,
-    interview: 0,
-  }
-];
+export default function App(applications) {
 
-export default function App() {
+const application = applications.map((application, i) => console.log(application.dateapplied))
+
+console.log(application)
+
+  const data = [
+    {
+      date: "09/10/2022",
+      appsSent: 0,
+      interview: 0,
+    },
+    {
+      date: "09/11/2022",
+      appsSent: 3,
+      interview: 0,
+    },
+    {
+      date: "09/12/2022",
+      appsSent: 2,
+      interview: 0,
+    },
+    {
+      date: "09/13/2022",
+      appsSent: 3,
+      interview: 0,
+    },
+    {
+      date: "09/14/2022",
+      appsSent: 2,
+      interview: 0,
+    },
+    {
+      date: "09/15/2022",
+      appsSent: 0,
+      interview: 1,
+    },
+    {
+      date: "09/16/2022",
+      appsSent: 4,
+      interview: 0,
+    }
+  ];
+
   return (
     <ResponsiveContainer width="100%" height="100%">
       <LineChart

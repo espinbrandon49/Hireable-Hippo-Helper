@@ -36,7 +36,8 @@ export const ADD_APPLICATION = gql`
     $jobTitle: String, 
     $jobLink: String, 
     $jobDescription: String, 
-    $jobType: String) {
+    $jobType: String
+    $dateApplied: String) {
     createApplication(
       applicant: $applicant,
       company: $company,
@@ -49,6 +50,7 @@ export const ADD_APPLICATION = gql`
       jobLink: $jobLink,
       jobDescription: $jobDescription,
       jobType: $jobType,
+      dateApplied: $dateApplied
       ) {
         _id
         applicant
@@ -62,6 +64,7 @@ export const ADD_APPLICATION = gql`
         jobLink
         jobDescription
         jobType
+        dateApplied
       }
     }`;
 

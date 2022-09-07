@@ -18,7 +18,7 @@ const ApplicationForm = () => {
     jobLink: "",
     jobDescription: "",
     jobType: "",
-
+    dateApplied: ""
   });
   const [createApplication, { error, data}] = useMutation(ADD_APPLICATION);
 
@@ -59,6 +59,7 @@ const ApplicationForm = () => {
       jobLink: "",
       jobDescription: "",
       jobType: "",
+      dateApplied: ""
     });
     window.location.reload();
   };

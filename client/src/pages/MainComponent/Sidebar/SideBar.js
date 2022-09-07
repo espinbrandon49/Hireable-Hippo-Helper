@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom";
+import './colors.css';
 
 const styles = {
   box: {
@@ -9,49 +10,47 @@ const styles = {
   radii: {
     borderTopLeftRadius: '0',
     borderTopRightRadius: '0',
-  }
+  },
 };
 
 const SideBar = ({ applications }) => {
   
-  let classCode;
-  const { _id } = useParams();
-  console.log(_id)
+  // let classCode;
+  // const { _id } = useParams();
+  // console.log(_id)
 
-  if (!_id) {
-    classCode = "is-link"
-  } else {
-    let application = applications.filter((application) => application._id === _id)[0];
+  // if (!_id) {
+  //   classCode = "is-link"
+  // } else {
+  //   let application = applications.filter((application) => application._id === _id)[0];
+  //     if (application) {
+  //       const color = application.currentMilestone
+  //       switch (color) {
+  //         case "Applied":
+  //           classCode = " is-primary";
+  //           break;
+  //         case "Phone Interview":
+  //           classCode = " is-link";
+  //           break;
+  //         case "Technical Interview":
+  //           classCode = " is-info";
+  //           break;
+  //         case "Job Offer":
+  //           classCode = " is-warning";
+  //           break;
+  //         case "Accepted":
+  //           classCode = " is-success";
+  //           break;
+  //         case "Rejected":
+  //           classCode = " is-danger";
+  //           break;
+  //         default:
+  //           classCode = " is-light";
+  //       }
+  //     }
+  //   }
+  //   console.log(classCode)
 
-    function classCodes () {
-      if (application.currentMilestone !== undefined) {
-        const color = application.currentMilestone
-        switch (color) {
-          case "Applied":
-            classCode = " is-primary";
-            break;
-          case "Phone Interview":
-            classCode = " is-link";
-            break;
-          case "Technical Interview":
-            classCode = " is-info";
-            break;
-          case "Job Offer":
-            classCode = " is-warning";
-            break;
-          case "Accepted":
-            classCode = " is-success";
-            break;
-          case "Rejected":
-            classCode = " is-danger";
-            break;
-          default:
-            classCode = " is-light";
-        }
-      }
-    }
-
-  }
   return (
     <div className="container column is-one-quarter" style={styles.box} >
       {applications &&

@@ -59,7 +59,7 @@ const ApplicationForm = () => {
       jobType: "",
       dateApplied: ""
     });
-    window.location.reload();
+    window.location.replace("/");
   };
 
   return (

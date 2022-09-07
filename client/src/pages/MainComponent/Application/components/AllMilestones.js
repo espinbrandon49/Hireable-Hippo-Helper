@@ -19,7 +19,7 @@ const AllMilestones = ({ applications }) => {
         
       });
       console.log(data);
-      window.location.reload(false);
+      window.location.replace("/");
     } catch (err) {
       console.error(err);
     }

@@ -23,6 +23,7 @@ const typeDefs = gql`
     jobLink: String
     jobDescription: String
     jobType: String
+    dateApplied: String
     currentMilestone: String
     milestones: [String]
     note: String
@@ -58,6 +59,7 @@ const typeDefs = gql`
       jobLink: String
       jobDescription: String
       jobType: String
+      dateApplied: String
     ): Application  
     
     updateNote(

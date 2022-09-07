@@ -1,0 +1,17 @@
+:root {
+  --Applied: #00d1b2;
+  --Rejected: #ff3860;
+  --Accepted: #23d160;
+}
+
+.Applied {
+  background-color: var(--Applied);
+}
+
+.Rejected {
+  background-color: var(--Rejected);
+}
+
+.Accepted {
+  background-color: var(--Accepted);
+}

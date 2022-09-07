@@ -27,6 +27,7 @@ export const QUERY_APPLICATIONS = gql`
       jobLink
       jobDescription
       jobType
+      dateApplied
       currentMilestone
       note
       milestones

@@ -35,7 +35,6 @@ const Notes = ({ applications }) => {
     }
   }, [quill]);
 
-
   // form handler to make notes
   const handleFormSubmit = async (event) => {
     try {

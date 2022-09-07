@@ -24,7 +24,6 @@ export default function TrackerContainer() {
     console.log(err);
   }
 
-
   // render pages by state
   const [currentPage, setCurrentPage] = useState("Homepage");
 

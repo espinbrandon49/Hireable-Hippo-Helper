@@ -61,7 +61,7 @@ const resolvers = {
     createApplication: async (
       parent,
       {
-        applicant,
+        applicant, //username
         company,
         salary,
         appliedFrom,

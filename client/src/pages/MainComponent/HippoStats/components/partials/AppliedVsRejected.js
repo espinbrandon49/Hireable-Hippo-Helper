@@ -139,15 +139,3 @@ const renderActiveShape = (props) => {
 };
 
 export default AppliedVsRejected;
-
-// export default function App() {
-
-// }
-
-// const AppliedVsRejected = () => {
-//   return (
-//     <div>
-//       Applications sent vs. applications rejected data visual coming soon!
-//     </div>
-//   )
-// }

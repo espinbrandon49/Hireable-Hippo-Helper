@@ -26,7 +26,7 @@ const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
           Applied To
         </button>
         
-        <button
+        {/* <button
           className={
             currentDataPage === "AppliedVsInterviews"
               ? "button is-primary is-active"
@@ -35,7 +35,7 @@ const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
           onClick={() => handleDataPageChange("AppliedVsInterviews")}
           >
           Applied vs Interviews
-        </button>
+        </button> */}
 
         <button
           className={

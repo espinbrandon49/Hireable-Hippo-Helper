@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { checkForText, validateEmail } from "../../../utils/helpers";
 import Auth from "../../../utils/auth";
 import Login from "../../Login";
 import { useMutation } from "@apollo/client";
@@ -41,7 +40,6 @@ const ApplicationForm = () => {
           variables: {...formState, applicant: Auth.getProfile().data.username,},
           
         });
-        console.log(data);
       } catch (err) {
         console.error(err);
       }
@@ -264,21 +262,6 @@ const ApplicationForm = () => {
                 </div>
               </div>
             </div>
-
-            {/* <div className="field">
-              <label htmlFor="dateApplied" className="label">
-                Date Applied
-              </label>
-              <div className="control">
-                <input
-                  id="dateApplied"
-                  value={formState.dateApplied}
-                  name="dateApplied"
-                  onChange={handleInputChange}
-                  type="text"
-                />
-              </div>
-            </div> */}
 
             <div className="field pt-3">
               <div className="control">

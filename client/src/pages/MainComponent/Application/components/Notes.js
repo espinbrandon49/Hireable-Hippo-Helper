@@ -14,14 +14,12 @@ const styles = {
 };
 
 const Notes = ({ applications }) => {
-  // console.log(applications)
 
   const [updateNote, { data, loading, error }] = useMutation(UPDATE_NOTE);
 
   // initiate  Quill
   const { quill, quillRef } = useQuill();
 
-  // var id = window.location.href.split("/")
   const { _id } = useParams();
  
   //filter by single application
@@ -40,13 +38,10 @@ const Notes = ({ applications }) => {
 
   // form handler to make notes
   const handleFormSubmit = async (event) => {
-    //  event.preventDefault();
-    console.log(_id, quill.getText());
     try {
       await updateNote({
         variables: { _id: _id, note: quill.getText() },
       });
-      // quill.setText(application.note)
       console.log("Success");
     } catch (err) {
       console.error(err);

@@ -28,7 +28,6 @@ const AppliedFrom = ({applications}) => {
     app.appliedFrom === "Other" && appliedFrom.other++
   })
 
-  console.log(appliedFrom.linkedIn)
 
   const data = [
     {
@@ -73,20 +72,6 @@ const AppliedFrom = ({applications}) => {
     },
   ];
 
-
-//     <div>
-//       <h4>APPLIED</h4>
-//       Linkedin: {appliedFrom.linkedIn} <br />
-//       Indeed: {appliedFrom.indeed} <br />
-//       AngelList: {appliedFrom.angelList} <br />
-//       Handshake: {appliedFrom.handshake} <br />
-//       Monster: {appliedFrom.monster} <br />
-//       ZipRecruiter: {appliedFrom.zipRecruiter} <br />
-//       Job Fair: {appliedFrom.jobFair} <br />
-//       Company Website: {appliedFrom.website} <br />
-//       Craigslist: {appliedFrom.craigslist} <br />
-//       Other: {appliedFrom.other} <br />
-//     </div>
 
   return (
     <ResponsiveContainer width="95%" height="100%">

@@ -199,11 +199,6 @@ const AllMilestones = ({ applications }) => {
             );
           })}
         </ul>
-        {/* <p className="menu-label">
-        {application.milestones}
-      </p> */}
-        {/* current Milestone will be in the buttons bar       */}
-        {/* notes will be in notes */}
         <div className="field pt-3">
           <div className="control">
             <button

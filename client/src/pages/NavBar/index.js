@@ -71,9 +71,6 @@ function NavTabs({ currentPage, handlePageChange }) {
             <div className="navbar-item" >
               {Auth.loggedIn() ? (
                 <div className="control buttons">
-                  {/* <p>
-                Hey there, {Auth.getProfile().data.username}!
-              </p> */}
                   <button
                     className="button is-outlined is-rounded"
                     onClick={logout}
@@ -103,7 +100,6 @@ function NavTabs({ currentPage, handlePageChange }) {
           </div>
 
         </div>
-      {/* </div> */}
 
     </nav>
 

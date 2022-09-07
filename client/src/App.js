@@ -49,7 +49,6 @@ const App = () => (
             <Route path="/Hippostats" element={<HippoStats/>} />
             <Route path="/Application/:_id" element={<TrackerContainer/>} />
           </Routes>
-          {/* <Footer /> */}
         </>
     </Router>
   </ApolloProvider> 

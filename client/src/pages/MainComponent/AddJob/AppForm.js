@@ -4,6 +4,8 @@ import Login from "../../Login";
 import { useMutation } from "@apollo/client";
 import { ADD_APPLICATION } from "../../../utils/mutations";
 
+import NavTabs from '../../../pages/NavBar';
+
 const ApplicationForm = () => {
   const [formState, setFormState] = useState({
     applicant: "",
@@ -63,10 +65,15 @@ const ApplicationForm = () => {
   };
 
   return (
+    
     <div className="column is-half is-offset-one-quarter">
+
       {Auth.loggedIn() ? (
+        
         <form onSubmit={handleFormSubmit}>
+          <NavTabs />
           <div className="box">
+            
             <div className="pb-5">
               <h1 className='title'>
                 Welcome {Auth.getProfile().data.username}!

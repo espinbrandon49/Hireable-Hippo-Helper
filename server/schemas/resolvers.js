@@ -162,8 +162,8 @@ const resolvers = {
     },
 
 
-    removeApplication: async (parent, { applicationId }) => {
-      return Application.findOneAndDelete({ _id: applicationId });
+    removeApplication: async (parent, { _id }) => {
+      return Application.findOneAndDelete({ _id: _id });
     },
 
     removeMilestone: async (parent, { applicationId, milestoneId }) => {

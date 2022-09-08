@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Subheader = () => {
-
   return (
     <div className='block'>
       <h1 className="title">Hippo Stats</h1>

@@ -1,7 +1,7 @@
 import React from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
-export default function App({ applications }) {
+const AppTimeline = ({ applications }) => {
 
   let day1 = 0;
   let day2 = 0;
@@ -273,12 +273,14 @@ export default function App({ applications }) {
         <Legend />
         <Line
           type="monotone"
-          dataKey="appsSent"
+          dataKey="interview"
           stroke="#8884d8"
           activeDot={{ r: 8 }}
         />
-        <Line type="monotone" dataKey="interview" stroke="#82ca9d" />
+        <Line type="monotone" dataKey="appsSent" stroke="#82ca9d" />
       </LineChart>
     </ResponsiveContainer>
   );
 }
+
+export default AppTimeline

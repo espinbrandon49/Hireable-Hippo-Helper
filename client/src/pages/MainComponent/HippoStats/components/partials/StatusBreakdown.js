@@ -1,7 +1,7 @@
 import React from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 
-const CurrentMilestones = ({applications}) => {
+const StatusBreakdown = ({applications}) => {
 
   console.log(applications[0])
 
@@ -46,6 +46,6 @@ const CurrentMilestones = ({applications}) => {
   );
 }
 
-export default CurrentMilestones;
+export default StatusBreakdown;
 
 

@@ -11,52 +11,41 @@ const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
               : "button is-primary"
           }
           onClick={() => handleDataPageChange("AppliedFrom")}
-          >
+        >
           Applied From
         </button>
 
         <button
           className={
-            currentDataPage === "AppliedTo"
+            currentDataPage === "AppTimeline"
               ? "button is-primary is-active"
               : "button is-primary"
           }
-          onClick={() => handleDataPageChange("AppliedTo")}
-          >
-          Applied To
-        </button>
-        
-        {/* <button
-          className={
-            currentDataPage === "AppliedVsInterviews"
-              ? "button is-primary is-active"
-              : "button is-primary"
-          }
-          onClick={() => handleDataPageChange("AppliedVsInterviews")}
-          >
-          Applied vs Interviews
-        </button> */}
-
-        <button
-          className={
-            currentDataPage === "AppliedVsRejected"
-              ? "button is-primary is-active"
-              : "button is-primary"
-          }
-          onClick={() => handleDataPageChange("AppliedVsRejected")}
-          >
-          Applied vs Rejected
+          onClick={() => handleDataPageChange("AppTimeline")}
+        >
+          Application Timeline
         </button>
 
         <button
           className={
-            currentDataPage === "CurrentMilestones"
+            currentDataPage === "StatusCount"
               ? "button is-primary is-active"
               : "button is-primary"
           }
-          onClick={() => handleDataPageChange("CurrentMilestones")}
-          >
-          Current Milestones
+          onClick={() => handleDataPageChange("StatusCount")}
+        >
+          Current Status Count
+        </button>
+
+        <button
+          className={
+            currentDataPage === "StatusBreakdown"
+              ? "button is-primary is-active"
+              : "button is-primary"
+          }
+          onClick={() => handleDataPageChange("StatusBreakdown")}
+        >
+          Current Status Breakdown
         </button>
 
       </div>

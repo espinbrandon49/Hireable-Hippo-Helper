@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { PieChart, Pie, Sector, ResponsiveContainer } from "recharts";
 
-const AppliedVsRejected = ({ applications }) => {
+const StatusCount = ({ applications }) => {
   const currentMilestoneCount = {
     Applied: 0,
     Rejected: 0,
@@ -138,4 +138,4 @@ const renderActiveShape = (props) => {
   );
 };
 
-export default AppliedVsRejected;
+export default StatusCount;

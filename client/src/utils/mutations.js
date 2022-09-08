@@ -37,8 +37,10 @@ export const ADD_APPLICATION = gql`
     $jobLink: String, 
     $jobDescription: String, 
     $jobType: String
-    $dateApplied: String) {
-    createApplication(
+    $dateApplied: String
+    ) {
+    createApplication
+    (
       applicant: $applicant,
       company: $company,
       salary: $salary, 
@@ -66,52 +68,40 @@ export const ADD_APPLICATION = gql`
         jobType
         dateApplied
       }
-    }`;
+    }
+`;
 
 export const REMOVE_APPLICATION = gql`
-  mutation removeApplication(
-    $_id: String) {
-    removeApplication(
-      _id: $_id
-      ) {        
-        _id
+  mutation removeApplication($_id: String) {
+    removeApplication(_id: $_id) {        
+      _id
     }
-  }`;
+  }
+`;
 
 export const UPDATE_NOTE = gql`
-      mutation updateNote(
-        $_id: String, $note: String) {
-        updateNote(
-          _id: $_id,
-          note: $note) {        
-          _id
-          note
-        }
-      }`;
+  mutation updateNote($_id: String, $note: String) {
+    updateNote(_id: $_id, note: $note) {        
+      _id
+      note
+    }
+  }
+`;
 
 export const UPDATE_MILESTONE = gql`
-  mutation updateMilestone(
-    $_id: String, $currentMilestone: String) {
-    updateMilestone(
-      _id: $_id,
-      currentMilestone: $currentMilestone) {        
+  mutation updateMilestone($_id: String, $currentMilestone: String) {
+    updateMilestone(_id: $_id, currentMilestone: $currentMilestone) {        
       _id
       currentMilestone
     }
-}`;
+  }
+`;
 
 export const ADD_MILESTONE = gql`
-  mutation addMilestone(
-    $_id: String, $milestones: [String]) {
-    addMilestone(
-      _id: $_id,
-      milestones: $milestones) {        
+  mutation addMilestone($_id: String, $milestones: [String]) {
+    addMilestone(_id: $_id, milestones: $milestones) {        
       _id
       milestones
     }
-}`;
-
-
-
-
-
+  }
+`;

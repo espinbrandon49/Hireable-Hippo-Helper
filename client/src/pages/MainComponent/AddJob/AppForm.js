@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Auth from "../../../utils/auth";
-import Login from "../../Login";
 import { useMutation } from "@apollo/client";
 import { ADD_APPLICATION } from "../../../utils/mutations";
-
+import Auth from "../../../utils/auth";
+import Login from "../../Login";
 import NavTabs from '../../../pages/NavBar';
 
 const ApplicationForm = () => {
@@ -21,12 +20,11 @@ const ApplicationForm = () => {
     jobType: "",
     dateApplied: ""
   });
-  const [createApplication, { error, data}] = useMutation(ADD_APPLICATION);
+  const [createApplication, { error }] = useMutation(ADD_APPLICATION);
 
-
+  // Update state based on form input changes
   const handleInputChange = (event) => {
     const { name, value} = event.target;
-
 
     setFormState({
       ...formState,
@@ -34,19 +32,18 @@ const ApplicationForm = () => {
     });
   };
 
+  // Submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    try {
+        await createApplication({
+        variables: {...formState, applicant: Auth.getProfile().data.username,},
+      });
+    } catch (err) {
+      console.error(err);
+    }
 
-      try {
-        const { data } = await createApplication({
-          variables: {...formState, applicant: Auth.getProfile().data.username,},
-          
-        });
-      } catch (err) {
-        console.error(err);
-      }
-
-    // clear form values
+    // Clear form values
     setFormState({
       applicant: Auth.getProfile().data.username,
       company: "",

@@ -2,7 +2,6 @@ import React from "react";
 import Auth from "../../utils/auth";
 import icon from "../../images/hippoIcon.png";
 
-
 function NavTabs({ currentPage, handlePageChange }) {
   const logout = (event) => {
     event.preventDefault();
@@ -88,11 +87,9 @@ function NavTabs({ currentPage, handlePageChange }) {
               )}
             </div>
           </div>
-
+          
         </div>
-
     </nav>
-
   );
 }
 

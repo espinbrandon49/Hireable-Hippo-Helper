@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
-
 import NavTabs from '../NavBar';
-
 import Auth from '../../utils/auth';
 
 const Signup = () => {
@@ -16,6 +13,7 @@ const Signup = () => {
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
+  // Update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -25,15 +23,13 @@ const Signup = () => {
     });
   };
 
+  // Submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
-
     try {
       const { data } = await addUser({
         variables: { ...formState },
       });
-
       Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
@@ -93,7 +89,6 @@ const Signup = () => {
                   </div>
                 </div>
 
-
                 <div className='field'>
                   <label htmlFor='password' className='label'>
                     Password
@@ -111,7 +106,6 @@ const Signup = () => {
                     />
                   </div>
                 </div>
-
 
                 <div className='field pt-3'>
                   <div className='control'>

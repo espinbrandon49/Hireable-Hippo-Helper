@@ -4,10 +4,9 @@ import Auth from "../../../utils/auth";
 import Subheader from "./components/Subheader";
 import DataMilestones from "./components/DataMilestones";
 import AppliedFrom from './components/partials/AppliedFrom'
-import AppliedTo from './components/partials/AppliedTo';
-import AppliedVsInterviews from './components/partials/AppliedVsInterviews';
-import AppliedVsRejected from './components/partials/AppliedVsRejected';
-import CurrentMilestones from './components/partials/CurrentMilestones';
+import AppTimeline from './components/partials/AppTimeline';
+import StatusCount from './components/partials/StatusCount';
+import StatusBreakdown from './components/partials/StatusBreakdown';
 
 const styles = {
   box: {
@@ -22,17 +21,14 @@ const HippoStats = ({ applications }) => {
     if (currentDataPage === 'AppliedFrom') {
       return <AppliedFrom applications={applications} />;
     }
-    if (currentDataPage === 'AppliedTo') {
-      return <AppliedTo applications={applications} />;
+    if (currentDataPage === 'AppTimeline') {
+      return <AppTimeline applications={applications} />;
     }
-    if (currentDataPage === 'AppliedVsInterviews') {
-      return <AppliedVsInterviews applications={applications} />;
+    if (currentDataPage === 'StatusCount') {
+      return <StatusCount applications={applications} />;
     }
-    if (currentDataPage === 'AppliedVsRejected') {
-      return <AppliedVsRejected applications={applications} />;
-    }
-    if (currentDataPage === 'CurrentMilestones') {
-      return <CurrentMilestones applications={applications} />;
+    if (currentDataPage === 'StatusBreakdown') {
+      return <StatusBreakdown applications={applications} />;
     }
   };
 
@@ -43,19 +39,16 @@ const HippoStats = ({ applications }) => {
       {Auth.loggedIn() ? (
         <>
           <Subheader applications={applications} />
-
           <DataMilestones 
             currentDataPage={currentDataPage}
-            handleDataPageChange={handleDataPageChange} />
-
+            handleDataPageChange={handleDataPageChange}
+          />
           <div className='box' style={styles.box}>
             {renderDataPage()}
           </div>
-
         </>
       ) : (
         <Login />
-
       )}
     </div>
   );

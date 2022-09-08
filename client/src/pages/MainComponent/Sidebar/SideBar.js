@@ -13,9 +13,6 @@ const styles = {
 };
 
 const SideBar = ({ applications }) => {
-  
-
-
   return (
     <div className="container column is-one-quarter" style={styles.box} >
       {applications &&

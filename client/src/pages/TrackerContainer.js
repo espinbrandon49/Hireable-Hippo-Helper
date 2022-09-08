@@ -8,11 +8,11 @@ import { useQuery } from "@apollo/client";
 import { QUERY_APPLICATIONS } from "../utils/queries";
 
 export default function TrackerContainer() {
-  // call all applications
+  // Call all applications
   const { loading, data } = useQuery(QUERY_APPLICATIONS);
   const applications = data?.applications || [];
 
-  // call single applications by username
+  // Call single applications by username
   var filteredApps = [];
   try {
     filteredApps = applications.filter((application) => application.applicant === Auth.getProfile().data.username);
@@ -20,7 +20,7 @@ export default function TrackerContainer() {
     console.log(err);
   }
 
-  // render pages by state
+  // Render pages by state
   const [currentPage, setCurrentPage] = useState("Application");
 
   if (loading) return "Hippo Loading";
@@ -33,7 +33,7 @@ export default function TrackerContainer() {
     }
   };
 
-  // event handler to toggle state
+  // Event handler to toggle state
   const handlePageChange = (page) => setCurrentPage(page);
     return (
       <div>

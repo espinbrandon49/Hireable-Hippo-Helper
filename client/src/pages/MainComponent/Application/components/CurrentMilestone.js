@@ -43,7 +43,6 @@ const CurrentMilestone = ({applications}) => {
           }
           value={"Applied"}
           onClick={submitMilestone}
-          // style={styles.radii}
         >
           Applied
         </button>
@@ -110,7 +109,6 @@ const CurrentMilestone = ({applications}) => {
           }
           value={"Accepted"}
           onClick={submitMilestone}
-          // style={styles.circle}
         >
           Accepted
         </button>
@@ -127,24 +125,7 @@ const CurrentMilestone = ({applications}) => {
         >
           Rejected
         </button>
-        {/* <button
-          className={
-            _id
-            ? application.currentMilestone === "Hippo Donations"
-              ? 'button column  py-6 mx-3 my-2 is-link'
-              : 'button column  py-6 mx-3 my-2 is-info'
-            : 'button column  py-6 mx-3 my-2 is-info'
-          }
-          style={styles.button}
-          value={"Hippo Donations"}
-          onClick={submitMilestone}
-        >
-          Hippo Donations
-        </button> */}
       </div>
-
-        {/* {error && (
-        <div className="my-3 p-3 bg-danger text-white">{error.message}</div>)} */}
     </div>
   )
 }

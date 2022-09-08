@@ -28,6 +28,17 @@ Job seekers can view view data on milestones and job information to track my pro
 * Update/Add notes at different stages of the application process using the powerful rich text editor [Quill.js](https://quilljs.co).
 * Delete job applications that have closed or otherwise not desired to be tracked.
 
+```
+Guest Login 1
+username: virgoSpanishFoodHiking@techfriends.dev
+password: password01
+```
+```
+Guest Login 2
+username: hipNerd98@techfriends.dev
+password: password02 
+```
+
 ## Features
 See the jobs you have applied to on a clickable sidebar that will display job application details on a specific job so that you can always refer to a tool that has hiring manager names, inportant dates such as interviews, the job link, description, company website, and your own custom notes.
 
@@ -38,7 +49,7 @@ Leave a custom note that can be meaningfully documented and organized because th
 Dynamic visualizations allow one to see the application life cycle evolve in real time which is an analytics tool to zero in on your job search habits, milestones, and key metrics such as number of applied, number of job interviews, days of the week you are most actively searching, etc.
 
 ## Tests
-Testing was done using GraphQL.
+Testing was done using Apollo GraphQL.
 
 ## Credits
 All original coding credit goes to Brandon Espinosa, Brice Veyna, Jeffrey Zhang, and Zori Zulkhuu.

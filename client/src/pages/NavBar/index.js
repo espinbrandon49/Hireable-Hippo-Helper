@@ -2,7 +2,7 @@ import React from "react";
 import Auth from "../../utils/auth";
 import icon from "../../images/hippoIcon.png";
 
-function NavTabs({ currentPage, handlePageChange}) {
+function NavTabs({ currentPage, handleHippoStats, handleApplication, handlePageChange}) {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
@@ -20,10 +20,8 @@ function NavTabs({ currentPage, handlePageChange}) {
         <div className="navbar-start is-flex is-align-items-center ">
 
           <a href="/Main/#HippoStats"
-            onClick={(e) => {
-              e.persist()
-              handlePageChange("HippoStats")}
-            }
+            onClick={handleHippoStats}
+            
             // Check to see if the currentPage is `HippoStats`, and if so we use the active link class. Otherwise, we set it to a normal nav-link
             className={
               currentPage === "HippoStats"
@@ -35,7 +33,7 @@ function NavTabs({ currentPage, handlePageChange}) {
           </a>
 
           <a href="/Main/#Application"
-            onClick={() => handlePageChange("Application")}
+            onClick={handleApplication}
             // Check to see if the currentPage is `Application`, and if so we use the active link class. Otherwise, we set it to a normal nav-link
             className={
               currentPage === "Application"

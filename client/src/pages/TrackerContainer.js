@@ -35,16 +35,26 @@ export default function TrackerContainer() {
     //second click I get hippostats or application depending on which navbutton I click
     console.log(page)
   }
-
+  const handleHippoStats = () => {
+    setCurrentPage('HippoStats')
+  }
+  const handleApplication = () => {
+    setCurrentPage('Application')
+  }
   //first click I get homepage when I click hippostats or application (expected hippostat or application)
   //second click I get hippostats or application depending on which navbutton I click
-  console.log(currentPage) 
-  
-  return ( 
+  console.log(currentPage)
+
+  return (
     //first click renders navbar and #maincomponent empty, (expect render navbar, sidebar, and either HippoStats and Application)
     //second click renders render navbar, sidebar, and either HippoStats and Application 
     <div>
-      <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
+      <NavBar
+        currentPage={currentPage}
+        handleHippoStats={handleHippoStats}
+        handleApplication={handleApplication}
+        handlePageChange={handlePageChange}
+      />
       <div className="section">
         <div className="columns" id="mainComponent">
           {

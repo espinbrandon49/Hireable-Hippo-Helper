@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar/index";
 import SideBar from "./MainComponent/Sidebar/SideBar";
 import Application from "./MainComponent/Application/Application";
@@ -21,29 +21,48 @@ export default function TrackerContainer() {
   }
 
   // Render pages by state
-  const [currentPage, setCurrentPage] = useState("Application");
+  const [currentPage, setCurrentPage] = useState("homepage");
 
   if (loading) return "Hippo Loading";
 
-  const renderPage = () => {
-    if (currentPage === "HippoStats") {
-      return <HippoStats applications={filteredApps} />;
-    } else if (currentPage === "Application") {
-      return <Application applications={filteredApps} />;
-    }
-  };
-
   // Event handler to toggle state
-  const handlePageChange = (page) => setCurrentPage(page);
-    return (
-      <div>
-        <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
-        <div className="section">
-          <div className="columns">
-            {renderPage()}
-            <SideBar applications={filteredApps} />
-          </div>
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    //first click no console log happens
+    //second click "meow"
+    console.log('meow'); 
+    //first click no console log happens
+    //second click I get hippostats or application depending on which navbutton I click
+    console.log(page)
+  }
+
+  //first click I get homepage when I click hippostats or application (expected hippostat or application)
+  //second click I get hippostats or application depending on which navbutton I click
+  console.log(currentPage) 
+  
+  return ( 
+    //first click renders navbar and #maincomponent empty, (expect render navbar, sidebar, and either HippoStats and Application)
+    //second click renders render navbar, sidebar, and either HippoStats and Application 
+    <div>
+      <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
+      <div className="section">
+        <div className="columns" id="mainComponent">
+          {
+            currentPage === "HippoStats" &&
+            <>
+              <HippoStats applications={filteredApps} />
+              <SideBar applications={filteredApps} />
+            </>
+          }
+
+          {currentPage === "Application" &&
+            <>
+              <Application applications={filteredApps} />
+              <SideBar applications={filteredApps} />
+            </>
+          }
         </div>
       </div>
-    );
+    </div>
+  );
 }

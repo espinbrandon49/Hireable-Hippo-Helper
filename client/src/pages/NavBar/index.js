@@ -20,7 +20,10 @@ function NavTabs({ currentPage, handlePageChange}) {
         <div className="navbar-start is-flex is-align-items-center ">
 
           <a href="/Main/#HippoStats"
-            onClick={() => handlePageChange("HippoStats")}
+            onClick={(e) => {
+              e.persist()
+              handlePageChange("HippoStats")}
+            }
             // Check to see if the currentPage is `HippoStats`, and if so we use the active link class. Otherwise, we set it to a normal nav-link
             className={
               currentPage === "HippoStats"

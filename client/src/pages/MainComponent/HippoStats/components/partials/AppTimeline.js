@@ -37,65 +37,65 @@ const AppTimeline = ({ applications }) => {
   const appDates = applications.map((app) => { return app.dateApplied })
 
   for (let i = 0; i < appDates.length; i++) {
-    if (appDates[i] == "Sep 1st, 2022 at 12:00 am") {
+    if (appDates[i] === "Sep 1st, 2022 at 12:00 am") {
       day1++
-    } else if (appDates[i] == "Sep 2nd, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 2nd, 2022 at 12:00 am") {
       day2++
-    } else if (appDates[i] == "Sep 3rd, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 3rd, 2022 at 12:00 am") {
       day3++
-    } else if (appDates[i] == "Sep 4th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 4th, 2022 at 12:00 am") {
       day4++
-    } else if (appDates[i] == "Sep 5th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 5th, 2022 at 12:00 am") {
       day5++
-    } else if (appDates[i] == "Sep 6th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 6th, 2022 at 12:00 am") {
       day6++
-    } else if (appDates[i] == "Sep 7th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 7th, 2022 at 12:00 am") {
       day7++
-    } else if (appDates[i] == "Sep 8th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 8th, 2022 at 12:00 am") {
       day8++
-    } else if (appDates[i] == "Sep 9th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 9th, 2022 at 12:00 am") {
       day9++
-    } else if (appDates[i] == "Sep 10th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 10th, 2022 at 12:00 am") {
       day10++
-    } else if (appDates[i] == "Sep 11th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 11th, 2022 at 12:00 am") {
       day11++
-    } else if (appDates[i] == "Sep 12th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 12th, 2022 at 12:00 am") {
       day12++
-    } else if (appDates[i] == "Sep 13th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 13th, 2022 at 12:00 am") {
       day13++
-    } else if (appDates[i] == "Sep 14th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 14th, 2022 at 12:00 am") {
       day14++
-    } else if (appDates[i] == "Sep 15th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 15th, 2022 at 12:00 am") {
       day15++
-    } else if (appDates[i] == "Sep 16th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 16th, 2022 at 12:00 am") {
       day16++
-    } else if (appDates[i] == "Sep 17th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 17th, 2022 at 12:00 am") {
       day17++
-    } else if (appDates[i] == "Sep 18th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 18th, 2022 at 12:00 am") {
       day18++
-    } else if (appDates[i] == "Sep 19th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 19th, 2022 at 12:00 am") {
       day19++
-    } else if (appDates[i] == "Sep 20th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 20th, 2022 at 12:00 am") {
       day20++
-    } else if (appDates[i] == "Sep 21st, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 21st, 2022 at 12:00 am") {
       day21++
-    } else if (appDates[i] == "Sep 22nd, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 22nd, 2022 at 12:00 am") {
       day22++
-    } else if (appDates[i] == "Sep 23rd, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 23rd, 2022 at 12:00 am") {
       day23++
-    } else if (appDates[i] == "Sep 24th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 24th, 2022 at 12:00 am") {
       day24++
-    } else if (appDates[i] == "Sep 25th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 25th, 2022 at 12:00 am") {
       day25++
-    } else if (appDates[i] == "Sep 26th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 26th, 2022 at 12:00 am") {
       day26++
-    } else if (appDates[i] == "Sep 27th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 27th, 2022 at 12:00 am") {
       day27++
-    } else if (appDates[i] == "Sep 28th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 28th, 2022 at 12:00 am") {
       day28++
-    } else if (appDates[i] == "Sep 29th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 29th, 2022 at 12:00 am") {
       day29++
-    } else if (appDates[i] == "Sep 30th, 2022 at 12:00 am") {
+    } else if (appDates[i] === "Sep 30th, 2022 at 12:00 am") {
       day30++
     }
   }

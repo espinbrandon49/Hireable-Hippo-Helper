@@ -1,6 +1,6 @@
 import React from "react";
-import Auth from "../../utils/auth";
-import icon from "../../images/hippoIcon.png";
+import Auth from "../utils/auth";
+import icon from "../images/hippoIcon.png";
 
 
 function NavBar({ currentPage, handleHippoStats, handleApplication, handlePageChange}) {
@@ -34,7 +34,7 @@ function NavBar({ currentPage, handleHippoStats, handleApplication, handlePageCh
           </a>
 
           <a href="/Main/#Application"
-            onClick={handleApplication}
+            onClick={() => handlePageChange('Application')}
             // Check to see if the currentPage is `Application`, and if so we use the active link class. Otherwise, we set it to a normal nav-link
             className={
               currentPage === "Application"
@@ -95,4 +95,4 @@ function NavBar({ currentPage, handleHippoStats, handleApplication, handlePageCh
   );
 }
 
-// export default NavBar;
+export default NavBar;

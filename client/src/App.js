@@ -53,7 +53,7 @@ const App = () => (
           <Route path="/Login" element={<Login />} />
 
           <Route path="/Main/Application" element={<Application />} />
-          <Route path="/HippoStats" element={<HippoStats />} />
+          <Route path="/Main/HippoStats" element={<HippoStats />} />
           <Route path="/Main/Application/:_id" element={<TrackerContainer />} />
         </Routes>
       </>

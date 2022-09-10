@@ -3,7 +3,8 @@ import { useMutation } from "@apollo/client";
 import { ADD_APPLICATION } from "../../../utils/mutations";
 import Auth from "../../../utils/auth";
 import Login from "../../Login";
-import NavTabs from '../../../pages/NavBar';
+// import NavBar from '../../../pages/NavBar';
+import NavBar from '../../Navbar';
 
 const ApplicationForm = () => {
   const [formState, setFormState] = useState({
@@ -63,7 +64,7 @@ const ApplicationForm = () => {
 
   return (
     <>
-    <NavTabs/>
+    <NavBar/>
     <div className="column is-half is-offset-one-quarter">
 
       {Auth.loggedIn() ? (

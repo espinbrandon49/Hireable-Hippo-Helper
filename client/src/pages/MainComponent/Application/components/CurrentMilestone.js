@@ -9,6 +9,7 @@ const CurrentMilestone = ({applications}) => {
 
   const [updateMilestone, { error, data }] = useMutation(UPDATE_MILESTONE);
   const [addMilestone, { err, dataA }] = useMutation(ADD_MILESTONE);
+console.log(error, err, data, dataA)
 
   if (_id) {
     application = applications.filter((application) => application._id === _id)[0];

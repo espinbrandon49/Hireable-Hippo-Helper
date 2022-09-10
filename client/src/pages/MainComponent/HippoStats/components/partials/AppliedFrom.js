@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 
 const AppliedFrom = ({applications}) => {
   const appliedFrom = {

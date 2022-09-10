@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import NavBar from "./NavBar/index";
+import React, { useState } from "react";
+// import NavBar from "./NavBar/index";
+import NavBar from "./Navbar";
 import SideBar from "./MainComponent/Sidebar/SideBar";
 import Application from "./MainComponent/Application/Application";
 import HippoStats from "./MainComponent/HippoStats/HippoStats";
@@ -23,34 +24,37 @@ export default function TrackerContainer() {
   // Render pages by state
   const [currentPage, setCurrentPage] = useState("homepage");
 
-  if (loading) return "Hippo Loading";
-
   // Event handler to toggle state
   const handlePageChange = (page) => {
-    setCurrentPage(page);
-    //first click no console log happens
+        //first click no console log happens
     //second click "meow"
     console.log('meow'); 
     //first click no console log happens
     //second click I get hippostats or application depending on which navbutton I click
     console.log(page)
+    return setCurrentPage(page);
   }
+
   const handleHippoStats = () => {
-    setCurrentPage('HippoStats')
+    return setCurrentPage('HippoStats')
   }
   const handleApplication = () => {
-    setCurrentPage('Application')
+    return setCurrentPage('Application')
   }
+  console.log(currentPage)
   //first click I get homepage when I click hippostats or application (expected hippostat or application)
   //second click I get hippostats or application depending on which navbutton I click
   console.log(currentPage)
 
+  if (loading) return "Hippo Loading";
+  
   return (
     //first click renders navbar and #maincomponent empty, (expect render navbar, sidebar, and either HippoStats and Application)
     //second click renders render navbar, sidebar, and either HippoStats and Application 
     <div>
       <NavBar
         currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
         handleHippoStats={handleHippoStats}
         handleApplication={handleApplication}
         handlePageChange={handlePageChange}

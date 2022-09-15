@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 
 const AppliedFrom = ({applications}) => {
   const appliedFrom = {
@@ -26,7 +26,7 @@ const AppliedFrom = ({applications}) => {
     app.appliedFrom === "Company Website" && appliedFrom.website++
     app.appliedFrom === "Craigslist" && appliedFrom.craigslist++
     app.appliedFrom === "Other" && appliedFrom.other++
-  })
+  });
 
 
   const data = [

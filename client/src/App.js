@@ -44,20 +44,21 @@ const client = new ApolloClient({
 const App = () => (
   <ApolloProvider client={client}>
     <Router>
-        <>
-          <Routes>
-            <Route path="/" element={<TrackerContainer />} />
-            <Route path="/Signup" element={<Signup/>} />
-            <Route path="/Login" element={<Login/>} />
-            <Route path="/Homepage" element={<Homepage/>} />
-            <Route path="/Hippostats" element={<HippoStats/>} />
-            <Route path="/Application" element={<Application/>} />
-            <Route path="/Application/:_id" element={<TrackerContainer/>} />
-            <Route path="/AppForm" element={<AddJob/>} />
-          </Routes>
-        </>
+      <>
+        <Routes>
+          <Route path="/Main" element={<TrackerContainer />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/AppForm" element={<AddJob />} />
+          <Route path="/Signup" element={<Signup />} />
+          <Route path="/Login" element={<Login />} />
+
+          <Route path="/Main/Application" element={<Application />} />
+          <Route path="/Main/HippoStats" element={<HippoStats />} />
+          <Route path="/Main/Application/:_id" element={<TrackerContainer />} />
+        </Routes>
+      </>
     </Router>
-  </ApolloProvider> 
+  </ApolloProvider>
 );
 
 export default App;

@@ -26,7 +26,7 @@ const AppliedFrom = ({applications}) => {
     app.appliedFrom === "Company Website" && appliedFrom.website++
     app.appliedFrom === "Craigslist" && appliedFrom.craigslist++
     app.appliedFrom === "Other" && appliedFrom.other++
-  })
+  });
 
 
   const data = [

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import NavBar from "./NavBar/index";
 import NavBar from "./Navbar";
 import SideBar from "./MainComponent/Sidebar/SideBar";
@@ -21,14 +21,13 @@ export default function TrackerContainer() {
     console.log(err);
   }
 
-  // Render pages by state
-  const [currentPage, setCurrentPage] = useState("homepage");
+  const [currentPage, setCurrentPage] = useState('homepage');
 
   // Event handler to toggle state
   const handlePageChange = (page) => {
-        //first click no console log happens
+    //first click no console log happens
     //second click "meow"
-    console.log('meow'); 
+    console.log('meow');
     //first click no console log happens
     //second click I get hippostats or application depending on which navbutton I click
     console.log(page)
@@ -36,26 +35,30 @@ export default function TrackerContainer() {
   }
 
   const handleHippoStats = () => {
-    return setCurrentPage('HippoStats')
+    console.log(currentPage)
+    console.log('meow')
+    setCurrentPage('HippoStats')
   }
+
   const handleApplication = () => {
+    console.log(currentPage)
     return setCurrentPage('Application')
   }
-  console.log(currentPage)
+
   //first click I get homepage when I click hippostats or application (expected hippostat or application)
   //second click I get hippostats or application depending on which navbutton I click
   console.log(currentPage)
 
   if (loading) return "Hippo Loading";
-  
+
   return (
     //first click renders navbar and #maincomponent empty, (expect render navbar, sidebar, and either HippoStats and Application)
     //second click renders render navbar, sidebar, and either HippoStats and Application 
     <div>
       <NavBar
+        handleHippoStats={handleHippoStats}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-        handleHippoStats={handleHippoStats}
         handleApplication={handleApplication}
         handlePageChange={handlePageChange}
       />
@@ -80,3 +83,5 @@ export default function TrackerContainer() {
     </div>
   );
 }
+
+//currentPage needs change before anything else is rendered

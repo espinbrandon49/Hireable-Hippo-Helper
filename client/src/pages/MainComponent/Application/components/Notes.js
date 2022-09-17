@@ -16,7 +16,6 @@ const styles = {
 const Notes = ({ applications }) => {
 
   const [updateNote, { data, loading, error }] = useMutation(UPDATE_NOTE);
-console.log(data)
   // initiate  Quill
   const { quill, quillRef } = useQuill();
 

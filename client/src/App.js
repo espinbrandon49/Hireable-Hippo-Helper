@@ -7,6 +7,8 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import '@mui/material'
+import '@mui/icons-material'
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import AddJob from "./pages/MainComponent/AddJob/AppForm";

@@ -3,8 +3,6 @@ import { useMutation } from "@apollo/client";
 import { ADD_APPLICATION } from "../../../utils/mutations";
 import Auth from "../../../utils/auth";
 import Login from "../../Login";
-// import NavBar from '../../../pages/NavBar';
-import NavBar from '../../Navbar';
 
 const ApplicationForm = () => {
   const [formState, setFormState] = useState({
@@ -64,11 +62,8 @@ const ApplicationForm = () => {
 
   return (
     <>
-    <NavBar/>
-    <div className="column is-half is-offset-one-quarter">
-
-      {Auth.loggedIn() ? (
-        
+    {Auth.loggedIn() ? (
+      <div className="column is-half is-offset-one-quarter">
         <form onSubmit={handleFormSubmit}>
           <div className="box">
             
@@ -282,6 +277,7 @@ const ApplicationForm = () => {
             </div>
           </div>
         </form>
+      </div>
       ) : (
         <Login />
       )}
@@ -289,7 +285,6 @@ const ApplicationForm = () => {
       {error && (
         <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
       )}
-    </div>
     </>
   );
 };

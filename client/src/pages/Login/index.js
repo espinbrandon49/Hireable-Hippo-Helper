@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
-
 import Auth from '../../utils/auth';
-// import NavBar from '../NavBar';
-import NavBar from '../Navbar';
 
 const Login = (props) => {
     const [formState, setFormState] = useState({ email: '', password: '' });
@@ -43,7 +40,6 @@ const Login = (props) => {
   
     return (
       <main className="flex-row justify-center mb-4">
-        <NavBar/>
         <div className="col-12 col-lg-10">
           <div className="card">
             <h3 className="card-header title p-3 mb-1">Login</h3>
@@ -55,6 +51,10 @@ const Login = (props) => {
                 </p>
               ) : (
                 <form className="p-6" onSubmit={handleFormSubmit}>
+                  <p>
+                    Don't have an account?{' '}
+                    <Link to="/Signup">Signup here.</Link>
+                  </p>
 
                   <div className='field'>
                     <label htmlFor='email' className='label'>

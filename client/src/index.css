@@ -1,6 +1,6 @@
 html, body,#root {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   margin: 0 ;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,4 +13,58 @@ html, body,#root {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#homepage {
+  height: 100%;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+#background1 {
+  height: 75%;
+  border-left: 100vw solid lightgrey;
+  border-bottom: 15vh solid rgb(80, 190, 250);
+}
+
+#background2 {
+  height: 45%;
+  background: rgb(80, 190, 250);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+#background2 p {
+  margin-right: 5%;
+  width: 25%;
+  text-align: right;
+}
+
+#background3 {
+  height: 75%;
+  border-left: 100vw solid lightgrey;
+  border-top: 15vh solid rgb(80, 190, 250);
+  border-bottom: 15vh solid rgb(0, 90, 135);
+}
+
+#background3 p {
+  margin-left: 38%;
+  width: 25%;
+}
+
+#background4 {
+  height: 50%;
+  background: rgb(0, 90, 135);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+#background4 p {
+  margin-right: 5%;
+  width: 25%;
+  text-align: right;
+  color: antiquewhite;
 }

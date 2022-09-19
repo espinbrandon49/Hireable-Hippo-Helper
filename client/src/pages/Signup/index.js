@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
-// import NavBar from '../NavBar';
-import NavBar from '../Navbar';
 import Auth from '../../utils/auth';
 
 const Signup = () => {
@@ -39,7 +37,6 @@ const Signup = () => {
 
   return (
     <main className="flex-row justify-center mb-4">
-      <NavBar />
       <div className="col-12 col-lg-10">
         <div className="card">
           <h3 className="card-header title p-3 mb-1">Signup</h3>
@@ -53,7 +50,7 @@ const Signup = () => {
               <form className="p-6" onSubmit={handleFormSubmit}>
               <p>
                 Already have an account?{' '}
-                <Link to="/Login">login here.</Link>
+                <Link to="/Login">Login here.</Link>
               </p>
 
                 <div className='field'>

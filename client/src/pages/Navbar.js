@@ -7,6 +7,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import icon from "../images/hippoIcon.png";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 function TabPanel(props) {
   const { children, currentPage, index, ...other } = props;
@@ -14,8 +15,8 @@ function TabPanel(props) {
     <div
       role="tabpanel"
       hidden={currentPage !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
+      id={`vertical-tabpanel-${index}`}
+      aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
       {currentPage === index && (
@@ -29,8 +30,8 @@ function TabPanel(props) {
 
 function a11yProps(index) {
   return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    id: `vertical-tab-${index}`,
+    'aria-controls': `vertical-tabpanel-${index}`,
   };
 }
 
@@ -46,12 +47,14 @@ function NavBar() {
     setCurrentPage(newPage);
   };
 
+  const smallScreen = useMediaQuery("(max-width: 768px)");
+
   return (
     <>
     <Box sx={{ background: 'white' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         {Auth.loggedIn() ? (
-          <Tabs value={currentPage} onChange={handlePageChange} aria-label="basic tabs example">
+          <Tabs variant={smallScreen ? "fullWidth" : ""} value={currentPage} orientation={smallScreen ? "vertical" : "horizonal"} onChange={handlePageChange}>
             <Tab icon={<img src={icon} alt="hippo" style={{"height": "45px"}} />} component={Link} to="/" {...a11yProps(0)} />
             <Tab label="HippoStats" component={Link} to="/Main/#HippoStats" {...a11yProps(1)} />
             <Tab label="My Applications" component={Link} to="/Main/#Application" {...a11yProps(2)} />
@@ -59,7 +62,7 @@ function NavBar() {
             <Tab label="Log Out" onClick={logout} {...a11yProps(4)} />
           </Tabs>
         ) : (
-          <Tabs value={currentPage} onChange={handlePageChange} aria-label="basic tabs example">
+          <Tabs value={currentPage} orientation={smallScreen ? "vertical" : "horizonal"} onChange={handlePageChange}>
             <Tab icon={<img src={icon} alt="hippo" style={{"height": "45px"}} />} component={Link} to="/" {...a11yProps(0)} />
             <Tab label="HippoStats" component={Link} to="/Login" {...a11yProps(1)} />
             <Tab label="My Applications" component={Link} to="/Login" {...a11yProps(2)} />

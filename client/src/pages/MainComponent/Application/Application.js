@@ -5,8 +5,11 @@ import Subheader from './components/Subheader'
 import CurrentMilestones from './components/CurrentMilestone'
 import AllMilestones from './components/AllMilestones'
 import Notes from './components/Notes'
+import { useLocation } from "react-router-dom";
 
 const Application = ({ applications }) => {
+  const Bob = useLocation()
+  console.log(Bob)
   return (
     <div className='container column is-three-quarters'>
       {Auth.loggedIn() ? (

@@ -1,6 +1,7 @@
 import decode from "jwt-decode";
 
 class AuthService {
+  //this is trying to get the webtoken from localstorage
   getProfile() {
     return decode(this.getToken());
   }

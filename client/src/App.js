@@ -17,7 +17,7 @@ import Application from "./pages/MainComponent/Application/Application";
 import Homepage from "./pages/Homepage/Homepage";
 
 import { useState } from 'react'
-import { AuthContext } from './utils/helpers'
+// import { AuthContext } from './utils/helpers'
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({

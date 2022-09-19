@@ -18,6 +18,9 @@ import 'bulma/css/bulma.min.css';
 import '@mui/material'
 import '@mui/icons-material'
 
+import { useState } from 'react'
+// import { AuthContext } from './utils/helpers'
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: "/graphql",

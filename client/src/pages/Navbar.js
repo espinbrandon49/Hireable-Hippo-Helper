@@ -10,7 +10,6 @@ import icon from "../images/hippoIcon.png";
 
 function TabPanel(props) {
   const { children, currentPage, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -27,13 +26,6 @@ function TabPanel(props) {
     </div>
   );
 }
-
-// const styles = createTheme({
-//   tab: {
-//     maxWidth: "100%",
-//     width: "100%",
-//   }
-// })
 
 function a11yProps(index) {
   return {

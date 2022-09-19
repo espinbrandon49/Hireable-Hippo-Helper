@@ -5,7 +5,7 @@ import { REMOVE_APPLICATION } from "../../../../utils/mutations";
 const AllMilestones = ({ application }) => {
 
   const [removeApplication, { error, data }] = useMutation(REMOVE_APPLICATION);
-  // console.log(error, data)
+
   const handleDelete = async (event) => {
     // console.log(event.type);
     try {

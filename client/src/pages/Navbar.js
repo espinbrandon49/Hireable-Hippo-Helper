@@ -1,97 +1,102 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
+import TrackerContainer from '../pages/TrackerContainer/TrackerContainer';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 import icon from "../images/hippoIcon.png";
 
+function TabPanel(props) {
+  const { children, currentPage, index, ...other } = props;
 
-function NavBar({ currentPage, handleHippoStats, handleApplication, handlePageChange}) {
+  return (
+    <div
+      role="tabpanel"
+      hidden={currentPage !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {currentPage === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+// const styles = createTheme({
+//   tab: {
+//     maxWidth: "100%",
+//     width: "100%",
+//   }
+// })
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
+
+function NavBar() {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
 
+  const [currentPage, setCurrentPage] = React.useState(0);
+
+  const handlePageChange = (event, newPage) => {
+    setCurrentPage(newPage);
+  };
+
   return (
-    <nav className="navbar nav-toggle is-light is-transparent mx-1 is-flex " role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
-        <a className="navbar-item" href="/">
-          <img src={icon} alt="hippo" height="56" />
-        </a>
-      </div>
-
-      {/* <div className="navbar-menu"> */}
-        <div className="navbar-start is-flex is-align-items-center ">
-
-          <a href="/Main/#HippoStats"
-            onClick={handleHippoStats}
-            
-            // Check to see if the currentPage is `HippoStats`, and if so we use the active link class. Otherwise, we set it to a normal nav-link
-            className={
-              currentPage === "HippoStats"
-                ? "navbar-item is-active mx-1"
-                : "navbar-item mx-1"
-            }
-          >
-            HippoStats
-          </a>
-
-          <a href="/Main/#Application"
-            onClick={() => handlePageChange('Application')}
-            // Check to see if the currentPage is `Application`, and if so we use the active link class. Otherwise, we set it to a normal nav-link
-            className={
-              currentPage === "Application"
-                ? "navbar-item is-active mx-1"
-                : "navbar-item mx-1"
-            }
-          >
-            My Applications
-          </a>
-
-          <a href="/AppForm"
-            onClick={() => handlePageChange("AppForm")}
-            // Check to see if the currentPage is `AppForm`, and if so we use the active link class. Otherwise, we set it to a normal nav-link
-            className={
-              currentPage === "AppForm"
-                ? "navbar-item is-active mx-1"
-                : "navbar-item mx-1"
-            }
-          >
-            Add New
-          </a>
-          {/* <Link to="/AppForm">Add New</Link> */}
-
-          <div className="navbar-end ">
-            <div className="navbar-item" >
-              {Auth.loggedIn() ? (
-                <div className="control buttons">
-                  <button
-                    className="button is-outlined is-rounded"
-                    onClick={logout}
-                  >
-                    Logout
-                  </button>
-                </div>
-              ) : (
-                <div className="control buttons">
-                  <button className="button is-outlined">
-                    <a
-                      href="/Login"
-                      onClick={() => handlePageChange("Login")}
-                      // Check to see if the currentPage is `Login`, and if so we use the active link class. Otherwise, we set it to a normal nav-link
-                      className={
-                        currentPage === "Login"
-                          ? "nav-link is-active mx-1"
-                          : "nav-link mx-1"
-                      }
-                    >
-                      Login
-                    </a>
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-          
-        </div>
-    </nav>
+    <>
+    <Box sx={{ background: 'white' }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        {Auth.loggedIn() ? (
+          <Tabs value={currentPage} onChange={handlePageChange} aria-label="basic tabs example">
+            <Tab icon={<img src={icon} alt="hippo" style={{"height": "45px"}} />} component={Link} to="/" {...a11yProps(0)} />
+            <Tab label="HippoStats" component={Link} to="/Main/#HippoStats" {...a11yProps(1)} />
+            <Tab label="My Applications" component={Link} to="/Main/#Application" {...a11yProps(2)} />
+            <Tab label="Add New" component={Link} to="/AppForm" {...a11yProps(3)} />
+            <Tab label="Log Out" onClick={logout} {...a11yProps(4)} />
+          </Tabs>
+        ) : (
+          <Tabs value={currentPage} onChange={handlePageChange} aria-label="basic tabs example">
+            <Tab icon={<img src={icon} alt="hippo" style={{"height": "45px"}} />} component={Link} to="/" {...a11yProps(0)} />
+            <Tab label="HippoStats" component={Link} to="/Login" {...a11yProps(1)} />
+            <Tab label="My Applications" component={Link} to="/Login" {...a11yProps(2)} />
+            <Tab label="Add New" component={Link} to="/Login" {...a11yProps(3)} />
+            <Tab label="Log In" component={Link} to="/Login" {...a11yProps(5)} />
+          </Tabs>
+        )}
+      </Box>
+      <TabPanel value={currentPage} index={0}>
+        Homepage
+      </TabPanel>
+      <TabPanel value={currentPage} index={1}>
+        HippoStats
+      </TabPanel>
+      <TabPanel value={currentPage} index={2}>
+        Application
+      </TabPanel>
+      <TabPanel value={currentPage} index={3}>
+        AppForm
+      </TabPanel>
+      <TabPanel value={currentPage} index={4}>
+        Logout
+      </TabPanel>
+      <TabPanel value={currentPage} index={5}>
+        Login
+      </TabPanel>
+    </Box>
+    <TrackerContainer currentPage={currentPage} />
+    </>
   );
 }
 

@@ -7,16 +7,16 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import '@mui/material'
-import '@mui/icons-material'
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import AddJob from "./pages/MainComponent/AddJob/AppForm";
-import TrackerContainer from "./pages/TrackerContainer";
-import 'bulma/css/bulma.min.css';
-import HippoStats from "./pages/MainComponent/HippoStats/HippoStats";
-import Application from "./pages/MainComponent/Application/Application";
+import AddJob from "./pages/AddJob/AppForm";
+import TrackerContainer from "./pages/TrackerContainer/TrackerContainer";
+import Application from "./pages/TrackerContainer/Application/Application";
 import Homepage from "./pages/Homepage/Homepage";
+import NavBar from "./pages/Navbar";
+import 'bulma/css/bulma.min.css';
+import '@mui/material'
+import '@mui/icons-material'
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -46,19 +46,16 @@ const client = new ApolloClient({
 const App = () => (
   <ApolloProvider client={client}>
     <Router>
-      <>
+        <NavBar />
         <Routes>
-          <Route path="/Main" element={<TrackerContainer />} />
           <Route path="/" element={<Homepage />} />
+          <Route path="/Main" element={<TrackerContainer />}>
+            <Route path="Application/:_id" element={<Application />} />
+          </Route>
           <Route path="/AppForm" element={<AddJob />} />
-          <Route path="/Signup" element={<Signup />} />
           <Route path="/Login" element={<Login />} />
-
-          <Route path="/Main/Application" element={<Application />} />
-          <Route path="/Main/HippoStats" element={<HippoStats />} />
-          <Route path="/Main/Application/:_id" element={<TrackerContainer />} />
+          <Route path="/Signup" element={<Signup />} />
         </Routes>
-      </>
     </Router>
   </ApolloProvider>
 );

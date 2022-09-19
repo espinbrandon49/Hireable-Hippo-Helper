@@ -1,94 +1,27 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { REMOVE_APPLICATION } from "../../../../utils/mutations";
 
-const AllMilestones = ({ applications }) => {
-  const { _id } = useParams();
-
-  const application = applications.filter(
-    (application) => application._id === _id
-  )[0];
+const AllMilestones = ({ application }) => {
 
   const [removeApplication, { error, data }] = useMutation(REMOVE_APPLICATION);
-console.log(error, data)
+  // console.log(error, data)
   const handleDelete = async (event) => {
-    console.log(event.type);
+    // console.log(event.type);
     try {
       const { data } = await removeApplication({
-        variables: { _id: _id },
+        variables: { _id: application._id },
       });
-      console.log(data);
+      // console.log(data);
       window.location.replace("/");
     } catch (err) {
       console.error(err);
     }
   };
 
-  if (!application) {
+  if (application === undefined) {
     return (
-      <div className="menu column is-half">
-        <p className="menu-label is-size-5 has-text-weight-bold">General</p>
-        <ul className="menu-list">
-          <li className="has-text-weight-bold navbar-item">
-            Job Link
-          </li>
-          <li className="navbar-item has-text-weight-bold">
-            Location
-          </li>
-          <li className="navbar-item has-text-weight-bold">
-            Job Type
-          </li>
-          <li className="navbar-item has-text-weight-bold">
-            Salary
-          </li>
-          <li className="navbar-item has-text-weight-bold">
-            Job Description
-          </li>
-        </ul>
-        <p className="menu-label is-size-5 has-text-weight-bold">
-          Important Dates
-        </p>
-        <ul className="menu-list">
-          <li className="navbar-item has-text-weight-bold">
-            Date Applied
-          </li>
-          <li className="navbar-item has-text-weight-bold">
-            Interviews
-            <ul>
-              <li className="navbar-item has-text-weight-bold">
-                Phone
-              </li>
-              <li className="navbar-item has-text-weight-bold">
-                Technical
-              </li>
-              <li className="navbar-item has-text-weight-bold">
-                In person
-              </li>
-            </ul>
-          </li>
-          <li className="navbar-item has-text-weight-bold">
-          Date of Offer
-          </li>
-          <li className="navbar-item has-text-weight-bold">
-            Start Date
-          </li>
-        </ul>
-        <p className="menu-label is-size-5 has-text-weight-bold">
-          Contact Info
-        </p>
-        <ul className="menu-list">
-          <li className="navbar-item has-text-weight-bold">
-            Contact Name
-          </li>
-          <li className="navbar-item has-text-weight-bold">
-            Contact Email
-          </li>
-          <li className="navbar-item has-text-weight-bold">
-            Contact Phone
-          </li>
-        </ul>
-      </div>
+      <></>
     );
   } else {
     return (

@@ -3,7 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 
 const StatusBreakdown = ({applications}) => {
 
-  console.log(applications[0])
+  // console.log(applications[0])
 
   const data = [];
 
@@ -33,7 +33,7 @@ const StatusBreakdown = ({applications}) => {
     })
   })
 
-  console.log(data)
+  // console.log(data)
 
   return (
     <ResponsiveContainer width="95%" height="100%">

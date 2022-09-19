@@ -23,7 +23,7 @@ const SideBar = ({ applications }) => {
             </h6>
             <Link
               to={`/Main/Application/${application._id}`}
-              state={{ applications: application }}
+              state={ application }
               className="button is-size-6 is-fullwidth"
               style={styles.radii}
             >

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { ADD_APPLICATION } from "../../../utils/mutations";
-import Auth from "../../../utils/auth";
-import Login from "../../Login";
+import { ADD_APPLICATION } from "../../utils/mutations";
+import Auth from "../../utils/auth";
+import Login from "../Login";
 
 const ApplicationForm = () => {
   const [formState, setFormState] = useState({

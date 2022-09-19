@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroSection from '../MainComponent/HeroSection/HeroSection';
+import HeroSection from './HeroSection/HeroSection';
 import '../../index.css'
 import Container from '@mui/material/Container';
 

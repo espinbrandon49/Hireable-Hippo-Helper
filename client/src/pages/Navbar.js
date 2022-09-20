@@ -62,12 +62,12 @@ function NavBar() {
             <Tab label="Log Out" onClick={logout} {...a11yProps(4)} />
           </Tabs>
         ) : (
-          <Tabs value={currentPage} orientation={smallScreen ? "vertical" : "horizonal"} onChange={handlePageChange}>
-            <Tab icon={<img src={icon} alt="hippo" style={{"height": "45px"}} />} component={Link} to="/" {...a11yProps(0)} />
-            <Tab label="HippoStats" component={Link} to="/Login" {...a11yProps(1)} />
-            <Tab label="My Applications" component={Link} to="/Login" {...a11yProps(2)} />
-            <Tab label="Add New" component={Link} to="/Login" {...a11yProps(3)} />
-            <Tab label="Log In" component={Link} to="/Login" {...a11yProps(5)} />
+          <Tabs variant={smallScreen ? "fullWidth" : ""} value={currentPage} orientation={smallScreen ? "vertical" : "horizonal"} onChange={handlePageChange}>
+            <Tab icon={<img src={icon} alt="hippo" style={smallScreen ? {"height": "45px", "padding": "5px"} : {"height": "45px"}} />} component={Link} to="/" sx={smallScreen ? { borderBottom: 1, borderColor: 'divider' } : {}} {...a11yProps(0)} />
+            <Tab label="HippoStats" component={Link} to="/Login" sx={smallScreen ? { borderBottom: 1, borderColor: 'divider' } : {}} {...a11yProps(1)} />
+            <Tab label="My Applications" component={Link} to="/Login" sx={smallScreen ? { borderBottom: 1, borderColor: 'divider' } : {}} {...a11yProps(2)} />
+            <Tab label="Add New" component={Link} to="/Login" sx={smallScreen ? { borderBottom: 1, borderColor: 'divider' } : {}} {...a11yProps(3)} />
+            <Tab label="Log In" component={Link} to="/Login" sx={smallScreen ? { borderBottom: 1, borderColor: 'divider' } : {}} {...a11yProps(5)} />
           </Tabs>
         )}
       </Box>

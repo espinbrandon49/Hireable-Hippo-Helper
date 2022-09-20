@@ -3,6 +3,20 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import Box from '@mui/material/Box';
+import CardContent from '@mui/material/CardContent';
+import FormControl from '@mui/material/FormControl'
+import InputLabel from '@mui/material/InputLabel';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import InputAdornment from '@mui/material/InputAdornment';
+import EmailIcon from '@mui/icons-material/Email';
+import LockIcon from '@mui/icons-material/Lock';
+import PersonIcon from '@mui/icons-material/Person';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -36,88 +50,81 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h3 className="card-header title p-3 mb-1">Signup</h3>
-          <div className="card-body">
+    <Grid container justifyContent="center" sx={{marginTop: "50px"}}>
+      <Grid item xl={4} lg={6} md={8} sm={10} xs={12}>
+        <Card elevation={15} sx={{borderRadius: 3}}>
+
+          <Typography component="div" variant="h3" sx={{textAlign: "center", padding: "25px", fontWeight: "bold"}}>
+            Signup
+          </Typography>
+
+          <Box>
             {data ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form className="p-6" onSubmit={handleFormSubmit}>
-              <p>
-                Already have an account?{' '}
-                <Link to="/Login">Login here.</Link>
-              </p>
+              <CardContent component="form" onSubmit={handleFormSubmit}>
 
-                <div className='field'>
-                  <label htmlFor='username' className='label'>
-                    username
-                  </label>
+                <FormControl fullWidth sx={{padding:"65px 75px 0 75px"}}>
+                  <InputLabel htmlFor='username'>
+                    <Typography variant="h5" sx={{paddingLeft:"65px", marginTop: "5px", fontWeight: "bold"}}>
+                      Username
+                    </Typography>
+                  </InputLabel>
+                  <TextField
+                    name="username"
+                    placeholder="Your username"
+                    value={formState.name}
+                    onChange={handleChange}
+                    InputProps={{ endAdornment: <InputAdornment position="end"> <PersonIcon /> </InputAdornment> }}
+                  />
+                </FormControl>
 
-                  <div className='control'>
-                    <input
-                      className="input"
-                      placeholder="Your Username"
-                      name="username"
-                      type="text"
-                      value={formState.name}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
+                <FormControl fullWidth sx={{padding:"75px 75px 0 75px"}}>
+                  <InputLabel htmlFor='email'>
+                    <Typography variant="h5" sx={{paddingLeft:"65px", marginTop: "15px", fontWeight: "bold"}}>
+                      Email
+                    </Typography>
+                  </InputLabel>
+                  <TextField
+                    name="email"
+                    placeholder="Your email"
+                    value={formState.email}
+                    onChange={handleChange}
+                    InputProps={{ endAdornment: <InputAdornment position="end"> <EmailIcon /> </InputAdornment> }}
+                  />
+                </FormControl>
 
-                <div className='field'>
-                  <label htmlFor='email' className='label'>
-                    Email
-                  </label>
+                <FormControl fullWidth sx={{padding:"75px 75px 0 75px"}}>
+                  <InputLabel htmlFor='password'>
+                    <Typography variant="h5" sx={{paddingLeft:"65px", marginTop: "15px", fontWeight: "bold"}}>
+                        Password
+                      </Typography>
+                  </InputLabel>
+                  <TextField
+                    name="password"
+                    placeholder="********"
+                    type="password"
+                    value={formState.password}
+                    onChange={handleChange}
+                    InputProps={{ endAdornment: <InputAdornment position="end"> <LockIcon /> </InputAdornment> }}
+                  />
+                </FormControl>
 
-                  <div className='control'>
-                    <input
-                      className="input"
-                      placeholder="Your email"
-                      name="email"
-                      type="email"
-                      value={formState.email}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
+                <FormControl fullWidth sx={{padding:"50px 75px 50px 75px"}}>
+                  <Button variant="contained" size="large" type="submit" sx={{borderRadius: 6, padding:"12px", fontWeight: "bold"}}>Signup</Button>
+                </FormControl>
 
-                <div className='field'>
-                  <label htmlFor='password' className='label'>
-                    Password
-                  </label>
+                <Divider variant="middle" />
 
-                  <div className='control'>
-                    <input
-                      className="input"
-                      id='password'
-                      placeholder="********"
-                      name="password"
-                      type="password"
-                      value={formState.password}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div className='field pt-3'>
-                  <div className='control'>
-                    <button
-                      className="button is-info"
-                      style={{ cursor: 'pointer' }}
-                      type="submit"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </div>
-
-              </form>
+                <p style={{"textAlign": "center", "padding": "35px"}}>
+                  Already have an account?{' '}
+                  <Link to="/Login">Login here.</Link>
+                </p>
+                
+              </CardContent>
             )}
 
             {error && (
@@ -125,10 +132,10 @@ const Signup = () => {
                 {error.message}
               </div>
             )}
-          </div>
-        </div>
-      </div>
-    </main>
+          </Box>
+        </Card>
+      </Grid>
+    </Grid>
   );
 };
 

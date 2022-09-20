@@ -3,8 +3,21 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import Box from '@mui/material/Box';
+import CardContent from '@mui/material/CardContent';
+import FormControl from '@mui/material/FormControl'
+import InputLabel from '@mui/material/InputLabel';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import InputAdornment from '@mui/material/InputAdornment';
+import EmailIcon from '@mui/icons-material/Email';
+import LockIcon from '@mui/icons-material/Lock';
 
-const Login = (props) => {
+const Login = () => {
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [login, { error, data }] = useMutation(LOGIN_USER);
   
@@ -39,77 +52,76 @@ const Login = (props) => {
     };
   
     return (
-      <main className="flex-row justify-center mb-4">
-        <div className="col-12 col-lg-10">
-          <div className="card">
-            <h3 className="card-header title p-3 mb-1">Login</h3>
-            <div className="card-body">
+      <Grid container justifyContent="center" sx={{marginTop: "50px"}}>
+        <Grid item xl={4} lg={6} md={8} sm={10} xs={12}>
+          <Card elevation={15} sx={{borderRadius: 3}}>
+
+            <Typography component="div" variant="h3" sx={{textAlign: "center", padding: "25px", fontWeight: "bold"}}>
+              Login
+            </Typography>
+            
+            <Box>
               {data ? (
                 <p>
                   Success! You may now head{' '}
                   <Link to="/">back to the homepage.</Link>
                 </p>
               ) : (
-                <form className="p-6" onSubmit={handleFormSubmit}>
-                  <p>
+                <CardContent component="form" onSubmit={handleFormSubmit}>
+
+                  <FormControl fullWidth sx={{padding:"65px 75px 0 75px"}}>
+                    <InputLabel htmlFor='email'>
+                      <Typography variant="h5" sx={{paddingLeft:"65px", marginTop: "5px", fontWeight: "bold"}}>
+                        Email
+                      </Typography>
+                    </InputLabel>
+                    <TextField
+                      name="email"
+                      placeholder="Your email"
+                      value={formState.email}
+                      onChange={handleChange}
+                      InputProps={{ endAdornment: <InputAdornment position="end"> <EmailIcon /> </InputAdornment> }}
+                    />
+                  </FormControl>
+
+                  <FormControl fullWidth sx={{padding:"75px 75px 0 75px"}}>
+                    <InputLabel htmlFor='password'>
+                      <Typography variant="h5" sx={{paddingLeft:"65px", marginTop: "15px", fontWeight: "bold"}}>
+                          Password
+                        </Typography>
+                    </InputLabel>
+                    <TextField
+                      name="password"
+                      placeholder="********"
+                      type="password"
+                      value={formState.password}
+                      onChange={handleChange}
+                      InputProps={{ endAdornment: <InputAdornment position="end"> <LockIcon /> </InputAdornment> }}
+                    />
+                  </FormControl>
+
+                  <FormControl fullWidth sx={{padding:"50px 75px 50px 75px"}}>
+                    <Button variant="contained" size="large" type="submit" sx={{borderRadius: 6, padding:"12px", fontWeight: "bold"}}>Login</Button>
+                  </FormControl>
+
+                  <Divider variant="middle" />
+
+                  <p style={{"textAlign": "center", "padding": "35px"}}>
                     Don't have an account?{' '}
                     <Link to="/Signup">Signup here.</Link>
                   </p>
-
-                  <div className='field'>
-                    <label htmlFor='email' className='label'>
-                      Email
-                    </label>
-                    <div className='control'>
-                      <input
-                        className="input"
-                        placeholder="Your email"
-                        name="email"
-                        type="email"
-                        value={formState.email}
-                        onChange={handleChange}
-                      />
-                    </div>
-                  </div>
-                  <div className='field'>
-                    <label htmlFor='password' className='label'>
-                      Password
-                    </label>
-                    <div className='control'>
-                      <input
-                        className="input"
-                        id='password'
-                        placeholder="********"
-                        name="password"
-                        type="password"
-                        value={formState.password}
-                        onChange={handleChange}
-                      />
-                    </div>
-                  </div>
-                  <div className='field pt-3'>
-                    <div className='control'>
-                      <button
-                        className="button is-info"
-                        style={{ cursor: 'pointer' }}
-                        type="submit"
-                      >
-                        Login
-                      </button>
-                      <Link to="/signup">Sign Up Instead</Link>
-                    </div>
-                  </div>
-                </form>
+                  
+                </CardContent>
               )}
               {error && (
                 <div className="my-3 p-3 bg-danger text-white">
                   {error.message}
                 </div>
               )}
-            </div>
-          </div>
-        </div>
-      </main>
+            </Box>
+          </Card>
+        </Grid>
+      </Grid>
     );
   };
   

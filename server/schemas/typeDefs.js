@@ -80,6 +80,7 @@ const typeDefs = gql`
     removeApplication(_id: String): Application
     
     removeMilestone(applicationId: ID!, milestoneId: ID!): Application
+
   }
 `;
 

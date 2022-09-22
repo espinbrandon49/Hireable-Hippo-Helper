@@ -57,7 +57,7 @@ const AllMilestones = ({ application }) => {
               {application.dateApplied}
           </li>
           <li navbar-item has-text-weight-bold>
-            Interviews
+            <span className="navbar-item has-text-weight-bold">Interviews</span>
             <ul>
               <li>
                   <span className="navbar-item has-text-weight-bold">Phone: </span>

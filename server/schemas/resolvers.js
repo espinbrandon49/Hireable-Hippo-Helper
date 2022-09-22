@@ -30,7 +30,6 @@ const resolvers = {
     application: async (parent, { applicationId }) => {
       return Application.findOne({ _id: applicationId });
     },
-
   },
 
   Mutation: {

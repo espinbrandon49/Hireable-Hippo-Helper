@@ -10,6 +10,7 @@ export default function TrackerContainer({currentPage}) {
   // Call all applications
   const { loading, data } = useQuery(QUERY_APPLICATIONS);
   const applications = data?.applications || [];
+  console.log(applications)
 
   // Call single applications by username
   var filteredApps = [];

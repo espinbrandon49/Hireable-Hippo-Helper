@@ -1,36 +1,34 @@
 import React from "react";
 import Auth from "../../../utils/auth";
 import Login from "../../Login";
-import Subheader from './components/Subheader'
-import CurrentMilestones from './components/CurrentMilestone'
-import AllMilestones from './components/AllMilestones'
-import Notes from './components/Notes'
+import Subheader from "./components/Subheader";
+import CurrentMilestones from "./components/CurrentMilestone";
+import AllMilestones from "./components/AllMilestones";
+import Notes from "./components/Notes";
 import { useLocation } from "react-router-dom";
+import UpdateJob from "../../UpdateJob/UpdateJob";
 
 const Application = () => {
   const locate = useLocation();
-  const application = locate.state
+  const application = locate.state;
 
-  console.log(application)
+  console.log(application);
 
   if (application !== null) {
     return (
-      <div className='container column is-three-quarters'>
+      <div className="container column is-three-quarters">
         {Auth.loggedIn() ? (
           <>
-            <Subheader
-               application={application}
-            />
-            <CurrentMilestones
-               application={application}
-            />
-            <div className='columns is-1 box'>
-              <AllMilestones
-                 application={application}
-              />
-              <Notes
-                 application={application}
-              />
+            <div>
+              <Subheader application={application} />
+              <CurrentMilestones application={application} />
+              <div className="columns is-1 box">
+                <AllMilestones application={application} />
+                <Notes application={application} />
+              </div>
+            </div>
+            <div>
+              <UpdateJob application={application} />
             </div>
           </>
         ) : (
@@ -40,11 +38,11 @@ const Application = () => {
     );
   } else {
     return (
-      <div className='container column is-three-quarters'>
+      <div className="container column is-three-quarters">
         {Auth.loggedIn() ? (
           <>
             <Subheader />
-            <div className='columns is-1 box'>
+            <div className="columns is-1 box">
               <p>What should we put here?</p>
             </div>
           </>
@@ -52,8 +50,7 @@ const Application = () => {
           <Login />
         )}
       </div>
-    )
+    );
   }
-
 };
 export default Application;

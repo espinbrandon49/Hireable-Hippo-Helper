@@ -1,5 +1,7 @@
 const addDateSuffix = (date) => {
+
   let dateStr = date.toString();
+
 
   // get last char of date string
   const lastChar = dateStr.charAt(dateStr.length - 1);
@@ -13,55 +15,57 @@ const addDateSuffix = (date) => {
   } else {
     dateStr = `${dateStr}th`;
   }
-
   return dateStr;
 };
 
 // function to format a timestamp, accepts the timestamp and an `options` object as parameters
-module.exports = (
-  timestamp,
-  { monthLength = 'short', dateSuffix = true } = {}
-) => {
-  // create month object
-  const months = {
-    0: monthLength === 'short' ? 'Jan' : 'January',
-    1: monthLength === 'short' ? 'Feb' : 'February',
-    2: monthLength === 'short' ? 'Mar' : 'March',
-    3: monthLength === 'short' ? 'Apr' : 'April',
-    4: monthLength === 'short' ? 'May' : 'May',
-    5: monthLength === 'short' ? 'Jun' : 'June',
-    6: monthLength === 'short' ? 'Jul' : 'July',
-    7: monthLength === 'short' ? 'Aug' : 'August',
-    8: monthLength === 'short' ? 'Sep' : 'September',
-    9: monthLength === 'short' ? 'Oct' : 'October',
-    10: monthLength === 'short' ? 'Nov' : 'November',
-    11: monthLength === 'short' ? 'Dec' : 'December',
-  };
+module.exports = () => {
+  let result = "";
+  // let month;
+  // switch ((d.getMonth() + 1)) {
+  //   case "1":
+  //     month = "January";
+  //     break;
+  //   case "2":
+  //     month = "Febuary";
+  //     break;
+  //   case "3":
+  //     month = "March";
+  //     break;
+  //   case "4":
+  //     month = "April";
+  //     break;
+  //   case "5":
+  //     month = "May";
+  //     break;
+  //   case "6":
+  //     month = "June";
+  //     break;
+  //   case "7":
+  //     month = "July";
+  //     break;
+  //   case "8":
+  //     month = "August";
+  //     break;
+  //   case "8":
+  //     month = "September";
+  //     break;
+  //   case "10":
+  //     month = "October";
+  //     break;
+  //   case "11":
+  //     month = "November";
+  //     break;
+  //   case "12":
+  //     month = "December";
+  //     break;
+  //   default: "January";
+  // }
 
-  const dateObj = new Date(timestamp);
-  const formattedMonth = months[dateObj.getMonth()];
+  var d = new Date();
+  result += (d.getMonth() + 1) + "/" + d.getDate()+ "/" + d.getFullYear()
 
-  const dayOfMonth = dateSuffix
-    ? addDateSuffix(dateObj.getDate())
-    : dateObj.getDate();
-
-  const year = dateObj.getFullYear();
-  let hour =
-    dateObj.getHours() > 12
-      ? Math.floor(dateObj.getHours() - 12)
-      : dateObj.getHours();
-
-  // if hour is 0 (12:00am), change it to 12
-  if (hour === 0) {
-    hour = 12;
-  }
-
-  const minutes = (dateObj.getMinutes() < 10 ? '0' : '') + dateObj.getMinutes();
-
-  // set `am` or `pm`
-  const periodOfDay = dateObj.getHours() >= 12 ? 'pm' : 'am';
-
-  const formattedTimeStamp = `${formattedMonth} ${dayOfMonth}, ${year} at ${hour}:${minutes} ${periodOfDay}`;
+  const formattedTimeStamp = result;
 
   return formattedTimeStamp;
 };

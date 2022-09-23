@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import { useMutation } from "@apollo/client";
 import { REMOVE_APPLICATION } from "../../../../utils/mutations";
+import UpdateJob from "../../../UpdateJob/UpdateJob";
 
 const AllMilestones = ({ application }) => {
 
@@ -28,24 +30,24 @@ const AllMilestones = ({ application }) => {
       <div className="menu column is-half">
         <p className="menu-label is-size-5 has-text-weight-bold">General</p>
         <ul className="menu-list">
-          <li>            
-              <span className="navbar-item has-text-weight-bold">Job Link: </span>
-              {application.jobLink}          
+          <li>
+            <span className="navbar-item has-text-weight-bold">Job Link: </span>
+            {application.jobLink}
           </li>
           <li>
-              <span className="navbar-item has-text-weight-bold">Location: </span>
+            <span className="navbar-item has-text-weight-bold">Location: </span>
           </li>
           <li>
-              <span className="navbar-item has-text-weight-bold">Job Type: </span>
-              {application.jobType}
+            <span className="navbar-item has-text-weight-bold">Job Type: </span>
+            {application.jobType}
           </li>
           <li>
-              <span className="navbar-item has-text-weight-bold">Salary: </span>
-              {application.salary}
+            <span className="navbar-item has-text-weight-bold">Salary: </span>
+            {application.salary}
           </li>
           <li>
-              <span className="navbar-item has-text-weight-bold">Job Description: </span>
-              {application.jobDescription}
+            <span className="navbar-item has-text-weight-bold">Job Description: </span>
+            {application.jobDescription}
           </li>
         </ul>
         <p className="menu-label is-size-5 has-text-weight-bold">
@@ -53,28 +55,28 @@ const AllMilestones = ({ application }) => {
         </p>
         <ul className="menu-list ">
           <li>
-              <span className="navbar-item has-text-weight-bold">Date Applied: </span>
-              {application.dateApplied}
+            <span className="navbar-item has-text-weight-bold">Date Applied: </span>
+            {application.dateApplied}
           </li>
           <li navbar-item has-text-weight-bold>
-            Interviews
+            <span className="navbar-item has-text-weight-bold">Interviews</span>
             <ul>
               <li>
-                  <span className="navbar-item has-text-weight-bold">Phone: </span>
+                <span className="navbar-item has-text-weight-bold">Phone: </span>
               </li>
               <li>
-                  <span className="navbar-item has-text-weight-bold">Technical: </span>
+                <span className="navbar-item has-text-weight-bold">Technical: </span>
               </li>
               <li>
-                  <span className="navbar-item has-text-weight-bold">In person: </span>
+                <span className="navbar-item has-text-weight-bold">In person: </span>
               </li>
             </ul>
           </li>
           <li>
-              <span className="navbar-item has-text-weight-bold">Date of Offer: </span>
+            <span className="navbar-item has-text-weight-bold">Date of Offer: </span>
           </li>
           <li>
-              <span className="navbar-item has-text-weight-bold">Start Date: </span>
+            <span className="navbar-item has-text-weight-bold">Start Date: </span>
           </li>
         </ul>
         <p className="menu-label is-size-5 has-text-weight-bold">
@@ -82,16 +84,16 @@ const AllMilestones = ({ application }) => {
         </p>
         <ul className="menu-list">
           <li>
-              <span className="navbar-item has-text-weight-bold">Contact Name: </span>
-              {application.contactName}
+            <span className="navbar-item has-text-weight-bold">Contact Name: </span>
+            {application.contactName}
           </li>
           <li>
-              <span className="navbar-item has-text-weight-bold">Contact Email: </span>
-              {application.contactEmail}
+            <span className="navbar-item has-text-weight-bold">Contact Email: </span>
+            {application.contactEmail}
           </li>
           <li>
-              <span className="navbar-item has-text-weight-bold">Contact Phone: </span>
-              {application.contactPhone}
+            <span className="navbar-item has-text-weight-bold">Contact Phone: </span>
+            {application.contactPhone}
           </li>
         </ul>
         <p className="menu-label is-size-5 has-text-weight-bold">Milestones</p>

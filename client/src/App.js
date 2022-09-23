@@ -14,11 +14,13 @@ import TrackerContainer from "./pages/TrackerContainer/TrackerContainer";
 import Application from "./pages/TrackerContainer/Application/Application";
 import Homepage from "./pages/Homepage/Homepage";
 import NavBar from "./pages/Navbar";
+import UpdateJob from "./pages/UpdateJob/UpdateJob";
 import 'bulma/css/bulma.min.css';
 import '@mui/material'
 import '@mui/icons-material'
 
 import { useState } from 'react'
+
 // import { AuthContext } from './utils/helpers'
 
 // Construct our main GraphQL API endpoint
@@ -49,16 +51,17 @@ const client = new ApolloClient({
 const App = () => (
   <ApolloProvider client={client}>
     <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/Main" element={<TrackerContainer />}>
-            <Route path="Application/:_id" element={<Application />} />
-          </Route>
-          <Route path="/AppForm" element={<AddJob />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Signup" element={<Signup />} />
-        </Routes>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/Main" element={<TrackerContainer />}>
+          <Route path="Application/:_id" element={<Application />} />
+        </Route>
+        <Route path="/AppForm" element={<AddJob />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Signup" element={<Signup />} />
+        <Route path="/UpdateJob" element={<UpdateJob />} />
+      </Routes>
     </Router>
   </ApolloProvider>
 );

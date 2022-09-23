@@ -28,6 +28,11 @@ export const QUERY_APPLICATIONS = gql`
       jobDescription
       jobType
       dateApplied
+      phoneInterview
+      technicalInterview
+      inpersonInterview
+      dateOfOffer
+      startDate
       currentMilestone
       note
       milestones

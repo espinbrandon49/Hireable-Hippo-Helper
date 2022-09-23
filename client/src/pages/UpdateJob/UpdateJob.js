@@ -17,7 +17,12 @@ const UpdateJob = ({ application }) => {
     jobLink: application.jobLink,
     jobDescription: application.jobDescription,
     jobType: application.jobType,
-    dateApplied: application.dateApplied
+    dateApplied: application.dateApplied,
+    phoneInterview: application.phoneInterview,
+    technicalInterview: application.technicalInterview,
+    inpersonInterview: application.inpersonInterview,
+    dateOfOffer: application.dateOfOffer,
+    startDate: application.startDate
   });
   const [updateApplication, { error }] = useMutation(UPDATE_APPLICATION);
   // console.log(application.company)
@@ -36,10 +41,15 @@ const UpdateJob = ({ application }) => {
       jobLink: application.jobLink,
       jobDescription: application.jobDescription,
       jobType: application.jobType,
-      dateApplied: application.dateApplied
+      dateApplied: application.dateApplied,
+      phoneInterview: application.phoneInterview,
+      technicalInterview: application.technicalInterview,
+      inpersonInterview: application.inpersonInterview,
+      dateOfOffer: application.dateOfOffer,
+      startDate: application.startDate
     })
   }, [application])
-  
+
   // Update state based on form input changes
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -66,6 +76,11 @@ const UpdateJob = ({ application }) => {
     console.log(formState.jobDescription)
     console.log(formState.jobType)
     console.log(formState.dateApplied)
+    console.log(formState.phoneInterview)
+    console.log(formState.technicalInterview)
+    console.log(formState.inpersonInterview)
+    console.log(formState.dateOfOffer)
+    console.log(formState.startDate)
     try {
       await updateApplication({
         variables: {
@@ -82,7 +97,11 @@ const UpdateJob = ({ application }) => {
           jobDescription: formState.jobDescription,
           jobType: formState.jobType,
           dateApplied: formState.dateApplied,
-          // applicant: Auth.getProfile().data.username,
+          phoneInterview: formState.phoneInterview,
+          technicalInterview: formState.technicalInterview,
+          inpersonInterview: formState.inpersonInterview,
+          dateOfOffer: formState.dateOfOffer,
+          startDate: formState.startDate
         },
       });
       // await setFormState(...formState)
@@ -90,22 +109,6 @@ const UpdateJob = ({ application }) => {
     } catch (err) {
       console.error(err);
     }
-    //Clear form values
-    // setFormState({
-    //   applicant: Auth.getProfile().data.username,
-    //   company: "",
-    //   salary: "",
-    //   appliedFrom: "",
-    //   contactName: "",
-    //   contactEmail: "",
-    //   contactPhone: "",
-    //   jobTitle: "",
-    //   jobLink: "",
-    //   jobDescription: "",
-    //   jobType: "",
-    //   dateApplied: ""
-    // });
-    // window.location.replace("/");
   };
   return (
     <>
@@ -185,6 +188,91 @@ const UpdateJob = ({ application }) => {
                     id="dateApplied"
                     value={formState.dateApplied}
                     name="dateApplied"
+                    onChange={handleInputChange}
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="phoneInterview" className="label">
+                  Phone Interview:
+                </label>
+
+                <div className="control">
+                  <input
+                    className="input"
+                    id="phoneInterview"
+                    value={formState.phoneInterview}
+                    name="phoneInterview"
+                    onChange={handleInputChange}
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="technicalInterview" className="label">
+                  Technical Interview:
+                </label>
+
+                <div className="control">
+                  <input
+                    className="input"
+                    id="technicalInterview"
+                    value={formState.technicalInterview}
+                    name="technicalInterview"
+                    onChange={handleInputChange}
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="inpersonInterview" className="label">
+                  In-person Interview:
+                </label>
+
+                <div className="control">
+                  <input
+                    className="input"
+                    id="inpersonInterview"
+                    value={formState.inpersonInterview}
+                    name="inpersonInterview"
+                    onChange={handleInputChange}
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="dateOfOffer" className="label">
+                  Date Of Offer:
+                </label>
+
+                <div className="control">
+                  <input
+                    className="input"
+                    id="dateOfOffer"
+                    value={formState.dateOfOffer}
+                    name="dateOfOffer"
+                    onChange={handleInputChange}
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="startDate" className="label">
+                  Start Date:
+                </label>
+
+                <div className="control">
+                  <input
+                    className="input"
+                    id="startDate"
+                    value={formState.startDate}
+                    name="startDate"
                     onChange={handleInputChange}
                     type="text"
                   />

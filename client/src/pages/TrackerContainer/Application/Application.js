@@ -44,6 +44,7 @@ const Application = () => {
             <Subheader />
             <div className="columns is-1 box">
               <p>What should we put here?</p>
+              <div>ALL JOBS CIRCLE DATA VISUALS</div>
             </div>
           </>
         ) : (

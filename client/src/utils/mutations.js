@@ -120,7 +120,12 @@ export const UPDATE_APPLICATION = gql`
     $jobLink: String,
     $jobDescription: String,
     $jobType: String,
-    $dateApplied: String
+    $dateApplied: String,
+    $phoneInterview: String,
+    $technicalInterview: String,
+    $inpersonInterview: String,
+    $dateOfOffer: String,
+    $startDate: String
     ) {
     updateApplication(
       _id: $_id,
@@ -136,6 +141,11 @@ export const UPDATE_APPLICATION = gql`
       jobDescription: $jobDescription,
       jobType: $jobType,
       dateApplied: $dateApplied
+      phoneInterview: $phoneInterview
+      technicalInterview: $technicalInterview
+      inpersonInterview: $inpersonInterview
+      dateOfOffer: $dateOfOffer
+      startDate: $startDate
       ) {        
       _id
       applicant
@@ -150,6 +160,11 @@ export const UPDATE_APPLICATION = gql`
       jobDescription
       jobType
       dateApplied
+      phoneInterview
+      technicalInterview
+      inpersonInterview
+      dateOfOffer
+      startDate
     }
   }
 `;

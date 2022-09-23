@@ -24,6 +24,11 @@ const typeDefs = gql`
     jobDescription: String
     jobType: String
     dateApplied: String
+    phoneInterview: String
+    technicalInterview: String
+    inpersonInterview: String
+    dateOfOffer: String
+    startDate: String
     currentMilestone: String
     milestones: [String]
     note: String
@@ -95,6 +100,11 @@ const typeDefs = gql`
       jobDescription: String
       jobType: String
       dateApplied: String
+      phoneInterview: String
+      technicalInterview: String
+      inpersonInterview: String
+      dateOfOffer: String
+      startDate: String
     ): Application  
     
   }

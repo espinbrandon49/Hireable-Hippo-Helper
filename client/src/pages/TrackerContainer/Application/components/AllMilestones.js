@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom"
 import { useMutation } from "@apollo/client";
 import { REMOVE_APPLICATION } from "../../../../utils/mutations";
-import UpdateJob from "../../../UpdateJob/UpdateJob";
 
 const AllMilestones = ({ application }) => {
 
@@ -63,20 +62,25 @@ const AllMilestones = ({ application }) => {
             <ul>
               <li>
                 <span className="navbar-item has-text-weight-bold">Phone: </span>
+                {application.phoneInterview}
               </li>
               <li>
                 <span className="navbar-item has-text-weight-bold">Technical: </span>
+                {application.technicalInterview}
               </li>
               <li>
                 <span className="navbar-item has-text-weight-bold">In person: </span>
+                {application.inpersonInterview}
               </li>
             </ul>
           </li>
           <li>
             <span className="navbar-item has-text-weight-bold">Date of Offer: </span>
+            {application.dateOfOffer}
           </li>
           <li>
             <span className="navbar-item has-text-weight-bold">Start Date: </span>
+            {application.startDate}
           </li>
         </ul>
         <p className="menu-label is-size-5 has-text-weight-bold">

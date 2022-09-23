@@ -174,6 +174,11 @@ const resolvers = {
       jobDescription,
       jobType,
       dateApplied,
+      phoneInterview,
+      technicalInterview,
+      inpersonInterview,
+      dateOfOffer,
+      startDate
     }) => {
       const updateApplication = await Application.findOneAndUpdate(
         { _id },
@@ -191,6 +196,11 @@ const resolvers = {
             "jobDescription": jobDescription,
             "jobType": jobType,
             "dateApplied": dateApplied,
+            "phoneInterview": phoneInterview,
+            "technicalInterview": technicalInterview,
+            "inpersonInterview": inpersonInterview,
+            "dateOfOffer": dateOfOffer,
+            "startDate": startDate
           },
         },
         {

@@ -12,7 +12,7 @@ const Application = () => {
   const locate = useLocation();
   const application = locate.state;
 
-  // console.log(application);
+  console.log(application);
 
   if (application !== null) {
     return (

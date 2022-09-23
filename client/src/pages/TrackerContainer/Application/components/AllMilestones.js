@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom"
 import { useMutation } from "@apollo/client";
 import { REMOVE_APPLICATION } from "../../../../utils/mutations";
 
-const AllMilestones = ({ application }) => {
+const AllMilestones = ({ application, updateJobApp }) => {
 
   const [removeApplication, { error, data }] = useMutation(REMOVE_APPLICATION);
 
@@ -119,6 +119,13 @@ const AllMilestones = ({ application }) => {
               type="button"
             >
               Delete Application
+            </button>
+
+            <button
+              onClick={updateJobApp}
+              className="button is-size-6 is-fullwidth"
+            >
+              Update Application
             </button>
           </div>
         </div>

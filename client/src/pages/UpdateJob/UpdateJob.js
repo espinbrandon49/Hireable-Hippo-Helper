@@ -4,7 +4,7 @@ import { UPDATE_APPLICATION } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import Login from "../Login";
 
-const UpdateJob = ({ application }) => {
+const UpdateJob = ({ application, jobUpdated}) => {
   const [formState, setFormState] = useState({
     applicant: application.applicant,
     company: application.company,
@@ -63,24 +63,6 @@ const UpdateJob = ({ application }) => {
   // Submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(application._id)
-    console.log(formState.applicant)
-    console.log(formState.company)
-    console.log(formState.salary)
-    console.log(formState.appliedFrom)
-    console.log(formState.contactName)
-    console.log(formState.contactEmail)
-    console.log(formState.contactPhone)
-    console.log(formState.jobTitle)
-    console.log(formState.jobLink)
-    console.log(formState.jobDescription)
-    console.log(formState.jobType)
-    console.log(formState.dateApplied)
-    console.log(formState.phoneInterview)
-    console.log(formState.technicalInterview)
-    console.log(formState.inpersonInterview)
-    console.log(formState.dateOfOffer)
-    console.log(formState.startDate)
     try {
       await updateApplication({
         variables: {
@@ -105,6 +87,7 @@ const UpdateJob = ({ application }) => {
         },
       });
       // await setFormState(...formState)
+      jobUpdated()
       console.log('success')
     } catch (err) {
       console.error(err);

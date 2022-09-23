@@ -5,6 +5,7 @@ import Auth from "../../utils/auth";
 import SideBar from "./Sidebar/SideBar";
 import Application from "./Application/Application";
 import HippoStats from "./HippoStats/HippoStats";
+import UpdateJob from "../UpdateJob/UpdateJob";
 
 export default function TrackerContainer({currentPage}) {
   // Call all applications

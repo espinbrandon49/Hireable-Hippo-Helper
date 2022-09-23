@@ -96,7 +96,7 @@ const resolvers = {
       return application;
     },
 
-    //brandon updateNote
+    //updateNote
     updateNote: async (parent, {
       _id,
       note
@@ -123,7 +123,7 @@ const resolvers = {
         { _id },
         {
           $set: { "currentMilestone": currentMilestone },
-        },        
+        },
         {
           new: true,
           runValidators: true,
@@ -132,11 +132,11 @@ const resolvers = {
       return milestoneUpdate
     },
 
-    addMilestone: async (parent, { _id, milestones  }) => {
+    addMilestone: async (parent, { _id, milestones }) => {
       const addMilestone = await Application.findOneAndUpdate(
         { _id },
         {
-          $addToSet: { milestones :  milestones},
+          $addToSet: { milestones: milestones },
         },
         {
           new: true,
@@ -157,6 +157,48 @@ const resolvers = {
         { $pull: { milestones: { _id: milestoneId } } },
         { new: true }
       );
+    },
+
+    //updateNote
+    updateApplication: async (parent, {
+      _id,
+      applicant, //username
+      company,
+      salary,
+      appliedFrom,
+      contactName,
+      contactEmail,
+      contactPhone,
+      jobTitle,
+      jobLink,
+      jobDescription,
+      jobType,
+      dateApplied,
+    }) => {
+      const updateApplication = await Application.findOneAndUpdate(
+        { _id },
+        {
+          $set: {
+            "applicant": applicant, //username
+            "company": company,
+            "salary": salary,
+            "appliedFrom": appliedFrom,
+            "contactName": contactName,
+            "contactEmail": contactEmail,
+            "contactPhone": contactPhone,
+            "jobTitle": jobTitle,
+            "jobLink": jobLink,
+            "jobDescription": jobDescription,
+            "jobType": jobType,
+            "dateApplied": dateApplied,
+          },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+      return updateApplication
     },
   },
 };

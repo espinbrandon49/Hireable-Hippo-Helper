@@ -39,9 +39,9 @@ const applicationSchema = new Schema({
     enum: ['In person', 'Hybrid', 'Remote'],
   },
   dateApplied: {
-    type: Date,
-    default: Date.now,
-    get: (timestamp) => dateFormat(timestamp),
+    type: String,
+    default: "09/14/1983",
+    // get: (timestamp) => dateFormat(timestamp),
   },
   currentMilestone: {
     type: String,

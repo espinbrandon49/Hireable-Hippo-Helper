@@ -81,6 +81,22 @@ const typeDefs = gql`
     
     removeMilestone(applicationId: ID!, milestoneId: ID!): Application
 
+    updateApplication(
+      _id: String
+      applicant: String
+      company: String
+      salary: String
+      appliedFrom: String
+      contactName: String
+      contactEmail: String
+      contactPhone: String
+      jobTitle: String
+      jobLink: String
+      jobDescription: String
+      jobType: String
+      dateApplied: String
+    ): Application  
+    
   }
 `;
 

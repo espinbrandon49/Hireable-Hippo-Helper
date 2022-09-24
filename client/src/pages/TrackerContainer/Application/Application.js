@@ -11,23 +11,18 @@ import UpdateJob from "../../UpdateJob/UpdateJob";
 const Application = () => {
   const [updateJob, setUpdateJob] = useState({ updateJob: false })
   const locate = useLocation();
+
   const application = locate.state;
 
   console.log(application);
 
   function updateJobApp() {
-    console.log('meow')
-    console.log(updateJob)
     setUpdateJob({ updateJob: true })
   }
 
   function jobUpdated() {
-    console.log('meow')
-    console.log(updateJob)
     setUpdateJob({ updateJob: false })
   }
-
-  console.log(updateJob.updateJob)
 
   if (application !== null) {
     return (

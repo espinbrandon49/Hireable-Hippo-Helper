@@ -9,6 +9,9 @@ const applicationSchema = new Schema({
   company: {
     type: String,
   },
+  location: {
+    type: String,
+  },
   salary: {
     type: String,
   },
@@ -40,7 +43,7 @@ const applicationSchema = new Schema({
   },
   dateApplied: {
     type: String,
-    default: "09/14/1983",
+    // default: "09/14/1983",
     // get: (timestamp) => dateFormat(timestamp),
   },
   phoneInterview: {

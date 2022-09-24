@@ -14,6 +14,7 @@ const typeDefs = gql`
     _id: ID
     applicant: String
     company: String
+    location: String
     salary: String
     appliedFrom: String
     contactName: String
@@ -90,6 +91,7 @@ const typeDefs = gql`
       _id: String
       applicant: String
       company: String
+      location: String
       salary: String
       appliedFrom: String
       contactName: String

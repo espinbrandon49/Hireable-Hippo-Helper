@@ -164,6 +164,7 @@ const resolvers = {
       _id,
       applicant, //username
       company,
+      location,
       salary,
       appliedFrom,
       contactName,
@@ -186,6 +187,7 @@ const resolvers = {
           $set: {
             "applicant": applicant, //username
             "company": company,
+            "location": location,
             "salary": salary,
             "appliedFrom": appliedFrom,
             "contactName": contactName,

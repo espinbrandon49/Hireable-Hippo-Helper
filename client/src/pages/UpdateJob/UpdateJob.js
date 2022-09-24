@@ -3,11 +3,31 @@ import { useMutation } from "@apollo/client";
 import { UPDATE_APPLICATION } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import Login from "../Login";
+import { useNavigate } from "react-router-dom";
 
-const UpdateJob = ({ application, jobUpdated}) => {
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
+
+const UpdateJob = ({ application, jobUpdated }) => {
+
+  // const [startdate, setStartDate] = useState(new Date(application.dateApplied));
+  const [dateApplied, setDateApplied] = useState(new Date(application.dateApplied));
+  const [phoneInterview, setPhoneInterview] = useState(new Date(application.phoneInterview));
+  const [technicalInterview, setTechnicalInterview] = useState(new Date(application.technicalInterview));
+  const [inpersonInterview, setInpersonInterview] = useState(new Date(application.inpersonInterview));
+  const [dateOfOffer, setDateOfOffer] = useState(new Date(application.dateOfOffer));
+  const [startDate, setStartDate] = useState(new Date(application.startDate));
+
+  // console.log(startdate)
+  console.log(dateApplied)
+  console.log(application.dateApplied)
+
+  const navigate = useNavigate();
   const [formState, setFormState] = useState({
     applicant: application.applicant,
     company: application.company,
+    location: application.location,
     salary: application.salary,
     appliedFrom: application.appliedFrom,
     contactName: application.contactName,
@@ -24,14 +44,14 @@ const UpdateJob = ({ application, jobUpdated}) => {
     dateOfOffer: application.dateOfOffer,
     startDate: application.startDate
   });
+
   const [updateApplication, { error }] = useMutation(UPDATE_APPLICATION);
-  // console.log(application.company)
-  // console.log(formState.company)
 
   useEffect(() => {
     setFormState({
       applicant: application.applicant,
       company: application.company,
+      location: application.location,
       salary: application.salary,
       appliedFrom: application.appliedFrom,
       contactName: application.contactName,
@@ -57,7 +77,6 @@ const UpdateJob = ({ application, jobUpdated}) => {
       ...formState,
       [name]: value,
     });
-    console.log(formState)
   };
 
   // Submit form
@@ -69,6 +88,7 @@ const UpdateJob = ({ application, jobUpdated}) => {
           _id: application._id,
           applicant: formState.applicant,
           company: formState.company,
+          location: formState.location,
           salary: formState.salary,
           appliedFrom: formState.appliedFrom,
           contactName: formState.contactName,
@@ -78,16 +98,37 @@ const UpdateJob = ({ application, jobUpdated}) => {
           jobLink: formState.jobLink,
           jobDescription: formState.jobDescription,
           jobType: formState.jobType,
-          dateApplied: formState.dateApplied,
-          phoneInterview: formState.phoneInterview,
-          technicalInterview: formState.technicalInterview,
-          inpersonInterview: formState.inpersonInterview,
-          dateOfOffer: formState.dateOfOffer,
-          startDate: formState.startDate
+          dateApplied: dateApplied,
+          phoneInterview: phoneInterview,
+          technicalInterview: technicalInterview,
+          inpersonInterview: inpersonInterview,
+          dateOfOffer: dateOfOffer,
+          startDate: startDate
         },
       });
       // await setFormState(...formState)
+      // setFormState({
+      //   applicant: application.applicant,
+      //   company: application.company,
+      //   location: application.location,
+      //   salary: application.salary,
+      //   appliedFrom: application.appliedFrom,
+      //   contactName: application.contactName,
+      //   contactEmail: application.contactEmail,
+      //   contactPhone: application.contactPhone,
+      //   jobTitle: application.jobTitle,
+      //   jobLink: application.jobLink,
+      //   jobDescription: application.jobDescription,
+      //   jobType: application.jobType,
+      //   dateApplied: application.dateApplied,
+      //   phoneInterview: application.phoneInterview,
+      //   technicalInterview: application.technicalInterview,
+      //   inpersonInterview: application.inpersonInterview,
+      //   dateOfOffer: application.dateOfOffer,
+      //   startDate: application.startDate
+      // })
       jobUpdated()
+      navigate(`/Main/Application/${application._id}`)
       console.log('success')
     } catch (err) {
       console.error(err);
@@ -120,6 +161,23 @@ const UpdateJob = ({ application, jobUpdated}) => {
                     id="companyName"
                     value={formState.company}
                     name="company"
+                    onChange={handleInputChange}
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="location" className="label">
+                  Location:
+                </label>
+
+                <div className="control">
+                  <input
+                    className="input"
+                    id="location"
+                    value={formState.location}
+                    name="location"
                     onChange={handleInputChange}
                     type="text"
                   />
@@ -164,102 +222,42 @@ const UpdateJob = ({ application, jobUpdated}) => {
                 <label htmlFor="dateApplied" className="label">
                   Date Applied:
                 </label>
-
-                <div className="control">
-                  <input
-                    className="input"
-                    id="dateApplied"
-                    value={formState.dateApplied}
-                    name="dateApplied"
-                    onChange={handleInputChange}
-                    type="text"
-                  />
-                </div>
+                <DatePicker selected={dateApplied} onChange={(date) => setDateApplied(date)} />
               </div>
 
               <div className="field">
                 <label htmlFor="phoneInterview" className="label">
                   Phone Interview:
                 </label>
-
-                <div className="control">
-                  <input
-                    className="input"
-                    id="phoneInterview"
-                    value={formState.phoneInterview}
-                    name="phoneInterview"
-                    onChange={handleInputChange}
-                    type="text"
-                  />
-                </div>
+                <DatePicker selected={phoneInterview} onChange={(date) => setPhoneInterview(date)} />
               </div>
 
               <div className="field">
                 <label htmlFor="technicalInterview" className="label">
                   Technical Interview:
                 </label>
-
-                <div className="control">
-                  <input
-                    className="input"
-                    id="technicalInterview"
-                    value={formState.technicalInterview}
-                    name="technicalInterview"
-                    onChange={handleInputChange}
-                    type="text"
-                  />
-                </div>
+                <DatePicker selected={technicalInterview} onChange={(date) => setTechnicalInterview(date)} />
               </div>
 
               <div className="field">
                 <label htmlFor="inpersonInterview" className="label">
                   In-person Interview:
                 </label>
-
-                <div className="control">
-                  <input
-                    className="input"
-                    id="inpersonInterview"
-                    value={formState.inpersonInterview}
-                    name="inpersonInterview"
-                    onChange={handleInputChange}
-                    type="text"
-                  />
-                </div>
+                <DatePicker selected={inpersonInterview} onChange={(date) => setInpersonInterview(date)} />
               </div>
 
               <div className="field">
                 <label htmlFor="dateOfOffer" className="label">
                   Date Of Offer:
                 </label>
-
-                <div className="control">
-                  <input
-                    className="input"
-                    id="dateOfOffer"
-                    value={formState.dateOfOffer}
-                    name="dateOfOffer"
-                    onChange={handleInputChange}
-                    type="text"
-                  />
-                </div>
+                <DatePicker selected={dateOfOffer} onChange={(date) => setDateOfOffer(date)} />
               </div>
 
               <div className="field">
                 <label htmlFor="startDate" className="label">
                   Start Date:
                 </label>
-
-                <div className="control">
-                  <input
-                    className="input"
-                    id="startDate"
-                    value={formState.startDate}
-                    name="startDate"
-                    onChange={handleInputChange}
-                    type="text"
-                  />
-                </div>
+                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
               </div>
 
               <div className="field">

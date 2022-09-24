@@ -111,6 +111,7 @@ export const UPDATE_APPLICATION = gql`
     $_id: String,
     $applicant: String,
     $company: String,
+    $location: String,
     $salary: String,
     $appliedFrom: String,
     $contactName: String,
@@ -131,6 +132,7 @@ export const UPDATE_APPLICATION = gql`
       _id: $_id,
       applicant: $applicant,
       company: $company,
+      location: $location,
       salary: $salary,
       appliedFrom: $appliedFrom,
       contactName: $contactName,
@@ -150,6 +152,7 @@ export const UPDATE_APPLICATION = gql`
       _id
       applicant
       company
+      location
       salary
       appliedFrom
       contactName

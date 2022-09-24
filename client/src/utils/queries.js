@@ -18,6 +18,7 @@ export const QUERY_APPLICATIONS = gql`
       _id
       applicant
       company
+      location
       jobTitle
       salary
       appliedFrom

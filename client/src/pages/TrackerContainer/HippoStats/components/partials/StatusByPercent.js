@@ -69,7 +69,6 @@ const StatusByPercent = ({ applications }) => {
     },
   ]
 
-
   for (let i = 0; i < appDates.length; i++) {
     let bell = 0;
     function currMileData(dataIndex) {

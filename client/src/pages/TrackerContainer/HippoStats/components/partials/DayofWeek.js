@@ -4,10 +4,12 @@ import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer, Cell } from 'recha
 const DayOfWeek = ({ applications }) => {
 
   const appDates = applications.map((app) => {
-    let applied = app.dateApplied
-    for (let i = 0; i < applied.length; i++) {
-      let indice = applied.indexOf('T')
-      return applied.slice(0, indice)
+    if (app.dateApplied) {
+      let applied = app.dateApplied
+      for (let i = 0; i < applied.length; i++) {
+        let indice = applied.indexOf('T')
+        return applied.slice(0, indice)
+      }
     }
   })
   console.log(appDates)
@@ -110,7 +112,7 @@ const DayOfWeek = ({ applications }) => {
             label="piechart">
             {
               data.map((entry, index) => (
-                <Cell fill={colors[index]} />
+                <Cell key={index} fill={colors[index]} />
               ))
             }
           </Pie>

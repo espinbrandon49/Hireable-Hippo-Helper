@@ -3,11 +3,26 @@ import { useMutation } from "@apollo/client";
 import { UPDATE_APPLICATION } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import Login from "../Login";
+import { useNavigate } from "react-router-dom";
 
-const UpdateJob = ({ application }) => {
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
+
+const UpdateJob = ({ application, jobUpdated }) => {
+
+  const [dateApplied, setDateApplied] = useState(application.dateApplied ? new Date(application.dateApplied) : null);
+  const [phoneInterview, setPhoneInterview] = useState(application.phoneInterview ? new Date(application.phoneInterview) : null);
+  const [technicalInterview, setTechnicalInterview] = useState(application.technicalInterview ? new Date(application.technicalInterview) : null);
+  const [inpersonInterview, setInpersonInterview] = useState(application.inpersonInterview ? new Date(application.inpersonInterview) : null);
+  const [dateOfOffer, setDateOfOffer] = useState(application.dateOfOffer ? new Date(application.dateOfOffer) : null);
+  const [startDate, setStartDate] = useState(application.startDate ? new Date(application.startDate) : null);
+
+  const navigate = useNavigate();
   const [formState, setFormState] = useState({
     applicant: application.applicant,
     company: application.company,
+    location: application.location,
     salary: application.salary,
     appliedFrom: application.appliedFrom,
     contactName: application.contactName,
@@ -17,16 +32,21 @@ const UpdateJob = ({ application }) => {
     jobLink: application.jobLink,
     jobDescription: application.jobDescription,
     jobType: application.jobType,
-    dateApplied: application.dateApplied
+    dateApplied: application.dateApplied,
+    phoneInterview: application.phoneInterview,
+    technicalInterview: application.technicalInterview,
+    inpersonInterview: application.inpersonInterview,
+    dateOfOffer: application.dateOfOffer,
+    startDate: application.startDate
   });
+
   const [updateApplication, { error }] = useMutation(UPDATE_APPLICATION);
-  // console.log(application.company)
-  // console.log(formState.company)
 
   useEffect(() => {
     setFormState({
       applicant: application.applicant,
       company: application.company,
+      location: application.location,
       salary: application.salary,
       appliedFrom: application.appliedFrom,
       contactName: application.contactName,
@@ -36,10 +56,15 @@ const UpdateJob = ({ application }) => {
       jobLink: application.jobLink,
       jobDescription: application.jobDescription,
       jobType: application.jobType,
-      dateApplied: application.dateApplied
+      dateApplied: application.dateApplied,
+      phoneInterview: application.phoneInterview,
+      technicalInterview: application.technicalInterview,
+      inpersonInterview: application.inpersonInterview,
+      dateOfOffer: application.dateOfOffer,
+      startDate: application.startDate
     })
   }, [application])
-  
+
   // Update state based on form input changes
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -47,31 +72,18 @@ const UpdateJob = ({ application }) => {
       ...formState,
       [name]: value,
     });
-    console.log(formState)
   };
 
   // Submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(application._id)
-    console.log(formState.applicant)
-    console.log(formState.company)
-    console.log(formState.salary)
-    console.log(formState.appliedFrom)
-    console.log(formState.contactName)
-    console.log(formState.contactEmail)
-    console.log(formState.contactPhone)
-    console.log(formState.jobTitle)
-    console.log(formState.jobLink)
-    console.log(formState.jobDescription)
-    console.log(formState.jobType)
-    console.log(formState.dateApplied)
     try {
       await updateApplication({
         variables: {
           _id: application._id,
           applicant: formState.applicant,
           company: formState.company,
+          location: formState.location,
           salary: formState.salary,
           appliedFrom: formState.appliedFrom,
           contactName: formState.contactName,
@@ -81,31 +93,41 @@ const UpdateJob = ({ application }) => {
           jobLink: formState.jobLink,
           jobDescription: formState.jobDescription,
           jobType: formState.jobType,
-          dateApplied: formState.dateApplied,
-          // applicant: Auth.getProfile().data.username,
+          dateApplied: dateApplied,
+          phoneInterview: phoneInterview,
+          technicalInterview: technicalInterview,
+          inpersonInterview: inpersonInterview,
+          dateOfOffer: dateOfOffer,
+          startDate: startDate
         },
       });
       // await setFormState(...formState)
+      // setFormState({
+      //   applicant: application.applicant,
+      //   company: application.company,
+      //   location: application.location,
+      //   salary: application.salary,
+      //   appliedFrom: application.appliedFrom,
+      //   contactName: application.contactName,
+      //   contactEmail: application.contactEmail,
+      //   contactPhone: application.contactPhone,
+      //   jobTitle: application.jobTitle,
+      //   jobLink: application.jobLink,
+      //   jobDescription: application.jobDescription,
+      //   jobType: application.jobType,
+      //   dateApplied: application.dateApplied,
+      //   phoneInterview: application.phoneInterview,
+      //   technicalInterview: application.technicalInterview,
+      //   inpersonInterview: application.inpersonInterview,
+      //   dateOfOffer: application.dateOfOffer,
+      //   startDate: application.startDate
+      // })
+      jobUpdated()
+      navigate(`/Main/Application/${application._id}`)
       console.log('success')
     } catch (err) {
       console.error(err);
     }
-    //Clear form values
-    // setFormState({
-    //   applicant: Auth.getProfile().data.username,
-    //   company: "",
-    //   salary: "",
-    //   appliedFrom: "",
-    //   contactName: "",
-    //   contactEmail: "",
-    //   contactPhone: "",
-    //   jobTitle: "",
-    //   jobLink: "",
-    //   jobDescription: "",
-    //   jobType: "",
-    //   dateApplied: ""
-    // });
-    // window.location.replace("/");
   };
   return (
     <>
@@ -134,6 +156,23 @@ const UpdateJob = ({ application }) => {
                     id="companyName"
                     value={formState.company}
                     name="company"
+                    onChange={handleInputChange}
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="location" className="label">
+                  Location:
+                </label>
+
+                <div className="control">
+                  <input
+                    className="input"
+                    id="location"
+                    value={formState.location}
+                    name="location"
                     onChange={handleInputChange}
                     type="text"
                   />
@@ -178,17 +217,42 @@ const UpdateJob = ({ application }) => {
                 <label htmlFor="dateApplied" className="label">
                   Date Applied:
                 </label>
+                <DatePicker selected={dateApplied} onChange={(date) => setDateApplied(date)} />
+              </div>
 
-                <div className="control">
-                  <input
-                    className="input"
-                    id="dateApplied"
-                    value={formState.dateApplied}
-                    name="dateApplied"
-                    onChange={handleInputChange}
-                    type="text"
-                  />
-                </div>
+              <div className="field">
+                <label htmlFor="phoneInterview" className="label">
+                  Phone Interview:
+                </label>
+                <DatePicker selected={phoneInterview} onChange={(date) => setPhoneInterview(date)} />
+              </div>
+
+              <div className="field">
+                <label htmlFor="technicalInterview" className="label">
+                  Technical Interview:
+                </label>
+                <DatePicker selected={technicalInterview} onChange={(date) => setTechnicalInterview(date)} />
+              </div>
+
+              <div className="field">
+                <label htmlFor="inpersonInterview" className="label">
+                  In-person Interview:
+                </label>
+                <DatePicker selected={inpersonInterview} onChange={(date) => setInpersonInterview(date)} />
+              </div>
+
+              <div className="field">
+                <label htmlFor="dateOfOffer" className="label">
+                  Date Of Offer:
+                </label>
+                <DatePicker selected={dateOfOffer} onChange={(date) => setDateOfOffer(date)} />
+              </div>
+
+              <div className="field">
+                <label htmlFor="startDate" className="label">
+                  Start Date:
+                </label>
+                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
               </div>
 
               <div className="field">

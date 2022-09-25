@@ -9,6 +9,9 @@ const applicationSchema = new Schema({
   company: {
     type: String,
   },
+  location: {
+    type: String,
+  },
   salary: {
     type: String,
   },
@@ -40,14 +43,39 @@ const applicationSchema = new Schema({
   },
   dateApplied: {
     type: String,
-    default: "09/14/1983",
+    // default: "09/14/1983",
+    // get: (timestamp) => dateFormat(timestamp),
+  },
+  phoneInterview: {
+    type: String,
+    // default: "09/14/1983",
+    // get: (timestamp) => dateFormat(timestamp),
+  },
+  technicalInterview: {
+    type: String,
+    // default: "09/14/1983",
+    // get: (timestamp) => dateFormat(timestamp),
+  },
+  inpersonInterview: {
+    type: String,
+    // default: "09/14/1983",
+    // get: (timestamp) => dateFormat(timestamp),
+  },
+  dateOfOffer: {
+    type: String,
+    // default: "09/14/1983",
+    // get: (timestamp) => dateFormat(timestamp),
+  },
+  startDate: {
+    type: String,
+    // default: "09/14/1983",
     // get: (timestamp) => dateFormat(timestamp),
   },
   currentMilestone: {
     type: String,
     enum: ['Applied', 'Phone Interview', 'Technical Interview', 'In Person Interview', 'Job Offer', 'Accepted', 'Rejected', 'Hippo Donations'],
   },
-  milestones: [ String ],
+  milestones: [String],
   note: {
     type: String
   },

@@ -18,6 +18,7 @@ export const QUERY_APPLICATIONS = gql`
       _id
       applicant
       company
+      location
       jobTitle
       salary
       appliedFrom
@@ -28,6 +29,11 @@ export const QUERY_APPLICATIONS = gql`
       jobDescription
       jobType
       dateApplied
+      phoneInterview
+      technicalInterview
+      inpersonInterview
+      dateOfOffer
+      startDate
       currentMilestone
       note
       milestones

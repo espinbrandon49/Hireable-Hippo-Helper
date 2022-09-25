@@ -7,6 +7,9 @@ import AppliedFrom from './components/partials/AppliedFrom'
 import AppTimeline from './components/partials/AppTimeline';
 import StatusCount from './components/partials/StatusCount';
 import StatusBreakdown from './components/partials/StatusBreakdown';
+import DayOfWeek from "./components/partials/DayOfWeek";
+import StatusByPercent from "./components/partials/StatusByPercent";
+
 
 const styles = {
   box: {
@@ -29,6 +32,12 @@ const HippoStats = ({ applications }) => {
     }
     if (currentDataPage === 'StatusBreakdown') {
       return <StatusBreakdown applications={applications} />;
+    }
+    if (currentDataPage === 'DayOfWeek') {
+      return <DayOfWeek applications={applications} />;
+    }
+    if (currentDataPage === 'StatusByPercent') {
+      return <StatusByPercent applications={applications} />;
     }
   };
 

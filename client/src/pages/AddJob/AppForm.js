@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_APPLICATION } from "../../utils/mutations";
 import Auth from "../../utils/auth";
@@ -34,6 +34,8 @@ const ApplicationForm = () => {
     jobType: ""
   });
   const [createApplication, { error }] = useMutation(ADD_APPLICATION);
+  const [btnText, setBtnText] = useState("Select your Option")
+  const [btnText1, setBtnText1] = useState("Select your Option")
 
   // Update state based on form input changes
   const handleInputChange = (event) => {
@@ -52,12 +54,9 @@ const ApplicationForm = () => {
   const openAppliedFrom = Boolean(dropdown1.anchorEl);
   const openJobType = Boolean(dropdown2.anchorEl);
 
-  let btnText = "Select your Option"
-
   const handleClose = (event) => {
     const { name, value } = event.currentTarget.dataset;
     console.log(name, value)
-    btnText = value
     console.log(btnText, typeof btnText)
     setFormState({
       ...formState,
@@ -69,12 +68,14 @@ const ApplicationForm = () => {
         ...dropdown1,
         anchorEl: null
       });
+      setBtnText(value)
     }
     if (name === "jobType") {
       setDropdown2({
         ...dropdown2,
         anchorEl: null
       });
+      setBtnText1(value)
     }
   };
 
@@ -307,7 +308,7 @@ const ApplicationForm = () => {
                   }}
                   endIcon={<KeyboardArrowDownIcon />}
                 >
-                  {btnText}
+                  {btnText1}
                 </Button>
                 <Menu
                   id="basic-menu"

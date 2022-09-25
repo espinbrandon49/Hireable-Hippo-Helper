@@ -48,6 +48,28 @@ const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
           Current Status Breakdown
         </button>
 
+        <button
+          className={
+            currentDataPage === "DayOfWeek"
+              ? "button is-primary is-active"
+              : "button is-primary"
+          }
+          onClick={() => handleDataPageChange("DayOfWeek")}
+        >
+          Day Of Week
+        </button>
+
+        <button
+          className={
+            currentDataPage === "StatusByPercent"
+              ? "button is-primary is-active"
+              : "button is-primary"
+          }
+          onClick={() => handleDataPageChange("StatusByPercent")}
+        >
+          Status By Percent
+        </button>
+
       </div>
     </div>
   )

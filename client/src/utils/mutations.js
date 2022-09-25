@@ -37,7 +37,6 @@ export const ADD_APPLICATION = gql`
     $jobLink: String, 
     $jobDescription: String, 
     $jobType: String
-    $dateApplied: String
     ) {
     createApplication
     (
@@ -51,8 +50,7 @@ export const ADD_APPLICATION = gql`
       jobTitle: $jobTitle,
       jobLink: $jobLink,
       jobDescription: $jobDescription,
-      jobType: $jobType,
-      dateApplied: $dateApplied
+      jobType: $jobType
       ) {
         _id
         applicant
@@ -66,7 +64,6 @@ export const ADD_APPLICATION = gql`
         jobLink
         jobDescription
         jobType
-        dateApplied
       }
     }
 `;
@@ -111,6 +108,7 @@ export const UPDATE_APPLICATION = gql`
     $_id: String,
     $applicant: String,
     $company: String,
+    $location: String,
     $salary: String,
     $appliedFrom: String,
     $contactName: String,
@@ -120,12 +118,18 @@ export const UPDATE_APPLICATION = gql`
     $jobLink: String,
     $jobDescription: String,
     $jobType: String,
-    $dateApplied: String
+    $dateApplied: String,
+    $phoneInterview: String,
+    $technicalInterview: String,
+    $inpersonInterview: String,
+    $dateOfOffer: String,
+    $startDate: String
     ) {
     updateApplication(
       _id: $_id,
       applicant: $applicant,
       company: $company,
+      location: $location,
       salary: $salary,
       appliedFrom: $appliedFrom,
       contactName: $contactName,
@@ -136,10 +140,16 @@ export const UPDATE_APPLICATION = gql`
       jobDescription: $jobDescription,
       jobType: $jobType,
       dateApplied: $dateApplied
+      phoneInterview: $phoneInterview
+      technicalInterview: $technicalInterview
+      inpersonInterview: $inpersonInterview
+      dateOfOffer: $dateOfOffer
+      startDate: $startDate
       ) {        
       _id
       applicant
       company
+      location
       salary
       appliedFrom
       contactName
@@ -150,6 +160,11 @@ export const UPDATE_APPLICATION = gql`
       jobDescription
       jobType
       dateApplied
+      phoneInterview
+      technicalInterview
+      inpersonInterview
+      dateOfOffer
+      startDate
     }
   }
 `;

@@ -14,6 +14,7 @@ const typeDefs = gql`
     _id: ID
     applicant: String
     company: String
+    location: String
     salary: String
     appliedFrom: String
     contactName: String
@@ -24,6 +25,11 @@ const typeDefs = gql`
     jobDescription: String
     jobType: String
     dateApplied: String
+    phoneInterview: String
+    technicalInterview: String
+    inpersonInterview: String
+    dateOfOffer: String
+    startDate: String
     currentMilestone: String
     milestones: [String]
     note: String
@@ -59,7 +65,6 @@ const typeDefs = gql`
       jobLink: String
       jobDescription: String
       jobType: String
-      dateApplied: String
     ): Application  
     
     updateNote(
@@ -85,6 +90,7 @@ const typeDefs = gql`
       _id: String
       applicant: String
       company: String
+      location: String
       salary: String
       appliedFrom: String
       contactName: String
@@ -95,6 +101,11 @@ const typeDefs = gql`
       jobDescription: String
       jobType: String
       dateApplied: String
+      phoneInterview: String
+      technicalInterview: String
+      inpersonInterview: String
+      dateOfOffer: String
+      startDate: String
     ): Application  
     
   }

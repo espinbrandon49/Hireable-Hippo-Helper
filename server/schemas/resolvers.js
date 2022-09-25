@@ -71,7 +71,6 @@ const resolvers = {
         jobLink,
         jobDescription,
         jobType,
-        dateApplied,
       }
     ) => {
       const application = await Application.create({
@@ -86,7 +85,6 @@ const resolvers = {
         jobLink,
         jobDescription,
         jobType,
-        dateApplied,
       });
 
       await User.findOneAndUpdate(
@@ -164,6 +162,7 @@ const resolvers = {
       _id,
       applicant, //username
       company,
+      location,
       salary,
       appliedFrom,
       contactName,
@@ -174,6 +173,11 @@ const resolvers = {
       jobDescription,
       jobType,
       dateApplied,
+      phoneInterview,
+      technicalInterview,
+      inpersonInterview,
+      dateOfOffer,
+      startDate
     }) => {
       const updateApplication = await Application.findOneAndUpdate(
         { _id },
@@ -181,6 +185,7 @@ const resolvers = {
           $set: {
             "applicant": applicant, //username
             "company": company,
+            "location": location,
             "salary": salary,
             "appliedFrom": appliedFrom,
             "contactName": contactName,
@@ -191,6 +196,11 @@ const resolvers = {
             "jobDescription": jobDescription,
             "jobType": jobType,
             "dateApplied": dateApplied,
+            "phoneInterview": phoneInterview,
+            "technicalInterview": technicalInterview,
+            "inpersonInterview": inpersonInterview,
+            "dateOfOffer": dateOfOffer,
+            "startDate": startDate
           },
         },
         {

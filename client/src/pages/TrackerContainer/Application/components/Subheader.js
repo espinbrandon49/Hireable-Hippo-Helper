@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Subheader = ({ application }) => {
+
+  // const [applications, setApplications] = useState({application})
+
+  // useEffect(() => {
+  //   setApplications({...application})
+  // }, [application])
+
   if (application === undefined) {
     return (
       <div className='block'>
         <h1 className='title'>Choose or Add New Application</h1>
+        
       </div>
     )
   } else {

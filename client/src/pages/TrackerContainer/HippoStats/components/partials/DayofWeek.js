@@ -1,7 +1,7 @@
 import React from 'react'
 import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
-const DayofWeek = ({ applications }) => {
+const DayOfWeek = ({ applications }) => {
 
   const appDates = applications.map((app) => {
     let applied = app.dateApplied
@@ -122,4 +122,4 @@ const DayofWeek = ({ applications }) => {
   )
 }
 
-export default DayofWeek;
+export default DayOfWeek;

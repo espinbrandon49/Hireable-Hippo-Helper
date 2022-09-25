@@ -54,32 +54,32 @@ const AllMilestones = ({ application, updateJobApp }) => {
         <ul className="menu-list ">
           <li>
             <span className="navbar-item has-text-weight-bold">Date Applied: </span>
-            {dateFormat(application.dateApplied)}
+            {application.dateApplied && dateFormat(application.dateApplied)}
           </li>
           <li navbar-item has-text-weight-bold>
             <span className="navbar-item has-text-weight-bold">Interviews</span>
             <ul>
               <li>
                 <span className="navbar-item has-text-weight-bold">Phone: </span>
-                {dateFormat(application.phoneInterview)}
+                {application.phoneInterview && dateFormat(application.phoneInterview)}
               </li>
               <li>
                 <span className="navbar-item has-text-weight-bold">Technical: </span>
-                {dateFormat(application.technicalInterview)}
+                {application.technicalInterview && dateFormat(application.technicalInterview)}
               </li>
               <li>
                 <span className="navbar-item has-text-weight-bold">In person: </span>
-                {dateFormat(application.inpersonInterview)}
+                {application.inpersonInterview && dateFormat(application.inpersonInterview)}
               </li>
             </ul>
           </li>
           <li>
             <span className="navbar-item has-text-weight-bold">Date of Offer: </span>
-            {dateFormat(application.dateOfOffer)}
+            {application.dateOfOffer && dateFormat(application.dateOfOffer)}
           </li>
           <li>
             <span className="navbar-item has-text-weight-bold">Start Date: </span>
-            {dateFormat(application.startDate)}
+            {application.startDate && dateFormat(application.startDate)}
           </li>
         </ul>
         <p className="menu-label is-size-5 has-text-weight-bold">

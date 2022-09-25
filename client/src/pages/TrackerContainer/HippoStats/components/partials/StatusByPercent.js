@@ -1,7 +1,8 @@
 import React from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 const StatusByPercent = ({ applications }) => {
+
   const appDates = applications.map((app) => {
     let applied = app.dateApplied
     for (let i = 0; i < applied.length; i++) {
@@ -213,22 +214,23 @@ const StatusByPercent = ({ applications }) => {
             data={data}
             stackOffset="expand"
             margin={{
-              top: 0,
+              top: 20,
               right: 20,
               left: 30,
               bottom: 0,
             }}
           >
+            <Legend/>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="Week" />
             <YAxis tickFormatter={toPercent} />
             <Tooltip content={renderTooltipContent} />
-            <Area type="monotone" dataKey="Applied" stackId="1" stroke="#8884d8" fill="blue" />
-            <Area type="monotone" dataKey="Phone" stackId="1" stroke="#82ca9d" fill="green" />
-            <Area type="monotone" dataKey="Technical" stackId="1" stroke="#ffc658" fill="yellow" />
-            <Area type="monotone" dataKey="Inperson" stackId="1" stroke="#ffc658" fill="purple" />
-            <Area type="monotone" dataKey="Offers" stackId="1" stroke="#ffc658" fill="pink" />
-            <Area type="monotone" dataKey="Rejected" stackId="1" stroke="#ffc658" fill="red" />
+            <Area type="monotone" dataKey="Applied" stackId="1" stroke="blue" fill="blue" />
+            <Area type="monotone" dataKey="Phone" stackId="1" stroke="green" fill="green" />
+            <Area type="monotone" dataKey="Technical" stackId="1" stroke="yellow" fill="yellow" />
+            <Area type="monotone" dataKey="Inperson" stackId="1" stroke="purple" fill="purple" />
+            <Area type="monotone" dataKey="Offers" stackId="1" stroke="pink" fill="pink" />
+            <Area type="monotone" dataKey="Rejected" stackId="1" stroke="red" fill="red" />
           </AreaChart>
         </ResponsiveContainer>
       </>

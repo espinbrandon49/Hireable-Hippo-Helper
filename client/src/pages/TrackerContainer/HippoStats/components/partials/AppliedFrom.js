@@ -28,7 +28,6 @@ const AppliedFrom = ({applications}) => {
     app.appliedFrom === "Other" && appliedFrom.other++
   });
 
-
   const data = [
     {
       appliedFrom: 'LinkedIn',

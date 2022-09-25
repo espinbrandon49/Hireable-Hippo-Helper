@@ -11,17 +11,12 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const UpdateJob = ({ application, jobUpdated }) => {
 
-  // const [startdate, setStartDate] = useState(new Date(application.dateApplied));
-  const [dateApplied, setDateApplied] = useState(new Date(application.dateApplied));
-  const [phoneInterview, setPhoneInterview] = useState(new Date(application.phoneInterview));
-  const [technicalInterview, setTechnicalInterview] = useState(new Date(application.technicalInterview));
-  const [inpersonInterview, setInpersonInterview] = useState(new Date(application.inpersonInterview));
-  const [dateOfOffer, setDateOfOffer] = useState(new Date(application.dateOfOffer));
-  const [startDate, setStartDate] = useState(new Date(application.startDate));
-
-  // console.log(startdate)
-  console.log(dateApplied)
-  console.log(application.dateApplied)
+  const [dateApplied, setDateApplied] = useState(application.dateApplied ? new Date(application.dateApplied) : null);
+  const [phoneInterview, setPhoneInterview] = useState(application.phoneInterview ? new Date(application.phoneInterview) : null);
+  const [technicalInterview, setTechnicalInterview] = useState(application.technicalInterview ? new Date(application.technicalInterview) : null);
+  const [inpersonInterview, setInpersonInterview] = useState(application.inpersonInterview ? new Date(application.inpersonInterview) : null);
+  const [dateOfOffer, setDateOfOffer] = useState(application.dateOfOffer ? new Date(application.dateOfOffer) : null);
+  const [startDate, setStartDate] = useState(application.startDate ? new Date(application.startDate) : null);
 
   const navigate = useNavigate();
   const [formState, setFormState] = useState({

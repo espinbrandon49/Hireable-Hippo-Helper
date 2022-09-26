@@ -5,14 +5,13 @@ const DayOfWeek = ({ applications }) => {
 
   const appDates = applications.map((app) => {
     if (app.dateApplied) {
-      let applied = app.dateApplied
+      let applied = new Date(app.dateApplied).toString()
+      console.log(applied)
       for (let i = 0; i < applied.length; i++) {
-        let indice = applied.indexOf('T')
-        return applied.slice(0, indice)
+        return applied.slice(0, 3)
       }
     }
   })
-  console.log(appDates)
 
   let sunday = 0;
   let monday = 0;
@@ -21,72 +20,61 @@ const DayOfWeek = ({ applications }) => {
   let thursday = 0;
   let friday = 0;
   let saturday = 0;
+  let apply = 0;
 
   for (let i = 0; i < appDates.length; i++) {
-    if (appDates[i] === "2022-09-01") {
-      thursday++
-    } else if (appDates[i] === "2022-09-02") {
-      friday++
-    } else if (appDates[i] === "2022-09-03") {
-      saturday++
-    } else if (appDates[i] === "2022-09-04") {
-      sunday++
-    } else if (appDates[i] === "2022-09-05") {
-      monday++
-    } else if (appDates[i] === "2022-09-06") {
-      tuesday++
-    } else if (appDates[i] === "2022-09-07") {
-      wednesday++
-    } else if (appDates[i] === "2022-09-08") {
-      thursday++
-    } else if (appDates[i] === "2022-09-09") {
-      friday++
-    } else if (appDates[i] === "2022-09-10") {
-      saturday++
-    } else if (appDates[i] === "2022-09-11") {
-      sunday++
-    } else if (appDates[i] === "2022-09-12") {
-      monday++
-    } else if (appDates[i] === "2022-09-13") {
-      tuesday++
-    } else if (appDates[i] === "2022-09-14") {
-      wednesday++
-    } else if (appDates[i] === "2022-09-15") {
-      thursday++
-    } else if (appDates[i] === "2022-09-16") {
-      friday++
-    } else if (appDates[i] === "2022-09-17") {
-      saturday++
-    } else if (appDates[i] === "2022-09-18") {
-      sunday++
-    } else if (appDates[i] === "2022-09-19") {
-      monday++
-    } else if (appDates[i] === "2022-09-20") {
-      tuesday++
-    } else if (appDates[i] === "2022-09-21") {
-      wednesday++
-    } else if (appDates[i] === "2022-09-22") {
-      thursday++
-    } else if (appDates[i] === "2022-09-23") {
-      friday++
-    } else if (appDates[i] === "2022-09-24") {
-      saturday++
-    } else if (appDates[i] === "2022-09-25") {
-      sunday++
-    } else if (appDates[i] === "2022-09-26") {
-      monday++
-    } else if (appDates[i] === "2022-09-27") {
-      tuesday++
-    } else if (appDates[i] === "2022-09-28") {
-      wednesday++
-    } else if (appDates[i] === "2022-09-29") {
-      thursday++
-    } else if (appDates[i] === "2022-09-30") {
-      friday++
+    switch (appDates[i]) {
+      case "Mon":
+        monday++;
+        break;
+      case "Tue":
+        tuesday++;
+        break;
+      case "Wed":
+        wednesday++;
+        break;
+      case "Thu":
+        thursday++;
+        break;
+      case "Fri":
+        friday++;
+        break;
+      case "Sat":
+        saturday++;
+        break;
+      default:
+        apply++
     }
   }
 
-  const data = [
+  const RADIAN = Math.PI / 180;
+  const renderCustomizedLabel = ({
+    cx,
+    cy,
+    midAngle,
+    innerRadius,
+    outerRadius,
+    percent,
+    index
+  }: any) => {
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+  
+    return (
+      <text
+        x={x}
+        y={y}
+        fill="white"
+        textAnchor={x > cx ? "start" : "end"}
+        dominantBaseline="central"
+      >
+        {`${(percent * 100).toFixed(0)}%`}
+      </text>
+    );
+  };
+
+  const data01 = [
     { name: 'Sunday', value: sunday },
     { name: 'Monday', value: monday },
     { name: 'Tuesday', value: tuesday },
@@ -94,6 +82,21 @@ const DayOfWeek = ({ applications }) => {
     { name: 'Thursday', value: thursday },
     { name: 'Friday', value: friday },
     { name: 'Saturday', value: saturday },
+    { name: 'Apply', value: apply },
+  ];
+
+  const data02 = [
+    { name: "A1", value: 100 },
+    { name: "A2", value: 300 },
+    { name: "B1", value: 100 },
+    { name: "B2", value: 80 },
+    { name: "B3", value: 40 },
+    { name: "B4", value: 30 },
+    { name: "B5", value: 50 },
+    { name: "C1", value: 100 },
+    { name: "C2", value: 200 },
+    { name: "D1", value: 150 },
+    { name: "D2", value: 50 }
   ];
 
   const colors = ['red', 'yellow', 'blue', 'orange', 'pink', 'purple', 'green']
@@ -104,12 +107,13 @@ const DayOfWeek = ({ applications }) => {
         <PieChart width={800} height={800}>
           <Pie
             dataKey="value"
-            isAnimationActive={false}
             data={data}
             cx="50%"
             cy="50%"
             outerRadius={180}
-            label="piechart">
+            labelLine={false}
+            label={renderCustomizedLabel}
+            >
             {
               data.map((entry, index) => (
                 <Cell key={index} fill={colors[index]} />

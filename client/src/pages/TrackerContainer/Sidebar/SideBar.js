@@ -1,15 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './colors.css';
+import Card from '@mui/material/Card';
+import Typography from '@mui/material/Typography';
 
 const styles = {
   box: {
     height: '100%',
   },
-  radii: {
-    borderTopLeftRadius: '0',
-    borderTopRightRadius: '0',
-  },
+  btn: {
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+  }
 };
 
 const SideBar = ({ applications }) => {
@@ -17,19 +19,21 @@ const SideBar = ({ applications }) => {
     <div className="container column is-one-quarter" style={styles.box} >
       {applications &&
         applications.map((application) => (
-          <div key={application._id} className="card mb-2 is-fullwidth ">
-            <h6 className="card-header is-size-7 p-1">
+          <Card key={application._id} elevation={4} className="mb-3">
+            <Typography variant="h6" className="p-1 pl-2">
               {application.company} ({application.appliedFrom}) 
-            </h6>
+            </Typography>
             <Link
               to={`/Main/Application/${application._id}`}
               state={ application }
-              className="button is-size-6 is-fullwidth"
-              style={styles.radii}
+              className="button is-fullwidth"
+              style={styles.btn}
             >
-              {application.jobTitle}
+              <Typography sx={{ fontSize: 18 }}>
+                {application.jobTitle}
+              </Typography>
             </Link>
-          </div>
+          </Card>
         ))}
 
     </div>

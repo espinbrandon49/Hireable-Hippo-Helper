@@ -8,10 +8,4 @@ mongoose.connect(
   }
 );
 
-// mongoose.connect('mongodb://127.0.0.1:27017/Hireable-Hippo-Helper',function(){
-//     /* Drop the DB */
-//     mongoose.connection.db.dropDatabase();
-// });
-
-
 module.exports = mongoose.connection;

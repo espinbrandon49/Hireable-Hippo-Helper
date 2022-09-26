@@ -5,7 +5,6 @@ import Auth from "../../utils/auth";
 import SideBar from "./Sidebar/SideBar";
 import Application from "./Application/Application";
 import HippoStats from "./HippoStats/HippoStats";
-import UpdateJob from "../UpdateJob/UpdateJob";
 
 export default function TrackerContainer({currentPage}) {
   // Call all applications
@@ -30,7 +29,6 @@ export default function TrackerContainer({currentPage}) {
           <div className="section">
             <div className="columns" id="mainComponent">
               <HippoStats applications={filteredApps} />
-              <SideBar applications={filteredApps}/>
             </div>
           </div>
         ) : (

@@ -11,8 +11,7 @@ const Subheader = ({ application }) => {
   if (application === undefined) {
     return (
       <div className='block'>
-        <h1 className='title'>Choose or Add New Application</h1>
-        
+        <h1 className='title'>Choose or Add New Application</h1>        
       </div>
     )
   } else {

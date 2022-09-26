@@ -7,12 +7,14 @@ import AllMilestones from "./components/AllMilestones";
 import Notes from "./components/Notes";
 import { useLocation } from "react-router-dom";
 import UpdateJob from "../../UpdateJob/UpdateJob";
+import AllJobs from "./components/AllJobs";
 
-const Application = () => {
+const Application = ({applications}) => {
   const [updateJob, setUpdateJob] = useState({ updateJob: false })
   const locate = useLocation();
 
   const application = locate.state;
+  const applicationsData = applications
 
   console.log(application);
 
@@ -58,8 +60,7 @@ const Application = () => {
           <>
             <Subheader />
             <div className="columns is-1 box">
-              <p>What should we put here?</p>
-              <div>ALL JOBS CIRCLE DATA VISUALS</div>
+            <AllJobs allApplications={applicationsData} />
             </div>
           </>
         ) : (

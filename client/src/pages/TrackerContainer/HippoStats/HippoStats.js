@@ -24,8 +24,8 @@ const styles = {
 }
 
 const HippoStats = ({ applications }) => {
-  const [currentDataPage, setCurrentDataPage] = useState('');
 
+  const [currentDataPage, setCurrentDataPage] = useState('AppTimeline');
   const renderDataPage = () => {
     if (currentDataPage === 'AppliedFrom') {
       return <AppliedFrom applications={applications} />;
@@ -46,7 +46,7 @@ const HippoStats = ({ applications }) => {
       return <StatusByPercent applications={applications} />;
     }
   };
-
+//handlechange
   const handleDataPageChange = (page) => setCurrentDataPage(page);
 
   return (

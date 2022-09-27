@@ -51,7 +51,7 @@ export default function TrackerContainer({currentPage}) {
         {Auth.loggedIn() ? (
           <div className="section" id="mainBackground">
             <div className="columns">
-              <Application />
+              <Application applications={filteredApps}/>
               <SideBar applications={filteredApps} />
             </div>
           </div>

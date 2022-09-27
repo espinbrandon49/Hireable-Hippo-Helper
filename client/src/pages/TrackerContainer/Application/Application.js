@@ -7,6 +7,7 @@ import AllMilestones from "./components/AllMilestones";
 import Notes from "./components/Notes";
 import { useLocation } from "react-router-dom";
 import UpdateJob from "../../UpdateJob/UpdateJob";
+import Card from '@mui/material/Card';
 
 const Application = () => {
   const [updateJob, setUpdateJob] = useState({ updateJob: false })
@@ -14,7 +15,7 @@ const Application = () => {
 
   const application = locate.state;
 
-  console.log(application);
+  // console.log(application);
 
   function updateJobApp() {
     setUpdateJob({ updateJob: true })
@@ -33,11 +34,13 @@ const Application = () => {
               !updateJob.updateJob ? (
                 <div>
                   <Subheader application={application} />
-                  <CurrentMilestones application={application} />
-                  <div className="columns is-1 box">
+                  <Card elevation={5} className="columns is-1 mb-5">
+                    <CurrentMilestones application={application} />
+                  </Card>
+                  <Card elevation={5} className="columns is-1 p-5">
                     <AllMilestones application={application} updateJobApp={updateJobApp} />
                     <Notes application={application} />
-                  </div>
+                  </Card>
                 </div>
               ) : (
                 <div>
@@ -57,10 +60,10 @@ const Application = () => {
         {Auth.loggedIn() ? (
           <>
             <Subheader />
-            <div className="columns is-1 box">
+            <Card elevation={5} className="columns is-1">
               <p>What should we put here?</p>
               <div>ALL JOBS CIRCLE DATA VISUALS</div>
-            </div>
+            </Card>
           </>
         ) : (
           <Login />

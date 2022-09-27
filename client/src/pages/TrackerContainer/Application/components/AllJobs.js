@@ -1,10 +1,9 @@
 import React from "react";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label, LabelList } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Label, LabelList, ResponsiveContainer } from "recharts";
 const dateFormat = require('../../../../utils/dateFormat');
 
 const AllJobs = ({ allApplications }) => {
   const appsData = allApplications;
-  // console.log(appsData)
   const today = Date.now()
   const data = appsData.map((value, key) => {
     let mileValue;
@@ -46,11 +45,9 @@ const AllJobs = ({ allApplications }) => {
       name: `${value.company}^${value.currentMilestone}^${color}^${dateFormat(value.dateApplied)}`,
       pv: mileValue,
       uv: value.company,
-      px: today/86400000 - (new Date(value.dateApplied).getTime())/86400000
+      px: today / 86400000 - (new Date(value.dateApplied).getTime()) / 86400000
     };
   });
-
-  console.log(data);
 
   const renderCustomizedLabelMilestone = (props, appsData) => {
     const { x, y, width, value } = props;
@@ -76,22 +73,24 @@ const AllJobs = ({ allApplications }) => {
 
   return (
     <>
-    <BarChart width={700} height={1000} data={data} layout="vertical" margin={{ top: 0, right: 50, left: 0, bottom: 30 }}>
-      <CartesianGrid strokeDasharray="3 3" />
-      <YAxis dataKey="uv" type="category" width={150} />
-      <XAxis type="number" xAxisId="top" orientation="top" stroke="#82ca9d" tick={false}/>
-      <XAxis type="number" xAxisId="bottom" orientation="bottom" stroke="#8884d8">
-      <Label value={`Days Since Applied (${dateFormat(today)}  - date applied)`} offset={-20} position="insideBottom" />
-      </XAxis>  
-      {/* <Tooltip dataKey="uv" /> */}
+      <BarChart width={600} height={1000} data={data} layout="vertical" margin={{ top: 10, right: 50, left: 0, bottom: 30 }} label={"barchart"}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <YAxis dataKey="uv" type="category" width={150} />
+        <XAxis type="number" xAxisId="top" orientation="top" stroke="#82ca9d" tick={false}>
+        <Label value={`Days Since Applied (${dateFormat(today)}  - date applied)`} offset={-20} position="top" fontSize={20} offset={-5} />
+        </XAxis>
+        <XAxis type="number" xAxisId="bottom" orientation="bottom" stroke="#8884d8" >
 
-      <Bar dataKey="pv" fill="#8884d8" minPointSize={50} xAxisId="top" >
-        <LabelList dataKey="name" content={renderCustomizedLabelMilestone} />
-      </Bar>
-      <Bar dataKey="px" fill="#82ca9d" xAxisId="bottom" >
-      <LabelList dataKey="name" content={renderCustomizedLabelDateApplied} />
-      </Bar>
-    </BarChart>
+        </XAxis>
+        {/* <Tooltip dataKey="uv" /> */}
+
+        <Bar dataKey="pv" fill="#8884d8" minPointSize={50} xAxisId="top" >
+          <LabelList dataKey="name" content={renderCustomizedLabelMilestone} />
+        </Bar>
+        <Bar dataKey="px" fill="#82ca9d" xAxisId="bottom" >
+          <LabelList dataKey="name" content={renderCustomizedLabelDateApplied} />
+        </Bar>
+      </BarChart>
     </>
   );
 };

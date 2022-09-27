@@ -303,9 +303,8 @@ const AppTimeline = ({ applications }) => {
 
   const CustomizedLabel: FunctionComponent<any> = (props: any) => {
     const { x, y, stroke, value } = props;
-    console.log(props)
     return (
-      <text x={x} y={y} dy={-4} fill={stroke} fontSize={10} textAnchor="middle">
+      <text x={x} y={y} dy={-4} fill={stroke} fontSize={20} textAnchor="middle">
         {value}
       </text>
     );
@@ -328,8 +327,8 @@ const AppTimeline = ({ applications }) => {
       <YAxis dataKey="date" type="category" />
       <Tooltip />
       <Legend />
-      <Line dataKey="appsSent" stroke="#8884d8">
-        <LabelList dataKey="company" content={<CustomizedLabel />} />
+      <Line dataKey="appsSent" stroke="#8884d8" activeDot={{ r: 8 }}>
+        <LabelList dataKey="appsSent" content={<CustomizedLabel />} />
       </Line>
       {/* <Line dataKey="uv" stroke="#82ca9d" /> */}
     </LineChart>

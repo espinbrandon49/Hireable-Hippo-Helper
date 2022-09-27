@@ -40,7 +40,7 @@ const HippoStats = ({ applications }) => {
       return <StatusByPercent applications={applications} />;
     }
   };
-
+//handlechange
   const handleDataPageChange = (page) => setCurrentDataPage(page);
 
   return (

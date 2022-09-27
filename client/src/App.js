@@ -14,6 +14,7 @@ import TrackerContainer from "./pages/TrackerContainer/TrackerContainer";
 import Application from "./pages/TrackerContainer/Application/Application";
 import Homepage from "./pages/Homepage/Homepage";
 import NavBar from "./pages/Navbar";
+import Footer from "./pages/Footer";
 import UpdateJob from "./pages/UpdateJob/UpdateJob";
 import 'bulma/css/bulma.min.css';
 import '@mui/material'
@@ -62,6 +63,7 @@ const App = () => (
         <Route path="/Signup" element={<Signup />} />
         <Route path="/UpdateJob" element={<UpdateJob />} />
       </Routes>
+      <Footer />
     </Router>
   </ApolloProvider>
 );

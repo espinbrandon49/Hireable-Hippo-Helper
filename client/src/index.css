@@ -68,3 +68,7 @@ code {
   text-align: right;
   color: antiquewhite;
 }
+
+#mainBackground {
+  background: whitesmoke;
+}

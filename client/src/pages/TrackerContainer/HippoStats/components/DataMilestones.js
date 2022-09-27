@@ -1,9 +1,10 @@
 import React from 'react'
+import Box from '@mui/material/Box';
 
 const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
   return (
-    <div className='box'>
-    <div className="buttons is-justify-content-center">
+    <Box className='p-5'>
+      <div className="buttons is-justify-content-center">
         <button
           className={
             currentDataPage === "AppliedFrom"
@@ -71,7 +72,7 @@ const dataMilestones = ({currentDataPage, handleDataPageChange}) => {
         </button>
 
       </div>
-    </div>
+    </Box>
   )
 }
 

@@ -54,7 +54,7 @@ function NavBar() {
     <Box sx={{ background: 'white' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         {Auth.loggedIn() ? (
-          <Tabs variant={smallScreen ? "fullWidth" : ""} value={currentPage} orientation={smallScreen ? "vertical" : "horizonal"} onChange={handlePageChange}>
+          <Tabs variant={smallScreen ? "fullWidth" : "standard"} value={currentPage} orientation={smallScreen ? "vertical" : "horizontal"} onChange={handlePageChange}>
             <Tab icon={<img src={icon} alt="hippo" style={{"height": "45px"}} />} component={Link} to="/" {...a11yProps(0)} />
             <Tab label="HippoStats" component={Link} to="/Main/#HippoStats" {...a11yProps(1)} />
             <Tab label="My Applications" component={Link} to="/Main/#Application" {...a11yProps(2)} />

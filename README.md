@@ -9,7 +9,7 @@ A full-stack MERN application for those looking for and actively applying to job
 Job seekers can view view data on milestones and job information to track my progress and key metrics relating to my job search.  This can potentially provide insights on adjustments and good practices to continue.  
 
 ### Deployed Link
-[Hireable-Hippo-Helper](https://hireablehippohelper.herokuapp.com/)
+[Hireable-Hippo-Helper](https://hireable-hippo-helpers.herokuapp.com/)
 
 ![A full-stack MERN application for those looking for and actively applying to jobs to add information about their applications to track progress throughout the full life application.](./client/src/images/Hireable%20Hippo%20Helper.gif)
 

@@ -18,8 +18,8 @@ const styles = {
 }
 
 const HippoStats = ({ applications }) => {
-  const [currentDataPage, setCurrentDataPage] = useState('');
 
+  const [currentDataPage, setCurrentDataPage] = useState('AppTimeline');
   const renderDataPage = () => {
     if (currentDataPage === 'AppliedFrom') {
       return <AppliedFrom applications={applications} />;

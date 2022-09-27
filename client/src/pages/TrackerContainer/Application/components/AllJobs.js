@@ -6,12 +6,7 @@ const AllJobs = ({ allApplications }) => {
   const appsData = allApplications;
   // console.log(appsData)
   const today = Date.now()
-  console.log(new Date("2022-09-19T18:35:49.000Z").getTime())
- console.log(new Date("2022-09-19T18:35:49.000Z"))
-  console.log(dateFormat("2022-09-19T18:35:49.000Z"))
-  console.log(today - (new Date("2022-09-19T18:35:49.000Z").getTime()))
   const data = appsData.map((value, key) => {
-
     let mileValue;
     let color;
     switch (value.currentMilestone) {

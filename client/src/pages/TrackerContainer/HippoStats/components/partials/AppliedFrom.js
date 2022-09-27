@@ -87,7 +87,7 @@ const AppliedFrom = ({ applications }) => {
     const radius = 20;
     return (
       <g>
-        <circle cx={x + width / 2} cy={y - radius} r={radius} fill={value.split("^")[2]}/>
+        <circle cx={x + width / 2} cy={y - radius} r={radius} fill={value.split("^")[2]} />
         <text
           x={x + width / 2}
           y={y - radius}
@@ -102,51 +102,52 @@ const AppliedFrom = ({ applications }) => {
   };
 
   const getPath = (x: number, y: number, width: number, height: number) => {
-    return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${
-      y + height / 3
-    } 
+    return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3
+      } 
     ${x + width / 2}, ${y}
-    C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${
-      x + width
-    }, ${y + height}
+    C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${x + width
+      }, ${y + height}
     Z`;
   };
-  
+
   const TriangleBar: FunctionComponent<any> = (props: any) => {
     const { fill, x, y, width, height } = props;
-  
+
     return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
   };
 
   return (
-    <ResponsiveContainer width="95%" height="100%">
-      <BarChart
-        width={500}
-        height={300}
-        data={data}
-        margin={{
-          top: 50,
-          right: 0,
-          left: 0,
-          bottom: 0
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="pv" />
-        <YAxis tick={false}/>
-        <Bar
-          dataKey="uv"
-          fill="#8884d8"
-          shape={<TriangleBar />}
-          label={{ position: "top" }}
+    <>
+    <h2 className='title has-text-centered'>Job Application Portal</h2>
+      <ResponsiveContainer width="95%" height="100%">
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 50,
+            right: 0,
+            left: 0,
+            bottom: 0
+          }}
         >
-          <LabelList dataKey="name" content={renderCustomizedLabel} />
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={colors[index]} />
-          ))}
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="pv" />
+          <YAxis tick={false} />
+          <Bar
+            dataKey="uv"
+            fill="#8884d8"
+            shape={<TriangleBar />}
+            label={{ position: "top" }}
+          >
+            <LabelList dataKey="name" content={renderCustomizedLabel} />
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colors[index]} />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </>
   );
 }
 

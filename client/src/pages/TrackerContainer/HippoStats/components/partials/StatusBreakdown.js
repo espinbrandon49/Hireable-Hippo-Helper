@@ -39,15 +39,17 @@ const StatusBreakdown = ({ applications }) => {
   });
 
   return (
-    <div>
-      <RadarChart cx={350} cy={300} outerRadius={200} width={900} height={900} data={data}>
-        <Legend />
-        <PolarGrid />
-        <PolarAngleAxis dataKey="company" />
-        <PolarRadiusAxis />
-        <Radar name="All Jobs" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-      </RadarChart>
-    </div>
+    <>
+    <h2 className="title has-text-centered mb3">Job Application Status</h2>
+      <div className="is-flex is-justify-content-center is-align-self-center">
+        <RadarChart outerRadius={200} width={650} height={450} data={data}>
+          <PolarGrid />
+          <PolarAngleAxis dataKey="company" />
+          <PolarRadiusAxis />
+          <Radar name="All Jobs" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+        </RadarChart>
+      </div>
+    </>
   );
 };
 export default StatusBreakdown;

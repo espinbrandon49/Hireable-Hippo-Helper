@@ -6,18 +6,31 @@ import Typography from '@mui/material/Typography';
 
 const styles = {
   box: {
+    marginTop: '90px',
     height: '100%',
+
+  },
+  scroll: {
+    maxHeight: '100vh',
+    overflow: 'auto',
+    padding: 8,
   },
   btn: {
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,
+    backgroundImage: "linear-gradient( 180deg, rgb(80, 190, 250), rgb(70, 170, 220) )",
+    border: "grey",
   }
 };
 
 const SideBar = ({ applications }) => {
   return (
-    <div className="container column is-one-quarter" style={styles.box} >
-      {applications &&
+    <Card className="container column is-one-quarter" elevation={5} style={styles.box} >
+      <Typography variant="h5" component="div" className="pb-3">
+        My Applications
+      </Typography>
+      <Card style={styles.scroll} elevation={0}>
+        {applications &&
         applications.map((application) => (
           <Card key={application._id} elevation={4} className="mb-3">
             <Typography variant="h6" className="p-1 pl-2">
@@ -35,8 +48,10 @@ const SideBar = ({ applications }) => {
             </Link>
           </Card>
         ))}
+      </Card>
 
-    </div>
+
+    </Card>
   );
 };
 

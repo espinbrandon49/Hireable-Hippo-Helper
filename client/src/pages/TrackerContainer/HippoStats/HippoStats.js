@@ -9,11 +9,17 @@ import StatusCount from './components/partials/StatusCount';
 import StatusBreakdown from './components/partials/StatusBreakdown';
 import DayOfWeek from "./components/partials/DayOfWeek";
 import StatusByPercent from "./components/partials/StatusByPercent";
+import Card from '@mui/material/Card';
 
 
 const styles = {
+  container: {
+    marginLeft: "50px",
+    marginRight: "50px",
+    maxWidth: "94%",
+  },
   box: {
-    height: "50vh",
+    height: "60vh",
   }
 }
 
@@ -44,17 +50,19 @@ const HippoStats = ({ applications }) => {
   const handleDataPageChange = (page) => setCurrentDataPage(page);
 
   return (
-    <div className="container column is-three-quarters">
+    <div className="container column is-full" style={styles.container}>
       {Auth.loggedIn() ? (
         <>
           <Subheader applications={applications} />
-          <DataMilestones 
-            currentDataPage={currentDataPage}
-            handleDataPageChange={handleDataPageChange}
-          />
-          <div className='box' style={styles.box}>
+          <Card elevation={5} className="mb-4" >
+            <DataMilestones 
+              currentDataPage={currentDataPage}
+              handleDataPageChange={handleDataPageChange}
+            />
+          </Card>
+          <Card elevation={5} className='p-5' style={styles.box}>
             {renderDataPage()}
-          </div>
+          </Card>
         </>
       ) : (
         <Login />

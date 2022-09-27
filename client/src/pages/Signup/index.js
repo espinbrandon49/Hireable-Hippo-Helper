@@ -17,6 +17,13 @@ import InputAdornment from '@mui/material/InputAdornment';
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
 import PersonIcon from '@mui/icons-material/Person';
+import "../../index.css"
+
+const styles = {
+  background: {
+    height: "100%",
+  },
+};
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -50,9 +57,9 @@ const Signup = () => {
   };
 
   return (
-    <Grid container justifyContent="center" sx={{marginTop: "50px"}}>
+    <Grid container justifyContent="center" id="mainBackground" style={styles.background}>
       <Grid item xl={4} lg={6} md={8} sm={10} xs={12}>
-        <Card elevation={15} sx={{borderRadius: 3}}>
+        <Card elevation={15} sx={{borderRadius: 3, marginTop: "50px"}}>
 
           <Typography component="div" variant="h3" sx={{textAlign: "center", padding: "25px", fontWeight: "bold"}}>
             Signup

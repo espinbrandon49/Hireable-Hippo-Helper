@@ -18,6 +18,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import "../../index.css"
 
 const ApplicationForm = () => {
   const [formState, setFormState] = useState({
@@ -110,9 +111,9 @@ const ApplicationForm = () => {
   return (
     <>
     {Auth.loggedIn() ? (
-      <Grid container justifyContent="center" sx={{marginTop: "50px", marginBottom: "50px"}}>
+      <Grid container justifyContent="center" id="mainBackground">
         <Grid item xl={6} lg={8} md={10} sm={11} xs={12}>
-          <Card component="form" elevation={15} sx={{borderRadius: 3}} onSubmit={handleFormSubmit}>
+          <Card component="form" elevation={15} sx={{borderRadius: 3, marginTop: "50px", marginBottom: "50px"}} onSubmit={handleFormSubmit}>
             <CardContent>
               <Box>
                 <Typography component="div" variant="h3" sx={{textAlign: "center", padding: "25px", fontWeight: "bold"}}>

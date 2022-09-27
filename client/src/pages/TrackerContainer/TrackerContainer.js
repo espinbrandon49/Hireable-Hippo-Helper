@@ -5,13 +5,13 @@ import Auth from "../../utils/auth";
 import SideBar from "./Sidebar/SideBar";
 import Application from "./Application/Application";
 import HippoStats from "./HippoStats/HippoStats";
-import UpdateJob from "../UpdateJob/UpdateJob";
+import "../../index.css"
 
 export default function TrackerContainer({currentPage}) {
   // Call all applications
   const { loading, data } = useQuery(QUERY_APPLICATIONS);
   const applications = data?.applications || [];
-  console.log(applications)
+  // console.log(applications)
 
   // Call single applications by username
   var filteredApps = [];
@@ -22,15 +22,22 @@ export default function TrackerContainer({currentPage}) {
   }
 
   if (loading) return "Hippo Loading";
+
+  const styles = {
+    statsBackground: {
+      height: "100%",
+      paddingLeft: 0,
+      paddingRight: 0,
+    },
+  };
   
   if(currentPage === 1) {
     return (
       <>
         {Auth.loggedIn() ? (
-          <div className="section">
-            <div className="columns" id="mainComponent">
+          <div className="section" id="mainBackground" style={styles.statsBackground}>
+            <div className="columns" sx={{width: "100%"}}>
               <HippoStats applications={filteredApps} />
-              <SideBar applications={filteredApps}/>
             </div>
           </div>
         ) : (
@@ -42,8 +49,8 @@ export default function TrackerContainer({currentPage}) {
     return (
       <>
         {Auth.loggedIn() ? (
-          <div className="section">
-            <div className="columns" id="mainComponent">
+          <div className="section" id="mainBackground">
+            <div className="columns">
               <Application />
               <SideBar applications={filteredApps} />
             </div>

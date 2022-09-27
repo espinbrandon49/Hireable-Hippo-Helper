@@ -1,6 +1,9 @@
 import React from "react";
 import { useMutation } from "@apollo/client";
 import { REMOVE_APPLICATION } from "../../../../utils/mutations";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+
 const dateFormat = require('../../../../utils/dateFormat');
 
 const AllMilestones = ({ application, updateJobApp }) => {
@@ -29,23 +32,23 @@ const AllMilestones = ({ application, updateJobApp }) => {
         <ul className="menu-list">
           <li>
             <span className="navbar-item has-text-weight-bold">Job Link: </span>
-            {application.jobLink}
+            <span className="pl-3">{application.jobLink}</span>
           </li>
           <li>
             <span className="navbar-item has-text-weight-bold">Location: </span>
-            {application.location}
+            <span className="pl-3">{application.location}</span>
           </li>
           <li>
             <span className="navbar-item has-text-weight-bold">Job Type: </span>
-            {application.jobType}
+            <span className="pl-3">{application.jobType}</span>
           </li>
           <li>
             <span className="navbar-item has-text-weight-bold">Salary: </span>
-            {application.salary}
+            <span className="pl-3">{application.salary}</span>
           </li>
           <li>
             <span className="navbar-item has-text-weight-bold">Job Description: </span>
-            {application.jobDescription}
+            <span className="pl-3">{application.jobDescription}</span>
           </li>
         </ul>
         <p className="menu-label is-size-5 has-text-weight-bold">
@@ -54,32 +57,32 @@ const AllMilestones = ({ application, updateJobApp }) => {
         <ul className="menu-list ">
           <li>
             <span className="navbar-item has-text-weight-bold">Date Applied: </span>
-            {application.dateApplied && dateFormat(application.dateApplied)}
+            <span className="pl-3">{application.dateApplied && dateFormat(application.dateApplied)}</span>
           </li>
           <li navbar-item has-text-weight-bold>
             <span className="navbar-item has-text-weight-bold">Interviews</span>
             <ul>
               <li>
                 <span className="navbar-item has-text-weight-bold">Phone: </span>
-                {application.phoneInterview && dateFormat(application.phoneInterview)}
+                <span className="pl-3">{application.phoneInterview && dateFormat(application.phoneInterview)}</span>
               </li>
               <li>
                 <span className="navbar-item has-text-weight-bold">Technical: </span>
-                {application.technicalInterview && dateFormat(application.technicalInterview)}
+                <span className="pl-3">{application.technicalInterview && dateFormat(application.technicalInterview)}</span>
               </li>
               <li>
                 <span className="navbar-item has-text-weight-bold">In person: </span>
-                {application.inpersonInterview && dateFormat(application.inpersonInterview)}
+                <span className="pl-3">{application.inpersonInterview && dateFormat(application.inpersonInterview)}</span>
               </li>
             </ul>
           </li>
           <li>
             <span className="navbar-item has-text-weight-bold">Date of Offer: </span>
-            {application.dateOfOffer && dateFormat(application.dateOfOffer)}
+            <span className="pl-3">{application.dateOfOffer && dateFormat(application.dateOfOffer)}</span>
           </li>
           <li>
             <span className="navbar-item has-text-weight-bold">Start Date: </span>
-            {application.startDate && dateFormat(application.startDate)}
+            <span className="pl-3">{application.startDate && dateFormat(application.startDate)}</span>
           </li>
         </ul>
         <p className="menu-label is-size-5 has-text-weight-bold">
@@ -88,15 +91,15 @@ const AllMilestones = ({ application, updateJobApp }) => {
         <ul className="menu-list">
           <li>
             <span className="navbar-item has-text-weight-bold">Contact Name: </span>
-            {application.contactName}
+            <span className="pl-3">{application.contactName}</span>
           </li>
           <li>
             <span className="navbar-item has-text-weight-bold">Contact Email: </span>
-            {application.contactEmail}
+            <span className="pl-3">{application.contactEmail}</span>
           </li>
           <li>
             <span className="navbar-item has-text-weight-bold">Contact Phone: </span>
-            {application.contactPhone}
+            <span className="pl-3">{application.contactPhone}</span>
           </li>
         </ul>
         <p className="menu-label is-size-5 has-text-weight-bold">Milestones</p>
@@ -109,25 +112,25 @@ const AllMilestones = ({ application, updateJobApp }) => {
             );
           })}
         </ul>
-        <div className="field pt-3">
-          <div className="control">
-            <button
-              className="button is-danger"
-              onClick={handleDelete}
-              style={{ cursor: "pointer" }}
-              type="button"
-            >
-              Delete Application
-            </button>
+        <Stack spacing={2} direction="row" className="pt-3">
+          <Button
+            variant="contained"
+            size="large"
+            color="error"
+            onClick={handleDelete}
+          >
+            Delete Application
+          </Button>
 
-            <button
-              onClick={updateJobApp}
-              className="button is-size-6 is-fullwidth"
-            >
-              Update Application
-            </button>
-          </div>
-        </div>
+          <Button
+            variant="contained"
+            size="large"
+            color="secondary"
+            onClick={updateJobApp}
+          >
+            Update Application
+          </Button>
+        </Stack>
       </div>
     );
   }

@@ -102,7 +102,7 @@ const AllMilestones = ({ application, updateJobApp }) => {
             <span className="pl-3">{application.contactPhone}</span>
           </li>
         </ul>
-        <p className="menu-label is-size-5 has-text-weight-bold">Milestones</p>
+        {/* <p className="menu-label is-size-5 has-text-weight-bold">Milestones</p>
         <ul className="menu-list">
           {application.milestones.map((value, i) => {
             return (
@@ -111,7 +111,7 @@ const AllMilestones = ({ application, updateJobApp }) => {
               </li>
             );
           })}
-        </ul>
+        </ul> */}
         <Stack spacing={2} direction="row" className="pt-3">
           <Button
             variant="contained"

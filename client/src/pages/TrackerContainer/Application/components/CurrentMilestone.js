@@ -21,7 +21,7 @@ const CurrentMilestone = ({ application }) => {
   const [updateMilestone, { error, data }] = useMutation(UPDATE_MILESTONE);
   const [addMilestone, { err, dataA }] = useMutation(ADD_MILESTONE);
   // console.log(error, err, data, dataA)
-
+  console.log(application.currentMilestone)
   // Step Handling
   const steps = ["Applied", "Phone Interview", "Technical Interview", "In Person Interview", "Job Offer", "Accepted"];
 

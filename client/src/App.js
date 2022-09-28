@@ -63,7 +63,7 @@ const App = () => (
         <Route path="/Signup" element={<Signup />} />
         <Route path="/UpdateJob" element={<UpdateJob />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   </ApolloProvider>
 );

@@ -19,7 +19,7 @@ const styles = {
     maxWidth: "94%",
   },
   box: {
-    height: "60vh",
+    height: "90vh",
   }
 }
 
@@ -50,7 +50,7 @@ const HippoStats = ({ applications }) => {
   const handleDataPageChange = (page) => setCurrentDataPage(page);
 
   return (
-    <div className="container column is-full" style={styles.container}>
+    <div className="container column" style={styles.container}>
       {Auth.loggedIn() ? (
         <>
           <Subheader applications={applications} />

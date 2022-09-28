@@ -7,18 +7,26 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  LabelList
+  LabelList,
+  ResponsiveContainer
 } from "recharts";
 
 const AppTimeline = ({ applications }) => {
+  let appDates;
 
-  const appDates = applications.map((app) => {
-    let applied = app.dateApplied
-    for (let i = 0; i < applied.length; i++) {
-      let indice = applied.indexOf('T')
-      return [applied.slice(0, indice), app.company]
-    }
-  })
+  !applications
+    ? appDates = []
+    : appDates = applications.map((app) => {
+      let applied = app.dateApplied
+      if (applied !== null) {
+        for (let i = 0; i < applied.length; i++) {
+          let indice = applied.indexOf('T')
+          return [applied.slice(0, indice), app.company]
+        }
+      } else {
+        return [0, app.company]
+      }
+    })
   console.log(appDates)
 
   let data = [
@@ -305,33 +313,35 @@ const AppTimeline = ({ applications }) => {
     const { x, y, stroke, value } = props;
     return (
       <text x={x} y={y} dy={-4} fill={stroke} fontSize={20} textAnchor="middle">
-        {value}
+        {value === 0 ? "" : value}
       </text>
     );
   };
   return (
-    <LineChart
-      layout="vertical"
-      width={500}
-      height={800}
-      data={data}
-      margin={{
-        top: 20,
-        right: 0,
-        left: 0,
-        bottom: 0
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis type="number" domain={[0, "dataMax + 2"]} allowDecimals={false} />
-      <YAxis dataKey="date" type="category" />
-      <Tooltip />
-      <Legend />
-      <Line dataKey="appsSent" stroke="#8884d8" activeDot={{ r: 8 }}>
-        <LabelList dataKey="appsSent" content={<CustomizedLabel />} />
-      </Line>
-      {/* <Line dataKey="uv" stroke="#82ca9d" /> */}
-    </LineChart>
+    <ResponsiveContainer>
+      <LineChart
+        layout="vertical"
+        width="100%"
+        height={800}
+        data={data}
+        margin={{
+          top: 20,
+          right: 0,
+          left: 0,
+          bottom: 350
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis type="number" domain={[0, "dataMax + 2"]} allowDecimals={false} />
+        <YAxis dataKey="date" type="category" />
+        <Tooltip />
+        <Legend />
+        <Line dataKey="appsSent" stroke="#8884d8" activeDot={{ r: 8 }}>
+          <LabelList dataKey="appsSent" content={<CustomizedLabel />} />
+        </Line>
+        {/* <Line dataKey="uv" stroke="#82ca9d" /> */}
+      </LineChart>
+    </ResponsiveContainer>
   )
 }
 

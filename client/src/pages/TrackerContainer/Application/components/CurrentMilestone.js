@@ -29,6 +29,17 @@ const CurrentMilestone = ({ application }) => {
 
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState({});
+console.log(completed)
+console.log(application.currentMilestone)
+
+// React.useEffect(() => {
+//   switch(application.currentMilestone) {
+//     case 'Applied':
+//       break;
+
+//     default:
+//   }
+// }, [application])
 
   const totalSteps = () => {
     return steps.length;
@@ -55,8 +66,8 @@ const CurrentMilestone = ({ application }) => {
         : activeStep + 1;
     setActiveStep(newActiveStep);
     
-    const currentMilestone = steps[newActiveStep];
-    const milestones = steps[newActiveStep];
+    const currentMilestone = steps[newActiveStep - 1];
+    const milestones = steps[newActiveStep - 1];
     console.log(currentMilestone)
  
     try {
@@ -139,11 +150,14 @@ const CurrentMilestone = ({ application }) => {
       backgroundImage:
         'linear-gradient( 136deg, rgb(15,113,35) 0%, rgb(30,125,150) 50%, rgb(138,35,135) 100%)',
     }),
+    // ...(!ownerState.completed && {
+    //   pointerEvents: "none",
+    // }),
   }));
 
   function ColorlibStepIcon(props) {
     const { active, completed, className } = props;
-  
+  console.log(props)
     const icons = {
       1: <ArticleIcon />,
       2: <PhoneIcon />,
@@ -159,8 +173,6 @@ const CurrentMilestone = ({ application }) => {
       </ColorlibStepIconRoot>
     );
   }
-
-
 
   // const submitMilestone = async (event) => {
   //   event.preventDefault();

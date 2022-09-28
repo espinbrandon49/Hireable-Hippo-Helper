@@ -5,10 +5,15 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import "../../../index.css"
 
+const styles = {
+  background: {
+    height: "100%",
+  },
+};
 
 function HeroSection() {
   return (
-    <>
+    <div style={styles.background}>
       <div id="background1">
         <div style={{position: "absolute", left: "0"}}>
           <h1 className="title is-1 p-6">Hireable Hippo Helper</h1>
@@ -33,6 +38,7 @@ function HeroSection() {
           <div style={{paddingLeft: "20%"}}>Fun Hippo Fact</div>
         </div>
       </div>
+
       <div id="background2">
         <p>
           Store information on the jobs you have applied to, display job application details on a specific job so that you can always refer to back to the job listing's link and company website, the hiring manager's name and contact information, inportant dates such as interviews, and a description of the job itself.
@@ -52,6 +58,7 @@ function HeroSection() {
           <Paper elevation={5} />
         </Box>
       </div>
+
       <div id="background3">
         <div style={{position: "absolute", bottom: "-70%", left: "0"}}>
           <Box
@@ -75,6 +82,7 @@ function HeroSection() {
           </p>
         </div>
       </div>
+
       <div id="background4">
         <p>
           Dynamic visualizations allow one to see the application life cycle evolve in real time which is an analytics tool to zero in on your job search habits, milestones, and key metrics such as number of applied, number of job interviews, days of the week you are most actively searching, etc.
@@ -94,7 +102,8 @@ function HeroSection() {
           <Paper elevation={5} />
         </Box>
       </div>
-    </>
+
+    </div>
   );
 }
 

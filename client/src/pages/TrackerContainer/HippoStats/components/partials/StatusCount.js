@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { PieChart, Pie, Sector, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Sector, ResponsiveContainer, Label } from "recharts";
 
 const StatusCount = ({ applications }) => {
   const currentMilestoneCount = {
@@ -25,12 +25,13 @@ const StatusCount = ({ applications }) => {
     }
   });
   let data = [
-    { currentMilestone: "Applied", quantity: currentMilestoneCount.Applied },
+    { currentMilestone: "Applied",
+      quantity: currentMilestoneCount.Applied },
     {
-      currentMilestone: "In-Process",
+      currentMilestone: "Rejected",
       quantity: currentMilestoneCount.Rejected,
     },
-    { currentMilestone: "Rejected", quantity: currentMilestoneCount.inProcess },
+    { currentMilestone: "In-Process", quantity: currentMilestoneCount.inProcess },
     {
       currentMilestone: "Job Offers",
       quantity: currentMilestoneCount.jobOffers,
@@ -60,6 +61,7 @@ const StatusCount = ({ applications }) => {
           dataKey="quantity"
           onMouseEnter={onPieEnter}
         />
+        <Label>Application Status Count</Label>
       </PieChart>
     </ResponsiveContainer>
   );

@@ -144,7 +144,6 @@ const resolvers = {
       return addMilestone
     },
 
-
     removeApplication: async (parent, { _id }) => {
       return Application.findOneAndDelete({ _id: _id });
     },

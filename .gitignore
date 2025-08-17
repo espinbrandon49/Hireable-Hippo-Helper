@@ -1,29 +1,71 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-
-/.pnp
-.pnp.js
-.DS_Store
-../.DS_Store
-package-lock.json
+# =========================
+# Node & General
+# =========================
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
+# Environment files (never commit secrets like JWT keys, DB URIs, API keys)
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-.eslintcashe
-.env
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Logs
+logs/
+*.log
+*.log.*
+debug.log
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Coverage / Testing
+coverage/
+*.lcov
+
+# Temp directories
+tmp/
+temp/
+.cache/
+
+# =========================
+# Client (React)
+# =========================
+client/build/
+client/.cache/
+client/.next/
+client/out/
+
+# =========================
+# Server (Node / Express / GraphQL / MongoDB)
+# =========================
+server/dist/
+server/build/
+
+# MongoDB database files (local dev only)
+*.mongodb
+*.mongo
+dump/
+
+# Apollo / GraphQL generated cache
+.graphqlrc
+.graphqlconfig
+.graphqlconfig.yaml
+graphql-schema.json
+
+# =========================
+# Deployment (Heroku, misc)
+# =========================
+# Local Heroku config (not for repo)
+.heroku/
